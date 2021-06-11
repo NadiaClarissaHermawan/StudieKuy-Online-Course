@@ -5,7 +5,6 @@ public class contoh{
 =======
         System.out.println("Hello World");
         System.out.println();
-<<<<<<< HEAD
-        //tester
+>>>>>>> 60b44482537fe8fb7d95a4b5a8377d392d05d61c
     }
 }
