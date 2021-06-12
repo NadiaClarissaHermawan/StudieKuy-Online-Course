@@ -1,6 +1,5 @@
 <div class="nav">
-    <a href="index"><div class="menuNav">Home</div></a>
-    <div class="menuNav">/</div>
+    <a href="index"><div class="menuNav">Home /</div></a>
     <div  class="menuNav">Register</div>
 </div>
 <div class="form">
@@ -34,5 +33,5 @@
                 </td>
 			</tr>
 		</table>
-		<input type="submit" value="Register" name='updateUsername'>
+		<input type="submit" value="Register" class="button">
 	</form>
