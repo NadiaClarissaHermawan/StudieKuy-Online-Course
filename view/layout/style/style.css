@@ -6,6 +6,10 @@ body {
     margin: 0px;
 }
 
+.main {
+    padding-top: 130px;
+}
+
 .header {
     position: fixed;
     background-color: #CB6F6F;
@@ -18,10 +22,11 @@ body {
 
 .nav {
     position: fixed;
+    padding-left: 17px;
     background-color: white;
     display: block;
     width: 100%;
-    height: 34px;
+    height: 40px;
     left: 0px;
     top: 69px;
 }
@@ -29,7 +34,8 @@ body {
 .menuNav {
     display: inline-block;
     padding: 5px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
     text-decoration-line: none;
     font-family: Reem Kufi;
     font-style: normal;
@@ -37,14 +43,13 @@ body {
     font-size: 20px;
     line-height: 30px;
     text-align: center;
+    float: left;
 
     color: #432F2F;
 }
-
-.sticky {
-    position: fixed;
-    top: 0px;
-    width: 100%;
+.menuNav:hover {
+    background-color: #CB6F6F;
+    color: white;
 }
 
 #judul {
@@ -106,40 +111,56 @@ body {
 #learnNewKnowledge {
     font-size: 35px;
     line-height: 45px;
-    position: absolute;
     width: 500px;
-    height: 500px;
-    left: 150px;
-    top: 200px;
+    height: 260px;
+    margin-left: 150px;
+    margin-right: 75px;
 }
 
 #tombolStartLearning {
-    position: absolute;
     width: 231px;
     height: 50px;
-    left: 280px;
-    top: 470px;
+    left: 400px;
+    top: 200px;
     background: #FFDEDE;
     border-radius: 30px;
+    margin-top: 0px;
+    margin-left: 280px;
     border: none;
 }
 
 #gambarIndex1 {
-    position: absolute;
-    width: 600px;
-    height: 350px;
-    left: 650px;
-    top: 150px;
+    width: 580px;
+    height: 380px;
 }
 
 #quoteMainPage {
     font-size: 20px;
-    position: absolute;
     width: 540px;
     height: 54px;
     left: 690px;
     top: 500px;
 }
+
+#gambarIndex2 {
+    width: 600px;
+    height: 350px;
+    left: 150px;
+    top: 600px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.pinkbgIdx {
+    background-color: #FFC0C0;
+    width: 100%;
+    height: 503px;
+}
+/* styling page login.php
+--------------------
+ */
 
 form {
     background-color: #FFFFFF;
