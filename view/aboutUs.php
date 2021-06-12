@@ -1,5 +1,54 @@
+<div class="main" style="height: 1500px;">
+    <div class="nav fix">
+        <a href="courses" class="menuNav">Courses</a>
+        <a href="aboutUs" class="menuNav">About Us</a>
+        <a href="faq" class="menuNav">FAQ</a>
+    </div>
 
-<div class="nav fix">
+    <!-- blok coklat paling atas  -->
+    <div style="height: 480px">
+        <div class="content">  
+            <hr class="hr1">
+            <hr class="hr2">
+            <div class="slideTitle" id="slide1">About Us</div>
+            <hr class="hr2">
+            <hr class="hr1">
+        </div>
+        <div class="inline" style="vertical-align:middle;">
+            <img src="view/images/aboutUs1.png" id="gambarIndex1"/> 
+        </div>
+        <div class="inline" style="vertical-align:middle;">
+            <div class="tulisanPutih" id="about-us">
+                Perkembangan teknologi yang cukup pesat saat ini telah banyak berperan dalam kehidupan masyarkat sehari-hari khususnya dalam bidang pendidikan. Generasi milenial saat ini tentunya sudah tidak asing dengan sistem pembelajaran secara daring.
+        
+                OnlineCourse.com merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
+            </div>
+        </div>
+    </div>
+
+    <div  id="pinkbgIdx2">
+        <div class="content">  
+            <hr class="hr1">
+            <hr class="hr1">
+            <div class="slideTitle" id="slide2">Visi & Misi</div>
+            <hr class="hr1">
+            <hr class="hr1">
+        </div>
+        <div class="inline" style="vertical-align:middle;">
+            <img src="view/images/aboutUs2.png" id="gambarIndex1"/> 
+        </div>
+        <div class="inline" style="vertical-align:middle;">
+            <div class="tulisanPutih" id="about-us">
+                Perkembangan teknologi yang cukup pesat saat ini telah banyak berperan dalam kehidupan masyarkat sehari-hari khususnya dalam bidang pendidikan. Generasi milenial saat ini tentunya sudah tidak asing dengan sistem pembelajaran secara daring.
+        
+                OnlineCourse.com merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="nav fix">
     <a href="courses" class="menuNav">Courses</a>
     <a href="aboutUs" class="menuNav">About Us</a>
     <a href="faq" class="menuNav">FAQ</a>
@@ -18,4 +67,4 @@
         
         OnlineCourse.com merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
     </div>
-</div>
+</div> -->
