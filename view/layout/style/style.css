@@ -24,6 +24,20 @@ body {
     top: 69px;
 }
 
+.menuNav {
+    display: inline-block;
+    padding: 5px;
+    text-decoration-line: none;
+    font-family: Reem Kufi;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #432F2F;
+}
+
 #judul {
 	position: absolute;
 
