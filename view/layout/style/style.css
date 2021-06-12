@@ -9,7 +9,7 @@ body {
 .header {
     background-color: #CB6F6F;
     display: block;
-    width: 110%;
+    width: 100%;
     height: 69px;
     left: 0px;
     top: 0px;
@@ -17,7 +17,6 @@ body {
 
 .nav {
     background-color: white;
-    padding: 5px;
     display: block;
     width: 100%;
     height: 34px;
@@ -97,20 +96,21 @@ body {
  */
 
 #learnNewKnowledge {
+    font-size: 35px;
+    line-height: 45px;
     position: absolute;
-    width: 284px;
-    height: 118px;
-    left: 36px;
-    top: 164px;
+    width: 500px;
+    height: 500px;
+    left: 150px;
+    top: 200px;
 }
 
 #tombolStartLearning {
     position: absolute;
     width: 231px;
     height: 50px;
-    left: 62px;
-    top: 329px;
-    
+    left: 280px;
+    top: 470px;
     background: #FFDEDE;
     border-radius: 30px;
     border: none;
@@ -118,10 +118,10 @@ body {
 
 #gambarIndex1 {
     position: absolute;
-    width: 441px;
-    height: 273px;
-    left: 318px;
-    top: 130px;
+    width: 650px;
+    height: 400px;
+    left: 650px;
+    top: 150px;
 }
 
 form {
