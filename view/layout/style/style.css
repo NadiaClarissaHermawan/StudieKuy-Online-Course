@@ -135,8 +135,39 @@ body {
 
 form {
     background-color: #FFFFFF;
+    color: #432F2F;
+    text-align: center;
+    width: 545px;
+    position: relative;
+    left: 25%;
+    border-radius: 0 0 19px 19px;
 }
 
 input {
     background-color: #CB6F6F;
+}
+
+.button {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    background: #FFDEDE;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+.images {
+    position: relative;
+    width: 545px;
+    height: 180px;
+    align-items: center;
+    left: 25%;
+    top: 20px;
+    border-radius: 19px 19px 0 0;
+}
+
+table {
+    margin-left: 30%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
