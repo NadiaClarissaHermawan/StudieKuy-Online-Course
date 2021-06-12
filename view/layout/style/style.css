@@ -116,7 +116,7 @@ body {
 --------------------
  */
 
-svg {
+ svg {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -171,9 +171,8 @@ svg {
 }
 
 #gambarIndex2 {
-    width: 550px;
-    height: 400px;
-    margin-right: 130px;
+    width: 380px;
+    height: 320px;
 }
 
 .inline {
@@ -183,8 +182,8 @@ svg {
 #pinkbgIdx {
     background-color: #FFC0C0;
     padding: 50px;
-    height: 430px;
-    padding-left: 80px;
+    height: 500px;
+    padding-left: 100px;
 }
 
 .kotakCoklat {
@@ -208,9 +207,22 @@ svg {
     vertical-align: middle;
     font-size: 35px;
     line-height: 45px;
-    width: 500px;
+    width: 600px;
     height: 260px;
     margin-right: 90px;
+}
+
+.kotakPutih {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 0px;
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    border: 0px solid black;
+    
+    padding: 20px;
 }
 /* styling page userLogin.php
 --------------------
