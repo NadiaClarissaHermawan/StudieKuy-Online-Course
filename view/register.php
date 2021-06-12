@@ -4,7 +4,7 @@
     <div  class="menuNav">Register</div>
 </div>
 <div class="form">
-	<img src="view/images/loginpotongan.png">
+	<img src="view/images/loginpotongan.png" class = "imageLogin">
 	<form method="" action="">
 		<table>
 			<tr>

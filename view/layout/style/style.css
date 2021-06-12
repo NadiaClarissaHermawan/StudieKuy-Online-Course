@@ -1,10 +1,6 @@
 /* styling global
 --------------------
  */
- * {
-    font-family: Reem Kufi;
- }
- 
 body {
 	background-color: #432F2F;
     margin: 0px;
@@ -160,7 +156,7 @@ input {
     padding-bottom: 20px;
 }
 
-.images {
+.imageLogin {
     position: relative;
     width: 545px;
     height: 180px;

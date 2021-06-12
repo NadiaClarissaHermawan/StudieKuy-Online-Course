@@ -3,7 +3,7 @@
     <div class="menuNav">Login</div>
 </div>
 <div class="form">
-	<img src="view/images/loginpotongan.png" class="images">
+	<img src="view/images/loginpotongan.png" class="imageLogin">
 	<form method="" action="">
 		<table>
 			<tr>
