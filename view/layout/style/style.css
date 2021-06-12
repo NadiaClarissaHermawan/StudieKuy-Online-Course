@@ -27,12 +27,12 @@
 
 @font-face {
 	font-family: Calligraffitti;
-	src:url(../fonts/Calligraffitti-Regular.ttf);
+	src:url(fonts/Calligraffitti-Regular.ttf);
 }
 
 @font-face {
 	font-family: Reem Kufi;
-	src:url(../fonts/ReemKufi-Regular.ttf);
+	src:url(fonts/ReemKufi-Regular.ttf);
 }
 /*tombol login atau saldo*/
 .login { 
