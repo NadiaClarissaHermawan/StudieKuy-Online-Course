@@ -121,3 +121,5 @@ CREATE TABLE Transaksi_Saldo(
 	FOREIGN KEY(id_member) REFERENCES Member (id_member),
 	FOREIGN KEY(id_admin) REFERENCES Administrator (id_admin)
 )
+
+--INSERT BELOW
