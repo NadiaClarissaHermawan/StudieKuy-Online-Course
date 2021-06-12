@@ -20,5 +20,9 @@
         public function view_registerpage(){
             return View::createView('register.php', []);
         }
+
+        public function view_aboutUs(){
+            return View::createView('aboutUs.php', []);
+        }
     }
 ?>

@@ -19,6 +19,11 @@
             	$idxCtrl = new indexController();
                 echo $idxCtrl->view_registerpage();
                 break;
+            case $baseURL.'/aboutUs':
+            	require_once "control/indexController.php";
+            	$idxCtrl = new indexController();
+                echo $idxCtrl->view_aboutUs();
+                break;
             default :
                 echo '404 not found';
                 break;

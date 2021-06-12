@@ -186,3 +186,42 @@ table {
     margin-top: 150px;
     margin-left: 500px;
 }
+
+.hr1 {
+    position: absolute;
+    width: 274px;
+    height: 0px;
+    left: 270px;
+    top: 139px;
+
+    border: 1px solid #B56B5A;
+}
+
+.hr2 {
+    position: absolute;
+    width: 274px;
+    height: 0px;
+    left: 270px;
+    top: 147px;
+
+    border: 1px solid #FFFFFF;
+}
+
+.slideTitle {
+    font-size: 50px;
+    text-align: center;
+}
+
+#slide1 {
+    color: #CB6F6F;
+}
+
+#about-us {
+    font-size: 35px;
+    line-height: 45px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 150px;
+    top: 200px;
+}
