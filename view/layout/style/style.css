@@ -7,3 +7,59 @@
     top: -1px;
 }
 
+#judul {
+	position: absolute;
+	width: 202px;
+	height: 49px;
+	left: 23px;
+	top: 9px;
+
+	font-family: Calligraffitti;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 56px;
+
+	color: #FFFFFF;
+
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@font-face {
+	font-family: Calligraffitti;
+	src:url(../fonts/Calligraffitti-Regular.ttf);
+}
+
+@font-face {
+	font-family: Reem Kufi;
+	src:url(../fonts/ReemKufi-Regular.ttf);
+}
+/*tombol login atau saldo*/
+.login { 
+	position: absolute;
+	width: 95px;
+	height: 29px;
+	left: 662px;
+	top: 19px;
+
+	background: #FFFFFF;
+	border-radius: 9px;
+}
+
+/*Nominal dan tulisan Login*/
+.login.text {
+	position: absolute;
+	width: 87px;
+	height: 29px;
+	left: 666px;
+	top: 19px;
+
+	font-family: Reem Kufi;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 27px;
+	text-align: center;
+
+	color: #000000;
+}
