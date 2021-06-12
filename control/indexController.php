@@ -12,6 +12,10 @@
         public function view_mainpage(){
             return View::createView('index.php', []);
         }
+
+        public function view_userLoginpage(){
+            return View::createView('userLogin.php', []);
+        }
     }
 
 ?>
