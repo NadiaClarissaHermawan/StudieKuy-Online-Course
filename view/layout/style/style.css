@@ -329,3 +329,21 @@ table {
     margin-top: 0px;
     padding-top: 0px;
 }
+
+.tulisanCoklat ol li{
+    text-align: left;
+}
+
+#visi {
+    display: inline-block;
+    width: 300px;
+    margin-top: 0px;
+    margin-left: 220px;
+}
+
+#misi {
+    width: 300px;
+    margin-top: 0px;
+    margin-left: 220px;
+}
+
