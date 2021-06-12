@@ -344,9 +344,8 @@ table {
 
 .talk-bubble {
     margin: 40px;
-    /*display: inline-block;*/
     position: relative;
-    width: 300px;
+    width: 550px;
     height: auto;
     background-color: lightyellow;
 }
@@ -399,11 +398,10 @@ table {
 }
 
 #answer {
-    float: right;
     background-color: #DB6E61;
 }
 .talktext.answer {
-    float: right;
+    /*float: right;*/
 }
 .talktext.answer p {
     margin-top: 15px;
