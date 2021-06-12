@@ -73,15 +73,43 @@
     </div>
 
     <!-- blok our teams -->
-    <div style="height: 25%; padding-top:40px; background-color:#FFC0C0" >
+    <div style="height: 10%; padding-top:75px; padding-bottom:70px ; background-color:#FFC0C0; padding-bottom:40px" >
         <span>
-            <div style="margin-right:5%;" class="tulisanCoklat">
-                <hr class="hr1">
-                <hr class="hr2">
-                <div class="slideTitle tulisanCoklat">Our Teams</div>
-                <hr class="hr2">
-                <hr class="hr1">
+            <div class="tulisanCoklat slideTitle">
+                Our teams
             </div>  
+        </span>
+    </div>
+    <div  style="height: 25%;background-color:#FFC0C0; padding-bottom:100px; padding-top:50px" class="allMid">
+        <span style="width: 33%;">
+            <img class="pp" src="view/images/ppNadia.png"/>
+            <div>
+                Nadia Clarissa 
+                <br>
+                Hermawan
+                <br>
+                6181901013
+            </div>
+        </span>
+        <span style="width: 33%;">
+            <img class="pp" src="view/images/ppTasha.png"/>
+            <div>
+                Natasha Benedicta 
+                <br>
+                Bunnardi
+                <br>
+                6181901003
+            </div>
+        </span>
+        <span style="width: 33%;">
+            <img class="pp" src="view/images/ppRio.png"/>
+            <div>
+                Stanislaus Dendrio 
+                <br>
+                Evan
+                <br>
+                6181901034
+            </div>
         </span>
     </div>
 </div>
