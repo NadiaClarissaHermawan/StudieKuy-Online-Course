@@ -48,10 +48,11 @@
     <!-- blok coklat bawah -->
     <div>
         <div class="inline">
-            <img src="view/images/index3.png" id="gambarIndex3" />
+            A world where every learner can access education to unlock their potential,
+            without the barriers of location.
         </div>
         <div class="inline">
-            
+            <img src="view/images/index3.png" id="gambarIndex3"/>
         </div>
     </div>
 
