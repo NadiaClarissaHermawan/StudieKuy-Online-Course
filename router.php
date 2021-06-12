@@ -19,11 +19,6 @@
             	$idxCtrl = new indexController();
                 echo $idxCtrl->view_registerpage();
                 break;
-            case $baseURL.'/aboutUs':
-            	require_once "control/indexController.php";
-            	$idxCtrl = new indexController();
-                echo $idxCtrl->view_aboutUs();
-                break;
             case $baseURL.'/FAQ':
                 require_once "control/indexController.php";
                 $idxCtrl = new indexController();

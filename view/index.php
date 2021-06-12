@@ -1,4 +1,4 @@
-<div class="main" style="height: 1500px;">
+<div class="main" style="height: 100%;">
     <div class="nav fix">
         <a href="courses" class="menuNav">Courses</a>
         <a href="aboutUs" class="menuNav">About Us</a>
@@ -9,7 +9,7 @@
     <br>
 
     <!-- blok coklat paling atas  -->
-    <div style="height: 480px;  margin-left: 50px;">
+    <div style="height: 475px;  margin-left: 50px;">
         <div class="allMid">
             <span class="tulisanPutih" style="width:50%" id="learnNewKnowledge">
                 Learn new knowledge and skills in a variety of ways, 
@@ -29,7 +29,7 @@
     </div>
 
     <!-- pink tengah -->
-    <div  id="whitebgIdx">
+    <div style="height: 25%; margin-bottom: 20px; padding-top:50px">
         <hr style="border: 2px dashed white;">
         <div style="background-color:#432F2F">
             <div class="allMid" style="background-color: white;">
@@ -52,21 +52,36 @@
     </div>
 
     <!-- blok coklat bawah  -->
-    <div style="height: 520px" class="allMid">
+    <div style="height: 25%; padding-top:40px" class="allMid">
         <span style="width: 50%;">
             <img src="view/images/aboutUs1.png" id="gambarIndex1"/> 
         </span>
-        <span class="content" style="width: 50%;">  
-            <hr class="hr1">
-            <hr class="hr2">
-            <div class="slideTitle" id="slide1">About Us</div>
-            <hr class="hr2">
-            <hr class="hr1">
-            <div class="tulisanPutih" id="about-us">
+        <span class="content" style="width: 50%;">
+            <div style="margin-right:5%;">
+                <hr class="hr1">
+                <hr class="hr2">
+                <div class="slideTitle" id="slide1">About Us</div>
+                <hr class="hr2">
+                <hr class="hr1">
+            </div>  
+            <br>
+            <div class="tulisanPutih" id="about-us" style="margin-left: 10%;">
                 Perkembangan teknologi yang cukup pesat saat ini telah banyak berperan dalam kehidupan masyarkat sehari-hari khususnya dalam bidang pendidikan. Generasi milenial saat ini tentunya sudah tidak asing dengan sistem pembelajaran secara daring.
                 OnlineCourse.com merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
             </div>
         </span>
     </div>
 
+    <!-- blok our teams -->
+    <div style="height: 25%; padding-top:40px; background-color:#FFC0C0" >
+        <span>
+            <div style="margin-right:5%;" class="tulisanCoklat">
+                <hr class="hr1">
+                <hr class="hr2">
+                <div class="slideTitle tulisanCoklat">Our Teams</div>
+                <hr class="hr2">
+                <hr class="hr1">
+            </div>  
+        </span>
+    </div>
 </div>

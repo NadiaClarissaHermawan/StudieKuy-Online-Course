@@ -151,9 +151,6 @@ body {
     display: inline-block;
 }
 
-#whitebgIdx {
-    height: 400px;
-}
 
 .kotakCoklat {
     background-color: #432F2F;
@@ -262,16 +259,12 @@ table {
 .hr1 {
     width: 274px;
     height: 0px;
-    left: 270px;
-    top: 139px;
     border: 1px solid #B56B5A;
 }
 
 .hr2 {
     width: 274px;
     height: 0px;
-    left: 270px;
-    top: 147px;
     border: 1px solid #FFFFFF;
 }
 
@@ -285,7 +278,7 @@ table {
 }
 
 #about-us {
-    width: 450px;
+    width: 500px;
     height: 369px;
 
     font-family: Reem Kufi;
@@ -334,10 +327,6 @@ table {
 #pinkbgIdx2 .content {
     margin-top: 0px;
     padding-top: 0px;
-}
-
-.tulisanCoklat ol li{
-    text-align: left;
 }
 
 #visi {
