@@ -7,7 +7,7 @@
     </div>
 
     <!-- blok coklat paling atas  -->
-    <div style="height: 480px">
+    <div style="height: 540px">
         <div class="inline" style="vertical-align:middle;">
             <div class="tulisanPutih" id="learnNewKnowledge">
                 Learn new knowledge and skills in a variety of ways, 
@@ -24,39 +24,54 @@
         </div>    
     </div>
 
-    <!-- blok pink tengah -->
-    <div  id="pinkbgIdx">
-        <div class="inline" style="vertical-align:middle;">
-            <img src="view/images/index2.png" id="gambarIndex2"/>
+    <!-- pink tengah -->
+    <div  id="whitebgIdx">
+        <div class="content">  
+            <hr class="hr1">
+            <hr class="hr1">
+            <div class="slideTitle" id="slide2" >Visi & Misi</div>
+            <hr class="hr1">
+            <hr class="hr1">
         </div>
-        <div class="inline" style="vertical-align:middle;">
-            <div class="tulisanPutih kotakCoklat">
-                FOR LEARNERS :
-                <br>
-                Propel your career, get a degree, or expand your knowledge at any level.
-                View all courses and programs   
+        <div style="background-color:#432F2F">
+            <div class="allMid">
+                <span style="width: 33%;">
+                    Visi :
+                    <br>
+                    Menjadi platform online course terbaik nasional, 
+                    dengan metode yang modern, dan sistem yang terintegrasi.
+                </span>
+                    <img style="width: 33%" src="view/images/aboutUs2.png" id="gambarIndex2"/> 
+                <span style="width: 33%;">
+                    Misi :
+                    <br>
+                    Menyelenggarakan program belajar online yang memenuhi harapan 
+                    user dengan menerapkan metode modern, dan sistem yang terintegrasi.   
+                </span>
             </div>
-            <br>
-            <div class="tulisanPutih kotakCoklat">
-                FOR EDUCATORS :
-                <br>
-                Expand your curriculum through blended learning.
-            </div>
+            <div class="inline" style="vertical-align: middle">
+                 </div>
         </div>
     </div>
 
-    <!-- blok coklat bawah -->
-    <div style="padding-left: 90px; padding-top: 50px">
-        <div class="inline tulisanPutih" id="aWorldWhere">
-            <hr>
-            <hr>
-            A world where every learner can access education to unlock their potential,
-            without the barriers of location.
-            <hr>
-            <hr>
+    <!-- blok coklat bawah  -->
+    <div style="height: 520px">
+        <div class="content">  
+            <hr class="hr1">
+            <hr class="hr2">
+            <div class="slideTitle" id="slide1">About Us</div>
+            <hr class="hr2">
+            <hr class="hr1">
         </div>
-        <div class="inline">
-            <img src="view/images/index3.png" id="gambarIndex3"/>
+        <div class="inline" style="vertical-align:middle;">
+            <img src="view/images/aboutUs1.png" id="gambarIndex1"/> 
+        </div>
+        <div class="inline" style="vertical-align:middle;">
+            <div class="tulisanPutih" id="about-us">
+                Perkembangan teknologi yang cukup pesat saat ini telah banyak berperan dalam kehidupan masyarkat sehari-hari khususnya dalam bidang pendidikan. Generasi milenial saat ini tentunya sudah tidak asing dengan sistem pembelajaran secara daring.
+        
+                OnlineCourse.com merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
+            </div>
         </div>
     </div>
 

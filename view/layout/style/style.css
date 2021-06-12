@@ -115,24 +115,6 @@ body {
 /* styling page index.php
 --------------------
  */
-
-svg {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-.container {
-    display: inline-block;
-    position: absolute;
-    width: 100%;
-    padding-bottom: 100%;
-    vertical-align: middle;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-}
 #learnNewKnowledge {
     font-size: 35px;
     line-height: 45px;
@@ -140,6 +122,16 @@ svg {
     height: 260px;
     margin-left: 120px;
     margin-right: 75px;
+}
+
+.allMid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 350px;
+    width: 100%;
+    background-color: #FFC0C0;
 }
 
 #tombolStartLearning {
@@ -170,21 +162,16 @@ svg {
     top: 500px;
 }
 
-#gambarIndex2 {
-    width: 550px;
-    height: 400px;
-    margin-right: 130px;
-}
-
 .inline {
     display: inline-block;
 }
 
-#pinkbgIdx {
-    background-color: #FFC0C0;
-    padding: 50px;
-    height: 430px;
-    padding-left: 80px;
+#whitebgIdx {
+    background-color:#FFC0C0;
+    padding-top: 5px;
+    height: 480px;
+
+    margin-bottom: 40px;
 }
 
 .kotakCoklat {
@@ -192,7 +179,6 @@ svg {
     border-radius: 18px;
     padding: 20px;
     width: 400px;
-
     font-size: 30px;
     line-height: 40px;
 }
@@ -208,9 +194,28 @@ svg {
     vertical-align: middle;
     font-size: 35px;
     line-height: 45px;
-    width: 500px;
+    width: 600px;
     height: 260px;
     margin-right: 90px;
+}
+#gambarIndex2 {
+    width: 350px;
+    height: 300px;
+    margin: 13px;
+    background-color: #432F2F;
+}
+
+.kotakPink {
+    padding-top: 20px;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 0px;
+    width: 350px;
+    height: 300px;
+    background-color: #FFC0C0;
+    border: 0px solid black;
+    
+    padding: 20px;
 }
 /* styling page userLogin.php
 --------------------
@@ -314,6 +319,8 @@ table {
 .content {
     /*margin-top: 50px;*/
     /*display: inline-block;*/
+    margin-left: 0px;
+    padding-left: 0px;
     align-items: center;
     vertical-align: middle;
 }
