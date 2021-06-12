@@ -6,35 +6,32 @@
         <a href="myProfile" class="menuNav">My Profile</a>
     </div>
 
+    <br>
+
     <!-- blok coklat paling atas  -->
-    <div style="height: 480px">
-        <div class="inline" style="vertical-align:middle;">
-            <div class="tulisanPutih" id="learnNewKnowledge">
+    <div style="height: 480px;  margin-left: 50px;">
+        <div class="allMid">
+            <span class="tulisanPutih" style="width:50%" id="learnNewKnowledge">
                 Learn new knowledge and skills in a variety of ways, 
                 from engaging video lectures and dynamic graphics to
                 data visualizations and interactive element.
-            </div>
-            <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 30px;">Start Learning Now!</button></a>
-        </div>  
-        <div class="inline" style="vertical-align:middle;">
-            <img src="view/images/index1.png" id="gambarIndex1"/> 
-            <div class="tulisanPutih" style="font-size: 20px;" id="quoteMainPage">
-                "The single most important key to success is to be a good listener." - Kelly Wearstler
-            </div>
+                <br>
+                <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 30px;">Start Learning Now!</button></a>
+            </span>
+            <span class="tulisanPutih" style="width: 50%;">
+                <img src="view/images/index1.png" id="gambarIndex1"/> 
+                <div style="font-size: 20px; margin-left:45px" id="quoteMainPage">
+                    "The single most important key to success is to be a good listener." 
+                    <br>- Kelly Wearstler
+                </div>
+            </span>
         </div>    
     </div>
 
     <!-- pink tengah -->
     <div  id="whitebgIdx">
-        <!-- <div class="content">  
-            <hr class="hr1">
-            <hr class="hr1">
-            <div class="slideTitle" id="slide2" >Visi & Misi</div>
-            <hr class="hr1">
-            <hr class="hr1">
-        </div> -->
         <div style="background-color:#432F2F">
-            <div class="allMid">
+            <div class="allMid" style="background-color: white;">
                 <span style="width: 33%; font-size:25px; ">
                     Visi :
                     <br>

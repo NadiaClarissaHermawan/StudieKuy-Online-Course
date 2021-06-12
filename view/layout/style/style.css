@@ -7,7 +7,7 @@ body {
 }
 
 .main {
-    padding-top: 130px;
+    padding-top: 200px;
 }
 
 .header {
@@ -120,8 +120,6 @@ body {
     line-height: 45px;
     width: 500px;
     height: 260px;
-    margin-left: 120px;
-    margin-right: 75px;
 }
 
 #tombolStartLearning {
@@ -129,8 +127,7 @@ body {
     height: 50px;
     background: #FFDEDE;
     border-radius: 30px;
-    margin-top: 0px;
-    margin-left: 220px;
+    margin-top: 20px;
     border: none;
 }
 #tombolStartLearning:hover {
@@ -148,8 +145,6 @@ body {
     font-size: 18px;
     width: 540px;
     height: 54px;
-    left: 690px;
-    top: 500px;
 }
 
 .inline {
@@ -158,7 +153,6 @@ body {
 
 #whitebgIdx {
     height: 400px;
-    
 }
 
 .kotakCoklat {
@@ -198,7 +192,6 @@ body {
     text-align: center;
     height: 350px;
     width: 100%;
-    background-color: white;
 }
 
 .kotakPink {
