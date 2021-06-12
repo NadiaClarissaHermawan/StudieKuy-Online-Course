@@ -14,17 +14,20 @@
                 from engaging video lectures and dynamic graphics to
                 data visualizations and interactive element.
             </div>
-            <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 24px;">Start Learning Now!</button></a>
+            <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 30px;">Start Learning Now!</button></a>
         </div>  
         <div class="inline" style="vertical-align:middle;">
-            <img src="view/images/mainPage1.png" id="gambarIndex1"/> 
+            <img src="view/images/index1.png" id="gambarIndex1"/> 
+            <div class="tulisanPutih" style="font-size: 20px;" id="quoteMainPage">
+                "The single most important key to success is to be a good listener." - Kelly Wearstler
+            </div>
         </div>    
     </div>
 
     <!-- blok pink tengah -->
     <div  id="pinkbgIdx">
         <div class="inline" style="vertical-align:middle;">
-            <img src="view/images/mainPage2.png" id="gambarIndex2"/>
+            <img src="view/images/index2.png" id="gambarIndex2"/>
         </div>
         <div class="inline" style="vertical-align:middle;">
             <div class="tulisanPutih kotakCoklat">
@@ -42,5 +45,19 @@
         </div>
     </div>
 
+    <!-- blok coklat bawah -->
+    <div style="padding-left: 90px; padding-top: 50px">
+        <div class="inline tulisanPutih" id="aWorldWhere">
+            <hr>
+            <hr>
+            A world where every learner can access education to unlock their potential,
+            without the barriers of location.
+            <hr>
+            <hr>
+        </div>
+        <div class="inline">
+            <img src="view/images/index3.png" id="gambarIndex3"/>
+        </div>
+    </div>
 
 </div>
