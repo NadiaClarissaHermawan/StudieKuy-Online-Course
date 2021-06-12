@@ -19,8 +19,7 @@
                 <img src="view/images/profpicAdmin.jpg" class="profilePic">
             </div>
         </div>
-    </div>
-    <div class="question">
+
         <div class="talk-bubble tri-right round left-in" id="question">
             <div class="talktext question">
                 <img src="view/images/profpic1.jpg" class="profilePic">
@@ -33,5 +32,21 @@
                 <img src="view/images/profpicAdmin.jpg" class="profilePic">
             </div>
         </div>
+
+        <div class="talk-bubble tri-right round left-in" id="question">
+            <div class="talktext question">
+                <img src="view/images/profpic1.jpg" class="profilePic">
+                <p>Mengapa pohon tidak berjalan?</p>
+            </div>
+        </div>
+        <div class="talk-bubble tri-right round right-in" id="answer">
+            <div class="talktext answer" >
+                <p>Karena pohon tidak memiliki kaki.</p>
+                <img src="view/images/profpicAdmin.jpg" class="profilePic">
+            </div>
+        </div>
+    </div>
+    <div class="question2">
+        
     </div>
 </div>
