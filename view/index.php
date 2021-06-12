@@ -25,11 +25,12 @@
                     <br>- Kelly Wearstler
                 </div>
             </span>
-        </div>    
+        </div>  
     </div>
 
     <!-- pink tengah -->
     <div  id="whitebgIdx">
+        <hr style="border: 2px dashed white;">
         <div style="background-color:#432F2F">
             <div class="allMid" style="background-color: white;">
                 <span style="width: 33%; font-size:25px; ">
@@ -46,9 +47,8 @@
                     user dengan menerapkan metode modern, dan sistem yang terintegrasi.   
                 </span>
             </div>
-            <div class="inline" style="vertical-align: middle">
-                 </div>
         </div>
+        <hr style="border: 2px dashed white;">
     </div>
 
     <!-- blok coklat bawah  -->
