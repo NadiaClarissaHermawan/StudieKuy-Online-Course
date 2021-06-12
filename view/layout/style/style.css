@@ -7,7 +7,7 @@ body {
 }
 
 .main {
-    padding-top: 130px;
+    padding-top: 200px;
 }
 
 .header {
@@ -120,8 +120,6 @@ body {
     line-height: 45px;
     width: 500px;
     height: 260px;
-    margin-left: 120px;
-    margin-right: 75px;
 }
 
 .allMid {
@@ -139,8 +137,7 @@ body {
     height: 50px;
     background: #FFDEDE;
     border-radius: 30px;
-    margin-top: 0px;
-    margin-left: 220px;
+    margin-top: 20px;
     border: none;
 }
 #tombolStartLearning:hover {
@@ -158,8 +155,6 @@ body {
     font-size: 18px;
     width: 540px;
     height: 54px;
-    left: 690px;
-    top: 500px;
 }
 
 .inline {
@@ -167,11 +162,15 @@ body {
 }
 
 #whitebgIdx {
+<<<<<<< HEAD
     background-color:#FFC0C0;
     padding-top: 5px;
     height: 480px;
 
     margin-bottom: 40px;
+=======
+    height: 400px;
+>>>>>>> 3c7950b6c9ff4d794e61184b89410ee5728dc0df
 }
 
 .kotakCoklat {
@@ -199,10 +198,24 @@ body {
     margin-right: 90px;
 }
 #gambarIndex2 {
+<<<<<<< HEAD
     width: 350px;
     height: 300px;
     margin: 13px;
     background-color: #432F2F;
+=======
+    width: inherit;
+    height: inherit;
+    background-color: #FFC0C0;
+}
+.allMid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 350px;
+    width: 100%;
+>>>>>>> 3c7950b6c9ff4d794e61184b89410ee5728dc0df
 }
 
 .kotakPink {
