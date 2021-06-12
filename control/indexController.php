@@ -21,10 +21,6 @@
             return View::createView('register.php', []);
         }
 
-        public function view_aboutUs(){
-            return View::createView('aboutUs.php', []);
-        }
-
         public function view_faq(){
             return View::createView('faq.php', []);
         }

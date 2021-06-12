@@ -6,7 +6,7 @@
         <a href="myProfile" class="menuNav">My Profile</a>
     </div>
 
-    <div class="question">
+    <div class="question1">
         <div class="talk-bubble tri-right round left-in" id="question">
             <div class="talktext question">
                 <img src="view/images/profpic1.jpg" class="profilePic">
@@ -20,9 +20,18 @@
             </div>
         </div>
     </div>
-    <div class="answer">
-        
-    </div>
-        
+    <div class="question">
+        <div class="talk-bubble tri-right round left-in" id="question">
+            <div class="talktext question">
+                <img src="view/images/profpic1.jpg" class="profilePic">
+                <p>Apakah benar panda itu beruang?</p>
+            </div>
+        </div>
+        <div class="talk-bubble tri-right round right-in" id="answer">
+            <div class="talktext answer" >
+                <p>Ya, Panda merupakan salah satu spesies beruang</p>
+                <img src="view/images/profpicAdmin.jpg" class="profilePic">
+            </div>
+        </div>
     </div>
 </div>

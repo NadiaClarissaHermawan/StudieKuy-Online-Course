@@ -374,7 +374,7 @@ table {
     margin: 40px;
     /*display: inline-block;*/
     position: relative;
-    width: 300px;
+    width: auto;
     height: auto;
     background-color: lightyellow;
 }
