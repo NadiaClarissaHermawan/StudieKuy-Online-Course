@@ -17,6 +17,7 @@ body {
 
 .nav {
     background-color: white;
+    padding: 5px;
     display: block;
     width: 100%;
     height: 34px;
@@ -40,10 +41,9 @@ body {
 
 #judul {
 	position: absolute;
-
+    left: 15px;
 	width: 202px;
 	height: 49px;
-	left: 15px;
     margin: 0px;
     padding: 10px;
 
@@ -58,12 +58,6 @@ body {
 }
 
 .tulisanPutih {
-    position: absolute;
-    width: 284px;
-    height: 118px;
-    left: 36px;
-    top: 164px;
-    
     font-family: Reem Kufi;
     font-style: normal;
     font-weight: normal;
@@ -90,7 +84,13 @@ body {
 --------------------
  */
 
-
-/* styling page userLogin.php
---------------------
-*/
+<<<<<<< HEAD
+=======
+#learnNewKnowledge {
+    position: absolute;
+    width: 284px;
+    height: 118px;
+    left: 36px;
+    top: 164px;
+}
+>>>>>>> 86d3d5f431696d7208d83be2f732ab25be9f81d3
