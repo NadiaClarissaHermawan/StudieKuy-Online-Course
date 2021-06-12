@@ -1,8 +1,9 @@
-div {
-    background-color: #CB6F6F
-    position : absolute;
+.headerBlockPink {
+    background-color: #CB6F6F;
+    position: absolute;
     width: 772px;
     height: 69px;
     left: 0px;
     top: -1px;
 }
+
