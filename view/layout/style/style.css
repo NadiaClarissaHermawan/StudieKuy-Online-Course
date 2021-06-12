@@ -363,3 +363,79 @@ table {
     margin-left: 220px;
 }
 
+.talk-bubble {
+    margin: 40px;
+    /*display: inline-block;*/
+    position: relative;
+    width: 300px;
+    height: auto;
+    background-color: lightyellow;
+}
+.round{
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+
+}
+
+.talktext {
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+.talktext p {
+    -webkit-margin-after: 0em;
+    display: inline-block;
+    margin-left: 10px;
+}
+.tri-right.right-in:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -20px;
+    top: 25px;
+    bottom: auto;
+    border: 12px solid;
+    border-color: #DB6E61 transparent transparent #DB6E61;
+}
+
+.profilePic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.tri-right.left-in:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -20px;
+    right: auto;
+    top: 38px;
+    bottom: auto;
+    border: 12px solid;
+    border-color: lightyellow lightyellow transparent transparent;
+}
+
+#answer {
+    float: right;
+    background-color: #DB6E61;
+}
+.talktext.answer {
+    float: right;
+}
+.talktext.answer p {
+    margin-top: 15px;
+    margin-right: 10px;
+    -webkit-margin-after: 0em;
+}
+.talktext.answer img {
+    float: right;
+    top: 0px;
+}
+.talktext.question img {
+    float: left;
+    top: 0px;
+}

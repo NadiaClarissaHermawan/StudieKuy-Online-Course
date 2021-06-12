@@ -24,6 +24,11 @@
             	$idxCtrl = new indexController();
                 echo $idxCtrl->view_aboutUs();
                 break;
+            case $baseURL.'/FAQ':
+                require_once "control/indexController.php";
+                $idxCtrl = new indexController();
+                echo $idxCtrl->view_faq();
+                break;
             default :
                 echo '404 not found';
                 break;
