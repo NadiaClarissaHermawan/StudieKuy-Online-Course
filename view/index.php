@@ -1,7 +1,7 @@
 <div class="main" style="height: 100%;">
     <div class="nav fix">
         <a href="courses" class="menuNav">Courses</a>
-        <a href="aboutUs" class="menuNav">About Us</a>
+        <a href="#aboutUs" class="menuNav">About Us</a>
         <a href="faq" class="menuNav">FAQ</a>
         <a href="myProfile" class="menuNav">My Profile</a>
     </div>
@@ -48,11 +48,14 @@
                 </span>
             </div>
         </div>
-        <hr style="border: 2px dashed white;">
+        <hr style="border: 2px dashed white;" id="aboutUs">
     </div>
 
+    <br>
+    <br>
+
     <!-- blok coklat bawah  -->
-    <div style="height: 25%; padding-top:40px" class="allMid">
+    <div style="height: 28%; padding-top:40px" class="allMid">
         <span style="width: 50%;">
             <img src="view/images/aboutUs1.png" id="gambarIndex1"/> 
         </span>
@@ -72,8 +75,10 @@
         </span>
     </div>
 
+    <hr style="border: 2px dashed white;">
+
     <!-- blok our teams -->
-    <div style="height: 10%; padding-top:75px; padding-bottom:70px ; background-color:#FFC0C0; padding-bottom:40px" >
+    <div style="height: 10%; padding-top: 60px; padding-bottom:70px ; background-color:#FFC0C0; padding-bottom:40px" >
         <span>
             <div class="tulisanCoklat slideTitle">
                 Our teams

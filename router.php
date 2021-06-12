@@ -19,7 +19,7 @@
             	$idxCtrl = new indexController();
                 echo $idxCtrl->view_registerpage();
                 break;
-            case $baseURL.'/FAQ':
+            case $baseURL.'/faq':
                 require_once "control/indexController.php";
                 $idxCtrl = new indexController();
                 echo $idxCtrl->view_faq();
