@@ -50,6 +50,7 @@ body {
 .menuNav:hover {
     background-color: #CB6F6F;
     color: white;
+    cursor: pointer;
 }
 
 #judul {
@@ -113,7 +114,7 @@ body {
     line-height: 45px;
     width: 500px;
     height: 260px;
-    margin-left: 150px;
+    margin-left: 120px;
     margin-right: 75px;
 }
 
@@ -125,13 +126,18 @@ body {
     background: #FFDEDE;
     border-radius: 30px;
     margin-top: 0px;
-    margin-left: 280px;
+    margin-left: 270px;
     border: none;
+}
+#tombolStartLearning:hover {
+    background-color: #CB6F6F;
+    color: white;
+    cursor: pointer;
 }
 
 #gambarIndex1 {
-    width: 580px;
-    height: 380px;
+    width: 620px;
+    height: 450px;
 }
 
 #quoteMainPage {
@@ -144,19 +150,26 @@ body {
 
 #gambarIndex2 {
     width: 600px;
-    height: 350px;
-    left: 150px;
-    top: 600px;
+    height: 440px;
+    margin-right: 100px;
 }
 
 .inline {
     display: inline-block;
 }
 
-.pinkbgIdx {
+#pinkbgIdx {
     background-color: #FFC0C0;
-    width: 100%;
-    height: 503px;
+    padding: 50px;
+    height: 430px;
+}
+
+.kotakCoklat {
+    background-color: #432F2F;
+    border-radius: 18px;
+    padding: 20px;
+    width: 400px;
+
 }
 
 /* styling page userLogin.php
@@ -207,6 +220,8 @@ table {
     margin-top: 150px;
     margin-left: 500px;
 }
+
+
 
 /* styling page aboutUs.php
 --------------------
