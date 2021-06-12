@@ -285,24 +285,19 @@ table {
 }
 
 #about-us {
-    width: 360px;
+    width: 450px;
     height: 369px;
-    left: 393px;
-    top: 265px;
 
     font-family: Reem Kufi;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
-    text-align: center;
+    text-align: justify;
 
     color: #FFFFFF;
 
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    float: left;
-    display: inline-block;
 }
 .content {
     /*margin-top: 50px;*/
