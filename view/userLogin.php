@@ -2,8 +2,8 @@
     <a href="home"><div class="menuNav">Home /</div></a>
     <a href=""><div class="menuNav">Login</div></a>
 </div>
-<div>
-	<img src="images/login.jpg">
+<div class="form">
+	<img src="view/images/login.png">
 	<form method="" action="">
 		<table>
 			<tr>
