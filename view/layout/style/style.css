@@ -212,22 +212,18 @@ table {
 --------------------
  */
 .hr1 {
-    position: relative;
     width: 274px;
     height: 0px;
     left: 270px;
     top: 139px;
-
     border: 1px solid #B56B5A;
 }
 
 .hr2 {
-    position: relative;
     width: 274px;
     height: 0px;
     left: 270px;
     top: 147px;
-
     border: 1px solid #FFFFFF;
 }
 
@@ -237,20 +233,23 @@ table {
 }
 
 #slide1 {
-    color: #CB6F6F;
+    color: #FFDEDE;
 }
 
 #about-us {
-    font-size: 35px;
+    font-size: 25px;
     line-height: 45px;
-    position: absolute;
     width: 500px;
     height: 500px;
     left: 150px;
     top: 200px;
+    float: left;
 }
-/*test*/
+
 .content {
-    position: relative;
-    margin-top: 300px;
+    margin-top: 150px;
+}
+
+.content img {
+    float: left;
 }
