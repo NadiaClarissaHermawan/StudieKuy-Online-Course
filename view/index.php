@@ -14,7 +14,7 @@
                 from engaging video lectures and dynamic graphics to
                 data visualizations and interactive element.
             </div>
-            <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 24px;">Start Learning Now!</button></a>
+            <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 30px;">Start Learning Now!</button></a>
         </div>  
         <div class="inline" style="vertical-align:middle;">
             <img src="view/images/index1.png" id="gambarIndex1"/> 
@@ -46,10 +46,14 @@
     </div>
 
     <!-- blok coklat bawah -->
-    <div>
-        <div class="inline">
+    <div style="padding-left: 90px; padding-top: 50px">
+        <div class="inline tulisanPutih" id="aWorldWhere">
+            <hr>
+            <hr>
             A world where every learner can access education to unlock their potential,
             without the barriers of location.
+            <hr>
+            <hr>
         </div>
         <div class="inline">
             <img src="view/images/index3.png" id="gambarIndex3"/>
