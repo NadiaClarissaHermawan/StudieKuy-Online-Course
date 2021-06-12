@@ -9,7 +9,7 @@ body {
 .header {
     background-color: #CB6F6F;
     display: block;
-    width: 100%;
+    width: 110%;
     height: 69px;
     left: 0px;
     top: 0px;
@@ -28,6 +28,7 @@ body {
 .menuNav {
     display: inline-block;
     padding: 5px;
+    padding-left: 20px;
     text-decoration-line: none;
     font-family: Reem Kufi;
     font-style: normal;
@@ -70,6 +71,17 @@ body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.tulisanCoklat {
+    font-family: Reem Kufi;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    
+    color: #432F2F;
+}
+
 @font-face {
 	font-family: Calligraffitti;
 	src:url(fonts/Calligraffitti-Regular.ttf);
@@ -84,8 +96,6 @@ body {
 --------------------
  */
 
-<<<<<<< HEAD
-=======
 #learnNewKnowledge {
     position: absolute;
     width: 284px;
@@ -93,4 +103,23 @@ body {
     left: 36px;
     top: 164px;
 }
->>>>>>> 86d3d5f431696d7208d83be2f732ab25be9f81d3
+
+#tombolStartLearning {
+    position: absolute;
+    width: 231px;
+    height: 50px;
+    left: 62px;
+    top: 329px;
+    
+    background: #FFDEDE;
+    border-radius: 30px;
+    border: none;
+}
+
+#gambarIndex1 {
+    position: absolute;
+    width: 441px;
+    height: 273px;
+    left: 318px;
+    top: 130px;
+}

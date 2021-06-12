@@ -12,6 +12,9 @@
         data visualizations and interactive element.
     </div>
     <div>
-        <input type="submit" name="startLearningNow" id="tombolStart"
+        <button type="submit" id="tombolStartLearning"><div class="tulisanCoklat" style="font-size: 24px;">Start Learning Now !</div></button>
+    </div>
+    <div>
+        <img src="view/images/mainPage1.png" id="gambarIndex1"/>
     </div>
 </div>
