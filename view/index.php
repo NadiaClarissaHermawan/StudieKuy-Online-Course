@@ -7,7 +7,7 @@
     </div>
 
     <!-- blok coklat paling atas  -->
-    <div style="height: 540px">
+    <div style="height: 480px">
         <div class="inline" style="vertical-align:middle;">
             <div class="tulisanPutih" id="learnNewKnowledge">
                 Learn new knowledge and skills in a variety of ways, 
@@ -26,23 +26,23 @@
 
     <!-- pink tengah -->
     <div  id="whitebgIdx">
-        <div class="content">  
+        <!-- <div class="content">  
             <hr class="hr1">
             <hr class="hr1">
             <div class="slideTitle" id="slide2" >Visi & Misi</div>
             <hr class="hr1">
             <hr class="hr1">
-        </div>
+        </div> -->
         <div style="background-color:#432F2F">
             <div class="allMid">
-                <span style="width: 33%;">
+                <span style="width: 33%; font-size:25px; ">
                     Visi :
                     <br>
                     Menjadi platform online course terbaik nasional, 
                     dengan metode yang modern, dan sistem yang terintegrasi.
                 </span>
                     <img style="width: 33%" src="view/images/aboutUs2.png" id="gambarIndex2"/> 
-                <span style="width: 33%;">
+                <span style="width: 33%;  font-size:25px">
                     Misi :
                     <br>
                     Menyelenggarakan program belajar online yang memenuhi harapan 
