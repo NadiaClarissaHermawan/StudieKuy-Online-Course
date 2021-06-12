@@ -1,6 +1,10 @@
 /* styling global
 --------------------
  */
+ * {
+    font-family: Reem Kufi;
+ }
+ 
 body {
 	background-color: #432F2F;
     margin: 0px;
