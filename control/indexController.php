@@ -16,5 +16,9 @@
         public function view_userLoginpage(){
             return View::createView('userLogin.php', []);
         }
+
+        public function view_registerpage(){
+            return View::createView('register.php', []);
+        }
     }
 ?>
