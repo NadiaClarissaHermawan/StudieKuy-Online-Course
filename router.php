@@ -9,7 +9,11 @@
                 $idxCtrl = new indexController();
                 echo $idxCtrl->view_mainpage();
                 break;
-            
+            case $baseURL.'/userLogin':
+            	require_once "control/indexController.php";
+            	$idxCtrl = new indexController();
+                echo $idxCtrl->view_userLoginpage();
+                break;
             default :
                 echo '404 not found';
                 break;
