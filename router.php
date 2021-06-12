@@ -14,6 +14,11 @@
             	$idxCtrl = new indexController();
                 echo $idxCtrl->view_userLoginpage();
                 break;
+            case $baseURL.'/register':
+            	require_once "control/indexController.php";
+            	$idxCtrl = new indexController();
+                echo $idxCtrl->view_registerpage();
+                break;
             default :
                 echo '404 not found';
                 break;
