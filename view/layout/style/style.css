@@ -141,6 +141,9 @@ body {
     top: 500px;
 }
 
+/* styling page userLogin.php
+--------------------
+ */
 form {
     background-color: #FFFFFF;
     color: #432F2F;
@@ -187,8 +190,11 @@ table {
     margin-left: 500px;
 }
 
+/* styling page aboutUs.php
+--------------------
+ */
 .hr1 {
-    position: absolute;
+    position: relative;
     width: 274px;
     height: 0px;
     left: 270px;
@@ -198,7 +204,7 @@ table {
 }
 
 .hr2 {
-    position: absolute;
+    position: relative;
     width: 274px;
     height: 0px;
     left: 270px;
@@ -224,4 +230,9 @@ table {
     height: 500px;
     left: 150px;
     top: 200px;
+}
+/*test*/
+.content {
+    position: relative;
+    margin-top: 300px;
 }

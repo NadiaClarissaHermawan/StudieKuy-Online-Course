@@ -5,7 +5,7 @@
     <a href="faq" class="menuNav">FAQ</a>
     <a href="myProfile" class="menuNav">My Profile</a>
 </div>
-<div>
+<div class="content">
     <hr class="hr1">
     <hr class="hr2">
     <div class="slideTitle" id="slide1">About Us</div>
