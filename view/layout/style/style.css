@@ -118,10 +118,19 @@ body {
 
 #gambarIndex1 {
     position: absolute;
-    width: 650px;
-    height: 400px;
+    width: 600px;
+    height: 350px;
     left: 650px;
     top: 150px;
+}
+
+#quoteMainPage {
+    font-size: 20px;
+    position: absolute;
+    width: 540px;
+    height: 54px;
+    left: 690px;
+    top: 500px;
 }
 
 form {

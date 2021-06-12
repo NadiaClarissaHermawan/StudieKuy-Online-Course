@@ -16,5 +16,9 @@
     </div>
     <div>
         <img src="view/images/mainPage1.png" id="gambarIndex1"/>
+        <div class="tulisanPutih" id="quoteMainPage">
+            “The single most important key to success is to be a good listener.”
+            ― Kelly Wearstler   
+        </div>
     </div>
 </div>
