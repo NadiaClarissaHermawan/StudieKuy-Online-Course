@@ -13,5 +13,4 @@
             return View::createView('index.php', []);
         }
     }
-
 ?>
