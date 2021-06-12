@@ -7,7 +7,7 @@
     </div>
 
     <!-- blok coklat paling atas  -->
-    <div style="height: 480px">
+    <div style="height: 540px">
         <div class="inline" style="vertical-align:middle;">
             <div class="tulisanPutih" id="learnNewKnowledge">
                 Learn new knowledge and skills in a variety of ways, 
@@ -25,37 +25,37 @@
     </div>
 
     <!-- pink tengah -->
-    <div  id="pinkbgIdx">
+    <div  id="whitebgIdx">
         <div class="content">  
             <hr class="hr1">
             <hr class="hr1">
-            <div class="slideTitle" id="slide2">Visi & Misi</div>
+            <div class="slideTitle" id="slide2" >Visi & Misi</div>
             <hr class="hr1">
             <hr class="hr1">
         </div>
-        <br>
-        <div class="inline" style="vertical-align: middle;">
-            <div class="kotakPutih tulisanCoklat" style="font-size: 30px;">
-                Visi :
-                <br>
-                Menjadi platform online course terbaik nasional, 
-                dengan metode yang modern, dan sistem yang terintegrasi.
+        <div style="background-color:#432F2F">
+            <div class="allMid">
+                <span style="width: 33%;">
+                    Visi :
+                    <br>
+                    Menjadi platform online course terbaik nasional, 
+                    dengan metode yang modern, dan sistem yang terintegrasi.
+                </span>
+                    <img style="width: 33%" src="view/images/aboutUs2.png" id="gambarIndex2"/> 
+                <span style="width: 33%;">
+                    Misi :
+                    <br>
+                    Menyelenggarakan program belajar online yang memenuhi harapan 
+                    user dengan menerapkan metode modern, dan sistem yang terintegrasi.   
+                </span>
             </div>
-        </div>
-        <div class="inline" style="vertical-align: middle;">
-            <img src="view/images/aboutUs2.png" id="gambarIndex2"/> 
-        </div>
-        <div class="inline" style="vertical-align: middle;">
-            <div class="kotakPutih tulisanCoklat" style="font-size: 30px;">
-                Misi :
-                <br>
-                Menyelenggarakan program belajar online yang memenuhi harapan user dengan menerapkan metode modern, dan sistem yang terintegrasi.   
-            </div>
+            <div class="inline" style="vertical-align: middle">
+                 </div>
         </div>
     </div>
 
-    <!-- blok coklat paling atas  -->
-    <div style="height: 480px">
+    <!-- blok coklat bawah  -->
+    <div style="height: 520px">
         <div class="content">  
             <hr class="hr1">
             <hr class="hr2">
