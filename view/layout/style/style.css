@@ -123,3 +123,11 @@ body {
     left: 318px;
     top: 130px;
 }
+
+form {
+    background-color: #FFFFFF;
+}
+
+input {
+    background-color: #CB6F6F;
+}

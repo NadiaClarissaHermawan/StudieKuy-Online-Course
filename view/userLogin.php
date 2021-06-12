@@ -1,9 +1,9 @@
 <div class="nav">
-    <a href="home"><div class="menuNav">Home /</div></a>
-    <a href=""><div class="menuNav">Login</div></a>
+    <a href="index"><div class="menuNav">Home /</div></a>
+    <div class="menuNav">Login</div>
 </div>
 <div class="form">
-	<img src="view/images/login.png">
+	<img src="view/images/loginpotongan.png">
 	<form method="" action="">
 		<table>
 			<tr>
@@ -15,8 +15,8 @@
 				<td><input type="Password" name="userPass"></td>
 			</tr>
 		</table>
-		<input type="submit" value="Login" name='updateUsername'>
+		<input type="submit" value="Login">
 	</form>
 	<br>
-	<p>doesn't have an account?<a href="">Register Now!</a></p>
+	<div>doesn't have an account?<a href="">Register Now!</a></div>
 </div>
