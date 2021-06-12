@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="View/layout/style/style.css"/>
     </head>
     <body>
-    	<div class="header">
+    	<div class="header fix">
     		<h1 id="judul"> Studie Kuy ! </h1>
     	</div>
         

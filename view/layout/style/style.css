@@ -7,6 +7,7 @@ body {
 }
 
 .header {
+    position: fixed;
     background-color: #CB6F6F;
     display: block;
     width: 100%;
@@ -16,6 +17,7 @@ body {
 }
 
 .nav {
+    position: fixed;
     background-color: white;
     display: block;
     width: 100%;
@@ -37,6 +39,12 @@ body {
     text-align: center;
 
     color: #432F2F;
+}
+
+.sticky {
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
 #judul {

@@ -1,9 +1,9 @@
 
-<div class="nav">
-    <a href="courses"><div class="menuNav">Courses</div></a>
-    <a href="aboutUs"><div class="menuNav">About Us</div></a>
-    <a href="faq"><div  class="menuNav">FAQ</div></a>
-    <a href="myProfile"><div class="menuNav">My Profile</div></a>
+<div class="nav fix">
+    <a href="courses" class="menuNav">Courses</a>
+    <a href="aboutUs" class="menuNav">About Us</a>
+    <a href="faq" class="menuNav">FAQ</a>
+    <a href="myProfile" class="menuNav">My Profile</a>
 </div>
 <div>
     <div class="tulisanPutih" id="learnNewKnowledge">
