@@ -1,10 +1,9 @@
 <div class="nav">
-    <a href="index"><div class="menuNav">Home</div></a>
-    <div class="menuNav">/</div>
+    <a href="index"><div class="menuNav">Home /</div></a>
     <div  class="menuNav">Register</div>
 </div>
 <div class="form">
-	<img src="view/images/loginpotongan.png">
+	<img src="view/images/loginpotongan.png" class = "imageLogin">
 	<form method="" action="">
 		<table>
 			<tr>
@@ -34,5 +33,5 @@
                 </td>
 			</tr>
 		</table>
-		<input type="submit" value="Register" name='updateUsername'>
+		<input type="submit" value="Register" class="button">
 	</form>

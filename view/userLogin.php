@@ -3,7 +3,7 @@
     <div class="menuNav">Login</div>
 </div>
 <div class="form">
-	<img src="view/images/loginpotongan.png">
+	<img src="view/images/loginpotongan.png" class="imageLogin">
 	<form method="" action="">
 		<table>
 			<tr>
@@ -15,8 +15,9 @@
 				<td><input type="Password" name="userPass"></td>
 			</tr>
 		</table>
-		<input type="submit" value="Login">
+		<input type="submit" value="Login" class="button"><br><br>
+		<div>doesn't have an account?<a href="">Register Now!</a></div>
 	</form>
 	<br>
-	<div>doesn't have an account?<a href="">Register Now!</a></div>
+	
 </div>
