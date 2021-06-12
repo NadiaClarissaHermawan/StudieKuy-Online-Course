@@ -62,10 +62,6 @@ body {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* styling page index.php
---------------------
- */
-
 @font-face {
 	font-family: Calligraffitti;
 	src:url(fonts/Calligraffitti-Regular.ttf);
@@ -75,3 +71,7 @@ body {
 	font-family: Reem Kufi;
 	src:url(fonts/ReemKufi-Regular.ttf);
 }
+
+/* styling page index.php
+--------------------
+ */
