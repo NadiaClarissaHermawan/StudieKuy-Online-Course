@@ -22,7 +22,6 @@ body {
 
 .nav {
     position: fixed;
-    padding-left: 17px;
     background-color: white;
     display: block;
     width: 100%;
@@ -117,6 +116,23 @@ body {
 --------------------
  */
 
+svg {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.container {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
 #learnNewKnowledge {
     font-size: 35px;
     line-height: 45px;
