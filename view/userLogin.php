@@ -12,14 +12,20 @@
             <div class="rowLogin tulisanCoklat">
 				<label for="uname" class="txt hurufSedang">Username</label>
 				<span style="width: 5px;" class="hurufSedang">:</span>
-                <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username"/>
+                <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
             </div>
-            <div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
+            <div class="rowLogin" style="margin-bottom: 20px;">
+                <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
+            </div>
+            <div class="rowLogin tulisanCoklat">
 				<label for="upass" class="txt hurufSedang">Password</label>
 				<span style="width: 5px;"  class="hurufSedang">:</span>
-                <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password"/>
+                <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password" oninput="checkPw()" />
             </div>
-            <div class="rowLogin tulisanCoklat" style="margin-bottom: 10px;">
+            <div class="rowLogin" style="margin-bottom: 15px;">
+                <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
+            </div>
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 15px;">
 				<button type="submit" class="login-button link tulisanCoklat">Log in</button>
             </div>
             <div class="rowLogin tulisanCoklat">
@@ -38,31 +44,37 @@
             checkInput();
         });
 
-        function checkInput() {
+        function checkUName() {
             const username = user.value.trim();
-            const password = pass.value.trim();
+            const idU = document.getElementById('userError');
 
-            if(username === ''){
-                setError(user);
+            if(username === '' || username.length < 8){
+                setError(user, idU);
             }
             else {
-                setSuccess(user);
+                setSuccess(user, idU);
             }
+        }
+
+        function checkPw() {
+            const password = pass.value.trim();
+            const idPw = document.getElementById('pwError');
 
             if(password.length < 8 || password === ''){
-                setError(pass);
+                setError(pass, idPw);
             }
             else {
-                setSuccess(pass);
+                setSuccess(pass, idPw);
             }
         }
-
-        function setError(input){
+        function setError(input, idInput){
             input.className = 'kotakInput error';
+            idInput.className = 'errorMessage show';
         }
 
-        function setSuccess(input){
+        function setSuccess(input, idInput){
             input.className = 'kotakInput';
+            idInput.className = 'errorMessage';
         }
     </script>
 </body>
