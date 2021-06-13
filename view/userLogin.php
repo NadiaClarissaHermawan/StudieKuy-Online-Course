@@ -14,7 +14,7 @@
 				<span style="width: 5px;" class="hurufSedang">:</span>
                 <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
             </div>
-            <div class="rowLogin" style="margin-bottom: 20px;">
+            <div class="rowLogin" style="margin-bottom: 0px;">
                 <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
             </div>
             <div class="rowLogin tulisanCoklat">

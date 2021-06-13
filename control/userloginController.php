@@ -54,7 +54,7 @@
                         $_SESSION['phone'] = $resQuery[0]['kontak'];
                         $_SESSION['alamat'] = $resQuery[0]['alamat'];
                         $_SESSION['saldo'] = $resQuery[0]['saldo'];
-                        header('Location: index');
+                        header('Location: index?status=1');
 
                     //password salah
                     }else{
