@@ -27,5 +27,45 @@
                 <a class="link hurufKecil" href="userRegister"> Register now!</a>
             </div>
         </div>
-</form>
+    </form>
+    <script>
+        const form = document.getElementById('main');
+        const user = document.getElementById('uname');
+        const pass = document.getElementById('upass');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            checkInput();
+        });
+
+        function checkInput() {
+            const username = user.value.trim();
+            const password = pass.value.trim();
+
+            if(username === ''){
+                //error
+                //add error class
+                setError(user);
+            }
+            else {
+                //success
+                setSuccess(user);
+            }
+
+            if(password < 8){
+                setError(pass);
+            }
+            else {
+                setSuccess(pass);
+            }
+        }
+
+        function setError(input){
+            input.className = 'kotakInput error';
+        }
+
+        function setSuccess(input){
+            input.className = 'kotakInput';
+        }
+    </script>
 </body>
