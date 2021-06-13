@@ -34,6 +34,11 @@
                 $userTopupCtrl = new userTopupController();
                 echo $userTopupCtrl->view_userTopup();
                 break;
+            case $baseURL.'/userProfile':
+                require_once "control/userProfileController.php";
+                $userProfileCtrl = new userProfileController();
+                echo $userProfileCtrl->view_userProfile();
+                break;
             default :
                 echo '404 not found';
                 break;
