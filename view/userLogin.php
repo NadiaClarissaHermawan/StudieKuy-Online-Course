@@ -11,20 +11,20 @@
         <div class="contentLogin">
             <div class="rowLogin tulisanCoklat">
 				<label for="uname" class="txt hurufSedang">Username</label>
-				<span style="width: 20px;">:</span>
-                <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter Username"/>
+				<span style="width: 5px;" class="hurufSedang">:</span>
+                <input type="text" class="kotakInput hurufSedang" id="uname" name="uname" placeholder="Enter Username"/>
             </div>
-            <div class="rowLogin tulisanCoklat">
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
 				<label for="upass" class="txt hurufSedang">Password</label>
-				<span style="width: 20px;">:</span>
-                <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter Password"/>
+				<span style="width: 5px;"  class="hurufSedang">:</span>
+                <input type="password" class="kotakInput hurufSedang" id="upass" name="upass" placeholder="Enter Password"/>
+            </div>
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 10px;">
+				<a href="index" style="text-decoration: none;"><button type="submit" class="button link tulisanCoklat">Log in</button></a>
             </div>
             <div class="rowLogin tulisanCoklat">
-				<a href="index"><button type="submit" class="button link">LOG IN</button></a>
-            </div>
-            <div class="rowLogin tulisanCoklat">
-                <span>doesn't have an account? </span>
-                <a class="link" href="userRegister">Register now!</a>
+                <span class="hurufKecil">doesn't have an account? </span>
+                <a class="link hurufKecil" href="userRegister"> Register now!</a>
             </div>
         </div>
     </div>

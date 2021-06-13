@@ -49,6 +49,7 @@
                 <br>
                 Menyelenggarakan program belajar online yang memenuhi harapan user dengan menerapkan
                 metode modern, dan sistem yang terintegrasi.
+                <br>
                 Menjadi platform Online Course yang terus berinovasi dan menyesuaikan dengan kemajuan jaman.
             </p>
         </div>

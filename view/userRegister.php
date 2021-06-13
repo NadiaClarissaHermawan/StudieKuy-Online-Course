@@ -1,37 +1,31 @@
-<div class="nav">
-    <a href="index"><div class="menuNav">Home /</div></a>
-    <div  class="menuNav">Register</div>
-</div>
-<div class="form">
-	<img src="view/images/loginpotongan.png" class = "imageLogin">
-	<form method="" action="">
-		<table>
-			<tr>
-				<td>Username</td>
-				<td><input type="text" name="userID"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="Password" name="userPass"></td>
-			</tr>
-            <tr>
-				<td>Email</td>
-				<td><input type="text" name="userEmail"></td>
-			</tr>
-            <tr>
-				<td>Phone</td>
-				<td><input type="text" name="userPhone"></td>
-			</tr>
-            <tr>
-				<td>Role</td>
-				<td>
-                    <select name="roleSelector">
-                        <option value="1">--Select Role--</option>
-                        <option value="2">Student</option>
-                        <option value="3">Teacher</option>
-                    </select>
-                </td>
-			</tr>
-		</table>
-		<input type="submit" value="Register" class="button">
-	</form>
+<!DOCTYPE html>
+<body>
+	<div class="nav">
+        <a href="courses" class="menuNav">Courses</a>
+        <a href="#aboutUs" class="menuNav">About Us</a>
+        <a href="faq" class="menuNav">FAQ</a>
+    </div>
+
+    <div id="main">
+        <img class="imgLogin" src="view/images/loginpotongan.png">
+        <div class="contentLogin">
+            <div class="rowLogin tulisanCoklat">
+				<label for="uname" class="txt hurufSedang">Username</label>
+				<span style="width: 5px;" class="hurufSedang">:</span>
+                <input type="text" class="kotakInput hurufSedang" id="uname" name="uname" placeholder="Enter Username"/>
+            </div>
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
+				<label for="upass" class="txt hurufSedang">Password</label>
+				<span style="width: 5px;"  class="hurufSedang">:</span>
+                <input type="password" class="kotakInput hurufSedang" id="upass" name="upass" placeholder="Enter Password"/>
+            </div>
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 10px;">
+				<a href="index" style="text-decoration: none;"><button type="submit" class="button link tulisanCoklat">Log in</button></a>
+            </div>
+            <div class="rowLogin tulisanCoklat">
+                <span class="hurufKecil">doesn't have an account? </span>
+                <a class="link hurufKecil" href="userRegister"> Register now!</a>
+            </div>
+        </div>
+    </div>
+</body>
