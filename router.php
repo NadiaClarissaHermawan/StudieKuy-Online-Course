@@ -10,9 +10,9 @@
                 echo $idxCtrl->view_mainpage();
                 break;
             case $baseURL.'/userLogin':
-            	require_once "control/indexController.php";
-            	$idxCtrl = new indexController();
-                echo $idxCtrl->view_userLoginpage();
+            	require_once "control/userLoginController.php";
+            	$loginCtrl = new userLoginController();
+                echo $loginCtrl->view_userLoginpage();
                 break;
             case $baseURL.'/register':
             	require_once "control/indexController.php";

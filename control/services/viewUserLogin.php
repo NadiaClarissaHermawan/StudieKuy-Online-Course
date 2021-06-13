@@ -11,7 +11,7 @@
             ob_end_clean();
 
             ob_start();
-            include 'view/layout/layout.php';
+            include 'view/layout/layoutUserLogin.php';
             $include = ob_get_contents();
             ob_end_clean();
             return $include;

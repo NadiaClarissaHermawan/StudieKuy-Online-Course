@@ -1,0 +1,88 @@
+/* styling global
+--------------------
+ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	background-color: #432F2F;
+    margin: 0px;
+    height: 100%;
+    font-family: Reem Kufi;
+}
+
+.head{
+    padding-top: 200px;
+}
+
+.header {
+    position: fixed;
+    background-color: #CB6F6F;
+    display: block;
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+}
+
+.nav {
+    position: fixed;
+    background-color: white;
+    display: block;
+    width: 100%;
+    height: 50px;
+    left: 0px;
+    top: 80px;
+}
+
+.menuNav {
+    display: inline-block;
+    padding: 7px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration-line: none;
+    font-family: Reem Kufi;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 37px;
+    text-align: center;
+    float: left;
+
+    color: #432F2F;
+}
+.menuNav:hover {
+    background-color: #CB6F6F;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#judul {
+	position: absolute;
+    left: 90px;
+    top : 2px;
+	width: 208px;
+	height: 49px;
+    margin: 0px;
+    padding: 10px;
+
+	font-family: Calligraffitti;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 42px;
+
+	color: #FFFFFF;
+
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+#logo {
+    position: absolute;
+    top:-15px;
+    width: 100px;
+    height: 100px;
+}

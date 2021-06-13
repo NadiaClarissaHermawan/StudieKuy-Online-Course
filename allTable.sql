@@ -1,3 +1,5 @@
+
+
 CREATE TABLE Pengguna (
 	id_pengguna int NOT NULL,
 	tipe int,

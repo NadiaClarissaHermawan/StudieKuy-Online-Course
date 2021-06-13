@@ -1,23 +1,31 @@
-<div class="nav">
-    <a href="index"><div class="menuNav">Home /</div></a>
-    <div class="menuNav">Login</div>
-</div>
-<div class="form">
-	<img src="view/images/loginpotongan.png" class="imageLogin">
-	<form method="" action="">
-		<table>
-			<tr>
-				<td>Username</td>
-				<td><input type="text" name="userID"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="Password" name="userPass"></td>
-			</tr>
-		</table>
-		<input type="submit" value="Login" class="button"><br><br>
-		<div>doesn't have an account?<a href="">Register Now!</a></div>
-	</form>
-	<br>
-	
-</div>
+<!DOCTYPE html>
+<body>
+	<div class="nav">
+        <a href="courses" class="menuNav">Courses</a>
+        <a href="#aboutUs" class="menuNav">About Us</a>
+        <a href="faq" class="menuNav">FAQ</a>
+    </div>
+
+    <div class="main" style="margin-top: 150px;">
+        <img class="imgLogin" src="view/images/loginpotongan.png">
+        <div class="contentLogin">
+            <div class="rowLogin tulisanCoklat">
+				<label for="uname" class="txt">Username</label>
+				<span style="width: 20px;">:</span>
+                <input type="text" class="kotakInput" id="uname" placeholder="Enter Username"/>
+            </div>
+            <div class="rowLogin tulisanCoklat">
+				<label for="upass" class="txt">Password</label>
+				<span style="width: 20px;">:</span>
+                <input type="password" class="kotakInput" id="upass"  placeholder="Enter Password"/>
+            </div>
+            <div class="rowLogin tulisanCoklat">
+				<a href="index"><button type="submit" class="button link">LOG IN</button></a>
+            </div>
+            <div class="rowLogin tulisanCoklat">
+                <span>doesn't have an account? </span>
+                <a class="link" href="">Register now!</a>
+            </div>
+        </div>
+    </div>
+</body>

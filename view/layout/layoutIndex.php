@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/style.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/headerStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
     </head>
     <body>
     	<div class="header">

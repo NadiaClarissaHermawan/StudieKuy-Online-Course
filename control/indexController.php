@@ -1,5 +1,5 @@
 <?php 
-    require_once "control/services/view.php";
+    require_once "control/services/viewIndex.php";
     require_once "control/services/mysqlDB.php";
 
     class indexController{

@@ -1,31 +1,28 @@
-<div class="main" style="height: 100%;">
-    <div class="nav fix">
-        <a href="courses" class="menuNav">Courses</a>
-        <a href="#aboutUs" class="menuNav">About Us</a>
-        <a href="faq" class="menuNav">FAQ</a>
-        <a href="myProfile" class="menuNav">My Profile</a>
-    </div>
+<div class="nav">
+    <a href="courses" class="menuNav">Courses</a>
+    <a href="#aboutUs" class="menuNav">About Us</a>
+    <a href="faq" class="menuNav">FAQ</a>
+    <a href="myProfile" class="menuNav">My Profile</a>
+</div>
 
-    <br>
-
+<div class="main" id="contentMainPage">
     <!-- blok coklat paling atas  -->
-    <div style="height: 475px;  margin-left: 50px;">
-        <div class="allMid">
-            <span class="tulisanPutih" style="width:50%" id="learnNewKnowledge">
+    <div class="content1">
+        <div class="content1-kiri">
+            <p class="tulisanPutih hurufBesar" >
                 Learn new knowledge and skills in a variety of ways, 
-                from engaging video lectures and dynamic graphics to
-                data visualizations and interactive element.
-                <br>
-                <a href="courses"><button type="submit" id="tombolStartLearning" style="font-size: 30px;">Start Learning Now!</button></a>
-            </span>
-            <span class="tulisanPutih" style="width: 50%;">
-                <img src="view/images/index1.png" id="gambarIndex1"/> 
-                <div style="font-size: 20px; margin-left:45px" id="quoteMainPage">
-                    "The single most important key to success is to be a good listener." 
-                    <br>- Kelly Wearstler
-                </div>
-            </span>
-        </div>  
+                from engaging video lectures and dynamic graphics to data
+                visualizations and interactive elements
+            </p>
+            <a href="courses" class="content1-button"><h1>Start Learning Now !</h1></a>
+        </div>
+        <div class="content1-kanan">
+            <img src="view/images/index1.png"/>
+            <p class="tulisanPutih content1-quote">
+                “The single most important key to success is to be a good listener.”
+                ― Kelly Wearstler
+            </p>
+        </div>
     </div>
 
     <!-- pink tengah -->
@@ -50,32 +47,9 @@
         </div>
         <hr style="border: 2px dashed white;" id="aboutUs">
     </div>
+</div>
 
-    <br>
-    <br>
-
-    <!-- blok coklat bawah  -->
-    <div style="height: 28%; padding-top:40px" class="allMid">
-        <span style="width: 50%;">
-            <img src="view/images/aboutUs1.png" id="gambarIndex1"/> 
-        </span>
-        <span class="content" style="width: 50%;">
-            <div style="margin-right:5%;">
-                <hr class="hr1">
-                <hr class="hr2">
-                <div class="slideTitle" id="slide1">About Us</div>
-                <hr class="hr2">
-                <hr class="hr1">
-            </div>  
-            <br>
-            <div class="tulisanPutih" id="about-us" style="margin-left: 10%;">
-                Perkembangan teknologi yang cukup pesat saat ini telah banyak berperan dalam kehidupan masyarkat sehari-hari khususnya dalam bidang pendidikan. Generasi milenial saat ini tentunya sudah tidak asing dengan sistem pembelajaran secara daring.
-                OnlineCourse.com merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
-            </div>
-        </span>
-    </div>
-
-    <hr style="border: 2px dashed white;">
+    <!-- pink tengah -->
 
     <!-- blok our teams -->
     <div style="height: 10%; padding-top: 60px; padding-bottom:70px ; background-color:#FFC0C0; padding-bottom:40px" >
