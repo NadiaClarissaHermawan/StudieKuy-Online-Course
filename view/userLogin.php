@@ -52,7 +52,7 @@
                 setSuccess(user);
             }
 
-            if(password < 8){
+            if(password.length < 8 || password === ''){
                 setError(pass);
             }
             else {
