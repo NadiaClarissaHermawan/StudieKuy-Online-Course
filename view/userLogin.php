@@ -43,12 +43,9 @@
             const password = pass.value.trim();
 
             if(username === ''){
-                //error
-                //add error class
                 setError(user);
             }
             else {
-                //success
                 setSuccess(user);
             }
 
