@@ -13,6 +13,7 @@
             <!-- muncul ilangin tombol login  -->
             <?php 
                 session_start();
+                $statusLogin = 0;
 
                 if(isset($_SESSION['status']) == false){
                     echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';

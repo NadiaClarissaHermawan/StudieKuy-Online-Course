@@ -3,8 +3,9 @@
     <a href="#anchor-aboutUs" class="menuNav">About Us</a>
     <a href="faq" class="menuNav">FAQ</a>
     <?php 
-        if(isset($statusLogin)){
-            echo '<a href="userProfile" class="menuNav">My Profile</a>';
+        //jgn lupa ini status udah login, di add di header controller bersangkutan
+        if($_GET['status'] == 1){
+            echo ' <a href="userProfile" class="menuNav">My Profile</a>';
         }
     ?>
 </div>
