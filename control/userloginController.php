@@ -27,15 +27,17 @@
                 //kalo username tdk tercantum di database
                 if(empty($pass_asli)){
                     //javascript ngasih tau akun tidak ditemukan
-               
+
                 }else{
                     //password benar
-                    if($upass == $pass_asli){
-                        header('Location: index');
-                        
+                    if($upass == $pass_asli[0]['password']){
+                        header('Location: index?status=1');
+                        die;
+
                     //password salah
                     }else{
-                        //javascript ngasih tau password salah
+                        //javascript ngasih tau salah password
+                        
                     }
                 }
             }
