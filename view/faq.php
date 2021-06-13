@@ -1,11 +1,10 @@
-<div class="main" style="height: 1500px;">
-    <div class="nav fix">
+<div class="nav">
         <a href="courses" class="menuNav">Courses</a>
-        <a href="index" class="menuNav">About Us</a>
+        <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
         <a href="faq" class="menuNav">FAQ</a>
-        <a href="myProfile" class="menuNav">My Profile</a>
-    </div>
+</div>
 
+<div class="main" style="height: 1500px;">
     <div class="allMid">
         <span class="talk-bubble tri-right round left-in" id="question" style="width: 50%;">
             <div class="talktext question">
