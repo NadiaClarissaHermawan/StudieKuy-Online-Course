@@ -21,13 +21,29 @@
                 break;
             case $baseURL.'/userRegister':
             	require_once "control/registerUserController.php";
-            	$idxCtrl = new registerUserController();
-                echo $idxCtrl->view_registerUserPage();
+            	$registerCtrl = new registerUserController();
+                echo $registerCtrl->view_registerUserPage();
                 break;
             case $baseURL.'/courses':
                 require_once "control/coursesController.php";
-                $idxCtrl = new coursesController();
-                echo $idxCtrl->view_courses();
+                $coursesCtrl = new coursesController();
+                echo $coursesCtrl->view_courses();
+                break;
+            default :
+                echo '404 not found';
+                break;
+        }
+    }else if($_SERVER["REQUEST_METHOD"] == "POST"){
+        switch($url){
+            case $baseURL.'/userLogin':
+                require_once "control/userLoginController.php";
+                $loginCtrl = new userLoginController();
+                echo $loginCtrl->klik_login();
+                break;
+            case $baseURL.'/userRegister':
+                require_once "control/registerUserController.php";
+                $registerCtrl = new registerUserController();
+                echo $registerCtrl->klik_register();
                 break;
             default :
                 echo '404 not found';
