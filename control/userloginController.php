@@ -1,6 +1,8 @@
 <?php 
+    session_start();
     require_once "control/services/viewUserLoginRegister.php";
     require_once "control/services/mysqlDB.php";
+    require_once "model/member.php";
 
     class userLoginController{
         protected $db;
@@ -26,18 +28,29 @@
 
                 //kalo username tdk tercantum di database
                 if(empty($pass_asli)){
+                    session_destroy();
                     //javascript ngasih tau akun tidak ditemukan
 
                 }else{
-                    //password benar
+                    //password benar -> simpan semua data diri user
                     if($upass == $pass_asli[0]['password']){
-                        header('Location: index?status=1');
+                        var_dump($uname);
+                        $query = "SELECT email, kontak, alamat, saldo 
+                                  FROM member m INNER JOIN pengguna p
+                                  ON m.id_pengguna = p.id_pengguna
+                                  WHERE nama_user = '$uname' AND password = '$upass'
+                                ";
+                        $resQuery = $this->db->executeSelectQuery($query);
+                        
+                        var_dump($resQuery);
                         die;
+                        $_SESSION['user'] = new Member($uname, $upass, $email, $phone, $address, $saldo);
 
                     //password salah
                     }else{
+                        session_destroy();
                         //javascript ngasih tau salah password
-                        
+
                     }
                 }
             }

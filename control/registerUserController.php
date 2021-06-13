@@ -37,7 +37,7 @@
                 
                 //kalau username sudah terdaftar
                 if(empty($adaTidak) == false){
-                    
+                    var_dump("username sudah terdaftar");
                 //kalau username belum terdaftar
                 }else{
                     $query = "INSERT INTO pengguna (tipe, nama_user, email, password) VALUES (3, '$username', '$email','$password')";
