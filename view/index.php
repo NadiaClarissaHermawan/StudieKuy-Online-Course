@@ -33,6 +33,7 @@
             <p class="tulisanCoklat hurufSedang">
                 Visi :
                 <br>
+                <br>
                 Menjadi platform online course terbaik nasional, dengan metode yang modern,
                 dan sistem yang terintegrasi.
             </p>
@@ -44,6 +45,7 @@
             <p class="tulisanCoklat hurufSedang">
                 Misi:
                 <br>
+                <br>
                 Menyelenggarakan program belajar online yang memenuhi harapan user dengan menerapkan
                 metode modern, dan sistem yang terintegrasi.
                 Menjadi platform Online Course yang terus berinovasi dan menyesuaikan dengan kemajuan jaman.
@@ -53,49 +55,77 @@
     <hr class="pembatasDashed">
 
     <!-- coklat tengah -->
-    
-</div>
-
-    <!-- pink tengah -->
-
-    <!-- blok our teams -->
-    <div style="height: 10%; padding-top: 60px; padding-bottom:70px ; background-color:#FFC0C0; padding-bottom:40px" >
-        <span>
-            <div class="tulisanCoklat slideTitle">
-                Our teams
-            </div>  
-        </span>
+    <div class="content3">
+        <div class="content3-kiri">
+            <img src="view/images/index3.png" class="content3-image"/>
+        </div>
+        <div class="content3-kanan">
+            <hr class="pembatasSubJudulPutih"/>
+            <hr class="pembatasSubJudulPink"/>
+            <p class="tulisanPutih hurufBesar" style="font-family: Calligraffitti; font-size:50px; margin:5px; margin-top:25px">
+                About Us
+            </p>
+            <hr class="pembatasSubJudulPutih"/>
+            <hr class="pembatasSubJudulPink"/>
+            <p class="tulisanPutih hurufSedang justify content3-aboutUs">
+                Perkembangan teknologi yang cukup pesat saat ini telah banyak berperan dalam kehidupan masyarkat
+                sehari-hari khususnya dalam bidang pendidikan. Generasi milenial saat ini tentunya sudah tidak asing 
+                dengan sistem pembelajaran secara daring.
+                <br>
+                <br>
+                Studie Kuy! merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu 
+                masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
+            </p>
+        </div>
     </div>
-    <div  style="height: 25%;background-color:#FFC0C0; padding-bottom:100px; padding-top:50px" class="allMid">
-        <span style="width: 33%;">
-            <img class="pp" src="view/images/ppNadia.png"/>
-            <div>
-                Nadia Clarissa 
+    <hr class="pembatasDashed">
+
+    <!-- pink bawah teams -->
+    <div class="content4">
+        <div class="subContent4" style="margin-bottom: 70px;">
+            <hr class="pembatasSubJudulPutih"/>
+            <hr class="pembatasSubJudulCoklat"/>
+            <p class="tulisanCoklat hurufBesar" style="font-family: Calligraffitti; font-size:60px; margin:5px; margin-top:25px">
+                Our Teams
+            </p>
+            <hr class="pembatasSubJudulCoklat"/>
+            <hr class="pembatasSubJudulPutih"/>
+        </div>
+        <div class="subContent4">
+            <div class="content4-kiri">
+                <img class="pp" src="view/images/ppNadia.png"/>
                 <br>
-                Hermawan
-                <br>
-                6181901013
+                <div class="tulisanCoklat hurufSedang">
+                    Nadia Clarissa 
+                    <br>
+                    Hermawan
+                    <br>
+                    6181901013
+                </div>
             </div>
-        </span>
-        <span style="width: 33%;">
-            <img class="pp" src="view/images/ppTasha.png"/>
-            <div>
-                Natasha Benedicta 
+            <div class="content4-tengah">
+                <img class="pp" src="view/images/ppTasha.png"/>
                 <br>
-                Bunnardi
-                <br>
-                6181901003
+                <div class="tulisanCoklat hurufSedang">
+                    Natasha Benedicta
+                    <br>
+                    Bunnardi
+                    <br>
+                    6181901003
+                </div>
             </div>
-        </span>
-        <span style="width: 33%;">
-            <img class="pp" src="view/images/ppRio.png"/>
-            <div>
-                Stanislaus Dendrio 
+            <div class="content4-kanan">
+                <img class="pp" src="view/images/ppRio.png"/>
                 <br>
-                Evan
-                <br>
-                6181901034
+                <div class="tulisanCoklat hurufSedang">
+                    Stanislaus Dendrio
+                    <br>
+                    Evan
+                    <br>
+                    6181901034
+                </div>
             </div>
-        </span>
+        </div>
+        
     </div>
 </div>

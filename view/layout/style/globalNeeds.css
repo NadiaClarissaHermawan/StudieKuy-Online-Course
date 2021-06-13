@@ -24,8 +24,28 @@
 }
 
 .hurufSedang {
-    font-size: 25px;
+    font-size: 30px;
     line-height: 30px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.pembatasSubJudulPutih {
+    width: 200px;
+    border: 1px solid white;
+    margin: 3px;
+}
+.pembatasSubJudulPink {
+    width: 200px;
+    border: 1px solid #FFC0C0;
+    margin: 3px;
+}
+.pembatasSubJudulCoklat {
+    width: 200px;
+    border: 1px solid #432F2F;
+    margin: 3px;
 }
 
 @font-face {
