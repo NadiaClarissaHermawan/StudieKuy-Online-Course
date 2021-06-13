@@ -1,1 +1,60 @@
-css
+.allMid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    width: 75%;
+    background-color: #FFFFFF;
+}
+#contentMainPage {
+    /*padding: 1%;*/
+    margin-top: 20%;
+    margin-left: 12%;
+    border-radius: 30px;
+}
+
+img {
+	/*width: 50%;
+	height: 50%;*/
+	width: 100px;
+	height: 100px;
+}
+
+.line1 {
+	display: inline;
+	align-items: center;
+    text-align: center;
+    justify-content: center;
+    /*display: flex;*/
+}
+#course1-image {
+	background-color: #FFDEDE;
+	border-radius: 30px;
+}
+#course2-image {
+	background-color: #AEF5FF;
+	border-radius: 30px;
+}
+#course3-image {
+	background-color: #FFDEAC;
+	border-radius: 30px;
+}
+#course4-image {
+	background-color: #B1EA8E;
+	border-radius: 30px;
+}
+#course5-image {
+	border-radius: 30px;
+}
+#course6-image {
+	background-color: #F6ADF4;
+	border-radius: 30px;
+}
+.line2 {
+	display: inline;
+	align-items: center;
+    text-align: center;
+    justify-content: center;
+    /*display: flex;*/
+}
