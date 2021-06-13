@@ -17,7 +17,7 @@
             <a href="courses" class="content1-button"><h1>Start Learning Now !</h1></a>
         </div>
         <div class="content1-kanan">
-            <img src="view/images/index1.png"/>
+            <img src="view/images/index1.png" class="content1-image"/>
             <p class="tulisanPutih content1-quote">
                 “The single most important key to success is to be a good listener.”
                 ― Kelly Wearstler
