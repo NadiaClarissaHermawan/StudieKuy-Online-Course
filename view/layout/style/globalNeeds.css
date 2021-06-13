@@ -23,12 +23,12 @@
 }
 
 .hurufBesar {
-    font-size: 38px;
+    font-size: 130%;
     line-height: 45px;
 }
 
 .hurufSedang {
-    font-size: 30px;
+    font-size: 90%;
     line-height: 30px;
 }
 
@@ -44,6 +44,11 @@
 .pembatasSubJudulPink {
     width: 200px;
     border: 1px solid #FFC0C0;
+    margin: 3px;
+}
+.pembatasSubJudulPinkTua {
+    width: 200px;
+    border: 1px solid #c75656;
     margin: 3px;
 }
 .pembatasSubJudulCoklat {
