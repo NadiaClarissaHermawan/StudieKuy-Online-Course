@@ -13,16 +13,19 @@
     font-family: Reem Kufi;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
     text-align: center;
     
     color: #432F2F;
 }
 
 .hurufBesar {
-    font-size: 35px;
-    line-height: 40px;
+    font-size: 38px;
+    line-height: 45px;
+}
+
+.hurufSedang {
+    font-size: 25px;
+    line-height: 30px;
 }
 
 @font-face {

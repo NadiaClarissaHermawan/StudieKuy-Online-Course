@@ -15,13 +15,14 @@
 --------------------
  */
 #contentMainPage {
-    padding-top: 200px;
+    padding-top: 150px;
 }
 .content1 {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin-bottom: 60px;
 }
 .content1-kiri {
     width: 40%;
@@ -52,7 +53,7 @@
     margin-top: 20px;
     border: none;
     text-decoration: none;
-    color: black;
+    color:  #432F2F;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -67,6 +68,44 @@
 .content1-image {
     width: 90%;
     height: 90%;
+}
+
+.content2 {
+    display: flex;
+    background-color: white;
+}
+
+.content2-kiri {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.content2-tengah {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #FFC0C0;
+}
+.content2-image {
+    width: 90%;
+    height: 90%;
+}
+.content2-kanan {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.pembatasDashed {
+    border: 3px dashed white;
 }
 #about-us {
     width: 500px;

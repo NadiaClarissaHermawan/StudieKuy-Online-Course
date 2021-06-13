@@ -20,33 +20,40 @@
             <img src="view/images/index1.png" class="content1-image"/>
             <p class="tulisanPutih content1-quote">
                 “The single most important key to success is to be a good listener.”
+                <br>
                 ― Kelly Wearstler
             </p>
         </div>
     </div>
 
     <!-- pink tengah -->
-    <div style="height: 25%; margin-bottom: 20px; padding-top:50px">
-        <hr style="border: 2px dashed white;">
-        <div style="background-color:#432F2F">
-            <div class="allMid" style="background-color: white;">
-                <span style="width: 33%; font-size:25px; ">
-                    Visi :
-                    <br>
-                    Menjadi platform online course terbaik nasional, 
-                    dengan metode yang modern, dan sistem yang terintegrasi.
-                </span>
-                    <img style="width: 33%" src="view/images/aboutUs2.png" id="gambarIndex2"/> 
-                <span style="width: 33%;  font-size:25px">
-                    Misi :
-                    <br>
-                    Menyelenggarakan program belajar online yang memenuhi harapan 
-                    user dengan menerapkan metode modern, dan sistem yang terintegrasi.   
-                </span>
-            </div>
+    <hr class="pembatasDashed">
+    <div class="content2">
+        <div class="content2-kiri">
+            <p class="tulisanCoklat hurufSedang">
+                Visi :
+                <br>
+                Menjadi platform online course terbaik nasional, dengan metode yang modern,
+                dan sistem yang terintegrasi.
+            </p>
         </div>
-        <hr style="border: 2px dashed white;" id="aboutUs">
+        <div class="content2-tengah">
+            <img src="view/images/index2.png" class="content2-image"/>
+        </div>
+        <div class="content2-kanan">
+            <p class="tulisanCoklat hurufSedang">
+                Misi:
+                <br>
+                Menyelenggarakan program belajar online yang memenuhi harapan user dengan menerapkan
+                metode modern, dan sistem yang terintegrasi.
+                Menjadi platform Online Course yang terus berinovasi dan menyesuaikan dengan kemajuan jaman.
+            </p>
+        </div>
     </div>
+    <hr class="pembatasDashed">
+
+    <!-- coklat tengah -->
+    
 </div>
 
     <!-- pink tengah -->
