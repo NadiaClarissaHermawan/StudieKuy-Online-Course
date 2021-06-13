@@ -35,7 +35,7 @@
                     var_dump("username tidak terdaftar");
                     session_destroy();
                     die;
-                    //javascript ngasih tau akun tidak ditemukan
+                    //javascript ngasih tau akun tidak ditemukan (AJAX)
 
                 }else{
                     //password benar -> simpan semua data diri user
@@ -46,7 +46,14 @@
                                   WHERE nama_user = '$uname' AND password = '$upass'
                                 ";
                         $resQuery = $this->db->executeSelectQuery($query);
-                        $_SESSION['user'] = new Member($uname, $upass, $resQuery[0]['email'], $resQuery[0]['phone'], $resQuery[0]['address'], $resQuery[0]['saldo']);
+
+                        $_SESSION['status'] = 1;
+                        $_SESSION['uname'] = $uname;
+                        $_SESSION['pass'] = $upass;
+                        $_SESSION['email'] = $resQuery[0]['email'];
+                        $_SESSION['phone'] = $resQuery[0]['kontak'];
+                        $_SESSION['alamat'] = $resQuery[0]['alamat'];
+                        $_SESSION['saldo'] = $resQuery[0]['saldo'];
                         header('Location: index');
 
                     //password salah

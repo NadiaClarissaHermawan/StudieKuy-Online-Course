@@ -29,6 +29,11 @@
                 $coursesCtrl = new coursesController();
                 echo $coursesCtrl->view_courses();
                 break;
+            case $baseURL.'/userTopup':
+                require_once "control/userTopupController.php";
+                $userTopupCtrl = new userTopupController();
+                echo $userTopupCtrl->view_userTopup();
+                break;
             default :
                 echo '404 not found';
                 break;
