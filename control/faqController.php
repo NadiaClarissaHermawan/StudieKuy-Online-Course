@@ -1,16 +1,16 @@
 <?php 
-    require_once "control/services/viewIndex.php";
+    require_once "control/services/viewFaq.php";
     require_once "control/services/mysqlDB.php";
 
-    class indexController{
+    class faqController{
         protected $db;
 
         public function __construct(){
             $this->db = new MySQLDB("localhost", "root", "", "tubes");
         }
 
-        public function view_mainpage(){
-            return View::createView('index.php', []);
+        public function view_faq(){
+            return View::createView('faq.php', []);
         }
     }
 ?>

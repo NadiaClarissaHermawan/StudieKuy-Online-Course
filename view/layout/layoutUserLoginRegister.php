@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/index.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/userLoginRegister.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
     </head>

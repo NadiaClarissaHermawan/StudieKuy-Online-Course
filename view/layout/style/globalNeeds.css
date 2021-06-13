@@ -20,6 +20,10 @@
     color: #432F2F;
 }
 
+.hurufBesar {
+    font-size: 35px;
+    line-height: 40px;
+}
 
 @font-face {
 	font-family: Calligraffitti;

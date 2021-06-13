@@ -1,5 +1,5 @@
 <?php 
-    require_once "control/services/viewUserLogin.php";
+    require_once "control/services/viewUserLoginRegister.php";
     require_once "control/services/mysqlDB.php";
 
     class userLoginController{

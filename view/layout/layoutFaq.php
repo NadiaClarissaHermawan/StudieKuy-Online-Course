@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/userLoginStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/headerStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/faq.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
     </head>
     <body>
