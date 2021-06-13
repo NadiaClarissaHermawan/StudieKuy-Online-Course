@@ -24,6 +24,11 @@
             	$idxCtrl = new registerUserController();
                 echo $idxCtrl->view_registerUserPage();
                 break;
+            case $baseURL.'/courses':
+                require_once "control/coursesController.php";
+                $idxCtrl = new coursesController();
+                echo $idxCtrl->view_courses();
+                break;
             default :
                 echo '404 not found';
                 break;
