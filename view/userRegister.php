@@ -6,7 +6,7 @@
         <a href="faq" class="menuNav">FAQ</a>
     </div>
 
-	<form method="POST" action="userLogin">
+	<form method="POST" action="userRegister">
 		<div id="main">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
 			<div class="contentLogin">
@@ -33,7 +33,7 @@
 				<div class="rowLogin tulisanCoklat">
 					<label for="uemail" class="txt hurufSedang">E-mail</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter home e-mail"/>
+					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail"/>
 				</div>
 				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
 					<label for="uphone" class="txt hurufSedang">Phone</label>

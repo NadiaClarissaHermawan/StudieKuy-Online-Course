@@ -19,7 +19,7 @@
             $email = $_POST['uemail'];
             $phone = $_POST['uphone'];
             $address = $_POST['uaddress'];
-            $kota = $_POST['ukota'];
+            $kota = $_POST['ucity'];
 
             if(isset($_POST['registerButton']) && isset($username) && $username!=""
             && isset($password) && $password!= "" && isset($email) && $email !="" 
@@ -32,12 +32,14 @@
                 $address = $this->db->escapeString($address);
                 $kota = $this->db->escapeString($kota);
 
-                $query = "SELECT id_pengguna FROM Pengguna WHERE nama_user = '$username'";
+                $query = "SELECT id_pengguna FROM Pengguna WHERE nama_user = '$username' OR email = '$email'";
                 $adaTidak = $this->db->executeSelectQuery($query);
+                
                 //kalau username sudah terdaftar
-                if($adaTidak != ""){
+                if(empty($adaTidak) == false){
                     //gimana cara munculin notif merah kalo username sudah ada? 
-                    header('Location: registerUser');
+                    header('Location: userRegister');
+                    die;
 
                 //kalau username belum terdaftar
                 }else{
@@ -53,7 +55,8 @@
                     $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$id_kota', $id_pengguna)";
                     $this->db->executeNonSelectQuery($query);
 
-                    header('Location: index?loginStat=1');
+                    header('Location: index');
+                    die;
                 }
             }
         }
