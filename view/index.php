@@ -2,6 +2,11 @@
     <a href="courses" class="menuNav">Courses</a>
     <a href="#anchor-aboutUs" class="menuNav">About Us</a>
     <a href="faq" class="menuNav">FAQ</a>
+    <?php 
+        if(isset($statusLogin)){
+            echo '<a href="userProfile" class="menuNav">My Profile</a>';
+        }
+    ?>
 </div>
 
 <div class="main" id="contentMainPage">

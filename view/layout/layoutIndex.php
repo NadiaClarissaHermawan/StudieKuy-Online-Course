@@ -13,12 +13,13 @@
             <!-- muncul ilangin tombol login  -->
             <?php 
                 session_start();
-                require 'model/member.php';
 
                 if(isset($_SESSION['status']) == false){
                     echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
+                    session_destroy();
                 }else{
                     $saldoUser = $_SESSION['saldo'];
+                    $statusLogin = $_SESSION['status'];
                     echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
                 }
             ?>
