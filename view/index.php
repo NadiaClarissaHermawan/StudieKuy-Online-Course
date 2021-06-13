@@ -1,8 +1,7 @@
 <div class="nav">
     <a href="courses" class="menuNav">Courses</a>
-    <a href="#aboutUs" class="menuNav">About Us</a>
+    <a href="#anchor-aboutUs" class="menuNav">About Us</a>
     <a href="faq" class="menuNav">FAQ</a>
-    <a href="myProfile" class="menuNav">My Profile</a>
 </div>
 
 <div class="main" id="contentMainPage">
@@ -37,7 +36,7 @@
                 Menjadi platform online course terbaik nasional, dengan metode yang modern,
                 dan sistem yang terintegrasi.
             </p>
-            <div id="aboutUs"></div>
+            <div id="anchor-aboutUs"></div>
         </div>
         <div class="content2-tengah">
             <img src="view/images/index2.png" class="content2-image"/>
@@ -75,7 +74,7 @@
                 dengan sistem pembelajaran secara daring.
                 <br>
                 <br>
-                Studie Kuy! merupakan salah satu platform kursus online yang didirikan dengan tujuan untuk membantu 
+                Studie Kuy! merupakan salah satu platform kursus online yang didirikan sejak 2021 dengan tujuan untuk membantu 
                 masyarakat untuk dapat memperoleh ilmu baru yang menarik yang disuguhkan oleh tenaga-tenaga pendidik yang profesional.
             </p>
         </div>
