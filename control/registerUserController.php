@@ -37,10 +37,7 @@
                 
                 //kalau username sudah terdaftar
                 if(empty($adaTidak) == false){
-                    //gimana cara munculin notif merah kalo username sudah ada? 
-                    header('Location: userRegister');
-                    die;
-
+                    
                 //kalau username belum terdaftar
                 }else{
                     $query = "INSERT INTO pengguna (tipe, nama_user, email, password) VALUES (3, '$username', '$email','$password')";

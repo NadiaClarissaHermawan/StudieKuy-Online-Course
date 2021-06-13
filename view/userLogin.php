@@ -6,7 +6,7 @@
         <a href="faq" class="menuNav">FAQ</a>
     </div>
 
-    <div id="main">
+    <form id="main" method="POST" action="userLogin">
         <img class="imgLogin" src="view/images/loginpotongan.png">
         <div class="contentLogin">
             <div class="rowLogin tulisanCoklat">
@@ -20,12 +20,12 @@
                 <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password"/>
             </div>
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 10px;">
-				<a href="index" style="text-decoration: none;"><button type="submit" class="button link tulisanCoklat">Log in</button></a>
+				<button type="submit" class="login-button link tulisanCoklat">Log in</button>
             </div>
             <div class="rowLogin tulisanCoklat">
                 <span class="hurufKecil">doesn't have an account? </span>
                 <a class="link hurufKecil" href="userRegister"> Register now!</a>
             </div>
         </div>
-    </div>
+</form>
 </body>

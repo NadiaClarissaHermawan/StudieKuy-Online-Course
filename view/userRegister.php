@@ -41,7 +41,7 @@
 					<input type="text" class="kotakInput" id="uphone" name="uphone" placeholder="Enter phone number"/>
 				</div>
 				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
-					<a href="index" style="text-decoration: none;"><button type="submit" class="button link tulisanCoklat" name="registerButton">Register</button></a>
+					<button type="submit" class="register-button link tulisanCoklat" name="registerButton">Register</button>
 				</div>
 			</div>
 		</div>

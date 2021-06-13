@@ -6,7 +6,7 @@
 
 <div class="allMid col" id="contentMainPage">
     <div class="allMid" id="col1">
-        <img src="view/images/course1.png" id="course1-image">
+        <a href="komputer"><img src="view/images/course1.png" id="course1-image"></a>
         <img src="view/images/course4.png" id="course4-image">        
     </div>
 
@@ -14,7 +14,7 @@
         <img src="view/images/course2.png" id="course2-image">
         <img src="view/images/course5.jpg" id="course5-image">
     </div>
-    
+
     <div class="allMid col" id="col3">
         <img src="view/images/course3.png" id="course3-image">
         <img src="view/images/course6.png" id="course6-image">

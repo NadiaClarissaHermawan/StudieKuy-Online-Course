@@ -12,5 +12,9 @@
         public function view_userLoginpage(){
             return View::createView('userLogin.php', []);
         }
+
+        public function klik_login(){
+            
+        }
     }
 ?>
