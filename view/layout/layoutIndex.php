@@ -11,12 +11,13 @@
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
             <!-- muncul ilangin tombol login  -->
             <?php 
+                session_start();
+
                 $status;
-                if(isset($_GET['status']) == false){
+                if(isset($_SESSION['status']) == false){
                     echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
                 }else{
-                    $status = $_GET['status'];
-                    
+                    $_SESSION['status'] = $_GET['status'];
                 }
             ?>
             </div>
