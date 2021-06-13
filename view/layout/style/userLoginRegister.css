@@ -141,3 +141,6 @@ h1 {
 .errorMessage.show {
     visibility: visible;
 }
+.pilihanRole{
+    font-family: Reem Kufi;
+}
