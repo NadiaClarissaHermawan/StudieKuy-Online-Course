@@ -26,7 +26,7 @@
                 <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
             </div>
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 15px;">
-				<button type="submit" class="login-button link tulisanCoklat">Log in</button>
+				<button type="submit" class="login-button link tulisanCoklat" onclick="checkValidation()">Log in</button>
             </div>
             <div class="rowLogin tulisanCoklat">
                 <span class="hurufKecil">doesn't have an account? </span>
@@ -40,8 +40,19 @@
         const pass = document.getElementById('upass');
 
         user.addEventListener('keyup', (e) => {
-            checkInput();
+            e.preventDefault();
+            checkValidation();
         });
+
+        function checkValidation() {
+            if(checkUName() && checkPw()){
+                return true;
+            }
+            else {
+                // alert('Form belum lengkap!');
+                return false;
+            }
+        }
 
         function checkUName() {
             const username = user.value.trim();
@@ -49,9 +60,11 @@
 
             if(username === '' || username.length < 8){
                 setError(user, idU);
+                return false;
             }
             else {
                 setSuccess(user, idU);
+                return true;
             }
         }
 
@@ -61,9 +74,11 @@
 
             if(password.length < 8 || password === ''){
                 setError(pass, idPw);
+                return false;
             }
             else {
                 setSuccess(pass, idPw);
+                return true;
             }
         }
         function setError(input, idInput){
