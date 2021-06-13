@@ -21,6 +21,7 @@
             $address = $_POST['uaddress'];
             $kota = $_POST['ucity'];
 
+            //cek validitas input
             if(isset($_POST['registerButton']) && isset($username) && $username!=""
             && isset($password) && $password!= "" && isset($email) && $email !="" 
             && isset($phone) && $phone!= "" && isset($address) && $address!= "" && isset($kota) && $kota!=""){
@@ -37,6 +38,7 @@
 
                 //kalau username sudah terdaftar
                 if(empty($adaTidak) == false){
+                    //JS biar ga redirecting tp muncul notif uname gaada
                     var_dump("username sudah terdaftar");
                     die;
 
@@ -55,7 +57,7 @@
 
                     $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$id_kota', '$id_pengguna')";
                     $this->db->executeNonSelectQuery($query);
-                    
+
                     header('Location: userLogin');
                     die;
                 }

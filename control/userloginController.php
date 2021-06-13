@@ -23,12 +23,18 @@
                 $uname = $this->db->escapeString($uname);
                 $upass = $this->db->escapeString($upass);
 
-                $query = "SELECT password FROM pengguna WHERE nama_user = '$uname'";
+                $query = "SELECT password 
+                          FROM member m INNER JOIN pengguna p
+                          ON m.id_pengguna = p.id_pengguna
+                          WHERE m.id_pengguna = (SELECT id_pengguna FROM pengguna WHERE nama_user = '$uname')
+                         ";
                 $pass_asli = $this->db->executeSelectQuery($query);
 
-                //kalo username tdk tercantum di database
+                //kalo username tdk tercantum di tabel MEMBER
                 if(empty($pass_asli)){
+                    var_dump("username tidak terdaftar");
                     session_destroy();
+                    die;
                     //javascript ngasih tau akun tidak ditemukan
 
                 }else{
@@ -40,16 +46,15 @@
                                   WHERE nama_user = '$uname' AND password = '$upass'
                                 ";
                         $resQuery = $this->db->executeSelectQuery($query);
-
-                        var_dump($resQuery);
-                        die;
-                        $_SESSION['user'] = new Member($uname, $upass, $email, $phone, $address, $saldo);
+                        $_SESSION['user'] = new Member($uname, $upass, $resQuery[0]['email'], $resQuery[0]['phone'], $resQuery[0]['address'], $resQuery[0]['saldo']);
+                        header('Location: index');
 
                     //password salah
                     }else{
+                        var_dump("salah password");
+                        die;
                         session_destroy();
                         //javascript ngasih tau salah password
-
                     }
                 }
             }

@@ -33,8 +33,7 @@
         const user = document.getElementById('uname');
         const pass = document.getElementById('upass');
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+        user.addEventListener('keyup', (e) => {
             checkInput();
         });
 
