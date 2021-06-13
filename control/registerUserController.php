@@ -34,10 +34,12 @@
 
                 $query = "SELECT id_pengguna FROM Pengguna WHERE nama_user = '$username' OR email = '$email'";
                 $adaTidak = $this->db->executeSelectQuery($query);
-                
+
                 //kalau username sudah terdaftar
                 if(empty($adaTidak) == false){
                     var_dump("username sudah terdaftar");
+                    die;
+
                 //kalau username belum terdaftar
                 }else{
                     $query = "INSERT INTO pengguna (tipe, nama_user, email, password) VALUES (3, '$username', '$email','$password')";
@@ -45,14 +47,16 @@
 
                     $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND password = '$password' AND email = '$email'";
                     $id_pengguna = $this->db->executeSelectQuery($query);
+                    $id_pengguna = $id_pengguna[0]['id_pengguna'];
 
                     $query = "SELECT id_kota FROM kota WHERE nama_kota = '$kota'";
                     $id_kota = $this->db->executeSelectQuery($query);
+                    $id_kota = $id_kota[0]['id_kota'];
 
-                    $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$id_kota', $id_pengguna)";
+                    $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$id_kota', '$id_pengguna')";
                     $this->db->executeNonSelectQuery($query);
-
-                    header('Location: index');
+                    
+                    header('Location: userLogin');
                     die;
                 }
             }
