@@ -25,6 +25,17 @@
                 }
             ?>
         </div>
+        <div class="nav">
+            <a href="courses" class="menuNav">Courses</a>
+            <a href="#anchor-aboutUs" class="menuNav">About Us</a>
+            <a href="faq" class="menuNav">FAQ</a>
+            <?php 
+                //jgn lupa ini status udah login, di add di header controller bersangkutan
+                if(isset($_SESSION['status'])){
+                    echo ' <a href="userProfile" class="menuNav">My Profile</a>';
+                }
+            ?>
+        </div>
         
         <!-- ini mesti ada buat keluarin konten yg uda dibikin sblmnya di php, kalo gaada, meski di echo di view jg gakan keluar -->
         <?php echo $content; ?>

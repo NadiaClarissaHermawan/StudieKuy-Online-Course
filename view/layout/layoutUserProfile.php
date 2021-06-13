@@ -22,7 +22,7 @@
             <a href="faq" class="menuNav">FAQ</a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if($_SESSION['status'] == 1){
+                if(isset($_SESSION['status'])){
                     echo ' <a href="#" class="menuNavNow">My Profile</a>';
                 }
             ?>

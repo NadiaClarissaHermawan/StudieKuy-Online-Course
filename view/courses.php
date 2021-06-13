@@ -1,9 +1,3 @@
-<div class="nav">
-    <a href="courses" class="menuNav">Courses</a>
-    <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
-    <a href="faq" class="menuNav">FAQ</a> 
-</div>
-
 <div class="allMid col" id="contentMainPage">
     <div class="allMid" id="col1">
         <a href="komputer"><img src="view/images/course1.png" id="course1-image"></a>

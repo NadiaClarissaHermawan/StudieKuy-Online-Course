@@ -1,15 +1,3 @@
-<div class="nav">
-    <a href="courses" class="menuNav">Courses</a>
-    <a href="#anchor-aboutUs" class="menuNav">About Us</a>
-    <a href="faq" class="menuNav">FAQ</a>
-    <?php 
-        //jgn lupa ini status udah login, di add di header controller bersangkutan
-        if($_GET['status'] == 1){
-            echo ' <a href="userProfile" class="menuNav">My Profile</a>';
-        }
-    ?>
-</div>
-
 <div class="main" id="contentMainPage">
     <!-- blok coklat paling atas  -->
     <div class="content1">
