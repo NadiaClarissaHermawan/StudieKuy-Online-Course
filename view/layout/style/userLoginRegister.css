@@ -30,8 +30,10 @@
 
 .txt {
     display: inline-block;
-    width: 150px;
+    width: 190px;
+    margin-right: 10px;
     font-size: 20px;
+    text-align:right;
 }
 
 .kotakInput {
