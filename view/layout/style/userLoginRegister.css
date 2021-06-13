@@ -55,6 +55,17 @@
     line-height: 30px;
 }
 
+.kotakInput.error {
+    background-color: #D40000;
+}
+
+.kotakInput.error::placeholder {
+    color: white;
+    font-family:Reem Kufi;
+    font-size: 100%;
+    line-height: 30px;
+}
+
 .rowLogin {
     display: flex;
     justify-content: center;
@@ -120,4 +131,5 @@ h1 {
 
 .link {
     text-decoration: none;
+    color: blue;
 }
