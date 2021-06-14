@@ -17,6 +17,7 @@
             <div class="rowLogin" style="margin-bottom: 0px;">
                 <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
             </div>
+
             <div class="rowLogin tulisanCoklat">
 				<label for="upass" class="txt hurufSedang">Password</label>
 				<span style="width: 5px;"  class="hurufSedang">:</span>
@@ -25,6 +26,7 @@
             <div class="rowLogin" style="margin-bottom: 15px;">
                 <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
             </div>
+
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 15px;">
 				<button type="submit" class="login-button link tulisanCoklat" onclick="checkValidation()">Log in</button>
             </div>
@@ -39,17 +41,13 @@
         const user = document.getElementById('uname');
         const pass = document.getElementById('upass');
 
-        user.addEventListener('keyup', (e) => {
-            e.preventDefault();
-            checkValidation();
-        });
-
         function checkValidation() {
             if(checkUName() && checkPw()){
                 return true;
             }
             else {
                 // alert('Form belum lengkap!');
+                event.preventDefault();
                 return false;
             }
         }
