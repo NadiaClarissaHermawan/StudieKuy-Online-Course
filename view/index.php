@@ -30,7 +30,6 @@
                 Menjadi platform online course terbaik nasional, dengan metode yang modern,
                 dan sistem yang terintegrasi.
             </p>
-            <div id="anchor-aboutUs"></div>
         </div>
         <div class="content2-tengah">
             <img src="view/images/index2.png" class="content2-image"/>
@@ -44,9 +43,11 @@
                 metode modern, dan sistem yang terintegrasi.
                 <br>
                 Menjadi platform Online Course yang terus berinovasi dan menyesuaikan dengan kemajuan jaman.
+                <br id="anchor-aboutUs">
             </p>
         </div>
     </div>
+    
     <hr class="pembatasDashed" >
 
     <!-- coklat tengah -->
