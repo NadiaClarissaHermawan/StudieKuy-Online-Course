@@ -44,8 +44,8 @@
         function checkValidation() {
             if(checkUName() && checkPw()){
                 return true;
-            }
-            else {
+                
+            }else{
                 // alert('Form belum lengkap!');
                 event.preventDefault();
                 return false;

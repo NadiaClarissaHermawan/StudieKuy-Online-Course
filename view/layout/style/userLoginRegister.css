@@ -62,7 +62,7 @@
 .rowLogin {
     display: flex;
     justify-content: center;
-    margin: 10px
+    margin: 0px;
 }
 
 .register-button {
