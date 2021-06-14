@@ -22,8 +22,8 @@
             if(isset($uname) && $uname!="" && isset($upass) && $uname!=""){
                 $uname = $this->db->escapeString($uname);
                 $upass = $this->db->escapeString($upass);
-
-                $query = "SELECT password 
+                
+                $query = "SELECT p.pass
                           FROM member m INNER JOIN pengguna p
                           ON m.id_pengguna = p.id_pengguna
                           WHERE m.id_pengguna = (SELECT id_pengguna FROM pengguna WHERE nama_user = '$uname')
@@ -39,11 +39,11 @@
 
                 }else{
                     //password benar -> simpan semua data diri user
-                    if($upass == $pass_asli[0]['password']){
+                    if($upass == $pass_asli[0]['pass']){
                         $query = "SELECT email, kontak, alamat, saldo 
                                   FROM member m INNER JOIN pengguna p
                                   ON m.id_pengguna = p.id_pengguna
-                                  WHERE nama_user = '$uname' AND password = '$upass'
+                                  WHERE nama_user = '$uname' AND pass = '$upass'
                                 ";
                         $resQuery = $this->db->executeSelectQuery($query);
 
