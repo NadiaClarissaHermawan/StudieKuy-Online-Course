@@ -182,12 +182,12 @@
         function checkPhone() {
         	const phoneUser = phone.value;
          	if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
-        		setError(phone, idPhone);
-        		return false;
+         		setSuccess(phone, idPhone);
+        		return true;
         	}
         	else {
-        		setSuccess(phone, idPhone);
-        		return true;
+        		setError(phone, idPhone);
+        		return false;
         	}
         }
 
