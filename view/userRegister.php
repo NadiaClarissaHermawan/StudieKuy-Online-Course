@@ -7,7 +7,7 @@
     </div>
 
 	<form method="POST" action="userRegister">
-		<div id="main">
+		<div id="main" style="margin-top: 170px;">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
 			<div class="contentLogin">
 				<div class="rowLogin tulisanCoklat">
