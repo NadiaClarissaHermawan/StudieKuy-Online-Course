@@ -78,19 +78,43 @@
         const city = document.getElementById('ucity');
         const email = document.getElementById('uemail');
         const phone = document.getElementById('uphone');
-
-        user.addEventListener('keyup', (e) => {
-            checkInput();
-        });
+        
+        const idU = document.getElementById('userError');
+        const idPw = document.getElementById('pwError');
+        const idAddr = document.getElementById('addrError');
+        const idCity = document.getElementById('cityError');
+        const idEmail = document.getElementById('emailError');
+        const idPhone = document.getElementById('phoneError');
 
         function checkValidation() {
         	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone()){
         		return true;
         	}
+        	else{
+        		event.preventDefault();
+                if(!checkUName()){
+                    setError(user, idU);
+                }
+                if(!checkPw()){
+                    setError(pass, idPw);
+                }
+                if(!checkAddress()){
+                    setError(addr, idAddr);
+                }
+                if(!checkCity()){
+                    setError(city, idCity);
+                }
+                if(!checkEmail()){
+                    setError(email, idEmail);
+                }
+                if(!checkPhone()){
+                    setError(phone, idPhone);
+                }
+                return false;
+        	}
         }
         function checkUName() {
             const username = user.value.trim();
-            const idU = document.getElementById('userError');
 
             if(username === '' || username.length < 8){
                 setError(user, idU);
@@ -104,7 +128,6 @@
 
         function checkPw() {
             const password = pass.value;
-            const idPw = document.getElementById('pwError');
 
             if(password.length < 8 || password === ''){
                 setError(pass, idPw);
@@ -118,8 +141,7 @@
 
         function checkAddress() {
         	const address = addr.value;
-        	const idAddr = document.getElementById('addrError');
-
+        	
         	if(address === ''){
         		setError(addr, idAddr);
         		return false;
@@ -132,8 +154,6 @@
 
         function checkCity() {
         	const cityName = city.value;
-        	const idCity = document.getElementById('cityError');
-
         	// cek city valid/ ga
         	if(cityName === ''){ 
         		setError(city, idCity);
@@ -147,11 +167,9 @@
 
         function checkEmail() {
         	const emailUser = email.value;
-        	const idEmail = document.getElementById('emailError');
+        	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
 
-        	const emailFormat = [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$;
-
-        	if(emailUser.match(emailFormat)){ 
+        	if(!emailUser.match(emailFormat)){ 
         		setError(email, idEmail);
         		return false;
         	}
@@ -163,9 +181,7 @@
 
         function checkPhone() {
         	const phoneUser = phone.value;
-        	const idPhone = document.getElementById('phoneError');
-
-        	if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
+         	if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
         		setError(phone, idPhone);
         		return false;
         	}
