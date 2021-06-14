@@ -65,15 +65,6 @@
 	            </div>
 
 				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
-					<label for="urole" class="txt hurufSedang">Role</label>
-					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<select class="kotakInput" id="urole"  name="urole">
-						<option value="1" class="pilihanRole">Student</option>
-						<option value="2" class="pilihanRole">Teacher</option>
-					</select>
-				</div>
-
-				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
 					<button type="submit" class="register-button link tulisanCoklat" name="registerButton" onclick="checkValidation()">Register</button>
 				</div>
 			</div>
