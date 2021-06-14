@@ -23,7 +23,7 @@
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
                 if(isset($_SESSION['status'])){
-                    echo ' <a href="#" class="menuNavNow">My Profile</a>';
+                    echo ' <a href="userProfile" class="menuNavNow">My Profile</a>';
                 }
             ?>
         </div>

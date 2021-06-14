@@ -64,7 +64,7 @@
 	                <span class="errorMessage" id="phoneError" style="margin-left: 1%;">Phone tidak valid!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
+				<div class="rowLogin tulisanCoklat" style="margin-bottom: 12px;">
 					<button type="submit" class="register-button link tulisanCoklat" name="registerButton" onclick="checkValidation()">Register</button>
 				</div>
 			</div>

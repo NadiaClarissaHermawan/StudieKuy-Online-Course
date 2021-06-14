@@ -27,13 +27,13 @@
     	</div>
 
         <div class="nav">
-            <a href="courses" class="menuNavNow">Courses</a>
+            <a href="courses" class="menuNav">Courses</a>
             <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
-            <a href="faq" class="menuNav">FAQ</a> 
+            <a href="faq" class="menuNavNow">FAQ</a> 
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
                 if(isset($_SESSION['status'])){
-                    echo ' <a href="userProfile" class="menuNav">My Profile</a>';
+                    echo '<a href="userProfile" class="menuNav">My Profile</a>';
                 }
             ?>
         </div>
