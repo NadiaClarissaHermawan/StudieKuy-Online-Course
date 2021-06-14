@@ -1,0 +1,53 @@
+#topup-content{
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#topup-content1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center; 
+    margin-bottom: 0px;
+}
+
+#judulTopup {
+    font-size: 60px;
+}
+
+#pembatasTopup {
+    border-top: 8px solid #F3A2A2;
+    border-bottom: 0px solid black;
+    width: 85%;
+}
+
+#topup-content2 {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.topup-content2-pilihan {
+    margin-right: 2%;
+    width: 150%;
+    height: 3vw;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    color: #432F2F;
+    border-radius: 25px;
+}
+
+.link-pilihan-topup {
+    text-decoration: none;
+}
