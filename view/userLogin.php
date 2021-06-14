@@ -14,7 +14,7 @@
 				<span style="width: 5px;" class="hurufSedang">:</span>
                 <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
             </div>
-            <div class="rowLogin" style="margin-bottom: 0px;">
+            <div class="rowLogin">
                 <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
             </div>
 
@@ -23,14 +23,14 @@
 				<span style="width: 5px;"  class="hurufSedang">:</span>
                 <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password" oninput="checkPw()" />
             </div>
-            <div class="rowLogin" style="margin-bottom: 15px;">
+            <div class="rowLogin">
                 <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
             </div>
 
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 15px;">
 				<button type="submit" class="login-button link tulisanCoklat" onclick="checkValidation()">Log in</button>
             </div>
-            <div class="rowLogin tulisanCoklat">
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
                 <span class="hurufKecil">doesn't have an account? </span>
                 <a class="link hurufKecil" href="userRegister"> Register now!</a>
             </div>
