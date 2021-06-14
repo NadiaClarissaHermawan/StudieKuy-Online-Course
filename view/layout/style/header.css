@@ -1,16 +1,6 @@
 /* styling global
 --------------------
  */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-	background-color: #432F2F;
-    margin: 0px;
-    height: 100%;
-    font-family: Reem Kufi;
-}
 
 .head{
     padding-top: 200px;
