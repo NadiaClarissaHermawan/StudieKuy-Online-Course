@@ -22,7 +22,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 3.5%;
 }
 .content1-kiri {
     width: 40%;
@@ -67,8 +67,8 @@
     cursor: pointer;
 }
 .content1-image {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
 }
 
 .content2 {
@@ -95,8 +95,8 @@
     background-color: #FFC0C0;
 }
 .content2-image {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 85%;
 }
 .content2-kanan {
     width: 33%;
