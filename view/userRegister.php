@@ -15,7 +15,7 @@
 					<span style="width: 7px;" class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
 				</div>
-				<div class="rowLogin" style="margin-bottom: 20px;">
+				<div class="rowLogin">
 	                <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
 	            </div>
 
@@ -24,7 +24,7 @@
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password" oninput="checkPw()" />
 				</div>
-				<div class="rowLogin" style="margin-bottom: 15px;">
+				<div class="rowLogin">
 	                <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
 	            </div>
 
@@ -33,7 +33,7 @@
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="uaddress" name="uaddress" placeholder="Enter home address" oninput="checkAddress()" />
 				</div>
-				<div class="rowLogin" style="margin-bottom: 15px;">
+				<div class="rowLogin">
 	                <span class="errorMessage" id="addrError">Address harus diisi!</span>
 	            </div>
 
@@ -42,7 +42,7 @@
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="ucity" name="ucity" placeholder="Enter city" oninput="checkCity()" />
 				</div>
-				<div class="rowLogin" style="margin-bottom: 15px;">
+				<div class="rowLogin">
 	                <span class="errorMessage" id="cityError">Kota harus diisi!</span>
 	            </div>
 
@@ -51,16 +51,16 @@
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail" oninput="checkEmail()" />
 				</div>
-				<div class="rowLogin" style="margin-bottom: 15px;">
+				<div class="rowLogin">
 	                <span class="errorMessage" id="emailError">Email tidak valid!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
+				<div class="rowLogin tulisanCoklat">
 					<label for="uphone" class="txt hurufSedang">Phone</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="uphone" name="uphone" placeholder="Enter phone number" oninput="checkPhone()" />
 				</div>
-				<div class="rowLogin" style="margin-bottom: 15px;">
+				<div class="rowLogin">
 	                <span class="errorMessage" id="phoneError">Phone tidak valid!</span>
 	            </div>
 
