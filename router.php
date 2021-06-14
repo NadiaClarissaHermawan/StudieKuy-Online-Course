@@ -24,6 +24,11 @@
             	$registerCtrl = new registerUserController();
                 echo $registerCtrl->view_registerUserPage();
                 break;
+            case $baseURL.'/userTeacherRegister':
+            	require_once "control/registerUserController.php";
+            	$registerCtrl = new registerUserController();
+                echo $registerCtrl->view_registerTeacherUserPage();
+                break;
             case $baseURL.'/courses':
                 require_once "control/coursesController.php";
                 $coursesCtrl = new coursesController();

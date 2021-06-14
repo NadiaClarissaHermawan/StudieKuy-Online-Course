@@ -13,6 +13,10 @@
             return View::createView('userRegister.php', []);
         }
 
+        public function view_registerTeacherUserPage(){
+            return View::createView('userTeacherRegister.php', []);
+        }
+
         public function klik_register(){
             $username = $_POST['uname'];
             $password = $_POST['upass'];
