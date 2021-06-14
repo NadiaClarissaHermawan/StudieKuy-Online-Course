@@ -1,4 +1,4 @@
-<div class="main" id="contentMainPage">
+<div id="contentMainPage">
     <!-- blok coklat paling atas  -->
     <div class="content1">
         <div class="content1-kiri">
