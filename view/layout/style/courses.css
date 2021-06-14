@@ -119,3 +119,6 @@
     -ms-transform: translate(-50%, -50%);*/
     text-align: center;
 }
+a {
+    text-decoration: none;
+}
