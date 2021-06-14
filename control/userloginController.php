@@ -53,7 +53,11 @@
                         $_SESSION['email'] = $resQuery[0]['email'];
                         $_SESSION['phone'] = $resQuery[0]['kontak'];
                         $_SESSION['alamat'] = $resQuery[0]['alamat'];
-                        $_SESSION['saldo'] = $resQuery[0]['saldo'];
+                        if($resQuery[0]['saldo'] == '0.000'){
+                            $_SESSION['saldo'] = 0;
+                        }else{
+                            $_SESSION['saldo'] = $resQuery[0]['saldo'];
+                        }
                         header('Location: index?status=1');
 
                     //password salah

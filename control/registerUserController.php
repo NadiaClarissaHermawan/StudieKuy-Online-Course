@@ -48,10 +48,10 @@
 
                 //kalau username belum terdaftar
                 }else{
-                    $query = "INSERT INTO pengguna (tipe, nama_user, email, password) VALUES (3, '$username', '$email','$password')";
+                    $query = "INSERT INTO pengguna (tipe, nama_user, email, pass) VALUES (3, '$username', '$email','$password')";
                     $this->db->executeNonSelectQuery($query);
 
-                    $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND password = '$password' AND email = '$email'";
+                    $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND pass = '$password' AND email = '$email'";
                     $id_pengguna = $this->db->executeSelectQuery($query);
                     $id_pengguna = $id_pengguna[0]['id_pengguna'];
 

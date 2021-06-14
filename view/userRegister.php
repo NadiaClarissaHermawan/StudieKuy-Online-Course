@@ -7,7 +7,7 @@
     </div>
 
 	<form method="POST" action="userRegister">
-		<div id="main" style="margin-top: 170px;">
+		<div id="main" style="margin-top: 150px;">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
 			<div class="contentLogin">
 				<div class="rowLogin tulisanCoklat">
@@ -34,7 +34,7 @@
 					<input type="text" class="kotakInput" id="uaddress" name="uaddress" placeholder="Enter home address" oninput="checkAddress()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="addrError">Address harus diisi!</span>
+	                <span class="errorMessage" id="addrError" style="margin-left: 2%;">Address harus diisi!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -43,7 +43,7 @@
 					<input type="text" class="kotakInput" id="ucity" name="ucity" placeholder="Enter city" oninput="checkCity()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="cityError">Kota harus diisi!</span>
+	                <span class="errorMessage" id="cityError" style="margin-left: 0%;">Kota harus diisi!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -52,7 +52,7 @@
 					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail" oninput="checkEmail()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="emailError">Email tidak valid!</span>
+	                <span class="errorMessage" id="emailError" style="margin-left: 1%;">Email tidak valid!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -61,7 +61,7 @@
 					<input type="text" class="kotakInput" id="uphone" name="uphone" placeholder="Enter phone number" oninput="checkPhone()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="phoneError">Phone tidak valid!</span>
+	                <span class="errorMessage" id="phoneError" style="margin-left: 1%;">Phone tidak valid!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
