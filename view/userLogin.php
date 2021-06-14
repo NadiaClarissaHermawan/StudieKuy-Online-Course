@@ -40,6 +40,8 @@
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
         const pass = document.getElementById('upass');
+        const idU = document.getElementById('userError');
+        const idPw = document.getElementById('pwError');
 
         function checkValidation() {
             if(checkUName() && checkPw()){
@@ -48,13 +50,19 @@
             else {
                 // alert('Form belum lengkap!');
                 event.preventDefault();
+                if(!checkUName()){
+                    setError(user, idU);
+                }
+                if(!checkPw()){
+                    setError(pass, idPw);
+                }
                 return false;
             }
         }
 
         function checkUName() {
             const username = user.value.trim();
-            const idU = document.getElementById('userError');
+            // const idU = document.getElementById('userError');
 
             if(username === '' || username.length < 8){
                 setError(user, idU);
@@ -68,7 +76,7 @@
 
         function checkPw() {
             const password = pass.value.trim();
-            const idPw = document.getElementById('pwError');
+            // const idPw = document.getElementById('pwError');
 
             if(password.length < 8 || password === ''){
                 setError(pass, idPw);

@@ -158,7 +158,7 @@
         	const emailUser = email.value;
         	const idEmail = document.getElementById('emailError');
 
-        	const emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        	const emailFormat = [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$;
 
         	if(emailUser.match(emailFormat)){ 
         		setError(email, idEmail);
