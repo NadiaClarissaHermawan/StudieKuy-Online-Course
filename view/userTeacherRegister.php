@@ -79,12 +79,11 @@
 				<div class="rowLogin tulisanCoklat">
 					<label for="upload" class="txt hurufSedang">Upload Image</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="file" name="upload" id="upload" class="kotakInput">
+					<input type="file" name="upload" id="upload" class="kotakInput" oninput="checkUpload()" >
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="diplomaError">Gelar tidak valid!</span>
+	                <span class="errorMessage" id="uploadError">Gambar belum tercantum</span>
 	            </div>
-
 				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
 					<button type="submit" class="register-button link tulisanCoklat" name="registerButton" onclick="checkValidation()">Register</button>
 				</div>
@@ -100,6 +99,7 @@
         const email = document.getElementById('uemail');
         const phone = document.getElementById('uphone');
 		const diploma = document.getElementById('udiploma');
+		const upload = document.getElementById('upload');
         
         const idU = document.getElementById('userError');
         const idPw = document.getElementById('pwError');
@@ -108,9 +108,10 @@
         const idEmail = document.getElementById('emailError');
         const idPhone = document.getElementById('phoneError');
 		const idDiploma = document.getElementById('diplomaError');
+		const idUpload = document.getElementById('uploadError');
 
         function checkValidation() {
-        	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkDiploma()){
+        	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkDiploma() && checkUpload()){
         		return true;
         	}
         	else{
@@ -135,6 +136,9 @@
                 }
 				if(!checkDiploma()){
                     setError(diploma,idDIploma);
+                }
+				if(!checkUpload()){
+                    setError(upload,idUpload);
                 }
                 return false;
         	}
@@ -229,6 +233,17 @@
         		return true;
         	}
         }
+		
+		function checkUpload(){
+			if($_FILES['upfile']['name'] != ""){
+				setSuccess(upload,idUpload);
+        		return true;
+			}
+			else{
+				setError(upload,idUpload);
+        		return false;
+			}
+		}
 
         function setError(input, idInput){
             input.className = 'kotakInput error';
