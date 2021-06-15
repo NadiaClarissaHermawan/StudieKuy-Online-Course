@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <body>
-	<div class="nav">
-        <a href="courses" class="menuNav">Courses</a>
-        <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
-        <a href="faq" class="menuNav">FAQ</a>
-    </div>
-
     <!-- action dihapus untuk ajax  -->
     <form id="main" method="POST" action="userLogin">
         <img class="imgLogin" src="view/images/loginpotongan.png">
@@ -13,12 +7,31 @@
             <div class="rowLogin tulisanCoklat">
 				<label for="uname" class="txt hurufSedang">Username</label>
 				<span style="width: 5px;" class="hurufSedang">:</span>
-                <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
+                <?php
+                    if(isset($_SESSION['unameNotFound']) == false){       
+                ?>
+                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />'
+                <?php
+                    }else if(isset($_SESSION['unameNotFound']) && $_SESSION['unameNotFound']  == 0){
+                        session_destroy();
+                ?>  
+                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />'
+                    <div>Username tidak terdaftar</div>
+                <?php
+                    }else{
+                        $tempUname = $_SESSION['unameNotFound'];
+                        echo '<input type="text" class="kotakInput" id="uname" name="uname" value="'.
+                        $tempUname.'" placeholder="Enter username" oninput="checkUName()" />';
+                ?>
+                    <div>Password salah</div>
+                <?php
+                    }
+                ?>
             </div>
-            <div class="rowLogin">
+
+            <div class="rowLogin" style="height: 20px;">
                 <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
             </div>
-            <div id="userNotValid"></div>
 
             <div class="rowLogin tulisanCoklat">
 				<label for="upass" class="txt hurufSedang">Password</label>
@@ -30,7 +43,7 @@
             </div>
             <div id="wrongPassword"></div>
 
-            <div class="rowLogin tulisanCoklat" style="margin-bottom: 15px;">
+            <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
 				<button type="submit" class="login-button link tulisanCoklat" value="login"  onclick="checkValidation()">Log in</button>
             </div>
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
@@ -52,21 +65,7 @@
 
         function checkValidation() {
             if(checkUName() && checkPw()){
-                $(document).ready(function(event) {
-                    event.preventDefault();
-
-                    //cobain ajax -->cek ada ga uname & password di DB
-                    $.post("userLogin", {username:user, password:pass}, function(data){
-                        event.preventDefault();
-                        
-                        if(data.value == 0){
-                            userNotValid.innerHTML = "Username tidak terdaftar";
-                        }else{
-                            wrongPassword.innerHTML = "Password salah";
-                        }
-
-                    })
-                })
+               return true;
                 
             }else{
                 event.preventDefault();

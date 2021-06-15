@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="View/layout/style/userTopup.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
@@ -26,6 +27,9 @@
                     echo ' <a href="userProfile" class="menuNav">My Profile</a>';
                 }
             ?>
+            <div class="menuNavKanan">
+                <a href="index" class="material-icons md-36">home</a>
+            </div>
         </div>
 
         <!-- ini mesti ada buat keluarin konten yg uda dibikin sblmnya di php, kalo gaada, meski di echo di view jg gakan keluar -->

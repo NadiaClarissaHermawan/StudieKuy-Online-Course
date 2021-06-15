@@ -5,7 +5,6 @@ Styling FAQ page
 
 .talk-bubble {
     margin: 40px;
-    position:relative;
     width: 550px;
     height: auto;
     background-color: lightyellow;
@@ -29,7 +28,6 @@ Styling FAQ page
 }
 .tri-right.right-in:after {
     content: ' ';
-    position: absolute;
     width: 0;
     height: 0;
     left: auto;
@@ -47,7 +45,6 @@ Styling FAQ page
 }
 .tri-right.left-in:after{
     content: ' ';
-    position: absolute;
     width: 0;
     height: 0;
     left: -20px;

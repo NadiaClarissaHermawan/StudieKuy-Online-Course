@@ -30,9 +30,10 @@
                          ";
                 $pass_asli = $this->db->executeSelectQuery($query);
 
-                //kalo username tdk tercantum di tabel MEMBER
+                //kalo username tdk tercantum di tabel MEMBER --> how biar ga redirect?
                 if(empty($pass_asli)){
-                    return;
+                    $_SESSION['unameNotFound'] = 0;
+                    header('Location: userLogin');
 
                 }else{
                     //password benar
@@ -59,7 +60,8 @@
 
                     //password salah
                     }else{
-                        return;
+                        $_SESSION['unameNotFound'] = $uname;
+                        header('Location: userLogin');
                     }
                 }
             }

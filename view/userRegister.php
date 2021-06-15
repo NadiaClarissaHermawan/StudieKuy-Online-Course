@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <body>
-	<div class="nav">
-        <a href="courses" class="menuNav">Courses</a>
-        <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
-        <a href="faq" class="menuNav">FAQ</a>
-    </div>
-
 	<form method="POST" action="userRegister">
 		<div id="main" style="margin-top: 150px;">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
