@@ -19,7 +19,7 @@
         
         <div class="nav">
             <a href="courses" class="menuNav">Courses</a>
-            <a href="#anchor-aboutUs" class="menuNav">About Us</a>
+            <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
             <a href="faq" class="menuNav">FAQ</a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
