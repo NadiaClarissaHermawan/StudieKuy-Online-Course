@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/userProfile.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/userProfile.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
     </head>
     <body>
     	<div class="header">
@@ -11,8 +11,8 @@
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
 
             <?php 
-                $saldoUser = $_SESSION['saldo'];
-                echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
+                // $saldoUser = $_SESSION['saldo'];
+                // echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
             ?>
     	</div>
         
