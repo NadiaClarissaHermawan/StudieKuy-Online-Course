@@ -6,7 +6,7 @@
         <a href="faq" class="menuNav">FAQ</a>
     </div>
 
-	<form method="POST" action="userRegister">
+	<form method="POST" action="userTeacherRegister">
 		<div id="main" style="margin-top: 170px;">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
 			<div class="contentLogin">

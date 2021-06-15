@@ -26,8 +26,8 @@
                 break;
             case $baseURL.'/teacherLogin':
                 require_once "control/teacherLoginController.php";
-                $loginCtrl = new loginUserController();
-                echo $loginCtrl->view_userLoginPage();
+                $loginCtrl = new teacherLoginController();
+                echo $loginCtrl->view_teacherLoginPage();
                 break;
             case $baseURL.'/userTeacherRegister':
             	require_once "control/registerUserController.php";

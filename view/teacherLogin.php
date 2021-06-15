@@ -2,7 +2,7 @@
 <body>
     <!-- action dihapus untuk ajax  -->
     <form id="main" method="POST" action="teacherLogin">
-        <img class="imgLogin" src="view/images/loginpotongan.png">
+        <img class="imgLogin" src="view/images/loginTeacher.jpg">
         <div class="contentLogin">
             <div class="rowLogin tulisanCoklat">
 				<label for="uname" class="txt hurufSedang">Username</label>

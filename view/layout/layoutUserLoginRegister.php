@@ -2,9 +2,9 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="View/layout/style/userLoginRegister.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/userLoginRegister.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
     </head>
     <body>
     	<div class="header">
