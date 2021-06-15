@@ -19,6 +19,7 @@
 
         public function klik_register(){
             $username = $_POST['uname'];
+            $realname = $_POST['urealname'];
             $password = $_POST['upass'];
             $email = $_POST['uemail'];
             $phone = $_POST['uphone'];
@@ -28,9 +29,11 @@
             //cek validitas input
             if(isset($_POST['registerButton']) && isset($username) && $username!=""
             && isset($password) && $password!= "" && isset($email) && $email !="" 
-            && isset($phone) && $phone!= "" && isset($address) && $address!= "" && isset($kota) && $kota!=""){
+            && isset($phone) && $phone!= "" && isset($address) && $address!= "" && isset($kota) && $kota!=""
+            && isset($realname) && $realname!=""){
 
                 $username = $this->db->escapeString($username);
+                $realname = $this->db->escapeString($realname);
                 $password = $this->db->escapeString($password);
                 $email = $this->db->escapeString($email);
                 $phone = $this->db->escapeString($phone);
@@ -48,7 +51,7 @@
 
                 //kalau username belum terdaftar
                 }else{
-                    $query = "INSERT INTO pengguna (tipe, nama_user, email, pass) VALUES (3, '$username', '$email','$password')";
+                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass) VALUES (3, '$username', '$realname' ,'$email','$password')";
                     $this->db->executeNonSelectQuery($query);
 
                     $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND pass = '$password' AND email = '$email'";

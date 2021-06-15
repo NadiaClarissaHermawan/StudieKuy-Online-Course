@@ -38,15 +38,16 @@
                 }else{
                     //password benar
                     if($upass == $pass_asli[0]['pass']){
-                        $query = "SELECT email, kontak, alamat, saldo 
+                        $query = "SELECT email, real_name, kontak, alamat, saldo 
                                   FROM member m INNER JOIN pengguna p
                                   ON m.id_pengguna = p.id_pengguna
                                   WHERE nama_user = '$uname' AND pass = '$upass'
                                 ";
                         $resQuery = $this->db->executeSelectQuery($query);
-
+                        
                         $_SESSION['status'] = 1;
                         $_SESSION['uname'] = $uname;
+                        $_SESSION['realuname'] =  $resQuery[0]['real_name'];
                         $_SESSION['pass'] = $upass;
                         $_SESSION['email'] = $resQuery[0]['email'];
                         $_SESSION['phone'] = $resQuery[0]['kontak'];

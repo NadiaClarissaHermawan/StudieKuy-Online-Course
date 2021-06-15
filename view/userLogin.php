@@ -10,38 +10,29 @@
                 <?php
                     if(isset($_SESSION['unameNotFound']) == false){       
                 ?>
-                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />'
+                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()"/>
+
                 <?php
                     }else if(isset($_SESSION['unameNotFound']) && $_SESSION['unameNotFound']  == 0){
                         session_destroy();
                 ?>  
-                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />'
-                    <div>Username tidak terdaftar</div>
+                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" onload="unameNotRegistered()" oninput="checkUName()" />
                 <?php
                     }else{
                         $tempUname = $_SESSION['unameNotFound'];
                         echo '<input type="text" class="kotakInput" id="uname" name="uname" value="'.
-                        $tempUname.'" placeholder="Enter username" oninput="checkUName()" />';
-                ?>
-                    <div>Password salah</div>
-                <?php
+                        $tempUname.'" placeholder="Enter username" onload="wrongPassword()" oninput="checkUName()" />';
                     }
                 ?>
             </div>
-
-            <div class="rowLogin" style="height: 20px;">
-                <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
-            </div>
+            <div class="rowLogin errorMessage" id="userError"style="height: 20px;"></div>
 
             <div class="rowLogin tulisanCoklat">
 				<label for="upass" class="txt hurufSedang">Password</label>
 				<span style="width: 5px;"  class="hurufSedang">:</span>
                 <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password" oninput="checkPw()" />
             </div>
-            <div class="rowLogin">
-                <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
-            </div>
-            <div id="wrongPassword"></div>
+            <div class="rowLogin errorMessage" id="pwError"></div>
 
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
 				<button type="submit" class="login-button link tulisanCoklat" value="login"  onclick="checkValidation()">Log in</button>
@@ -60,8 +51,6 @@
         const pass = document.getElementById('upass');
         const idU = document.getElementById('userError');
         const idPw = document.getElementById('pwError');
-        const userNotValid = document.getElementById('userNotValid');
-        const wrongPassword = document.getElementById('wrongPassword');
 
         function checkValidation() {
             if(checkUName() && checkPw()){
@@ -70,20 +59,37 @@
             }else{
                 event.preventDefault();
                 if(!checkUName()){
+                    idU.innerHTML = "Username harus terdiri lebih dari 8 karakter";
                     setError(user, idU);
                 }
                 if(!checkPw()){
+                    idPw.innerHTML = "Password harus terdiri lebih dari 8 karakter";
                     setError(pass, idPw);
                 }
                 return false;
             }
         }
 
+        function wrongPassword(){
+            setError(user,idPw);
+            idPw.innerHTML = "Password salah";
+            return false;
+        }
+
+        function unameNotRegistered(){
+            setError(user, idU);
+            console.log("HEHEH");
+            die;
+            idU.innerHTML = "Username tidak terdaftar";
+            return false;
+        }
+
         function checkUName() {
             const username = user.value.trim();
 
             if(username === '' || username.length < 8){
-                setError(user, idU);
+                setError(user,idU);
+                idU.innerHTML = "Username harus terdiri lebih dari 8 karakter";
                 return false;
             }
             else {
@@ -96,6 +102,7 @@
             const password = pass.value.trim();
 
             if(password.length < 8 || password === ''){
+                idPw.innerHTML = "Password harus terdiri lebih dari 8 karakter";
                 setError(pass, idPw);
                 return false;
             }
