@@ -180,3 +180,9 @@
     flex-direction: column;
     width: 33%;
 }
+
+.pp {
+    border-radius: 80px;
+    width: 20%;
+    height: 20%;
+}

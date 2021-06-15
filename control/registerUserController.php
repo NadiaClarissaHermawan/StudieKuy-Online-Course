@@ -51,7 +51,8 @@
 
                 //kalau username belum terdaftar
                 }else{
-                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass) VALUES (3, '$username', '$realname' ,'$email','$password')";
+                    $profpic = "view/images/profilepicture/baseProfilePic";
+                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture) VALUES (3, '$username', '$realname' ,'$email','$password', '$profpic')";
                     $this->db->executeNonSelectQuery($query);
 
                     $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND pass = '$password' AND email = '$email'";

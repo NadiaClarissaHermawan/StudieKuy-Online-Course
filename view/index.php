@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="content4-tengah">
-                <img class="pp" src="view/images/ppTasha.png"/>
+                <img class="pp" src="view/images/ppTasha.jpg"/>
                 <br>
                 <div class="tulisanCoklat hurufSedang">
                     Natasha Benedicta

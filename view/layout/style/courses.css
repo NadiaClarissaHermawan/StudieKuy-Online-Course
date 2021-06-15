@@ -1,124 +1,80 @@
 #contentMainPage {
-    margin-top: 25%;
-    /*padding-top: 15%;*/
-    margin-left: 7%;
-    margin-right: 10%;
-    padding-bottom: 20%;
+    display: flex;
+    margin-top: 200px;
+    margin-left: 20%;
+    width: 60%;
+    height: 60%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    flex-direction: column;
 }
 
 .line1 {
     display: flex;
-    background-color: white;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    height: 250px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55%;
 }
 
 .line2 {
     display: flex;
-    background-color: white;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    height: 250px;
-}
-
-.content2-kiri {
-    width: 33%;
-    display: flex;
-    justify-content: center;
     text-align: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 30px;
-}
-
-.content2-tengah {
-    width: 33%;
-    display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
-}
-.content2-kanan {
-    width: 33%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-.content-image {
-    width: 80%;
-    height: 85%;
-    border-radius: 30px;
-}
-
-#course1-image {
-    background-color: #FFDEDE;
-}
-
-#course2-image {
-    background-color: #AEF5FF;
-}
-
-#course3-image {
-    background-color: #FFDEAC;
-}
-
-#course4-image {
-    background-color: #B1EA8E;
-}
-
-#course6-image {
-    background-color: #FFDEDE;
-}
-
-/*.image {
-    opacity: 1;
-    display: block;
     width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-}*/
-
-.content2-kiri:hover .content-image {
-    opacity: 0.5;
+    height: 55%;
 }
 
-.content2-kiri:hover .text {
-    opacity: 1;
+#course1-image{
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
 }
 
-.content2-tengah:hover .content-image {
-    opacity: 0.5;
+#course2-image{
+    width: 80%;
+    height: 80%;
+    background-color: #AEF5FF;
+    border-radius: 20px;
 }
 
-.content2-tengah:hover .text {
-    opacity: 1;
+#course3-image{
+    width: 80%;
+    height: 78%;
+    background-color: #FFDEAC;
+    border-radius: 20px;
 }
 
-.content2-kanan:hover .content-image {
-    opacity: 0.5;
+#course4-image{
+    width: 80%;
+    height: 80%;
+    background-color: #B1EA8E;
+    border-radius: 20px;
 }
 
-.content2-kanan:hover .text {
-    opacity: 1;
+#course5-image{
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
 }
 
-.text {
-    background-color: #CB6F6F;
-    color: white;
-    font-size: 15px;
-    padding: 5px 5px;
-
-    opacity: 0;
-    position: absolute;
-    /*top: 40%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);*/
-    text-align: center;
+#course6-image{
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
 }
-a {
+
+.text1 {
+    display: absolute;
     text-decoration: none;
+    color: #432F2F;
+    top : 200px;
+    left: 50px;
+    
 }

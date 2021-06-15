@@ -2,7 +2,7 @@
 <div id="contentMainPage">
     <!-- judul -->
     <div class="title">
-        <div class="title-kiri tulisanPutih">My Profile </div>
+        <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
         <div class="title-tengah">
             <a href="" class="tulisanPutih hurufSedang">Edit</a>
         </div>
@@ -13,7 +13,10 @@
     <hr>
 
     <div class="content1">
-        <img src="view/images/ppTasha.jpg" class="content1-image content1-kiri">
+        <?php
+            $pic = $_SESSION['profpic'].'.jpg';
+            echo '<img src="'.$pic.'" class="content1-image content1-kiri">';
+        ?>
         <div class="content1-kanan tulisanPutih hurufBesar">
             <table class="profileTable">
                 <tr>
