@@ -29,6 +29,12 @@
             ?>
             <div class="menuNavKanan">
                 <a href="index" class="material-icons md-36">home</a>
+                <?php 
+                    //jgn lupa ini status udah login, di add di header controller bersangkutan
+                    if(isset($_SESSION['status'])){
+                        echo ' <a href="#userCourse" class="material-icons md-36">reorder</a>';
+                    }
+                ?>
             </div>
         </div>
 
