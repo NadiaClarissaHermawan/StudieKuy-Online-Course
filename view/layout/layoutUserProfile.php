@@ -12,8 +12,8 @@
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
 
             <?php 
-                // $saldoUser = $_SESSION['saldo'];
-                // echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
+                $saldoUser = $_SESSION['saldo'];
+                echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
             ?>
     	</div>
         
