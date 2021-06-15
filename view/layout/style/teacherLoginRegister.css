@@ -1,1 +1,151 @@
-/*css login teacher*/
+/* styling page teacherLogin.php
+--------------------
+ */
+ 
+#main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 150px;
+}
+#judul {
+	width: 500px;
+}
+
+#login {
+    color: #CB6F6F;
+}
+.imgLogin {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    width: 45%;
+}
+
+.contentLogin {
+    width: 45%;
+    padding-top: 40px;
+    background-color: white;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.txt {
+    display: inline-block;
+    width: 130px;
+    margin-right: 10px;
+    text-align:right;
+}
+
+.kotakInput {
+    margin-left: 20px;
+    display: inline-block;
+    width: 35%;
+    height: auto;
+    color: white;
+    background-color: #CB6F6F;
+    border: none;
+    padding-left: 5px;
+    font-size: 22px;
+    padding: 5px;
+}
+.kotakInput::placeholder {
+    color: white;
+    font-family:Reem Kufi;
+    font-size: 100%;
+    line-height: 30px;
+}
+
+.kotakInput.error {
+    background-color: #ce3232;
+}
+
+.rowLogin {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    height: 16%;
+}
+
+.register-button {
+    display: flex;
+    background-color: #FFDEDE;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid black;
+    border-radius: 35px;
+    color:#432F2F ;
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+.register-button:hover {
+    transition: 0.5s;
+    cursor:pointer;
+    background-color: #CB6F6F;
+    color: white;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.login-button {
+    display: flex;
+    background-color: #FFDEDE;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    height: 120%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid black;
+    border-radius: 35px;
+    color:#432F2F ;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.login-button:hover {
+    transition: 0.5s;
+    cursor:pointer;
+    background-color: #CB6F6F;
+    color: white;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.link {
+    text-decoration: none;
+    color: blue;
+}
+
+.errorMessage {
+    color: #e74c3c;
+    /*position: relative;*/
+    /*bottom: 0;
+    left: 0;*/
+    color: red;
+    font-weight: bold;
+    margin-left: 22%;
+    /*margin-left: 200px;*/
+    visibility: hidden;
+}
+.errorMessage.show {
+    visibility: visible;
+}
+.pilihanRole{
+    font-family: Reem Kufi;
+}
