@@ -32,13 +32,10 @@
 
                 //kalo username tdk tercantum di tabel MEMBER
                 if(empty($pass_asli)){
-                    var_dump("username tidak terdaftar");
-                    session_destroy();
-                    die;
-                    //javascript ngasih tau akun tidak ditemukan (AJAX)
+                    return;
 
                 }else{
-                    //password benar -> simpan semua data diri user
+                    //password benar
                     if($upass == $pass_asli[0]['pass']){
                         $query = "SELECT email, kontak, alamat, saldo 
                                   FROM member m INNER JOIN pengguna p
@@ -62,10 +59,7 @@
 
                     //password salah
                     }else{
-                        var_dump("salah password");
-                        die;
-                        session_destroy();
-                        //javascript ngasih tau salah password
+                        return;
                     }
                 }
             }

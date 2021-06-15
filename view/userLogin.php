@@ -6,6 +6,7 @@
         <a href="faq" class="menuNav">FAQ</a>
     </div>
 
+    <!-- action dihapus untuk ajax  -->
     <form id="main" method="POST" action="userLogin">
         <img class="imgLogin" src="view/images/loginpotongan.png">
         <div class="contentLogin">
@@ -17,6 +18,7 @@
             <div class="rowLogin">
                 <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
             </div>
+            <div id="userNotValid"></div>
 
             <div class="rowLogin tulisanCoklat">
 				<label for="upass" class="txt hurufSedang">Password</label>
@@ -26,9 +28,10 @@
             <div class="rowLogin">
                 <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
             </div>
+            <div id="wrongPassword"></div>
 
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 15px;">
-				<button type="submit" class="login-button link tulisanCoklat" onclick="checkValidation()">Log in</button>
+				<button type="submit" class="login-button link tulisanCoklat" value="login"  onclick="checkValidation()">Log in</button>
             </div>
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
                 <span class="hurufKecil">doesn't have an account? </span>
@@ -36,19 +39,36 @@
             </div>
         </div>
     </form>
-    <script>
+</body>
+
+<script>
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
         const pass = document.getElementById('upass');
         const idU = document.getElementById('userError');
         const idPw = document.getElementById('pwError');
+        const userNotValid = document.getElementById('userNotValid');
+        const wrongPassword = document.getElementById('wrongPassword');
 
         function checkValidation() {
             if(checkUName() && checkPw()){
-                return true;
+                $(document).ready(function(event) {
+                    event.preventDefault();
+
+                    //cobain ajax -->cek ada ga uname & password di DB
+                    $.post("userLogin", {username:user, password:pass}, function(data){
+                        event.preventDefault();
+                        
+                        if(data.value == 0){
+                            userNotValid.innerHTML = "Username tidak terdaftar";
+                        }else{
+                            wrongPassword.innerHTML = "Password salah";
+                        }
+
+                    })
+                })
                 
-            }
-            else{
+            }else{
                 event.preventDefault();
                 if(!checkUName()){
                     setError(user, idU);
@@ -94,5 +114,4 @@
             input.className = 'kotakInput';
             idInput.className = 'errorMessage';
         }
-    </script>
-</body>
+</script>
