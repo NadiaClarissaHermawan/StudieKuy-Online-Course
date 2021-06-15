@@ -60,6 +60,11 @@
                 $registerCtrl = new registerUserController();
                 echo $registerCtrl->klik_register();
                 break;
+            case $baseURL.'/userTopup':
+                require_once "control/userTopupController.php";
+                $userTopupCtrl = new userTopupController();
+                echo $userTopupCtrl->topupSaldo();
+                break;
             default :
                 echo '404 not found';
                 break;

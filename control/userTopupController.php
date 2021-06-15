@@ -13,5 +13,9 @@
         public function view_userTopup(){
             return View::createView('userTopup.php', []);
         }
+
+        public function topupSaldo(){
+            //lengkapin nnti buat klik / fix topup saldo
+        }
     }
 ?>
