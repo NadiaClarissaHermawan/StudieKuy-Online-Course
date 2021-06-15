@@ -14,5 +14,10 @@
         public function view_userProfile(){
             return View::createView('userProfile.php', []);
         }
+
+        public function signOut(){
+            session_destroy();
+            header('Location: index');
+        }
     }
 ?>

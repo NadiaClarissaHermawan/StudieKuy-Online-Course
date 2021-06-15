@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <body>
 	<form method="POST" action="userRegister">
-		<div id="main" style="margin-top: 150px;">
+		<div id="main" style="margin-top: 180px;">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
-			<div class="contentLogin">
+			<div class="contentLogin" style="margin-bottom: 50px;">
 				<div class="rowLogin tulisanCoklat">
 					<label for="uname" class="txt hurufSedang">Username</label>
 					<span style="width: 7px;" class="hurufSedang">:</span>
@@ -14,12 +14,21 @@
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
+					<label for="urealname" class="txt hurufSedang">Name</label>
+					<span style="width: 7px;" class="hurufSedang">:</span>
+					<input type="text" class="kotakInput" id="urealname" name="urealname" placeholder="Enter your name" oninput="checkURealName()" />
+				</div>
+				<div class="rowLogin">
+	                <span class="errorMessage" id="nameError" style="margin-left: 100px;">Nama harus lebih dari 3 karakter</span>
+	            </div>
+
+				<div class="rowLogin tulisanCoklat">
 					<label for="upass" class="txt hurufSedang">Password</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password" oninput="checkPw()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="pwError">Password harus terdiri lebih dari 8 karakter</span>
+	                <span class="errorMessage" id="pwError" style="margin-left: 160px;">Password harus terdiri lebih dari 8 karakter</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -67,6 +76,7 @@
     <script>
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
+		const name = document.getElementById('urealname');
         const pass = document.getElementById('upass');
         const addr = document.getElementById('uaddress');
         const city = document.getElementById('ucity');
@@ -74,6 +84,7 @@
         const phone = document.getElementById('uphone');
         
         const idU = document.getElementById('userError');
+		const idName = document.getElementById('nameError');
         const idPw = document.getElementById('pwError');
         const idAddr = document.getElementById('addrError');
         const idCity = document.getElementById('cityError');
@@ -81,7 +92,7 @@
         const idPhone = document.getElementById('phoneError');
 
         function checkValidation() {
-        	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone()){
+        	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkURealName()){
         		return true;
         	}
         	else{
@@ -89,6 +100,9 @@
                 if(!checkUName()){
                     setError(user, idU);
                 }
+				if(!checkURealName()){
+					setError(name, idName);
+				}
                 if(!checkPw()){
                     setError(pass, idPw);
                 }
@@ -119,6 +133,19 @@
                 return true;
             }
         }
+
+		function checkURealName(){
+			const namee = name.value.trim();
+
+            if(namee === '' || namee.length < 3){
+                setError(name, idName);
+                return false;
+            }
+            else {
+                setSuccess(name, idName);
+                return true;
+            }
+		}
 
         function checkPw() {
             const password = pass.value;

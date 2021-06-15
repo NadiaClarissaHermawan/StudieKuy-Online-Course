@@ -15,7 +15,8 @@
 }
 
 #judulTopup {
-    font-size: 4vw;
+    font-size: 3vw;
+    line-height: 20px;
 }
 
 #pembatasTopup {
@@ -33,12 +34,19 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    flex-direction: column;
 }
-
+#topup-content2-kesamping {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
 .topup-content2-pilihan {
     margin-right: 2%;
-    width: 15vw;
-    height: 3.5vw;
+    width: 13vw;
+    height: 3vw;
     font-size: 2vw;
     display: flex;
     justify-content: center;
@@ -51,19 +59,48 @@
     border: none;
 }
 .topup-content2-pilihan:hover {
-    background-color:#CB6F6F ;
+    background-color:#F3A2A2 ;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
     transition: 0.5s;
     cursor: pointer;
+    color: white;
 }
 
-.topup-content2-isi {
+#topup-content2-isi {
+    margin-top: 80px;
     background-color: white;
     color: #432F2F;
     flex-direction:row-reverse;
+    border-radius: 10px;
+    width: 17vw;
+    height: 2.5vw;
+    border: none;
+    padding: 10px;
+}
+#topup-content2-isi::placeholder{
+    color: grey;
+}
+#topup-content2-isi:hover {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    transition: 0.5s;
 }
 
-.link-pilihan-topup {
-    text-decoration: none;
-    width: 20%;
+#topup-content2-submit {
+    margin-top: 80px;
+    margin-left: 30px;
+    background-color: #F7AB36;
+    color: black;
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+}
+
+#topup-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+#topup-image1 {
+    width: 44%;
+    height: 10%;
 }

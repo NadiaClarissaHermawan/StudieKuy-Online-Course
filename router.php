@@ -44,6 +44,11 @@
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->view_userProfile();
                 break;
+            case $baseURL.'/signOutUser':
+                require_once "control/userProfileController.php";
+                $userProfileCtrl = new userProfileController();
+                echo $userProfileCtrl->signOut();
+                break;
             default :
                 echo '404 not found';
                 break;
