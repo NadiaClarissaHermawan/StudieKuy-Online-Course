@@ -2,11 +2,7 @@
 <div id="contentMainPage">
     <!-- judul -->
     <div class="title">
-        <div class="title-kiri">
-            <p class="tulisanPutih">
-                My Profile
-            </p>
-        </div>
+        <div class="title-kiri tulisanPutih">My Profile </div>
         <div class="title-tengah">
             <a href="" class="tulisanPutih hurufSedang">Edit</a>
         </div>
@@ -17,9 +13,7 @@
     <hr>
 
     <div class="content1">
-        <div class="content1-kiri">
-            <img src="view/images/ppTasha.jpg" class="content1-image">
-        </div>
+        <img src="view/images/ppTasha.jpg" class="content1-image content1-kiri">
         <div class="content1-kanan tulisanPutih hurufBesar">
             <table class="profileTable">
                 <tr>
