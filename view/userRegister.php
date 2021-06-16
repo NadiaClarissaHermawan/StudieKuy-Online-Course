@@ -40,10 +40,18 @@
 	                <span class="errorMessage" id="addrError" style="margin-left: 2%;">Address harus diisi!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat">
-					<label for="ucity" class="txt hurufSedang">City</label>
+				<div class="rowLogin tulisanCoklat" style="width: 61%;">
+					<label for="sel" class="txt hurufSedang">City</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="text" class="kotakInput" id="ucity" name="ucity" placeholder="Enter city" oninput="checkCity()" />
+					<div class="">
+						<select id="sel" size = "1" name="ucity" class="input-option">
+							<?php 
+								foreach($result as $key => $row){
+									echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
+								}
+							?>
+						</select>
+					</div>
 				</div>
 				<div class="rowLogin">
 	                <span class="errorMessage" id="cityError" style="margin-left: 0%;">Kota harus diisi!</span>
@@ -74,12 +82,35 @@
 		</div>
 	</form>
     <script>
+
+		document.getElementById('sel').addEventListener('click', onClickHandler);
+		document.getElementById('sel').addEventListener('mousedown', onMouseDownHandler);
+
+		function onMouseDownHandler(e){
+			var el = e.currentTarget;
+			
+			if(el.hasAttribute('size') && el.getAttribute('size') == '1'){
+				e.preventDefault();    
+			}
+		}
+		function onClickHandler(e) {
+			var el = e.currentTarget; 
+
+			if (el.getAttribute('size') == '1') {
+				el.className += " selectOpen";
+				el.setAttribute('size', '3');
+			}
+			else {
+				el.className = '';
+				el.setAttribute('size', '1');
+			}
+		}
+		// --------------------------------------------------------------------------------------------
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
 		const name = document.getElementById('urealname');
         const pass = document.getElementById('upass');
         const addr = document.getElementById('uaddress');
-        const city = document.getElementById('ucity');
         const email = document.getElementById('uemail');
         const phone = document.getElementById('uphone');
         
@@ -87,7 +118,6 @@
 		const idName = document.getElementById('nameError');
         const idPw = document.getElementById('pwError');
         const idAddr = document.getElementById('addrError');
-        const idCity = document.getElementById('cityError');
         const idEmail = document.getElementById('emailError');
         const idPhone = document.getElementById('phoneError');
 
@@ -108,9 +138,6 @@
                 }
                 if(!checkAddress()){
                     setError(addr, idAddr);
-                }
-                if(!checkCity()){
-                    setError(city, idCity);
                 }
                 if(!checkEmail()){
                     setError(email, idEmail);
@@ -169,19 +196,6 @@
         	}
         	else {
         		setSuccess(addr, idAddr);
-        		return true;
-        	}
-        }
-
-        function checkCity() {
-        	const cityName = city.value;
-        	// cek city valid/ ga
-        	if(cityName === ''){ 
-        		setError(city, idCity);
-        		return false;
-        	}
-        	else {
-        		setSuccess(city, idCity);
         		return true;
         	}
         }

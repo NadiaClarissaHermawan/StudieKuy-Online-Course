@@ -1,6 +1,7 @@
 <?php 
     require_once "control/services/viewUserLoginRegister.php";
     require_once "control/services/mysqlDB.php";
+    require_once "model/kota.php";
 
     class registerUserController{
         protected $db;
@@ -10,11 +11,29 @@
         }
 
         public function view_registerUserPage(){
-            return View::createView('userRegister.php', []);
+            $result = $this->getAllKota();
+            return View::createView('userRegister.php', [
+                "result"=>$result
+            ]);
         }
 
         public function view_registerTeacherUserPage(){
-            return View::createView('userTeacherRegister.php', []);
+            $result = $this->getAllKota();
+            return View::createView('userTeacherRegister.php', [
+                "result"=>$result
+            ]);
+        }
+
+        public function getAllKota(){
+            $query = "  SELECT id_kota, nama_kota
+                        FROM kota
+                     ";
+            $query_result = $this->db->executeSelectQuery($query);
+            $result = [];
+            foreach($query_result as $key => $value){
+                $result[] = new Kota( $value['id_kota'], $value['nama_kota']);
+            }
+            return $result;
         }
 
         public function klik_register(){
@@ -59,11 +78,7 @@
                     $id_pengguna = $this->db->executeSelectQuery($query);
                     $id_pengguna = $id_pengguna[0]['id_pengguna'];
 
-                    $query = "SELECT id_kota FROM kota WHERE nama_kota = '$kota'";
-                    $id_kota = $this->db->executeSelectQuery($query);
-                    $id_kota = $id_kota[0]['id_kota'];
-
-                    $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$id_kota', '$id_pengguna')";
+                    $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$kota', '$id_pengguna')";
                     $this->db->executeNonSelectQuery($query);
 
                     header('Location: userLogin');
