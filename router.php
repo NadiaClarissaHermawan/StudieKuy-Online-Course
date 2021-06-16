@@ -54,6 +54,11 @@
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->signOut();
                 break;
+            case $baseURL.'/adminLogin':
+                require_once "control/adminLoginController.php";
+                $loginCtrl = new adminLoginController();
+                echo $loginCtrl->view_adminLoginPage();
+                break;
             default :
                 echo '404 not found';
                 break;
