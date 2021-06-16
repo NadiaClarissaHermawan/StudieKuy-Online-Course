@@ -54,11 +54,24 @@
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->signOut();
                 break;
-
+            case $baseURL.'/adminLogin':
+                require_once "control/adminLoginController.php";
+                $loginCtrl = new adminLoginController();
+                echo $loginCtrl->view_adminLoginPage();
             case $baseURL.'/profileEdit':
                 require_once "control/userProfileController.php";
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->view_editProfile();
+                break;
+            case $baseURL.'/indexAdmin':
+                require_once "control/indexAdminController.php";
+                $idxCtrl = new indexAdminController();
+                echo $idxCtrl->view_mainpageAdmin();
+                break;
+            case $baseURL.'/indexTeacher':
+                require_once "control/indexTeacherController.php";
+                $idxCtrl = new indexTeacherController();
+                echo $idxCtrl->view_mainpageTeacher();
                 break;
             default :
                 echo '404 not found';
