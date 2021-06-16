@@ -58,6 +58,10 @@
                 require_once "control/adminLoginController.php";
                 $loginCtrl = new adminLoginController();
                 echo $loginCtrl->view_adminLoginPage();
+            case $baseURL.'/profileEdit':
+                require_once "control/userProfileController.php";
+                $userProfileCtrl = new userProfileController();
+                echo $userProfileCtrl->view_editProfile();
                 break;
             default :
                 echo '404 not found';
@@ -79,6 +83,13 @@
                 require_once "control/userTopupController.php";
                 $userTopupCtrl = new userTopupController();
                 echo $userTopupCtrl->topupSaldo();
+                break;
+            case $baseURL.'/userProfileEdit':
+                require_once "control/userProfileController.php";
+                $userTopupCtrl = new userProfileController();
+                $userTopupCtrl->editProfile();
+
+                header('Location: userProfile');
                 break;
             default :
                 echo '404 not found';

@@ -1,11 +1,9 @@
+
 <!-- userProfile.php -->
 <div id="contentMainPage">
     <!-- judul -->
     <div class="title">
         <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
-        <div class="title-tengah">
-            <a href="profileEdit" class="tulisanPutih hurufSedang">Edit</a>
-        </div>
         <div class="title-kanan">
             <a href="signOutUser" class="tulisanPutih hurufSedang">Sign Out</a>
         </div>
@@ -66,18 +64,7 @@
     </div>    
 </div>
 
-
-
-<!-- <div class="content1">
-    <div class="abc">
-        <p class="tulisanPutih hurufBesar" id="abc">My Profile</p>
-    </div>
-    <div class="menuProf">
-        <a href="" class="tulisanPutih hurufKecil" id="edit">Edit</a>
-        <a href="" class="tulisanPutih hurufKecil" id="signOut">Sign Out</a>
-    </div>
-    <hr>
-</div>
-<?php
-        // session_destdoy();
-?> -->
+<form method="POST" action="userProfileEdit" enctype="multipart/form-data" style="margin-top: 150px;">
+    <input type="file" name="foto"/>
+    <button type="submit">Submit</button>
+</form>
