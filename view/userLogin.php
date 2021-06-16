@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <body>
-    <!-- action dihapus untuk ajax  -->
     <form id="main" method="POST" action="userLogin">
         <img class="imgLogin" src="view/images/loginpotongan.png">
         <div class="contentLogin">
@@ -28,14 +27,14 @@
                     }
                 ?>
             </div>
-            <div class="rowLogin errorMessage" id="userError"style="height: 20px; color:red; margin-left:21px"></div>
+            <div class="rowLogin errorMessage" id="userError"style="height: 20px; color:red"></div>
 
             <div class="rowLogin tulisanCoklat">
 				<label for="upass" class="txt hurufSedang">Password</label>
 				<span style="width: 5px;"  class="hurufSedang">:</span>
                 <input type="password" class="kotakInput" id="upass" name="upass" placeholder="Enter password" oninput="checkPw()" />
             </div>
-            <div class="rowLogin errorMessage" id="pwError" style="color:red; margin-left:5px"></div>
+            <div class="rowLogin errorMessage" id="pwError" style="color:red"></div>
 
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
 				<button type="submit" class="login-button link tulisanCoklat" value="login"  onclick="checkValidation()">Log in</button>
@@ -63,21 +62,15 @@
             }else{
                 event.preventDefault();
                 if(!checkUName()){
-                    idU.innerHTML = "Username harus terdiri lebih dari 8 karakter";
-                    setError(user, idU);
+                    isiError.innerHTML = "Username harus terdiri lebih dari 8 karakter";
+                    setError(user, isiError);
                 }
                 if(!checkPw()){
-                    idPw.innerHTML = "Password harus terdiri lebih dari 8 karakter";
-                    setError(pass, idPw);
+                    isiErrorPass.innerHTML = "Password harus terdiri lebih dari 8 karakter";
+                    setError(pass, isiErrorPass);
                 }
                 return false;
             }
-        }
-
-        function wrongPassword(){
-            setError(user,idPw);
-            idPw.innerHTML = "Password salah";
-            return false;
         }
 
         function errorHandler(){
@@ -98,12 +91,12 @@
             const username = user.value.trim();
 
             if(username === '' || username.length < 8){
-                setError(user,idU);
-                idU.innerHTML = "Username harus terdiri lebih dari 8 karakter";
+                setError(user,isiError);
+                isiError.textContent = "Username harus terdiri lebih dari 8 karakter";
                 return false;
             }
             else {
-                setSuccess(user, idU);
+                setSuccess(user, isiError);
                 return true;
             }
         }
@@ -112,12 +105,12 @@
             const password = pass.value.trim();
 
             if(password.length < 8 || password === ''){
-                idPw.innerHTML = "Password harus terdiri lebih dari 8 karakter";
-                setError(pass, idPw);
+                isiErrorPass.textContent = "Password harus terdiri lebih dari 8 karakter";
+                setError(pass, isiErrorPass);
                 return false;
             }
             else {
-                setSuccess(pass, idPw);
+                setSuccess(pass, isiErrorPass);
                 return true;
             }
         }
