@@ -1,0 +1,188 @@
+.allMid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 350px;
+    width: 100%;
+}
+
+.inline {
+    display: inline-block;
+}
+
+/* styling page homeAdmin.php
+--------------------
+ */
+#contentMainPage {
+    padding-top: 150px;
+}
+.content1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3.5%;
+}
+.content1-kiri {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content1-kanan {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content1-quote {
+    width: 80%;
+    font-size: 20px;
+}
+.content1-button {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    background: #FFDEDE;
+    border-radius: 30px;
+    margin-top: 20px;
+    border: none;
+    text-decoration: none;
+    color:  #432F2F;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.content1-button:hover {
+    transition: 1s;
+    background-color: #CB6F6F;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    color: white;
+    cursor: pointer;
+}
+.content1-image {
+    width: 95%;
+    height: 95%;
+}
+
+.content2 {
+    display: flex;
+    background-color: white;
+}
+
+.content2-kiri {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.content2-tengah {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #FFC0C0;
+}
+.content2-image {
+    width: 80%;
+    height: 85%;
+}
+.content2-kanan {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.pembatasDashed {
+    border-top: 5px dashed white;
+    border-bottom: none;
+}
+.content3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 85px;
+    margin-top: 50px;
+    padding-top: 15px;
+}
+.content3-kiri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+.content3-image {
+    width: 90%;
+    height: 90%;
+}
+.content3-kanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 30px;
+}
+.content3-aboutUs {
+    width: 70%;
+}
+
+.content4 {
+    background-color: #FFC0C0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+.subContent4{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 20px;
+}
+.content4-kiri{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+}
+.content4-tengah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+}
+
+.content4-kanan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+}
+
+.pp {
+    border-radius: 80px;
+    width: 20%;
+    height: 20%;
+}

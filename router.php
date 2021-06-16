@@ -63,6 +63,11 @@
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->view_editProfile();
                 break;
+            case $baseURL.'/indexAdmin':
+                require_once "control/indexAdminController.php";
+                $idxCtrl = new indexAdminController();
+                echo $idxCtrl->view_mainpageAdmin();
+                break;
             default :
                 echo '404 not found';
                 break;
