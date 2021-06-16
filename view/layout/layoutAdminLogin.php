@@ -9,7 +9,7 @@
     <body>
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
-    		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! - Admin</h1>
+    		<h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
     	</div>
         
         <div class="nav">

@@ -68,6 +68,11 @@
                 $idxCtrl = new indexAdminController();
                 echo $idxCtrl->view_mainpageAdmin();
                 break;
+            case $baseURL.'/indexTeacher':
+                require_once "control/indexTeacherController.php";
+                $idxCtrl = new indexTeacherController();
+                echo $idxCtrl->view_mainpageTeacher();
+                break;
             default :
                 echo '404 not found';
                 break;
