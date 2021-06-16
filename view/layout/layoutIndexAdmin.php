@@ -2,14 +2,14 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="View/layout/style/indexAdmin.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
-        <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/indexAdmin.css"/>
     </head>
     <body>
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
-    		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
+    		<h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
 
             <!-- muncul ilangin tombol login  -->
             <?php 
@@ -17,7 +17,8 @@
                 $statusLogin = 0;
 
                 if(isset($_SESSION['status']) == false){
-                    echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
+                    // echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
+                    echo '<button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Admin</button>';
                     session_destroy();
                 }else{
                     $saldoUser = $_SESSION['saldo'];
