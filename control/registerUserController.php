@@ -42,7 +42,7 @@
 
                 $query = "SELECT id_pengguna FROM Pengguna WHERE nama_user = '$username' OR email = '$email'";
                 $adaTidak = $this->db->executeSelectQuery($query);
-
+                
                 //kalau username sudah terdaftar
                 if(empty($adaTidak) == false){
                     //JS biar ga redirecting tp muncul notif uname gaada
@@ -51,7 +51,7 @@
 
                 //kalau username belum terdaftar
                 }else{
-                    $profpic = "view/images/profilepicture/baseProfilePic";
+                    $profpic = "baseProfilePic.jpg";
                     $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture) VALUES (3, '$username', '$realname' ,'$email','$password', '$profpic')";
                     $this->db->executeNonSelectQuery($query);
 

@@ -54,6 +54,12 @@
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->signOut();
                 break;
+
+            case $baseURL.'/profileEdit':
+                require_once "control/userProfileController.php";
+                $userProfileCtrl = new userProfileController();
+                echo $userProfileCtrl->view_editProfile();
+                break;
             default :
                 echo '404 not found';
                 break;
@@ -74,6 +80,13 @@
                 require_once "control/userTopupController.php";
                 $userTopupCtrl = new userTopupController();
                 echo $userTopupCtrl->topupSaldo();
+                break;
+            case $baseURL.'/userProfileEdit':
+                require_once "control/userProfileController.php";
+                $userTopupCtrl = new userProfileController();
+                $userTopupCtrl->editProfile();
+
+                header('Location: userProfile');
                 break;
             default :
                 echo '404 not found';
