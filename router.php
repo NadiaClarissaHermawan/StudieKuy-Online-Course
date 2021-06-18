@@ -30,8 +30,8 @@
                 echo $loginCtrl->view_teacherLoginPage();
                 break;
             case $baseURL.'/userTeacherRegister':
-            	require_once "control/registerUserController.php";
-            	$registerCtrl = new registerUserController();
+            	require_once "control/registerTeacherController.php";
+            	$registerCtrl = new registerTeacherController();
                 echo $registerCtrl->view_registerTeacherUserPage();
                 break;
             case $baseURL.'/courses':
@@ -72,6 +72,11 @@
                 require_once "control/indexTeacherController.php";
                 $idxCtrl = new indexTeacherController();
                 echo $idxCtrl->view_mainpageTeacher();
+                break;
+            case $baseURL.'/verifikasiAdmin':
+                require_once "control/verifikasiAdminController.php";
+                $idxCtrl = new verifikasiAdminController();
+                echo $idxCtrl->view_verifpageAdmin();
                 break;
             default :
                 echo '404 not found';

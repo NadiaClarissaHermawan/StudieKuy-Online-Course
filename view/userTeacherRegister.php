@@ -7,8 +7,15 @@
     </div>
 
 	<form method="POST" action="userTeacherRegister">
+		<?php
+			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 0){
+				echo ' <div id="error" hidden >Username duplicate</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 00){
+				echo ' <div id="error" hidden >Email duplicate</div>';
+			}
+		?>
 		<div id="main" style="margin-top: 170px;">
-			<img class="imgLogin" src="view/images/loginpotongan.png">
+			<img class="imgLogin"  src="view/images/loginTeacher.jpg">
 			<div class="contentLogin">
 				<div class="rowLogin tulisanCoklat">
 					<h1><label for="uJudul" class="txt hurufSedang">Teacher's Register</label></hi>
@@ -40,13 +47,21 @@
 	                <span class="errorMessage" id="addrError">Address harus diisi!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat">
-					<label for="ucity" class="txt hurufSedang">City</label>
+				<div class="rowLogin tulisanCoklat" style="width: 61%;">
+					<label for="sel" class="txt hurufSedang">City</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="text" class="kotakInput" id="ucity" name="ucity" placeholder="Enter city" oninput="checkCity()" />
+					<div class="">
+						<select id="sel" size = "1" name="ucity" class="input-option">
+							<?php 
+								foreach($result as $key => $row){
+									echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
+								}
+							?>
+						</select>
+					</div>
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="cityError">Kota harus diisi!</span>
+	                <span class="errorMessage" id="cityError" style="margin-left: 0%;">Kota harus diisi!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
