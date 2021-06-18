@@ -10,7 +10,6 @@
                     if(isset($_SESSION['unameNotFound']) == false){       
                 ?>
                     <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()"/>  
-                        
                 <?php
                     }else if(isset($_SESSION['unameNotFound']) && $_SESSION['unameNotFound']  == 0){
                         session_destroy();

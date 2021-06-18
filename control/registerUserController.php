@@ -45,31 +45,34 @@
             $address = $_POST['uaddress'];
             $kota = $_POST['ucity'];
 
+            $username = $this->db->escapeString($username);
+            $realname = $this->db->escapeString($realname);
+            $password = $this->db->escapeString($password);
+            $email = $this->db->escapeString($email);
+            $phone = $this->db->escapeString($phone);
+            $address = $this->db->escapeString($address);
+            $kota = $this->db->escapeString($kota);
+
             //cek validitas input
-            if(isset($_POST['registerButton']) && isset($username) && $username!=""
+            if(isset($_POST['registerButton']) && isset($username) && $username!="" 
             && isset($password) && $password!= "" && isset($email) && $email !="" 
             && isset($phone) && $phone!= "" && isset($address) && $address!= "" && isset($kota) && $kota!=""
             && isset($realname) && $realname!=""){
 
-                $username = $this->db->escapeString($username);
-                $realname = $this->db->escapeString($realname);
-                $password = $this->db->escapeString($password);
-                $email = $this->db->escapeString($email);
-                $phone = $this->db->escapeString($phone);
-                $address = $this->db->escapeString($address);
-                $kota = $this->db->escapeString($kota);
+                //cek apakah uname & email sdh ada ato blm
+                $queryUname = "SELECT id_pengguna
+                        FROM pengguna
+                        WHERE nama_user = '$username'
+                        ";
+                $resQueryUname = $this->db->executeSelectQuery($queryUname);
+                $queryEmail = "SELECT id_pengguna
+                                FROM pengguna
+                                WHERE email = '$email'
+                            ";
+                $resQueryEmail = $this->db->executeSelectQuery($queryEmail);
 
-                $query = "SELECT id_pengguna FROM Pengguna WHERE nama_user = '$username' OR email = '$email'";
-                $adaTidak = $this->db->executeSelectQuery($query);
-                
-                //kalau username sudah terdaftar
-                if(empty($adaTidak) == false){
-                    //JS biar ga redirecting tp muncul notif uname gaada
-                    var_dump("username sudah terdaftar");
-                    die;
-
-                //kalau username belum terdaftar
-                }else{
+                //belum ada
+                if(empty($resQueryUname) && empty($resQueryEmail)){
                     $profpic = "baseProfilePic.jpg";
                     $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture) VALUES (3, '$username', '$realname' ,'$email','$password', '$profpic')";
                     $this->db->executeNonSelectQuery($query);
@@ -83,6 +86,24 @@
 
                     header('Location: userLogin');
                     die;
+                
+                //ada duplikasi
+                }else{
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    
+                    //uname duplicate
+                    if(empty($resQueryEmail)){
+                        $_SESSION['duplicate'] = 0;
+                    }
+
+                    //email duplicate
+                    if(empty($resQueryUname)){
+                        $_SESSION['duplicate'] = 00;
+                    }
+
+                    header('Location: userRegister');
                 }
             }
         }

@@ -14,7 +14,7 @@
 
     <div class="content1">
         <?php
-            $pic = 'view/images/profilepicture/'.$_SESSION['profpic'];
+            $pic = 'view/images/profilepicture/'.$result[0]->getProfpic();
             echo '<img src="'.$pic.'" class="content1-image content1-kiri">';
         ?>
         <div class="content1-kanan tulisanPutih hurufBesar">
@@ -23,42 +23,35 @@
                     <td>Username</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$_SESSION['uname'].'</td>';
+                        echo '<td>'.$result[0]->getUsername().'</td>';
                     ?>
                 </tr>
                 <tr>
                     <td>Name</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$_SESSION['realuname'].'</td>';
+                        echo '<td>'.$result[0]->getRealname().'</td>';
                     ?>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$_SESSION['email'].'</td>';
+                        echo '<td>'.$result[0]->getEmail().'</td>';
                     ?>
                 </tr>
                 <tr>
                     <td>Address</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$_SESSION['alamat'].'</td>';
+                        echo '<td>'.$result[0]->getAddress().'</td>';
                     ?>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$_SESSION['phone'].'</td>';
-                    ?>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td>:</td>
-                    <?php   
-                        echo '<td>'.$_SESSION['pass'].'</td>';
+                        echo '<td>'.$result[0]->getPhone().'</td>';
                     ?>
                 </tr>
             </table>

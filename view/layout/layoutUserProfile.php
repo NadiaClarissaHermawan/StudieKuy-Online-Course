@@ -12,8 +12,13 @@
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
 
             <?php 
-                $saldoUser = $_SESSION['saldo'];
+                $saldoUser = $result[0]->getSaldo();
+                if($saldoUser == 0.000){
+                    $saldoUser = 0;
+                }
+                $statusLogin = $_SESSION['status'];
                 echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
+               
             ?>
     	</div>
         

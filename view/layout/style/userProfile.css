@@ -21,7 +21,7 @@
     font-size: 3vw;
     padding-left: 15%;
     margin: 0px;
-    padding-top: 1%;
+    padding-top: 0.1%;
 }
 
 .title-tengah {
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 3.5%;
     margin-top: 3%;
     margin-left: 5%;
@@ -85,3 +85,44 @@ td {
 	padding: 15px;
 }
 
+.profile-title {
+    width: 40%;
+}
+
+form {
+    width: 55%;
+}
+
+.edit-input-box{
+    background-color:  #CB6F6F;
+    font-size: 1.2vw;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+#submit-edit-profile {
+    background-color: #CB6F6F;
+    font-weight:100;
+    color:white;
+    padding: 10px;
+    border: none;
+    font-size: 1.5vw;
+    border-radius: 18px;
+}
+
+#submit-edit-profile:hover {
+    background-color: #FFC0C0;
+    cursor: pointer;
+    color: #432F2F;
+    transition: 0.5s;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+
+#gantiprofpic {
+    margin-top: 4%;
+    font-family: Reem Kufi;
+    font-size: 1.4vw;
+    width: 17.2%;
+}

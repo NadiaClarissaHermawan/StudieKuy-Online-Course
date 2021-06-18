@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <body>
 	<form method="POST" action="userRegister">
+		<!-- kalau  -->
+		<?php
+			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 0){
+				echo ' <div id="error" hidden >Username duplicate</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 00){
+				echo ' <div id="error" hidden >Email duplicate</div>';
+			}
+		?>
 		<div id="main" style="margin-top: 180px;">
 			<img class="imgLogin" src="view/images/loginpotongan.png">
 			<div class="contentLogin" style="margin-bottom: 50px;">
@@ -10,7 +18,7 @@
 					<input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
+	                <span class="errorMessage" id="userError"></span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -63,7 +71,7 @@
 					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail" oninput="checkEmail()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="emailError" style="margin-left: 1%;">Email tidak valid!</span>
+	                <span class="errorMessage" id="emailError" style="margin-left: 1%;"></span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -82,7 +90,7 @@
 		</div>
 	</form>
     <script>
-
+		//script untuk scroll select-option kota
 		document.getElementById('sel').addEventListener('click', onClickHandler);
 		document.getElementById('sel').addEventListener('mousedown', onMouseDownHandler);
 
@@ -114,12 +122,13 @@
         const email = document.getElementById('uemail');
         const phone = document.getElementById('uphone');
         
-        const idU = document.getElementById('userError');
+        let idU = document.getElementById('userError');
 		const idName = document.getElementById('nameError');
         const idPw = document.getElementById('pwError');
         const idAddr = document.getElementById('addrError');
-        const idEmail = document.getElementById('emailError');
+        let idEmail = document.getElementById('emailError');
         const idPhone = document.getElementById('phoneError');
+		const dupli = document.getElementById('error');
 
         function checkValidation() {
         	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkURealName()){
@@ -128,6 +137,7 @@
         	else{
         		event.preventDefault();
                 if(!checkUName()){
+					idU.textContent = "Username harus terdiri lebih dari 8 karakter!";
                     setError(user, idU);
                 }
 				if(!checkURealName()){
@@ -140,6 +150,7 @@
                     setError(addr, idAddr);
                 }
                 if(!checkEmail()){
+					idEmail.textContent = "Email tidak valid!";
                     setError(email, idEmail);
                 }
                 if(!checkPhone()){
@@ -148,10 +159,24 @@
                 return false;
         	}
         }
+		
+		function errorHandler(){
+			if(dupli.textContent === 'Username duplicate'){
+				idU.textContent = 'Username sudah digunakan';
+				idU.classList.remove('errorMessage');
+				dupli.textContent = "";
+			}else if(dupli.textContent === 'Email duplicate'){
+				idEmail.textContent = 'Email sudah digunakan';
+				idEmail.classList.remove('errorMessage');
+				dupli.textContent = "";
+			}
+		}
+
         function checkUName() {
             const username = user.value.trim();
 
             if(username === '' || username.length < 8){
+				idU.textContent = 'Username harus terdiri lebih dari 8 karakter';
                 setError(user, idU);
                 return false;
             }
@@ -205,6 +230,7 @@
         	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
 
         	if(!emailUser.match(emailFormat)){ 
+				idEmail.textContent = "Email tidak valid !"
         		setError(email, idEmail);
         		return false;
         	}
@@ -235,5 +261,7 @@
             input.className = 'kotakInput';
             idInput.className = 'errorMessage';
         }
+
+		errorHandler();
     </script>
 </body>

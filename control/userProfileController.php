@@ -12,7 +12,32 @@
         }
 
         public function view_userProfile(){
-            return View::createView('userProfile.php', []);
+            $result = $this->getUserProfile();
+            return View::createView('userProfile.php', [
+                "result"=>$result
+            ]);
+        }
+
+        public function getUserProfile(){
+            $id = $_SESSION['id_pengguna'];
+            $query = "SELECT nama_user, real_name, email, profile_picture, pass, saldo, kontak, alamat
+                      FROM pengguna p INNER JOIN member m
+                      ON p.id_pengguna = m.id_pengguna
+                      WHERE m.id_pengguna = '$id' 
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+
+            $saldo = 0;
+            if($resQuery[0]['saldo'] == '0.000'){
+                $saldo = 0;
+            }else{
+                $saldo = $resQuery[0]['saldo'];
+            }
+
+            foreach($resQuery as $key=> $value){
+                $result[] = new Member ($value['nama_user'], $value['real_name'], $value['pass'], $value['email'], $value['kontak'], $value['alamat'], $saldo, $value['profile_picture']);
+            }
+            return $result;
         }
 
         public function signOut(){
