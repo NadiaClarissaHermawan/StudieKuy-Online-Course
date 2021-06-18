@@ -7,8 +7,15 @@
     </div>
 
 	<form method="POST" action="userTeacherRegister">
+		<?php
+			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 0){
+				echo ' <div id="error" hidden >Username duplicate</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 00){
+				echo ' <div id="error" hidden >Email duplicate</div>';
+			}
+		?>
 		<div id="main" style="margin-top: 170px;">
-			<img class="imgLogin" src="view/images/loginpotongan.png">
+			<img class="imgLogin"  src="view/images/loginTeacher.jpg">
 			<div class="contentLogin">
 				<div class="rowLogin tulisanCoklat">
 					<h1><label for="uJudul" class="txt hurufSedang">Teacher's Register</label></hi>
