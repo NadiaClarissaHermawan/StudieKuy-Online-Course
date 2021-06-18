@@ -14,13 +14,22 @@
     <div class="content1">
         <div class="content1-kiri-edit">
             <?php
+                if(session_status() == PHP_SESSION_NONE){
+                    session_start();
+                }
                 $pic = 'view/images/profilepicture/'.$result[0]->getProfpic();
-                echo '<img src="'.$pic.'" class="content1-image ">';  
+                echo '<img id="gambar" src="'.$pic.'" class="content1-image ">'; 
             ?>
-            <input type="file" id="gantiprofpic" style="display:none" enctype="multipart/form-data"/>
-            <input type="button" value="Upload Picture" class="tulisanPutih edit-input-box" style="margin-top: 5%;" onclick="document.getElementById('gantiprofpic').click();" />
+            <form id="formUpload" enctype="multipart/form-data">
+                Photo : <input type="file" name="file">
+                <input type="submit" value="Upload">
+            </form>
+            <!-- <form id="formUpload" enctype="multipart/form-data"> -->
+                <!-- <input type="file" id="gantiprofpic"  name="file"/> -->
+                <!-- <input type="submit" id="profpic-button" value="Upload" class="tulisanPutih edit-input-box" style="margin-top: 5%;"/> -->
+            <!-- </form>     -->
         </div>
-        <form method="post" action="userProfileEdit"  enctype="multipart/form-data" style="display: flex;">
+        <!-- <form method="post" action="userProfileEdit" style="display: flex;">
             <div class="content1-tengah-edit tulisanPutih hurufBesar">
                 <table class="profileTable">
                     <tr>
@@ -70,11 +79,37 @@
             <div class="content1-kanan-edit tulisanPutih hurufBesar">
                 <button type="submit" class="tulisanCoklat" id="submit-edit-profile">Submit</button>
             </div>
-        </form>
+        </form> -->
     </div>    
 </div>
 
-<form method="POST" action="userProfileEdit" enctype="multipart/form-data" style="margin-top: 150px;">
-    <input type="file" name="foto"/>
-    <button type="submit">Submit</button>
-</form>
+<script defer>
+    <?php var_dump("anything"); die;?>
+	let formData = new FormData();
+	const fil = document.querySelector('input[type="file"]');
+
+	fil.onchange = function(){
+		//ambil disini & masukin ke formData
+		formData.append('file', fil.files[0]);
+
+		//proses AJAX fetch
+		fetch('uploadFile', {
+			method: 'POST',
+			body: formData
+		})
+		
+		//notif aja
+		.then(response => response.json())
+		.then(response => console.log('Success:',JSON.stringify(response)))
+		.then(result =>{
+			console.log("success", result);
+		})
+		.catch(error =>{
+			console.log("error", error);
+		})
+
+		let gambar = document.getElementById("gambar");
+		gambar.src = "/TugasBesar/view/images/profilepicture/".<?php echo $_SESSION["id_pengguna"]?>.".jpg";
+        console.log(gambar.src);
+	}
+</script>
