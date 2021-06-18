@@ -13,7 +13,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav" id="verif">Verifikasi </a>
+            <a href="" class="menuNav" id="verif">Verification </a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
                 if(isset($_SESSION['status'])){
