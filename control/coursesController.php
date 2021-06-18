@@ -30,13 +30,8 @@
                 ]);
             
             //belum login
-            }else{
-                session_destroy();
-                return View::createView('index.php', []);
             }
-            return View::createView('courses.php', [
-
-            ]);
+            return View::createView('courses.php', []);
         }
     }
 ?>
