@@ -1,13 +1,35 @@
-/*
-Styling FAQ page
-------------------------------------
-*/
-
+table {
+    margin-left: 220px;
+}
+.container {
+    margin-top: 150px;
+    height: 100%;
+    flex-direction: column;
+    padding: 50px;
+    padding-left: 25%;
+    z-index: 900;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #FFC0C0;
+    border-radius: 20px;
+    width: 70%;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-left: 0px;
+}
 .talk-bubble {
-    margin: 40px;
-    width: 550px;
-    height: auto;
-    background-color: lightyellow;
+	margin: 40px;
+    display: inline-block;
+    position: relative;
+	width: 50%;
+	height: auto;
+	background-color: lightyellow;
 }
 .round{
     border-radius: 30px;
@@ -16,26 +38,27 @@ Styling FAQ page
 
 }
 
-.talktext {
-    padding: 20px;
-    text-align: left;
-    font-size: 20px;
-}
-.talktext p {
+.talktext{
+    padding: 1em;
+      text-align: left;
+    line-height: 1.5em;
+  }
+.talktext p{
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
-    display: inline-block;
-    margin-left: 10px;
 }
 .tri-right.right-in:after {
     content: ' ';
+    position: absolute;
     width: 0;
     height: 0;
     left: auto;
     right: -20px;
-    top: 25px;
+    top: 38px;
     bottom: auto;
     border: 12px solid;
-    border-color: #DB6E61 transparent transparent #DB6E61;
+    border-color: lightyellow transparent transparent lightyellow;
 }
 
 .profilePic {
@@ -45,6 +68,7 @@ Styling FAQ page
 }
 .tri-right.left-in:after{
     content: ' ';
+    position: absolute;
     width: 0;
     height: 0;
     left: -20px;
@@ -56,10 +80,11 @@ Styling FAQ page
 }
 
 #answer {
+    float: right;
     background-color: #DB6E61;
 }
 .talktext.answer {
-    /*float: right;*/
+    float: right;
 }
 .talktext.answer p {
     margin-top: 15px;
@@ -73,7 +98,4 @@ Styling FAQ page
 .talktext.question img {
     float: left;
     top: 0px;
-}
-.question2 {
-    
 }

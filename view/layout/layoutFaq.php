@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="View/layout/style/globalNeeds.css"/>
     </head>
     <body>
-    	<div class="header">
+    	<div class="header" style="z-index: 850;">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
 
@@ -27,7 +27,7 @@
             ?>
     	</div>
                 
-        <div class="nav">
+        <div class="nav" style="z-index: 850">
             <a href="courses" class="menuNav">Courses</a>
             <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
             <a href="faq" class="menuNavNow">FAQ</a> 

@@ -28,9 +28,8 @@
                 return View::createView('courses.php', [
                     "result" => $result
                 ]);
-            
-            //belum login
             }
+            
             return View::createView('courses.php', []);
         }
     }

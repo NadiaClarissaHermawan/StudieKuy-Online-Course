@@ -1,12 +1,43 @@
-<div style="height: 1500px;">
+<div class="container">
+    <div class="container-1">
+        <div class="talk-bubble tri-right round left-in">
+        <div class="talktext question">
+            <img src="view/images/ppTasha.jpg" class="profilePic" style="margin-right: 10px;">
+            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
+        </div>
+        </div>
+        <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">
+        <div class="talktext answer">
+            <img src="view/images/profpicAdmin.jpg" class="profilePic">
+            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- lanjut container kedua  -->
+    <div class="container-1" style="margin-top: 2%;">
+        <div class="talk-bubble tri-right round left-in">
+        <div class="talktext question">
+            <img src="view/images/ppTasha.jpg" class="profilePic" style="margin-right: 10px;">
+            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
+        </div>
+        </div>
+        <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">
+        <div class="talktext answer">
+            <img src="view/images/profpicAdmin.jpg" class="profilePic">
+            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
+        </div>
+        </div>
+    </div>
+    
     <div class="allMid">
-        <span class="talk-bubble tri-right round left-in" id="question" style="width: 50%;">
+        <span class="talk-bubble tri-right round left-in" id="question" style="width: 40%;">
             <div class="talktext question">
                 <img src="view/images/profpic1.jpg" class="profilePic">
                 <p>Mengapa bumi bulat?</p>
             </div>
         </span>
-        <span class="talk-bubble tri-right round right-in" id="answer" style="width: 50%;">
+        <span class="talk-bubble tri-right round right-in" id="answer" style="width: 40%;">
             <div class="talktext answer" >
                 <p>Karena tidak datar</p>
                 <img src="view/images/profpicAdmin.jpg" class="profilePic">
