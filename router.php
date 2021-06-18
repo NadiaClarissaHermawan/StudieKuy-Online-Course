@@ -57,7 +57,8 @@
             case $baseURL.'/adminLogin':
                 require_once "control/adminLoginController.php";
                 $loginCtrl = new adminLoginController();
-                echo $loginCtrl->view_adminLoginPage();
+                echo $loginCtrl->view_adminLoginpage();
+                break;
             case $baseURL.'/profileEdit':
                 require_once "control/userProfileController.php";
                 $userProfileCtrl = new userProfileController();
