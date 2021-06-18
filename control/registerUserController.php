@@ -92,18 +92,23 @@
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();
                     }
-                    
+                    var_dump($resQueryEmail);
+                    var_dump($resQueryUname);
+
+                    //both duplicate
+                    if(!empty($resQueryUname) && !empty($resQueryEmail)){
+                        $_SESSION['duplicate'] = "0";
+
                     //uname duplicate
-                    if(empty($resQueryEmail)){
-                        $_SESSION['duplicate'] = 0;
-                    }
-
+                    }else if(!empty($resQueryUname)){
+                        $_SESSION['duplicate'] = "00";
+                    
                     //email duplicate
-                    if(empty($resQueryUname)){
-                        $_SESSION['duplicate'] = 00;
+                    }else if(!empty($resQueryEmail)){
+                        $_SESSION['duplicate'] = "000";
                     }
-
                     header('Location: userRegister');
+                    die;
                 }
             }
         }

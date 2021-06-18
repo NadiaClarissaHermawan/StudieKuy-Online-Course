@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <body>
 	<form method="POST" action="userRegister">
-		<!-- kalau  -->
+		<!-- kalau  ada duplikasi-->
 		<?php
-			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 0){
-				echo ' <div id="error" hidden >Username duplicate</div>';
-			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 00){
-				echo ' <div id="error" hidden >Email duplicate</div>';
+			if (session_status() == PHP_SESSION_NONE) {
+				session_start();
+			}
+
+			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] === "0"){
+				session_destroy();
+				echo ' <div id="error" hidden >UsernameEmail</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] === "00"){
+				session_destroy();
+				echo ' <div id="error" hidden >Username</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] === "000"){
+				session_destroy();
+				echo ' <div id="error" hidden >Email</div>';
 			}
 		?>
 		<div id="main" style="margin-top: 180px;">
@@ -17,9 +26,7 @@
 					<span style="width: 7px;" class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
 				</div>
-				<div class="rowLogin">
-	                <span class="errorMessage" id="userError"></span>
-	            </div>
+				<div class="rowLogin errorMessage" id="userError"style="height: 20px; color:red"></div>
 
 				<div class="rowLogin tulisanCoklat">
 					<label for="urealname" class="txt hurufSedang">Name</label>
@@ -70,9 +77,7 @@
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail" oninput="checkEmail()" />
 				</div>
-				<div class="rowLogin">
-	                <span class="errorMessage" id="emailError" style="margin-left: 1%;"></span>
-	            </div>
+				<div class="rowLogin errorMessage" id="emailError"style="height: 20px; color:red; margin-left:0px"></div>
 
 				<div class="rowLogin tulisanCoklat">
 					<label for="uphone" class="txt hurufSedang">Phone</label>
@@ -161,14 +166,32 @@
         }
 		
 		function errorHandler(){
-			if(dupli.textContent === 'Username duplicate'){
-				idU.textContent = 'Username sudah digunakan';
+			console.log(dupli.textContent);
+			if(dupli.textContent === 'UsernameEmail'){
+				idU.textContent = 'Username sudah terdaftar !';
+				idU.style.marginLeft = "4.5%";
 				idU.classList.remove('errorMessage');
-				dupli.textContent = "";
-			}else if(dupli.textContent === 'Email duplicate'){
-				idEmail.textContent = 'Email sudah digunakan';
+
+				idEmail.textContent = 'Email sudah terdaftar !';
 				idEmail.classList.remove('errorMessage');
+				idEmail.style.marginLeft = "2.4%";
+
 				dupli.textContent = "";
+
+			}else if(dupli.textContent === 'Username'){
+				idU.textContent = 'Username sudah terdaftar !';
+				idU.classList.remove('errorMessage');
+				idU.style.marginLeft = "4.5%";
+				dupli.textContent = "";
+
+			}else if(dupli.textContent = 'Email'){
+				idEmail.textContent = 'Email sudah terdaftar !';
+				idEmail.classList.remove('errorMessage');
+				idEmail.style.marginLeft = "2.4%";
+				dupli.textContent = "";
+
+			}else{
+				return;
 			}
 		}
 
