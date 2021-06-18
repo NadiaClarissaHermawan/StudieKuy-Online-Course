@@ -1,6 +1,17 @@
+@font-face {
+	font-family: Reem Kufi;
+	src:url(fonts/ReemKufi-Regular.ttf);
+}
+
 table {
     margin-left: 220px;
 }
+
+p{
+    font-family: Reem Kufi;
+    font-size: 20px;
+}
+
 .container {
     margin-top: 150px;
     height: 100%;
@@ -99,3 +110,4 @@ table {
     float: left;
     top: 0px;
 }
+
