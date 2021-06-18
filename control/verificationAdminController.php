@@ -1,8 +1,8 @@
 <?php 
-    require_once "control/services/viewVerifikasiAdmin.php";
+    require_once "control/services/viewVerificationAdmin.php";
     require_once "control/services/mysqlDB.php";
 
-    class verifikasiAdminController{
+    class verificationAdminController{
         protected $db;
 
         public function __construct(){
@@ -10,7 +10,7 @@
         }
 
         public function view_verifpageAdmin(){
-            return View::createView('verifikasiAdmin.php', []);
+            return View::createView('verificationAdmin.php', []);
         }
     }
 ?>

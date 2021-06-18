@@ -1,0 +1,112 @@
+#judul {
+    width: 500px;
+}
+
+table, th, tr, td {
+    border: 2px solid #000000;
+    background-color: #FFFFFF;
+}
+table {
+    border-collapse: collapse;
+}
+th {
+    padding: 15px;
+    font-size: 20px;
+}
+
+td {
+    padding: 5px;
+    font-size: 18px;
+}
+.content1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.button {
+    width: auto;
+    height: 50px;
+    border-radius: 20px;
+    /*margin-top: 10%;*/
+    border: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+.content1-button:hover {
+    transition: 1s;
+    background-color: #CB6F6F;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    color: white;
+    cursor: pointer;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.button-kiri {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 5%;
+    background-color: #BFEA88;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Reem Kufi;
+    padding: 10px;
+}
+.button-kanan {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E16354;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Reem Kufi;
+    padding: 10px;
+}
+.button-verified {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #54D9E1;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Reem Kufi;
+    padding: 10px;
+}
+.button-rejected {
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F17400;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Reem Kufi;
+    padding: 10px;
+}
