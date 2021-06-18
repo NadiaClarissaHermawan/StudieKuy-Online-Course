@@ -23,6 +23,7 @@
                 <img src="view/images/ppRio.png" class="profilePic" style="margin-right: 10px;">
                 <br>
                 <p>Apakah benar panda itu beruang?</p>
+                <!-- <br> -->
             </div>
         </div>
         <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">
@@ -40,6 +41,7 @@
             <img src="view/images/ppNadia.png" class="profilePic" style="margin-right: 10px;">
             <br>
             <p>Mengapa pohon tidak berjalan?</p>
+            <!-- <br> -->
         </div>
         </div>
         <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">

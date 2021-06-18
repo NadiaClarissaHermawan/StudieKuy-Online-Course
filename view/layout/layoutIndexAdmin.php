@@ -37,7 +37,7 @@
                 }
             ?>
             <div class="menuNavKanan">
-                <a href="indexAdmin" class="material-icons md-36">home</a>
+                <a href="verificationAdmin" class="material-icons md-36">notifications</a>
                 <?php 
                     //jgn lupa ini status udah login, di add di header controller bersangkutan
                     if(isset($_SESSION['status'])){
