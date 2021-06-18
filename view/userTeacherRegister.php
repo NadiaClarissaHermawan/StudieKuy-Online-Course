@@ -40,13 +40,21 @@
 	                <span class="errorMessage" id="addrError">Address harus diisi!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat">
-					<label for="ucity" class="txt hurufSedang">City</label>
+				<div class="rowLogin tulisanCoklat" style="width: 61%;">
+					<label for="sel" class="txt hurufSedang">City</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="text" class="kotakInput" id="ucity" name="ucity" placeholder="Enter city" oninput="checkCity()" />
+					<div class="">
+						<select id="sel" size = "1" name="ucity" class="input-option">
+							<?php 
+								foreach($result as $key => $row){
+									echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
+								}
+							?>
+						</select>
+					</div>
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="cityError">Kota harus diisi!</span>
+	                <span class="errorMessage" id="cityError" style="margin-left: 0%;">Kota harus diisi!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
