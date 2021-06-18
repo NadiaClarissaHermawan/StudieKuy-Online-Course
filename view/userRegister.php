@@ -156,6 +156,7 @@
                 }
                 if(!checkEmail()){
 					idEmail.textContent = "Email tidak valid!";
+					idEmail.style.marginLeft = "0px";
                     setError(email, idEmail);
                 }
                 if(!checkPhone()){

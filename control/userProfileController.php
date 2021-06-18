@@ -46,7 +46,10 @@
         }
 
         public function view_editProfile(){
-            return View::createView('userEditProfile.php', []);
+            $result = $this->getUserProfile();
+            return View::createView('userEditProfile.php', [
+                "result"=>$result
+            ]);
         }
 
         public function editProfile(){

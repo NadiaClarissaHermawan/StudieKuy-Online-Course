@@ -12,62 +12,65 @@
     <hr>
 
     <div class="content1">
-        <div class="content1-kiri">
+        <div class="content1-kiri-edit">
             <?php
-                $pic = 'view/images/profilepicture/'.$_SESSION['profpic'];
+                $pic = 'view/images/profilepicture/'.$result[0]->getProfpic();
                 echo '<img src="'.$pic.'" class="content1-image ">';  
             ?>
-            <input type="file" id="gantiprofpic" class="tulisanPutih edit-input-box" enctype="multipart/form-data"/>
+            <input type="file" id="gantiprofpic" style="display:none" enctype="multipart/form-data"/>
+            <input type="button" value="Upload Picture" class="tulisanPutih edit-input-box" style="margin-top: 5%;" onclick="document.getElementById('gantiprofpic').click();" />
         </div>
-        <div class="content1-kanan tulisanPutih hurufBesar">
-            <form method="post" action="userProfileEdit"  enctype="multipart/form-data">
+        <form method="post" action="userProfileEdit"  enctype="multipart/form-data" style="display: flex;">
+            <div class="content1-tengah-edit tulisanPutih hurufBesar">
                 <table class="profileTable">
                     <tr>
                         <td class="profile-title">Username</td>
                         <td>:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" value="'.$_SESSION['uname'].'"/></td>';
+                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" value="'.$result[0]->getUsername().'"/></td>';
                         ?>
                     </tr>
                     <tr>
                         <td class="profile-title">Name</td>
                         <td>:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" value="'.$_SESSION['realuname'].'"/></td>';
+                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" value="'.$result[0]->getRealname().'"/></td>';
                         ?>
                     </tr>
                     <tr>
                         <td class="profile-title">Email</td>
                         <td>:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" value="'.$_SESSION['email'].'"/></td>';
+                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" value="'.$result[0]->getEmail().'"/></td>';
                         ?>
                     </tr>
                     <tr>
                         <td class="profile-title">Address</td>
                         <td>:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" value="'.$_SESSION['alamat'].'"/></td>';
+                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" value="'.$result[0]->getAddress().'"/></td>';
                         ?>
                     </tr>
                     <tr>
                         <td class="profile-title">Phone Number</td>
                         <td>:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" value="'.$_SESSION['phone'].'"/></td>';
+                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" value="'.$result[0]->getPhone().'"/></td>';
                         ?>
                     </tr>
                     <tr>
                         <td class="profile-title">Password</td>
                         <td>:</td>
                         <?php   
-                            echo '<td><input type="password" class="edit-input-box tulisanPutih" value="'.$_SESSION['pass'].'"/></td>';
+                            echo '<td><input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" value="'.$result[0]->getPassword().'"/></td>';
                         ?>
                     </tr>
                 </table>
+            </div>
+            <div class="content1-kanan-edit tulisanPutih hurufBesar">
                 <button type="submit" class="tulisanCoklat" id="submit-edit-profile">Submit</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>    
 </div>
 
