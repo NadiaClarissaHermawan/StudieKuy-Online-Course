@@ -58,10 +58,9 @@
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
         const pass = document.getElementById('upass');
-        const idU = document.getElementById('userError');
-        const idPw = document.getElementById('pwError');
-        const userNotValid = document.getElementById('userNotValid');
-        const wrongPassword = document.getElementById('wrongPassword');
+        const err = document.getElementById('error');
+        let isiError = document.getElementById('userError');
+        let isiErrorPass = document.getElementById('pwError');
 
         function checkValidation() {
             if(checkUName() && checkPw()){
@@ -70,12 +69,28 @@
             }else{
                 event.preventDefault();
                 if(!checkUName()){
-                    setError(user, idU);
+                    isiError.innerHTML = "Username harus terdiri lebih dari 8 karakter";
+                    setError(user, isiError);
                 }
                 if(!checkPw()){
-                    setError(pass, idPw);
+                    isiErrorPass.innerHTML = "Password harus terdiri lebih dari 8 karakter";
+                    setError(pass, isiErrorPass);
                 }
                 return false;
+            }
+        }
+
+        function errorHandler(){
+            if(err.textContent === 'Username not found'){
+                isiError.textContent = 'Username not found !'; 
+                isiError.classList.remove('errorMessage');
+                err.textContent = "";
+            }else if(err.textContent === 'Wrong password'){
+                isiErrorPass.textContent = 'Wrong password !';
+                isiErrorPass.classList.remove('errorMessage');
+                err.textContent = "";
+            }else{
+                return;
             }
         }
 
@@ -83,11 +98,12 @@
             const username = user.value.trim();
 
             if(username === '' || username.length < 8){
-                setError(user, idU);
+                setError(user,isiError);
+                isiError.textContent = "Username harus terdiri lebih dari 8 karakter";
                 return false;
             }
             else {
-                setSuccess(user, idU);
+                setSuccess(user, isiError);
                 return true;
             }
         }
@@ -96,11 +112,12 @@
             const password = pass.value.trim();
 
             if(password.length < 8 || password === ''){
-                setError(pass, idPw);
+                isiErrorPass.textContent = "Password harus terdiri lebih dari 8 karakter";
+                setError(pass, isiErrorPass);
                 return false;
             }
             else {
-                setSuccess(pass, idPw);
+                setSuccess(pass, isiErrorPass);
                 return true;
             }
         }
@@ -113,4 +130,6 @@
             input.className = 'kotakInput';
             idInput.className = 'errorMessage';
         }
+
+        errorHandler();
 </script>
