@@ -73,6 +73,11 @@
                 $idxCtrl = new indexTeacherController();
                 echo $idxCtrl->view_mainpageTeacher();
                 break;
+            case $baseURL.'/verifikasiAdmin':
+                require_once "control/verifikasiAdminController.php";
+                $idxCtrl = new verifikasiAdminController();
+                echo $idxCtrl->view_verifpageAdmin();
+                break;
             default :
                 echo '404 not found';
                 break;

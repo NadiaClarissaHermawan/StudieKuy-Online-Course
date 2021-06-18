@@ -11,7 +11,7 @@
     display: inline-block;
 }
 
-/* styling page homeAdmin.php
+/* styling page indexAdmin.php
 --------------------
  */
 #contentMainPage {
@@ -19,6 +19,9 @@
 }
 #judul {
     width: 500px;
+}
+#home {
+    color: #CB6F6F;
 }
 .content1 {
     display: flex;
