@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <body>
-	<div class="nav">
+	<!-- <div class="nav">
         <a href="courses" class="menuNav">Courses</a>
         <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
         <a href="faq" class="menuNav">FAQ</a>
-    </div>
+    </div> -->
 
 	<form method="POST" action="userTeacherRegister">
 		<?php
@@ -200,7 +200,7 @@
         function checkCity() {
         	const cityName = city.value;
         	// cek city valid/ ga
-        	if(cityName === ''){ 
+        	if(cityName == ''){ 
         		setError(city, idCity);
         		return false;
         	}
@@ -239,7 +239,7 @@
 		function checkDiploma() {
         	const dipval = diploma.value;
         	
-        	if(dipval === ''){
+        	if(dipval == ''){
         		setError(diploma,idDIploma);
         		return false;
         	}
