@@ -1,5 +1,5 @@
 <div class="content1">
-    <div class="tulisanPutih hurufSedang">Top-Up Verification</div>
+    <div class="tulisanPutih hurufBesar">Top-Up Verification</div>
 </div>
 <div class="table">
     <table>

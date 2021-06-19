@@ -10,22 +10,7 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
-
-            <!-- muncul ilangin tombol login  -->
-            <?php 
-                session_start();
-                $statusLogin = 0;
-
-                if(isset($_SESSION['status']) == false){
-                    // echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
-                    echo '<button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Admin</button>';
-                    session_destroy();
-                }else{
-                    $saldoUser = $_SESSION['saldo'];
-                    $statusLogin = $_SESSION['status'];
-                    echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
-                }
-            ?>
+            <button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Admin</button>
         </div>
         
         <div class="nav">

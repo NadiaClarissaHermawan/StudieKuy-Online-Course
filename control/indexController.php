@@ -35,5 +35,31 @@
                 return View::createView('index.php', []);
             }
         }
+
+        public function view_coursesList(){
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            //sudah login
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                foreach($saldoUser as $key =>$value){
+                    $result[] = new Saldo($value['saldo']);
+                }
+                return View::createViewList('list.php', [
+                    "result" => $result
+                ]);
+            
+            //belum login
+            }else{
+                session_destroy();
+                return View::createViewList('list.php', []);
+            }
+        }
     }
 ?>

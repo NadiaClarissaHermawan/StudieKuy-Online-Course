@@ -111,12 +111,6 @@
                 $topupCtrl = new verificationTableController();
                 echo $topupCtrl->view_verifTopUp();
 
-            case $baseURL.'/verifikasiAdmin':
-                require_once "control/verifikasiAdminController.php";
-                $idxCtrl = new verificationAdminController();
-                echo $idxCtrl->view_verifpageAdmin();
-                break;
-
             case $baseURL.'/reportCourse':
                 require_once "control/reportController.php";
                 $courseCtrl = new reportController();
@@ -133,6 +127,12 @@
                 require_once "control/reportController.php";
                 $courseCtrl = new reportController();
                 echo $courseCtrl->view_courseTransactionReport();
+                break;
+
+            case $baseURL.'/coursesList':
+                require_once "control/indexController.php";
+                $idxCtrl = new indexController();
+                echo $idxCtrl->view_coursesList();
                 break;
 
             default :

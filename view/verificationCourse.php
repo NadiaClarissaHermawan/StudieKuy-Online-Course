@@ -1,5 +1,5 @@
 <div class="content1">
-    <div class="tulisanPutih hurufSedang">Course Transaction Verification</div>
+    <div class="tulisanPutih hurufBesar">Course Transaction Verification</div>
 </div>
 <div class="table">
     <table>

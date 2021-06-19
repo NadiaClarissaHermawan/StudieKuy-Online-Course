@@ -1,5 +1,5 @@
 <div class="content1">
-    <div class="tulisanPutih hurufSedang">Top Up Transaction Report</div>
+    <div class="tulisanPutih hurufBesar">Top Up Transaction Report</div>
 </div>
 <hr>
 <div class="content2 tulisanPutih">
