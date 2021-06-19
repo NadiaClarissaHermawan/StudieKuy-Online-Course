@@ -159,7 +159,7 @@
 		const idUpload = document.getElementById('uploadError');
 
         function checkValidation() {
-        	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkDiploma() && checkUpload()){
+        	if(checkUName() && checkPw() && checkAddress() && checkEmail() && checkPhone() && checkDiploma() && checkUpload()){
         		return true;
         	}
         	else{
@@ -261,18 +261,6 @@
         	}
         }
 
-        function checkCity() {
-        	const cityName = city.value;
-        	// cek city valid/ ga
-        	if(cityName == ''){ 
-        		setError(city, idCity);
-        		return false;
-        	}
-        	else {
-        		setSuccess(city, idCity);
-        		return true;
-        	}
-        }
 
         function checkEmail() {
         	const emailUser = email.value;
