@@ -1,5 +1,5 @@
 <?php
-    require_once "control/services/viewTeacherLoginRegister.php";
+    require_once "control/services/viewTeacherRegister.php";
     require_once "control/services/mysqlDB.php";
     require_once "model/kota.php";
 
