@@ -1,17 +1,11 @@
 <div class="content1">
     <div class="tulisanPutih hurufBesar">Attending Courses</div>
 </div>
-<!-- <div class="content2">
-    <div>
-        <div class="content2-kiri tulisanPutih hurufSedang">Java Basic Programming</div>
-        <div class="content2-kanan"><a href="" class="tulisanCoklat hurufKecil">Go to Course</a></div>
-    </div>
-</div> -->
-
 <div class="content2 tulisanPutih">
     <div class="content2-1 hurufSedang">Java Basic Programming</div>
     <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
 </div>
+<!-- Test Contoh -->
 <div class="content2 tulisanPutih">
     <div class="content2-1 hurufSedang">Python for Data Science</div>
     <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>

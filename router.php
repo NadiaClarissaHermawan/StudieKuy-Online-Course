@@ -135,6 +135,13 @@
                 echo $idxCtrl->view_coursesList();
                 break;
 
+            //Contoh halaman course tertentu misal nama course = Java Basic Programming
+            case $baseURL.'/JavaBasicProgramming':
+                require_once "control/indexController.php";
+                $idxCtrl = new indexController();
+                echo $idxCtrl->view_coursesDetail();
+                break;
+
             default :
                 echo '404 not found';
                 break;
