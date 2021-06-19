@@ -115,6 +115,7 @@
 			}
 			else {
 				el.className = '';
+				el.className += " input-option";
 				el.setAttribute('size', '1');
 			}
 		}
