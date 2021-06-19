@@ -13,7 +13,11 @@
     <div class="content1">
         <!-- update prof pic -->
         <div class="content1-kiri-edit">
-            
+            <img class="content1-image" src="/TugasBesar/view/images/profilepicture/<?php echo $result[0]->getProfpic()?>" id="gambar"/>
+            <form id="formUpload" enctype="multipart/form-data">
+                <input type="file" name="file"  id="baten">
+                <input type="submit" value="Upload">
+            </form>
         </div>
 
         <!-- update data diri -->
@@ -21,52 +25,82 @@
             <div class="content1-tengah-edit tulisanPutih hurufBesar">
                 <table class="profileTable">
                     <tr>
-                        <td class="profile-title">Username</td>
-                        <td>:</td>
+                        <td class="profile-title td-edit" style="padding: 0px;">Username</td>
+                        <td class="td-edit" >:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/></td>';
+                            echo 
+                            '<td class = "td-edit" >
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/>
+                                <div class="errorMessage edit-input-box" style="line-height:0px" id="userError"style=" color:red"></div>
+                            </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title">Name</td>
-                        <td>:</td>
+                        <td class="profile-title td-edit">Name</td>
+                        <td class="td-edit">:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="urealname" id="urealname" oninput="checkUNRealName()"  value="'.$result[0]->getRealname().'"/></td>';
+                            echo 
+                            '<td class = "td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result[0]->getRealname().'"/>
+                                <div class="rowLogin">
+                                        <span class="errorMessage" id="nameError" style="margin-left: 100px;">Nama harus lebih dari 3 karakter</span>
+                                </div>
+                            </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title">Email</td>
-                        <td>:</td>
+                        <td class="profile-title td-edit">Email</td>
+                        <td class="td-edit">:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uemail" id="uemail" oninput="checkEmail()" value="'.$result[0]->getEmail().'"/></td>';
+                            echo 
+                            '<td class = "td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uemail" id="uemail" oninput="checkEmail()" value="'.$result[0]->getEmail().'"/>
+                                <div class="rowLogin errorMessage" id="emailError" style=" color:red; margin-left:0px"></div>
+                            </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title">Address</td>
-                        <td>:</td>
+                        <td class="profile-title td-edit">Address</td>
+                        <td class="td-edit">:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uaddress" id="uaddress" oninput="checkAddress()"  value="'.$result[0]->getAddress().'"/></td>';
+                            echo 
+                            '<td class = "td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uaddress" id="uaddress" oninput="checkAddress()" value="'.$result[0]->getAddress().'"/>
+                                <div class="rowLogin">
+                                    <span class="errorMessage" id="addrError" style="margin-left: 2%;">Address harus diisi!</span>
+                                </div>
+                            </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title">Phone Number</td>
-                        <td>:</td>
+                        <td class="profile-title td-edit">Phone Number</td>
+                        <td class="td-edit">:</td>
                         <?php   
-                            echo '<td><input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uphone" id="uphone" oninput="checkPhone()"  value="'.$result[0]->getPhone().'"/></td>';
+                            echo 
+                            '<td class = "td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uphone" id="uphone" oninput="checkPhone()" value="'.$result[0]->getPhone().'"/>
+                                <div class="rowLogin">
+                                        <span class="errorMessage" id="phoneError" style="margin-left: 1%;">Phone tidak valid!</span>
+                                </div>
+                            </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title">Password</td>
-                        <td>:</td>
+                        <td class="profile-title td-edit">Password</td>
+                        <td class="td-edit">:</td>
                         <?php   
-                            echo '<td><input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="upass" id="upass" oninput="checkPw()"  value="'.$result[0]->getPassword().'"/></td>';
-                        ?> 
+                            echo 
+                            '<td class = "td-edit">
+                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="upass" id="upass" oninput="checkPw()" value="'.$result[0]->getPassword().'"/>
+                                <div class="rowLogin">
+                                    <span class="errorMessage" id="pwError" style="margin-left: 160px;">Password harus terdiri lebih dari 8 karakter</span>
+                                </div> 
+                            </td>';
+                        ?>
                     </tr>
                 </table>
             </div>
-            <div class="content1-kanan-edit tulisanPutih hurufBesar">
-                <button type="submit" class="tulisanCoklat" id="submit-edit-profile">Submit</button>
-            </div>
+         
         </form>
     </div>    
 </div>
