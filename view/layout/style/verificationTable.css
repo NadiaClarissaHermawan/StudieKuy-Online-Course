@@ -3,7 +3,7 @@
 }
 
 table, th, tr, td {
-    border: 2px solid #000000;
+    border: 2px solid #7D94D1;
     background-color: #FFFFFF;
 }
 table {
@@ -112,4 +112,15 @@ a {
     font-size: 18px;
     font-family: Reem Kufi;
     padding: 10px;
+}
+
+#back {
+    background-color: #F3A2A2;
+    /*color: #FFFFFF;*/
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 100px;
+    font-size: 15px;
+    font-family: Reem Kufi;
+    color: white;
 }

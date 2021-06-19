@@ -137,25 +137,33 @@ hr {
     margin-top: 2%;
 }
 
-.content2-kiri {
+.content2-1 {
     width: 20%;
     display: flex;
     justify-content: center;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: left;
     flex-direction: column;
 }
 
-.content2-tengah {
-    width: 50%;
+.content2-2 {
+    width: 30%;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    /*background-color: #FFC0C0;*/
+    margin-right: 5%;
 }
-.content2-kanan {
-    width: 10%;
+.content2-3 {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+}
+.content2-4 {
+    width: 30%;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -187,7 +195,38 @@ hr {
 
 #search {
     margin-left: 20%;
-    height: 90%;
-    border-radius: 50%;
+    width: 100px;
+    height: 80%;
+    border-radius: 30px;
     background-color: #F3A2A2;
+    font-size: 
+}
+
+.content-kiri {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content-kanan {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.content-tgl {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#strip {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 30px;
 }

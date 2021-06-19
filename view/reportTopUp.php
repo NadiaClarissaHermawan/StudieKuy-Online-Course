@@ -1,17 +1,21 @@
 <div class="content1">
-    <div class="tulisanPutih hurufSedang">Top-Up Report</div>
+    <div class="tulisanPutih hurufSedang">Top Up Transaction Report</div>
 </div>
 <hr>
 <div class="content2 tulisanPutih">
-    <div class="content2-kiri">
-        Cari ID Transaksi :
-    </div>
-    <div class="content2-tengah">
-        <input type="text" name="" class="kotakInput tulisanCoklat">
-    </div>
-    <div class="content2-kanan">
-        <button class="button tulisanPutih" id="search">Search</button>
-    </div>
+        <div class="content2-1">Transaction ID :</div>
+        <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-3">Verification Status :</div>
+        <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+</div>
+<div class="content2 tulisanPutih">
+        <div class="content2-1">Transaction Date :</div>
+        <div class="content2-2">
+            <input type="text" name="" class="kotakInput tulisanCoklat content2-tgl">
+            <div id="strip">-</div>
+            <input type="text" name="" class="kotakInput tulisanCoklat content2-tgl">
+        </div>
+        <div class="content-kanan"><button class="button tulisanPutih" id="search">Search</button></div>
 </div>
 <div class="table">
     <table>

@@ -51,6 +51,6 @@
         </tr>
     </table>
 </div>
-<button class="button">
-	<a href="verificationAdmin">Back</a>
+<button class="button" id="back">
+    <a href="verificationAdmin">Back</a>
 </button>

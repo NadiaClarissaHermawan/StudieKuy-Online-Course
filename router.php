@@ -117,6 +117,24 @@
                 echo $idxCtrl->view_verifpageAdmin();
                 break;
 
+            case $baseURL.'/reportCourse':
+                require_once "control/reportController.php";
+                $courseCtrl = new reportController();
+                echo $courseCtrl->view_courseReport();
+                break;
+
+            case $baseURL.'/reportTopUp':
+                require_once "control/reportController.php";
+                $courseCtrl = new reportController();
+                echo $courseCtrl->view_topUpReport();
+                break;
+
+            case $baseURL.'/reportCourseTransaction':
+                require_once "control/reportController.php";
+                $courseCtrl = new reportController();
+                echo $courseCtrl->view_courseTransactionReport();
+                break;
+
             default :
                 echo '404 not found';
                 break;
