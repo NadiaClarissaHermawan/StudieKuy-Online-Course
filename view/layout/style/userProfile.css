@@ -161,3 +161,23 @@ form {
     text-align: center;
     align-items: center;
 }
+
+.kotakInput.error {
+    background-color: #ce3232;
+}
+
+.errorMessage {
+    color: #e74c3c;
+    /*position: relative;*/
+    /*bottom: 0;
+    left: 0;*/
+    color: red;
+    font-weight: bold;
+    margin-left: 22%;
+    /*margin-left: 200px;*/
+    visibility: hidden;
+}
+
+.errorMessage.show {
+    visibility: visible;
+}

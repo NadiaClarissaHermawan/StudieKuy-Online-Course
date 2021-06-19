@@ -110,6 +110,11 @@
                 require_once "control/verificationTableController.php";
                 $topupCtrl = new verificationTableController();
                 echo $topupCtrl->view_verifTopUp();
+
+            case $baseURL.'/verifikasiAdmin':
+                require_once "control/verifikasiAdminController.php";
+                $idxCtrl = new verificationAdminController();
+                echo $idxCtrl->view_verifpageAdmin();
                 break;
 
             default :
@@ -136,13 +141,15 @@
                 echo $userTopupCtrl->topupSaldo();
                 break;
 
-            case $baseURL.'/userProfileEdit':
+            //upload profile text 
+            case $baseURL.'/profileTextEdit':
                 require_once "control/userProfileController.php";
                 $userTopupCtrl = new userProfileController();
-                $userTopupCtrl->editProfile();
+                $userTopupCtrl->profileTextEdit();
                 header('Location: userProfile');
                 break;
 
+            //upload foto profile (AJAX) --> masih ngaco
             case $baseURL.'/uploadFile':
                 require_once "controller/Controller.php";
 				$uploadCtrl = new userProfileController();
