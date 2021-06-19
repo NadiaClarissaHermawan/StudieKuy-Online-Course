@@ -87,34 +87,31 @@
                 $idxCtrl = new indexTeacherController();
                 echo $idxCtrl->view_mainpageTeacher();
                 break;
-<<<<<<< Updated upstream
+
             case $baseURL.'/verificationAdmin':
                 require_once "control/verificationAdminController.php";
                 $verifCtrl = new verificationAdminController();
                 echo $verifCtrl->view_verifpageAdmin();
                 break;
+
             case $baseURL.'/verificationSertif':
                 require_once "control/verificationTableController.php";
                 $sertifCtrl = new verificationTableController();
                 echo $sertifCtrl->view_verifSertif();
                 break;
+
             case $baseURL.'/verificationCourse':
-                require_once "control/verificationTable.php";
+                require_once "control/verificationTableController.php";
                 $courseCtrl = new verificationTableController();
                 echo $courseCtrl->view_verifCourse();
                 break;
+
             case $baseURL.'/verificationTopUp':
-                require_once "control/verificationTable.php";
+                require_once "control/verificationTableController.php";
                 $topupCtrl = new verificationTableController();
                 echo $topupCtrl->view_verifTopUp();
-=======
-
-            case $baseURL.'/verifikasiAdmin':
-                require_once "control/verifikasiAdminController.php";
-                $idxCtrl = new verifikasiAdminController();
-                echo $idxCtrl->view_verifpageAdmin();
->>>>>>> Stashed changes
                 break;
+
             default :
                 echo '404 not found';
                 break;

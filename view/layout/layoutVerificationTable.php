@@ -21,7 +21,7 @@
                 }
             ?>
             <div class="menuNavKanan">
-                <a href="index" class="material-icons md-36">home</a>
+                <a href="indexAdmin" class="material-icons md-36">home</a>
             </div>
         </div>
         <!-- ini mesti ada buat keluarin konten yg uda dibikin sblmnya di php, kalo gaada, meski di echo di view jg gakan keluar -->

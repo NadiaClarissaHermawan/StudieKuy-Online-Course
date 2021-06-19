@@ -2,7 +2,7 @@
     <div class="tulisanPutih hurufSedang">Sertificate Verification</div>
 </div>
 <div class="table">
-    <table id="sertif">
+    <table>
         <tr>
             <th>Id Course</th>
             <th>Nama</th>
@@ -72,3 +72,6 @@
         </tr>
     </table>
 </div>
+<button class="button">
+    <a href="verificationAdmin">Back</a>
+</button>
