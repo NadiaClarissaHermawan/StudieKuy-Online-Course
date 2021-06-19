@@ -9,8 +9,18 @@
 </div> -->
 
 <div class="content2 tulisanPutih">
-        <div class="content2-1">Java Basic Programming</div>
-        <div class="content2-2"><a href="" class="kotakInput hurufKecil">Go to Course</a></div>
-        <!-- <div class="content2-3">Verification Status :</div>
-        <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div> -->
+    <div class="content2-1 hurufSedang">Java Basic Programming</div>
+    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1 hurufSedang">Python for Data Science</div>
+    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1 hurufSedang">Basic Accounting</div>
+    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1 hurufSedang">Creative Economy</div>
+    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
 </div>
