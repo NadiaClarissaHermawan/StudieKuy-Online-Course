@@ -169,7 +169,7 @@
 
             //upload foto profile (AJAX) --> masih ngaco
             case $baseURL.'/uploadFile':
-                require_once "controller/Controller.php";
+                require_once "control/userProfileController.php";
 				$uploadCtrl = new userProfileController();
 				echo $uploadCtrl->upload();
 				break;

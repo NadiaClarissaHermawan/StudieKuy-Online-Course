@@ -84,8 +84,9 @@
 }
 
 .profileTable {
-	width: 80%;
+	width: 100%;
 	height: 100%;
+    display: flex;
 }
 
 td {
@@ -98,8 +99,16 @@ td {
 	font-size: 30px;
 }
 
+.kotakInput2 {
+    background-color:  red;
+    font-size: 1.2vw;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
 .profile-title {
-    width: 50%;
+    /* width: 50%; */  
 }
 
 form {
@@ -114,17 +123,18 @@ form {
     border-radius: 15px;
 }
 
-#submit-edit-profile {
+.submit-edit-profile {
     background-color: #CB6F6F;
     font-weight:100;
     color:white;
     padding: 10px;
     border: none;
     font-size: 1.5vw;
+    width: fit-content;
     border-radius: 18px;
 }
 
-#submit-edit-profile:hover {
+.submit-edit-profile:hover {
     background-color: #FFC0C0;
     cursor: pointer;
     color: #432F2F;

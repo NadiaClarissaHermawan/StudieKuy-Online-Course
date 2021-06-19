@@ -12,14 +12,14 @@
 
     <div class="content1">
         <!-- update prof pic -->
-        <div class="content1-kiri-edit">
+        <div id="input-gbr" class="content1-kiri-edit">
             <img class="content1-image" src="/TugasBesar/view/images/profilepicture/<?php echo $result[0]->getProfpic()?>" id="gambar"/>
             <form id="formUpload" enctype="multipart/form-data">
                 <input type="file" name="file"  id="baten">
-                <input type="submit" value="Upload">
+                <input type="submit" value="Upload" >
             </form>
         </div>
-
+        
         <!-- update data diri -->
         <form method="post" action="profileTextEdit" style="display: flex;">
             <div class="content1-tengah-edit tulisanPutih hurufBesar">
@@ -30,10 +30,16 @@
                         <?php   
                             echo 
                             '<td class = "td-edit" >
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/>
-                                <div class="errorMessage edit-input-box" style="line-height:0px" id="userError"style=" color:red"></div>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/>
                             </td>';
                         ?>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <span class="errorMessage edit-input-box" style="line-height:0px" id="userError"style=" color:red">Test</span>
+                        </td>
                     </tr>
                     <tr>
                         <td class="profile-title td-edit">Name</td>
@@ -41,7 +47,7 @@
                         <?php   
                             echo 
                             '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result[0]->getRealname().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result[0]->getRealname().'"/>
                                 <div class="rowLogin">
                                         <span class="errorMessage" id="nameError" style="margin-left: 100px;">Nama harus lebih dari 3 karakter</span>
                                 </div>
@@ -54,7 +60,7 @@
                         <?php   
                             echo 
                             '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uemail" id="uemail" oninput="checkEmail()" value="'.$result[0]->getEmail().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uemail" id="uemail" oninput="checkEmail()" value="'.$result[0]->getEmail().'"/>
                                 <div class="rowLogin errorMessage" id="emailError" style=" color:red; margin-left:0px"></div>
                             </td>';
                         ?>
@@ -65,7 +71,7 @@
                         <?php   
                             echo 
                             '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uaddress" id="uaddress" oninput="checkAddress()" value="'.$result[0]->getAddress().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uaddress" id="uaddress" oninput="checkAddress()" value="'.$result[0]->getAddress().'"/>
                                 <div class="rowLogin">
                                     <span class="errorMessage" id="addrError" style="margin-left: 2%;">Address harus diisi!</span>
                                 </div>
@@ -78,7 +84,7 @@
                         <?php   
                             echo 
                             '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uphone" id="uphone" oninput="checkPhone()" value="'.$result[0]->getPhone().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uphone" id="uphone" oninput="checkPhone()" value="'.$result[0]->getPhone().'"/>
                                 <div class="rowLogin">
                                         <span class="errorMessage" id="phoneError" style="margin-left: 1%;">Phone tidak valid!</span>
                                 </div>
@@ -91,13 +97,14 @@
                         <?php   
                             echo 
                             '<td class = "td-edit">
-                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="upass" id="upass" oninput="checkPw()" value="'.$result[0]->getPassword().'"/>
+                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left" name="upass" id="upass" oninput="checkPw()" value="'.$result[0]->getPassword().'"/>
                                 <div class="rowLogin">
                                     <span class="errorMessage" id="pwError" style="margin-left: 160px;">Password harus terdiri lebih dari 8 karakter</span>
                                 </div> 
                             </td>';
                         ?>
                     </tr>
+                    <input type="submit" id="sbt" onclick="checkValidation()"/>
                 </table>
             </div>
          
@@ -108,6 +115,7 @@
 <script defer>
 	let formData = new FormData();
 	const fil = document.querySelector('input[type="file"]');
+    let inputgbr = document.getElementById('input-gbr');
 
 	fil.onchange = function(){
 		//ambil disini & masukin ke formData
@@ -128,13 +136,20 @@
 			console.log("error", error);
 		})
 		let gambar = document.getElementById("gambar");
+    //    gambar.remove();
 
-        let poto = "<?php echo $result[0]->getProfpic();?>"
-        console.log("HELLO " + poto);
-			
+    //    gambar = document.createElement('img');
+    //    gambar.classList.add("content1-image");
+    //    gambar.id = "gambar";
+
+        let poto = "<?php echo $result[0]->getProfpic()?>";
+        // console.log("HELLO " + poto);	
         gambar.src = "/TugasBesar/view/images/profilepicture/".concat(poto);
-        console.log("YESY  "+gambar.src);
+        // console.log("YESY  "+gambar.src);
             
+        // inputgbr.appendChild(gambar);
+
+        location.reload();
 	}
 
     //script untuk validasi input edit text profile
@@ -295,12 +310,12 @@
         }
 
         function setError(input, idInput){
-            input.className = 'kotakInput error';
+            input.className = 'kotakInput2 error';
             idInput.className = 'errorMessage show';
         }
 
         function setSuccess(input, idInput){
-            input.className = 'kotakInput';
+            input.className = 'edit-input-box tulisanPutih';
             idInput.className = 'errorMessage';
         }
 
