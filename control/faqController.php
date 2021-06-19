@@ -28,6 +28,10 @@
                 return View::createView('faq.php', [
                     "result" => $result
                 ]);
+            //belom login
+            }else{
+                session_destroy();
+                return View::createView('faq.php', []);
             }
         }
     }

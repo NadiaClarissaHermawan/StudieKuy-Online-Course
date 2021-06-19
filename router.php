@@ -87,7 +87,6 @@
                 $idxCtrl = new indexTeacherController();
                 echo $idxCtrl->view_mainpageTeacher();
                 break;
-<<<<<<< Updated upstream
             case $baseURL.'/verificationAdmin':
                 require_once "control/verificationAdminController.php";
                 $verifCtrl = new verificationAdminController();
@@ -107,13 +106,11 @@
                 require_once "control/verificationTable.php";
                 $topupCtrl = new verificationTableController();
                 echo $topupCtrl->view_verifTopUp();
-=======
 
             case $baseURL.'/verifikasiAdmin':
                 require_once "control/verifikasiAdminController.php";
-                $idxCtrl = new verifikasiAdminController();
+                $idxCtrl = new verificationAdminController();
                 echo $idxCtrl->view_verifpageAdmin();
->>>>>>> Stashed changes
                 break;
             default :
                 echo '404 not found';
@@ -139,13 +136,15 @@
                 echo $userTopupCtrl->topupSaldo();
                 break;
 
-            case $baseURL.'/userProfileEdit':
+            //upload profile text 
+            case $baseURL.'/profileTextEdit':
                 require_once "control/userProfileController.php";
                 $userTopupCtrl = new userProfileController();
-                $userTopupCtrl->editProfile();
+                $userTopupCtrl->profileTextEdit();
                 header('Location: userProfile');
                 break;
 
+            //upload foto profile (AJAX) --> masih ngaco
             case $baseURL.'/uploadFile':
                 require_once "controller/Controller.php";
 				$uploadCtrl = new userProfileController();
