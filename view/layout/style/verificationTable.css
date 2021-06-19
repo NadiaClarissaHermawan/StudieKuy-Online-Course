@@ -23,7 +23,7 @@ td {
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .button {
@@ -37,7 +37,10 @@ td {
     justify-content: center;
     text-align: center;
     align-items: center;
+}
 
+a {
+    text-decoration: none;
 }
 .content1-button:hover {
     transition: 1s;
