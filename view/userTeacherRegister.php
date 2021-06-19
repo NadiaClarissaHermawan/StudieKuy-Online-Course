@@ -8,10 +8,19 @@
 
 	<form method="POST" action="userTeacherRegister">
 		<?php
-			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 0){
-				echo ' <div id="error" hidden >Username duplicate</div>';
-			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == 00){
-				echo ' <div id="error" hidden >Email duplicate</div>';
+			if (session_status() == PHP_SESSION_NONE) {
+				session_start();
+			}
+
+			if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] === "0"){
+				session_destroy();
+				echo ' <div id="error" hidden >UsernameEmail</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] === "00"){
+				session_destroy();
+				echo ' <div id="error" hidden >Username</div>';
+			}else if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] === "000"){
+				session_destroy();
+				echo ' <div id="error" hidden >Email</div>';
 			}
 		?>
 		<div id="main" style="margin-top: 170px;">
@@ -106,6 +115,30 @@
 		</div>
 	</form>
     <script>
+		document.getElementById('sel').addEventListener('click', onClickHandler);
+		document.getElementById('sel').addEventListener('mousedown', onMouseDownHandler);
+
+		function onMouseDownHandler(e){
+			var el = e.currentTarget;
+			
+			if(el.hasAttribute('size') && el.getAttribute('size') == '1'){
+				e.preventDefault();    
+			}
+		}
+		function onClickHandler(e) {
+			var el = e.currentTarget; 
+
+			if (el.getAttribute('size') == '1') {
+				el.className += " selectOpen";
+				el.setAttribute('size', '3');
+			}
+			else {
+				el.className = '';
+				el.className += " input-option";
+				el.setAttribute('size', '1');
+			}
+		}
+
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
         const pass = document.getElementById('upass');
@@ -158,6 +191,37 @@
                 return false;
         	}
         }
+
+		function errorHandler(){
+			console.log(dupli.textContent);
+			if(dupli.textContent === 'UsernameEmail'){
+				idU.textContent = 'Username sudah terdaftar !';
+				idU.style.marginLeft = "4.5%";
+				idU.classList.remove('errorMessage');
+
+				idEmail.textContent = 'Email sudah terdaftar !';
+				idEmail.classList.remove('errorMessage');
+				idEmail.style.marginLeft = "2.4%";
+
+				dupli.textContent = "";
+
+			}else if(dupli.textContent === 'Username'){
+				idU.textContent = 'Username sudah terdaftar !';
+				idU.classList.remove('errorMessage');
+				idU.style.marginLeft = "4.5%";
+				dupli.textContent = "";
+
+			}else if(dupli.textContent = 'Email'){
+				idEmail.textContent = 'Email sudah terdaftar !';
+				idEmail.classList.remove('errorMessage');
+				idEmail.style.marginLeft = "2.4%";
+				dupli.textContent = "";
+
+			}else{
+				return;
+			}
+		}
+
         function checkUName() {
             const username = user.value.trim();
 
@@ -269,5 +333,7 @@
             input.className = 'kotakInput';
             idInput.className = 'errorMessage';
         }
+
+		errorHandler();
     </script>
 </body>
