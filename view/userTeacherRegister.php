@@ -27,7 +27,7 @@
 			<img class="imgLogin"  src="view/images/loginTeacher.jpg">
 			<div class="contentLogin">
 				<div class="rowLogin tulisanCoklat">
-					<h1><label for="uJudul" class="txt hurufSedang">Teacher's Register</label></hi>
+					<h1><label for="uJudul" class="txt hurufSedang">Lecturer's Register</label></hi>
 				</div>
 				<div class="rowLogin tulisanCoklat">
 					<label for="uname" class="txt hurufSedang">Username</label>
