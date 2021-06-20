@@ -1,16 +1,16 @@
 <!-- terhubung ke :
         viewIndexTeacher.php
         indexTeacherController.php
-        uploadModul.php
-        uploadModul.css
+        createExam.php
+        createExam.css
  -->
 <!DOCTYPE html>
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
-        <link rel="stylesheet" type="text/css" href="view/layout/style/uploadModul.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/createExam.css"/>
     </head>
     <body>
         <div class="header">
@@ -21,7 +21,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">Upload Course Module</a>
+            <a href="" class="menuNav">Create Course Exam</a>
             <div class="menuNavKanan">
                 <a href="indexTeacher" class="material-icons md-36">home</a>
             </div>

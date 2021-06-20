@@ -35,4 +35,15 @@
             return View::createViewUploadModul('uploadModul.php', []);
         }
     }
+    class createExamController{
+        protected $db;
+
+        public function __construct(){
+            $this->db = new MySQLDB("localhost", "root", "", "tubes");
+        }
+
+        public function view_createExam(){
+            return View::createViewcreateExam('createExam.php', []);
+        }
+    }
 ?>
