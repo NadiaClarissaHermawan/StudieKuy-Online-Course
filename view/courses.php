@@ -1,30 +1,111 @@
-<div id="contentMainPage">
-    <div class="line1">
-        <div class="courses-card">
-            <img src="view/images/courseee.png" id="course1-image" class="content-image one-edge-shadow row">
-            <h1>Computer</h1>
+<div class="main">
+    <div class="white-box">
+        <div class="card" onmouseover="over1()" onmouseout="out1()" style="background-color: #FFDEDE;">
+            <img src="view/images/courseee.png" class="card-img">
+            <h1 class="display-info">Computer</h1>
         </div>
-        <div class="courses-card">
-            <img src="view/images/course2.png" id="course2-image" class="content-image one-edge-shadow row">
-            <h1>Economy</h1>
+        <div class="card" onmouseover="over2()" onmouseout="out2()" style="background-color: #AEF5FF;">
+            <img src="view/images/course2.png" class="card-img">
+            <h1 class="display-info">Economy</h1>
         </div>
-        <div class="courses-card">
-            <img src="view/images/course3.png" id="course3-image" class="content-image one-edge-shadow">
-            <h1>Law</h1>
+        <div class="card" onmouseover="over3()" onmouseout="out3()" style="background-color: #FFDEAC;">
+            <img src="view/images/course3.png" class="card-img">
+            <h1 class="display-info">Law</h1>
         </div>
-    </div>
-    <div class="line2">
-        <div class="courses-card">
-            <img src="view/images/course4.png" id="course4-image" class="content-image one-edge-shadow">
-            <h1>Arts</h1>
+        <div class="card" onmouseover="over4()" onmouseout="out4()" style="background-color: #B1EA8E;">
+            <img src="view/images/course4.png" class="card-img">
+            <h1 class="display-info">Arts</h1>
         </div>
-        <div class="courses-card">
-            <img src="view/images/course5.png" id="course5-image" class="content-image one-edge-shadow">
-            <h1>Science</h1>
+        <div class="card" onmouseover="over5()" onmouseout="out5()" style="background-color: #F7AB36;">
+            <img src="view/images/course5.png" class="card-img">
+            <h1 class="display-info">Science</h1>
         </div>
-        <div class="courses-card">
-            <img src="view/images/course6.png" id="course6-image" class="content-image one-edge-shadow">
-            <h1>Language & Culture</h1>
+        <div class="card" onmouseover="over6()" onmouseout="out6()" style="background-color: #F6ADF4;">
+            <img src="view/images/course6.png " class="card-img">
+            <h1 class="display-info">Language & Culture</h1>
         </div>
     </div>
 </div>
+<script defer>
+    let card = document.getElementsByClassName("card");
+    let img = document.getElementsByClassName("card-img");
+    let info = document.getElementsByClassName("display-info");
+
+    function over1() {
+        card[0].classList.add('card-hover');
+        img[0].classList.add('img-hover');
+        info[0].classList.add('info-hover');
+
+    }
+
+    function out1() {
+        card[0].classList.remove('card-hover');
+        img[0].classList.remove('img-hover');
+        info[0].classList.remove('info-hover');
+    }
+
+    function over2() {
+        card[1].classList.add('card-hover');
+        img[1].classList.add('img-hover');
+        info[1].classList.add('info-hover');
+
+    }
+
+    function out2() {
+        card[1].classList.remove('card-hover');
+        img[1].classList.remove('img-hover');
+        info[1].classList.remove('info-hover');
+    }
+
+    function over3() {
+        card[2].classList.add('card-hover');
+        img[2].classList.add('img-hover');
+        info[2].classList.add('info-hover');
+
+    }
+
+    function out3() {
+        card[2].classList.remove('card-hover');
+        img[2].classList.remove('img-hover');
+        info[2].classList.remove('info-hover');
+    }
+
+    function over4() {
+        card[3].classList.add('card-hover');
+        img[3].classList.add('img-hover');
+        info[3].classList.add('info-hover');
+
+    }
+
+    function out4() {
+        card[3].classList.remove('card-hover');
+        img[3].classList.remove('img-hover');
+        info[3].classList.remove('info-hover');
+    }
+
+    function over5() {
+        card[4].classList.add('card-hover');
+        img[4].classList.add('img-hover');
+        info[4].classList.add('info-hover');
+
+    }
+
+    function out5() {
+        card[4].classList.remove('card-hover');
+        img[4].classList.remove('img-hover');
+        info[4].classList.remove('info-hover');
+    }
+
+    function over6() {
+        card[5].classList.add('card-hover');
+        img[5].classList.add('img-hover');
+        info[5].classList.add('info-hover');
+
+    }
+
+    function out6() {
+        card[5].classList.remove('card-hover');
+        img[5].classList.remove('img-hover');
+        info[5].classList.remove('info-hover');
+    }
+</script>
