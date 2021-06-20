@@ -144,12 +144,7 @@
 			console.log("error", error);
 		})
 		let gambar = document.getElementById("gambar");
-    //    gambar.remove();
-
-    //    gambar = document.createElement('img');
-    //    gambar.classList.add("content1-image");
-    //    gambar.id = "gambar";
-
+        
         let poto = "<?php echo $result[0]->getProfpic()?>";
         // console.log("HELLO " + poto);	
         gambar.src = "/TugasBesar/view/images/profilepicture/".concat(poto);

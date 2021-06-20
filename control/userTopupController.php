@@ -53,5 +53,54 @@
                 ], $nominalText);
             }
         }
+
+        //upload foto bukti transfer
+        public function topup(){
+            if(isset($_FILES["file"])){
+                $oldName = $_FILES["file"]["tmp_name"];
+                //dirname => naik 1 directory
+                //__DIR__ => directory file ini skrg (controller/Controller.php)
+                $newName = dirname(__DIR__)."\\view\\images\\buktitransfer\\".$_SESSION['id_pengguna'].".jpg";
+                if(move_uploaded_file($oldName, $newName)){
+                    printf("File [%s] has successfully uploaded to [%s]",
+                    $oldName, $newName);
+                }else{
+                    echo "Error in uploading";
+                }	
+            }
+        }
+
+        //fix top up saldo
+        public function insert_log(){
+            $id_pengguna = $_SESSION['id_pengguna'];
+            $nominal = $_POST['nominal'];
+            $saldo_awal = $this->getSaldoUser()[0]->getSaldo();
+            $saldo_akhir = $saldo_awal + ($nominal*1000);
+
+            $saldo_akhir = $saldo_akhir/1000;
+            $saldo_awal = $saldo_awal/1000;
+
+            $query = "SELECT id_member
+                      FROM member
+                      WHERE id_pengguna = '$id_pengguna'
+                     ";
+            $id_member = $this->db->executeSelectQuery($query)[0]["id_member"];
+            $bukti_trf = $id_pengguna.".jpg";
+
+            $query = "INSERT INTO transaksi_saldo
+                      (saldo_awal, saldo_akhir, status_verifikasi, tanggal_transaksi_saldo, nominal_pengisian, id_member, bukti_trf)
+                      VALUES 
+                      ($saldo_awal, $saldo_akhir, 0, now(), $nominal, $id_member, '$bukti_trf')
+                     ";
+            $this->db->executeNonSelectQuery($query);
+        }
+
+        //notifikasi transaksi diproses
+        public function view_process(){
+            $result = $this->getSaldoUser();
+            return View::createView('topupProcess.php', [
+                "result"=>$result
+            ]);
+        }
     }
 ?>
