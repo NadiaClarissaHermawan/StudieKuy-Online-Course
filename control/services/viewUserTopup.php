@@ -22,8 +22,6 @@
                 $$key = $value;
             }
             $nominal = $nominal;
-            var_dump($nominal);
-            die;
             
             ob_start();
             include 'view/'.$view;
