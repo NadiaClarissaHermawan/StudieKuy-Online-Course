@@ -148,6 +148,12 @@
                 echo $crsCtrl->view_createCoursePage();
                 break;
 
+            case $baseURL.'/topupConfirmation':
+                require_once "control/userTopupController.php";
+                $confirmCtrl = new userTopupController();
+                echo $confirmCtrl->view_topupConfirm();
+                break;
+
             default :
                 echo '404 not found';
                 break;
@@ -164,12 +170,6 @@
                 require_once "control/registerUserController.php";
                 $registerCtrl = new registerUserController();
                 echo $registerCtrl->klik_register();
-                break;
-
-            case $baseURL.'/userTopup':
-                require_once "control/userTopupController.php";
-                $userTopupCtrl = new userTopupController();
-                echo $userTopupCtrl->topupSaldo();
                 break;
 
             //upload profile text 
