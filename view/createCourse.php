@@ -6,7 +6,7 @@
         </div>
         <div class="content1-kanan">
             <p class="tulisanPutih welcome" >
-                WELCOME, (nama_Teacher)!
+                CREATE COURSE NIH!!!
             </p>
             <a href="" class="menuCourse-button">
                 <div class="menuCourse-kiri">
@@ -16,7 +16,7 @@
                     <p class="tulisanCoklat">Course</p>
                 </div>
             </a>
-            <a href="createCourse" class="menuCourse-button">
+            <a href="" class="menuCourse-button">
                 <div class="menuCourse-kiri">
                     <img src="view/images/createCourse.jpg" class="menuCourse-image">
                 </div>

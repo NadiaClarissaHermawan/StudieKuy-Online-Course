@@ -10,40 +10,14 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Teacher Studie Kuy !</h1>
-
+            <button name="loginButton" class="tulisanCoklat" id="header-loginButton">Teacher</button>
             <!-- muncul ilangin tombol login  -->
-            <?php 
-                session_start();
-                $statusLogin = 0;
-
-                if(isset($_SESSION['status']) == false){
-                    // echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
-                    echo '<button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Teacher</button>';
-                    session_destroy();
-                }else{
-                    $saldoUser = $_SESSION['saldo'];
-                    $statusLogin = $_SESSION['status'];
-                    echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
-                }
-            ?>
         </div>
         
         <div class="nav">
-            <a href="courses" class="menuNav">Home</a>
-            <?php 
-                //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
-                    echo ' <a href="userProfile" class="menuNav">My Profile</a>';
-                }
-            ?>
+            <a href="" class="menuNav">Home</a>
             <div class="menuNavKanan">
-                <a href="index" class="material-icons md-36">home</a>
-                <?php 
-                    //jgn lupa ini status udah login, di add di header controller bersangkutan
-                    if(isset($_SESSION['status'])){
-                        echo ' <a href="#userCourse" class="material-icons md-36">reorder</a>';
-                    }
-                ?>
+                <a href="indexTeacher" class="material-icons md-36">home</a>
             </div>
         </div>
         

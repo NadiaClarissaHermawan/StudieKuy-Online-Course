@@ -13,4 +13,15 @@
             return View::createView('indexTeacher.php', []);
         }
     }
+    class createCourseController{
+        protected $db;
+
+        public function __construct(){
+            $this->db = new MySQLDB("localhost", "root", "", "tubes");
+        }
+
+        public function view_createCoursePage(){
+            return View::createViewCreateCourse('createCourse.php', []);
+        }
+    }
 ?>
