@@ -171,7 +171,13 @@
                 $processCtrl = new userTopupController();
                 echo $processCtrl->view_process();
                 break;
-                
+
+            case $baseURL.'/history':
+                require_once "control/userTopupController.php";
+                $hisCtrl = new userTopupController();
+                echo $hisCtrl->view_topupHistory();
+                break; 
+
             default :
                 echo '404 not found';
                 break;

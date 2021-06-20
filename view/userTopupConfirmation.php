@@ -26,7 +26,9 @@
                 <div id="confirm-upload-bukti" class="tulisanPutih">
                     <input  type="file" name="file" style="margin-left:20%">
                     <input type="hidden" name="nominal" value="<?php echo $nominal?>"/>
-                    <img src="" id="gambar" style="visibility: hidden;"/>
+                    <div class="gambar-submit">
+                        <img src="" id="gambar" style="visibility: hidden;"/>
+                    </div>
                     <button style="margin-top: 5%;" id="sub-btn" class="confirm-button tulisanPutih" type="submit"  onclick="beli()">Submit</button>
                 </div>
             </div>
