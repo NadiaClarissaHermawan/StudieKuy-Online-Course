@@ -43,7 +43,7 @@
         }
 
         public function view_createExam(){
-            return View::createViewcreateExam('createExam.php', []);
+            return View::createViewCreateExam('createExam.php', []);
         }
     }
 ?>
