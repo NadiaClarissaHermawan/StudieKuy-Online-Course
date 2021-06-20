@@ -165,7 +165,13 @@
                 $confirmCtrl = new userTopupController();
                 echo $confirmCtrl->view_topupConfirm();
                 break;
-
+            
+            case $baseURL.'/transaction-progress':
+                require_once "control/userTopupController.php";
+                $processCtrl = new userTopupController();
+                echo $processCtrl->view_process();
+                break;
+                
             default :
                 echo '404 not found';
                 break;
@@ -198,6 +204,21 @@
 				$uploadCtrl = new userProfileController();
 				echo $uploadCtrl->upload();
 				break;
+
+            //upload bukti transfer
+            case $baseURL.'/uploadBukti':
+                require_once "control/userTopupController.php";
+                $buktiCtrl = new userTopupController();
+                echo $buktiCtrl->topup();
+                break;
+
+            //insert log transaksi ke database 
+            case $baseURL.'/fix-topup':
+                require_once "control/userTopupController.php";
+                $buyCtrl = new userTopupController();
+                echo $buyCtrl->insert_log();
+                header('Location: transaction-progress');
+                break;
 
             default :
                 echo '404 not found';

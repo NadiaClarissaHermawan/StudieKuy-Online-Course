@@ -21,10 +21,8 @@
         
         <div id="userError" style="color: red; width:18%; display:flex"></div>
     </form>
-</div> 
-<div id="topup-bottom">
     <img src="view/images/topup1.png" id="topup-image1">
-</div>
+</div> 
 
 <script>
     const nominal = document.getElementById("topup-content2-isi");
