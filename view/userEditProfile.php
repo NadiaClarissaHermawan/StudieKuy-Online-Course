@@ -14,9 +14,8 @@
         <!-- update prof pic -->
         <div id="input-gbr" class="content1-kiri-edit">
             <img class="content1-image" src="/TugasBesar/view/images/profilepicture/<?php echo $result[0]->getProfpic()?>" id="gambar"/>
-            <form id="formUpload" enctype="multipart/form-data">
-                <input type="file" name="file"  id="baten">
-                <input type="submit" value="Upload" >
+            <form id="formUpload" enctype="multipart/form-data" style="margin-top: 3%">
+                <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:35%;">
             </form>
         </div>
         
@@ -115,7 +114,7 @@
             <div class="content1-kanan-edit">
                     <td class="td-edit">
                         <input type="submit" class="submit-edit-profile" id="sbt" onclick="checkValidation()"/>
-                    </td>
+                        </td>
             </div>
         </form>
     </div>    

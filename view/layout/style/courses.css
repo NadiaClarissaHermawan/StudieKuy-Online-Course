@@ -1,127 +1,72 @@
-#contentMainPage {
-    display: flex;
-    margin-top: 200px;
-    margin-left: 20%;
-    width: 60%;
-    height: 60%;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    background-color: white;
-    border-radius: 20px;
-    flex-direction: column;
-}
-
-.line1 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+body,
+html {
+    margin: 0;
     width: 100%;
-    height: 55%;
-}
-
-.line2 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 55%;
-}
-.content2-kiri {
-    width: 33%;
-}
-.content2-tengah {
-    width: 33%;
-}
-.content2-kanan {
-    width: 33%;
-}
-#course1-image{
-    width: 76%;
-    height: 76%;
-    border-radius: 20px;   
-}
-#course1-image:hover {
-    background-color: #354076;
-    cursor: pointer;
-}
-
-#course2-image{
-    width: 78%;
-    height: 78%;
-    background-color: #AEF5FF;
-    border-radius: 20px;
-}
-#course2-image:hover {
-    background-origin: #AEF5FF;
-    cursor: pointer;
-}
-
-#course3-image{
-    width: 74%;
-    height: 74%;
-    background-color: #FFDEAC;
-    border-radius: 20px;
-}
-#course3-image:hover {
-    background-origin: #FFDEAC;
-    cursor: pointer;
-}
-
-#course4-image{
-    width: 73%;
-    height: 80%;
-    background-color: #B1EA8E;
-    border-radius: 20px;
-}
-#course4-image:hover {
-    background-origin: #B1EA8E;
-    cursor: pointer;
-}
-
-#course5-image{
-    width: 80%;
-    height: 80%;
-    border-radius: 20px;
-    background-color: #F7AB36;
-}
-#course5-image:hover {
-    background-origin: #F7AB36;
-    cursor: pointer;
-}
-
-#course6-image{
-    width: 75%;
-    height: 90%;
-    border-radius: 20px;
-    background-color: #F6ADF4;
-}
-#course6-image:hover {
-    background-origin: #F6ADF4;
-    cursor: pointer;
-}
-
-.one-edge-shadow {
-	-webkit-box-shadow: 0 8px 6px -6px black;
-	   -moz-box-shadow: 0 8px 6px -6px black;
-	        box-shadow: 0 8px 6px -6px black;
-}
-
-.text1 {
-    display: absolute;
-    text-decoration: none;
-    color: #432F2F;
-    top : 200px;
-    left: 50px;
-    
-}
-
-.row{
-    background: rgba(39,62,84,0.82);
-    overflow: hidden;
     height: 100%;
-    z-index: 2;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-box {
+    margin-top: 50px;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.card {
+    width: 20%;
+    height: 30%;
+    background-color: aqua;
+    margin: 50px;
+    border-radius: 30px;
+    display: table;
+    text-align: center;
+    transition: 0.1s;
+}
+
+.card:hover {
+    transition: 0.1s;
+}
+
+.card img {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    transition: 0.1s;
+}
+
+.display-info {
+    display: none;
+    vertical-align: middle;
+    transition: 0.1s;
+    width: 100%;
+    height: 100%;
+}
+
+.card-hover {
+    transition: 0.1s;
+    cursor: pointer;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.img-hover {
+    display: none;
+}
+
+.info-hover {
+    display: table-cell;
 }
