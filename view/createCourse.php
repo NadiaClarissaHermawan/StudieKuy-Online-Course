@@ -22,4 +22,4 @@
     <div class="content2-1">Completeness Criteria</div>
     <div class="content2-2">:<input type="number" name="courseKKM" class="kotakInput tulisanCoklat"></div>  
 </div>
-<a href=""><img src="view/images/createCourse.jpg" class="content-image"></a>
+<a href="uploadModul"><img src="view/images/createCourse.jpg" class="content-image"></a>

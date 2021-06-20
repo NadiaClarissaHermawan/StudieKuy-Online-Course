@@ -16,15 +16,14 @@
     <!-- <form id="formUpload" enctype="multipart/form-data" style="margin-left: 3%">
         <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:35%;">
     </form> -->
-
     <div class="content2-3">
         <i class="material-icons md-36">cloud_upload</i>
         <div class="upload">Upload a Module</div>
     </div>
 </div>
-<button class="button" id="button" onclick="addModule()" >Add Module</button>
+<button class="button" id="button" onclick="addModule()" >Add New Module</button>
 <a href="createCourse"><button class="buttonL">Back</button></a>
-<a href=""><button class="buttonR">Next</button></a>
+<a href="createExam"><button class="buttonR">Next</button></a>
 
 <script>
     function addModule(){
