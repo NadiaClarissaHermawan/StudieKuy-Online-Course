@@ -153,7 +153,13 @@
                 $crsCtrl = new uploadModulController();
                 echo $crsCtrl->view_uploadModul();
                 break;
-                
+
+            case $baseURL.'/createExam':
+                require_once "control/indexTeacherController.php";
+                $crsCtrl = new createExamController();
+                echo $crsCtrl->view_createExam();
+                break;
+
             case $baseURL.'/topupConfirmation':
                 require_once "control/userTopupController.php";
                 $confirmCtrl = new userTopupController();
