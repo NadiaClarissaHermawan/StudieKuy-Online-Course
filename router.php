@@ -174,7 +174,7 @@
 
             case $baseURL.'/history':
                 require_once "control/userTopupController.php";
-                $hisCtrl = new userLoginController();
+                $hisCtrl = new userTopupController();
                 echo $hisCtrl->view_topupHistory();
                 break; 
 

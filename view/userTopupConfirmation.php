@@ -28,8 +28,8 @@
                     <input type="hidden" name="nominal" value="<?php echo $nominal?>"/>
                     <div class="gambar-submit">
                         <img src="" id="gambar" style="visibility: hidden;"/>
-                        <button style="margin-top: 5%;" id="sub-btn" class="confirm-button tulisanPutih" type="submit"  onclick="beli()">Submit</button>
                     </div>
+                    <button style="margin-top: 5%;" id="sub-btn" class="confirm-button tulisanPutih" type="submit"  onclick="beli()">Submit</button>
                 </div>
             </div>
         </div>
