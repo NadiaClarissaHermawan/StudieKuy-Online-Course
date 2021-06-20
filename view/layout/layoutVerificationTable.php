@@ -20,6 +20,6 @@
             </div>
         </div>
         <!-- ini mesti ada buat keluarin konten yg uda dibikin sblmnya di php, kalo gaada, meski di echo di view jg gakan keluar -->
-        <?php echo $content; ?>
+        <?php echo $content;?>
     </body>
 </html>
