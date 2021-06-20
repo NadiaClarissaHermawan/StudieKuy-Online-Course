@@ -138,7 +138,7 @@ hr {
 }
 
 .content2-1 {
-    width: 20%;
+    width: 15%;
     display: flex;
     justify-content: center;
     text-align: left;
@@ -147,7 +147,7 @@ hr {
 }
 
 .content2-2 {
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -155,7 +155,7 @@ hr {
     margin-right: 5%;
 }
 .content2-3 {
-    width: 20%;
+    width: 15%;
     display: flex;
     justify-content: center;
     text-align: left;
@@ -163,7 +163,7 @@ hr {
     flex-direction: column;
 }
 .content2-4 {
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -174,14 +174,15 @@ hr {
     display: inline-block;
     width: 100%;
     height: auto;
-    color: white;
     background-color: #FFFFFF;
     border: none;
     padding-left: 5px;
     font-size: 22px;
     padding: 5px;
     border-radius: 10px;
+    text-align: left;
 }
+
 .kotakInput::placeholder {
     color: #CB6F6F;
     font-family:Reem Kufi;
@@ -218,15 +219,28 @@ hr {
     align-items: center;
 }
 
-.content-tgl {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+#strip {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 30px;
+}
+.kotakDate {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    background-color: #FFFFFF;
+    border: none;
+    padding-left: 5px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: left;
 }
 
-#strip {
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: 30px;
+#header-loginButton {
+    background-color: #BFF0FF;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Itim;
+    font-weight: bold;
 }

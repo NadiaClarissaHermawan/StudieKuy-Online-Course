@@ -1,37 +1,25 @@
-<div id="contentMainPage">
-    <!-- blok coklat paling atas  -->
-    <div class="content1">
-        <div class="content1-kiri">
-            <img src="view/images/indexTeacher.png" class="content1-image"/>
-        </div>
-        <div class="content1-kanan">
-            <p class="tulisanPutih welcome" >
-                CREATE COURSE NIH!!!
-            </p>
-            <a href="" class="menuCourse-button">
-                <div class="menuCourse-kiri">
-                    <img src="view/images/menuCourse.jpg" class="menuCourse-image">
-                </div>
-                <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">Course</p>
-                </div>
-            </a>
-            <a href="" class="menuCourse-button">
-                <div class="menuCourse-kiri">
-                    <img src="view/images/createCourse.jpg" class="menuCourse-image">
-                </div>
-                <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">Create Course</p>
-                </div>
-            </a>
-            <a href="" class="menuCourse-button">
-                <div class="menuCourse-kiri">
-                    <img src="view/images/myProfile.jpg" class="menuCourse-image">
-                </div>
-                <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">My Profile</p>
-                </div>
-            </a>
-        </div>
-    </div>
+<div class="content1">
+    <div class="tulisanPutih hurufBesar">New Course Detail</div>
 </div>
+<hr>
+<div class="content2 tulisanPutih">
+    <div class="content2-1">Course Name</div>
+    <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat"></div>
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1">Course Category</div>
+    <div class="content2-2">:<input type="text" name="courseCategory" class="kotakInput tulisanCoklat"></div>  
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1">Course Description</div>
+    <div class="content2-2">:<input type="text" name="courseDesc" class="kotakInput tulisanCoklat"></div>  
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1">Cost</div>
+    <div class="content2-2">:<input type="number" name="courseCost" class="kotakInput tulisanCoklat"></div>  
+</div>
+<div class="content2 tulisanPutih">
+    <div class="content2-1">Completeness Criteria</div>
+    <div class="content2-2">:<input type="number" name="courseKKM" class="kotakInput tulisanCoklat"></div>  
+</div>
+<a href=""><img src="view/images/createCourse.jpg" class="content-image"></a>

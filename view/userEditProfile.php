@@ -21,93 +21,102 @@
         </div>
         
         <!-- update data diri -->
-        <form method="post" action="profileTextEdit" style="display: flex;">
-            <div class="content1-tengah-edit tulisanPutih hurufBesar">
-                <table class="profileTable">
+        <form method="post" action="profileTextEdit" style="display: flex;" >
+            <div class="content1-tengah-edit tulisanPutih hurufBesar" >
+                <table class="profileTable2">
                     <tr>
-                        <td class="profile-title td-edit" style="padding: 0px;">Username</td>
-                        <td class="td-edit" >:</td>
+                        <td class="td-edit profile-title">Username</td>
+                        <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
-                            '<td class = "td-edit" >
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/>
+                            '<td class="td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/>
+                            </td>';
+                        ?> 
+                    </tr>
+                    <tr>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit"  style="line-height: 20px;"></td>
+                        <td class="td-edit"  style="line-height: 20px;">
+                            <span class="td-edit errorMessage" style="line-height:10px; font-size:1vw" id="userError"style=" color:red">username</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-edit profile-title">Name</td>
+                        <td class="td-edit" style="padding-right:20px">:</td>
+                        <?php   
+                            echo 
+                            '<td class="td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result[0]->getRealname().'"/>
                             </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="errorMessage edit-input-box" style="line-height:0px" id="userError"style=" color:red">Test</span>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;">
+                            <span id="nameError" class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Nama harus lebih dari 3 karakter</span>
                         </td>
                     </tr>
                     <tr>
-                        <td class="profile-title td-edit">Name</td>
-                        <td class="td-edit">:</td>
+                        <td  class="td-edit profile-title">Address</td>
+                        <td  class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
-                            '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result[0]->getRealname().'"/>
-                                <div class="rowLogin">
-                                        <span class="errorMessage" id="nameError" style="margin-left: 100px;">Nama harus lebih dari 3 karakter</span>
-                                </div>
+                            '<td  class="td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="uaddress" id="uaddress" oninput="checkAddress()" value="'.$result[0]->getAddress().'"/>
                             </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title td-edit">Email</td>
-                        <td class="td-edit">:</td>
+                        <td  class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;" >
+                            <span id="addrError"  class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Address harus diisi!</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-edit profile-title">Phone Number</td>
+                        <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
-                            '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uemail" id="uemail" oninput="checkEmail()" value="'.$result[0]->getEmail().'"/>
-                                <div class="rowLogin errorMessage" id="emailError" style=" color:red; margin-left:0px"></div>
+                            '<td class="td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="uphone" id="uphone" oninput="checkPhone()" value="'.$result[0]->getPhone().'"/>
                             </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title td-edit">Address</td>
-                        <td class="td-edit">:</td>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;">
+                            <span id="phoneError" class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Phone tidak valid!</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-edit profile-title">Password</td>
+                        <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
-                            '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uaddress" id="uaddress" oninput="checkAddress()" value="'.$result[0]->getAddress().'"/>
-                                <div class="rowLogin">
-                                    <span class="errorMessage" id="addrError" style="margin-left: 2%;">Address harus diisi!</span>
-                                </div>
+                            '<td class="td-edit">
+                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="upass" id="upass" oninput="checkPw()" value="'.$result[0]->getPassword().'"/>
                             </td>';
                         ?>
                     </tr>
                     <tr>
-                        <td class="profile-title td-edit">Phone Number</td>
-                        <td class="td-edit">:</td>
-                        <?php   
-                            echo 
-                            '<td class = "td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left" name="uphone" id="uphone" oninput="checkPhone()" value="'.$result[0]->getPhone().'"/>
-                                <div class="rowLogin">
-                                        <span class="errorMessage" id="phoneError" style="margin-left: 1%;">Phone tidak valid!</span>
-                                </div>
-                            </td>';
-                        ?>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;">
+                            <span id="pwError" class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Password harus terdiri lebih dari 8 karakter</span>
+                        </td>
                     </tr>
-                    <tr>
-                        <td class="profile-title td-edit">Password</td>
-                        <td class="td-edit">:</td>
-                        <?php   
-                            echo 
-                            '<td class = "td-edit">
-                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left" name="upass" id="upass" oninput="checkPw()" value="'.$result[0]->getPassword().'"/>
-                                <div class="rowLogin">
-                                    <span class="errorMessage" id="pwError" style="margin-left: 160px;">Password harus terdiri lebih dari 8 karakter</span>
-                                </div> 
-                            </td>';
-                        ?>
-                    </tr>
-                    <input type="submit" id="sbt" onclick="checkValidation()"/>
                 </table>
             </div>
-         
+            <div class="content1-kanan-edit">
+                    <td class="td-edit">
+                        <input type="submit" class="submit-edit-profile" id="sbt" onclick="checkValidation()"/>
+                    </td>
+            </div>
         </form>
     </div>    
 </div>
@@ -310,7 +319,8 @@
         }
 
         function setError(input, idInput){
-            input.className = 'kotakInput2 error';
+            input.className = 'kotakInput2 error tulisanPutih';
+            input.style.width = "100%";
             idInput.className = 'errorMessage show';
         }
 

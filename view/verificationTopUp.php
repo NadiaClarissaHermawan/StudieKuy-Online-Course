@@ -1,6 +1,7 @@
 <div class="content1">
     <div class="tulisanPutih hurufBesar">Top-Up Verification</div>
 </div>
+
 <div class="table">
     <table>
         <tr>
@@ -13,6 +14,7 @@
             <th>Verifikasi</th>
         </tr>
         <!-- Test Contoh -->
+        
         <tr>
             <td>1</td>
             <td>Tasha</td>
@@ -24,8 +26,7 @@
                 <button type="submit" class="button-kiri">Accept</button>
                 <button type="submit" class="button-kanan">Reject</button>
             </td>
-        </tr>
-
+        
         <tr>
             <td>2</td>
             <td>Tasha Boen</td>
@@ -51,6 +52,7 @@
         </tr>
     </table>
 </div>
+
 <button class="button" id="back">
     <a href="verificationAdmin">Back</a>
 </button>

@@ -10,6 +10,7 @@
         <div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
             <h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
+            <button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">ADMIN</button>
         </div>
         
         <div class="nav">
@@ -19,6 +20,6 @@
             </div>
         </div>
         <!-- ini mesti ada buat keluarin konten yg uda dibikin sblmnya di php, kalo gaada, meski di echo di view jg gakan keluar -->
-        <?php echo $content; ?>
+        <?php echo $content;?>
     </body>
 </html>

@@ -171,3 +171,11 @@ h1 {
     align-items: center;
     text-align: center;
 }
+
+#header-loginButton {
+    background-color: #EEFFBF;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Itim;
+    font-weight: bold;
+}

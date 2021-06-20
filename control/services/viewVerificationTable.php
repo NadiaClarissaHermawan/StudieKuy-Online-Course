@@ -14,6 +14,7 @@
             include 'view/layout/layoutVerificationTable.php';
             $include = ob_get_contents();
             ob_end_clean();
+
             return $include;
         }
     }
