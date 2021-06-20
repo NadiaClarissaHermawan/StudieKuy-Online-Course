@@ -12,13 +12,16 @@
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
 
             <?php 
+                //history transaksi
+                echo '<a href="history" style="float:right; margin-right: 14%; margin-top: 1.5%;" class="material-icons md-362">history</a>';
+
+                //saldo
                 $saldoUser = $result[0]->getSaldo();
                 if($saldoUser == 0.000){
                     $saldoUser = 0;
                 }
                 $statusLogin = $_SESSION['status'];
                 echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
-                
             ?>
     	</div>
         

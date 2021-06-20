@@ -38,19 +38,19 @@
             $nominal = $_GET['nominal'];
             $nominalText = $_GET['nominalText'];
 
-            //topup button
-            if(isset($nominal) && $nominal!=""){
-                $result = $this->getSaldoUser();
-                return View::createViewConfirm('userTopupConfirmation.php', [
-                    "result" => $result
-                ], $nominal);
-
             //topup custom
-            }else if(isset($nominalText) && $nominalText!=""){
+            if(isset($nominalText) && $nominalText!="" ){
+                $nominalText = $nominalText/1000;
                 $result = $this->getSaldoUser();
                 return View::createViewConfirm('userTopupConfirmation.php', [
                     "result" => $result
                 ], $nominalText);
+            //topup button
+            }else if(isset($nominal) && $nominal!=""){
+                $result = $this->getSaldoUser();
+                return View::createViewConfirm('userTopupConfirmation.php', [
+                    "result" => $result
+                ], $nominal);
             }
         }
 
@@ -101,6 +101,11 @@
             return View::createView('topupProcess.php', [
                 "result"=>$result
             ]);
+        }
+
+        //lihat riwayat transaksi saldo user
+        public function view_topupHistory(){
+            
         }
     }
 ?>

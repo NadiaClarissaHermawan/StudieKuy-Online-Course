@@ -27,9 +27,8 @@
                     <input  type="file" name="file" style="margin-left:20%">
                     <input type="hidden" name="nominal" value="<?php echo $nominal?>"/>
                     <img src="" id="gambar" style="visibility: hidden;"/>
-                    <button id="sub-btn" class="confirm-button tulisanPutih" type="submit"  onclick="beli()">Submit</button>
+                    <button style="margin-top: 5%;" id="sub-btn" class="confirm-button tulisanPutih" type="submit"  onclick="beli()">Submit</button>
                 </div>
-
             </div>
         </div>
     </form>

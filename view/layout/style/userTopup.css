@@ -176,3 +176,15 @@
     width: 44%;
     height: 7%;
 }
+
+#content1-process {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    padding-top: 50px;
+}
