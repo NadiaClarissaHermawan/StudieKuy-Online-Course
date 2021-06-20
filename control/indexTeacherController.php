@@ -24,4 +24,15 @@
             return View::createViewCreateCourse('createCourse.php', []);
         }
     }
+    class uploadModulController{
+        protected $db;
+
+        public function __construct(){
+            $this->db = new MySQLDB("localhost", "root", "", "tubes");
+        }
+
+        public function view_uploadModul(){
+            return View::createViewUploadModul('uploadModul.php', []);
+        }
+    }
 ?>

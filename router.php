@@ -148,6 +148,12 @@
                 echo $crsCtrl->view_createCoursePage();
                 break;
 
+            case $baseURL.'/uploadModul':
+                require_once "control/indexTeacherController.php";
+                $crsCtrl = new uploadModulController();
+                echo $crsCtrl->view_uploadModul();
+                break;
+
             default :
                 echo '404 not found';
                 break;
