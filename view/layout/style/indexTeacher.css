@@ -67,9 +67,11 @@
 }
 
 #header-loginButton {
-    background-color: #BFF0FF;
-    font-weight: bold;
+    background-color: #EEFFBF;
+    border-radius: 30px;
     font-size: 20px;
+    font-family: Itim;
+    font-weight: bold;
 }
 
 .menuCourse-button {

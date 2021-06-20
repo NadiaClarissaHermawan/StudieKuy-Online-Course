@@ -10,16 +10,11 @@
         <div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
             <h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
+            <button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">ADMIN</button>
         </div>
         
         <div class="nav">
             <a href="" class="menuNav" id="verif">Report</a>
-            <?php 
-                //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
-                    // echo ' <a href="userProfile" class="menuNav">My Profile</a>';
-                }
-            ?>
             <div class="menuNavKanan">
                 <a href="indexAdmin" class="material-icons md-36">home</a>
             </div>

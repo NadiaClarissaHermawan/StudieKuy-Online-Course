@@ -149,3 +149,11 @@ h1 {
 .pilihanRole{
     font-family: Reem Kufi;
 }
+
+#header-loginButton {
+    background-color: #BFF0FF;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Itim;
+    font-weight: bold;
+}

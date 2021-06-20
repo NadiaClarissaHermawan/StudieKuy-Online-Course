@@ -1,117 +1,88 @@
-.allMid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 350px;
-    width: 100%;
-}
-
-.inline {
-    display: inline-block;
-}
-
-/* styling page homeAdmin.php
---------------------
- */
-#contentMainPage {
-    padding-top: 150px;
-}
 #judul {
     width: 500px;
 }
+
 .content1 {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    /*margin-bottom: 3.5%;*/
+    margin-top: 15%;
 }
-.content1-kiri {
-    width: 50%;
+
+a {
+    text-decoration: none;
+}
+hr {
+    border: 4px solid #F3A2A2;
+    width: 80%;
+}
+
+.content2 {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    font-size: 25px;
+    line-height: 16px;
+}
+
+.content2-1 {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+}
+
+.content2-2 {
+    width: 60%;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    flex-direction: column;
 }
-.content1-kanan {
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
+
+.kotakInput {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    border: none;
+    padding-left: 5px;
+    font-size: 22px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5%;
+    text-align: left;
 }
-.content1-quote {
-    width: 80%;
-    font-size: 20px;
+.kotakInput::placeholder {
+    color: #CB6F6F;
+    font-family:Reem Kufi;
+    font-size: 100%;
+    line-height: 30px;
 }
-.content1-button:hover {
-    transition: 1s;
-    background-color: #CB6F6F;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-    color: white;
-    cursor: pointer;
+
+.kotakInput.error {
+    background-color: #ce3232;
 }
-.content1-image {
-    width: 80%;
-    height: 80%;
-    border-radius: 50px;
-}
-.welcome {
-    font-size: 50px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+
+.content-image {
+    width: 10%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #header-loginButton {
-    background-color: #BFF0FF;
-    font-weight: bold;
+    background-color: #EEFFBF;
+    border-radius: 30px;
     font-size: 20px;
-}
-
-.menuCourse-button {
-    width: 50%;
-    /*height: 100%;*/
-    /*padding: 5px;*/
-    background: #FFFFFF;
-    border-radius: 20px;
-    margin-top: 20px;
-    border: none;
-    text-decoration: none;
-    color:  #432F2F;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    font-size: 12px;
-    padding-left: 0px;
-}
-/*.menuCourse-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;*/
-    /*box-shadow: 5px lightgrey;*/
-/*}*/
-.menuCourse-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-}
-.menuCourse-kiri {
-    width: 33%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-}
-.menuCourse-kanan {
-    width: 67%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    font-family: Itim;
+    font-weight: bold;
 }

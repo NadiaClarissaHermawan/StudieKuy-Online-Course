@@ -17,9 +17,9 @@
 <div class="content2 tulisanPutih">
         <div class="content2-1">Transaction Date :</div>
         <div class="content2-2">
-            <input type="text" name="" class="kotakInput tulisanCoklat content2-tgl">
+            <input type="date" name="" class="kotakDate tulisanCoklat">
             <div id="strip">-</div>
-            <input type="text" name="" class="kotakInput tulisanCoklat content2-tgl">
+            <input type="date" name="" class="kotakDate tulisanCoklat">
         </div>
         <div class="content-kanan"><button class="button tulisanPutih" id="search">Search</button></div>
 </div>

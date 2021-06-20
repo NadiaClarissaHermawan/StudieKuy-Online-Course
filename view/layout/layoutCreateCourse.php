@@ -16,7 +16,7 @@
         <div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
             <h1 id="judul" style="display: inline-block;"> Teacher Studie Kuy !</h1>
-            <button name="loginButton" class="tulisanCoklat" id="header-loginButton">Teacher</button>
+            <button name="loginButton" class="tulisanCoklat" id="header-loginButton">TEACHER</button>
             <!-- muncul ilangin tombol login  -->
         </div>
         
