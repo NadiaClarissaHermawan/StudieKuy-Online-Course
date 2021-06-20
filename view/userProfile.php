@@ -19,8 +19,8 @@
         ?>
         <div class="content1-kanan tulisanPutih hurufBesar">
             <table class="profileTable">
-                <tr>
-                    <td>Username</td>
+                <tr >
+                    <td style="width: 40%;">Username</td>
                     <td>:</td>
                     <?php   
                         echo '<td>'.$result[0]->getUsername().'</td>';
@@ -58,19 +58,3 @@
         </div>
     </div>    
 </div>
-
-
-
-<!-- <div class="content1">
-    <div class="abc">
-        <p class="tulisanPutih hurufBesar" id="abc">My Profile</p>
-    </div>
-    <div class="menuProf">
-        <a href="" class="tulisanPutih hurufKecil" id="edit">Edit</a>
-        <a href="" class="tulisanPutih hurufKecil" id="signOut">Sign Out</a>
-    </div>
-    <hr>
-</div>
-<?php
-        // session_destdoy();
-?> -->

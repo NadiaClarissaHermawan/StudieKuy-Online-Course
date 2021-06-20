@@ -13,7 +13,7 @@
             return View::createView('verificationSertif.php', []);
         }
         public function view_verifCourse(){
-            return View::createView('verificationCourse.php', []);
+           return View::createView('verificationCourse.php', []);
         }
         public function view_verifTopUp(){
             return View::createView('verificationTopUp.php', []);
