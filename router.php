@@ -105,11 +105,11 @@
                 $courseCtrl = new verificationTableController();
                 echo $courseCtrl->view_verifCourse();
                 break;
-
             case $baseURL.'/verificationTopUp':
                 require_once "control/verificationTableController.php";
-                $topupCtrl = new verificationTableController();
-                echo $topupCtrl->view_verifTopUp();
+                $topUpCtrl = new verificationTableController();
+                echo $topUpCtrl->view_verifTopUp();
+                break;
 
             case $baseURL.'/reportCourse':
                 require_once "control/reportController.php";
@@ -140,6 +140,12 @@
                 require_once "control/indexController.php";
                 $idxCtrl = new indexController();
                 echo $idxCtrl->view_coursesDetail();
+                break;
+
+            case $baseURL.'/createCourse':
+                require_once "control/indexTeacherController.php";
+                $crsCtrl = new createCourseController();
+                echo $crsCtrl->view_createCoursePage();
                 break;
 
             default :

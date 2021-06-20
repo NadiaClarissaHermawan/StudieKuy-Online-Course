@@ -2,9 +2,9 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/verificationTable.css"/>
-        <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
     </head>
     <body>
         <div class="header">
@@ -13,13 +13,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav" id="verif">Verification </a>
-            <?php 
-                //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
-                    // echo ' <a href="userProfile" class="menuNav">My Profile</a>';
-                }
-            ?>
+            <a href="" class="menuNav" id="verif">Verification</a>
             <div class="menuNavKanan">
                 <a href="indexAdmin" class="material-icons md-36">home</a>
             </div>
