@@ -35,13 +35,13 @@
                 if($row->getStatus() == null){
                     //acc button
                     echo "<form method='GET' action='acceptSertif'>";
-                    echo '<input type="hidden" name="id" value="'.$row->getIdPengguna().'"/>';
+                    echo '<input type="hidden" name="id" value="'.$row->getIDMember().'"/>';
                     echo '<button type="submit" value="accept" name="verif" class="button-kiri">Accept</button>';
                     echo "</form>";
 
                     //reject button
                     echo "<form method='GET' action='rejectSertif'>";
-                    echo '<input type="hidden" name="id" value="'.$row->getIdPengguna().'"/>';
+                    echo '<input type="hidden" name="id" value="'.$row->getIDMember().'"/>';
                     echo '<button type="submit" value="decline" name="verif2" class="button-kanan">Reject</button>';
                     echo "</form>";
                 
