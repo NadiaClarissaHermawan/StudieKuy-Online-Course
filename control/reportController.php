@@ -36,6 +36,7 @@
             return $result;
         }
 
+        //view course report
         public function view_courseReport(){
             $result = $this->getCourseReport();
             return View::createView('reportCourse.php', [

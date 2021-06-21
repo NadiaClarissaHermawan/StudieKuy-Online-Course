@@ -1,13 +1,7 @@
 <div id="contentMainPage">
     <div class="content2">
-        <div class="content2-kiri">
-            <a href="verificationSertif">Sertificate Verification</a>
-        </div>
-        <div class="content2-tengah">
-            <a href="verificationCourse">Course Transaction Verification</a>
-        </div>
-        <div class="content2-kanan">
-            <a href="verificationTopUp">Top-Up Transaction Verification</a>
-        </div>
+        <a class="content2-kiri" href="verificationSertif">Sertificate Verification</a>
+        <a class="content2-tengah" href="verificationCourse">Course Transaction Verification</a>
+        <a class="content2-kanan" href="verificationTopUp">Top-Up Transaction Verification</a>
     </div>
 </div>
