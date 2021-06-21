@@ -64,10 +64,11 @@
                 echo $userProfileCtrl->signOut();
                 break;
 
+            //done
             case $baseURL.'/adminLogin':
-                require_once "control/adminLoginController.php";
-                $loginCtrl = new adminLoginController();
-                echo $loginCtrl->view_adminLoginpage();
+                require_once "control/adminController.php";
+                $Ctrl = new adminController();
+                echo $Ctrl->view_adminLoginpage();
                 break;
 
             case $baseURL.'/profileEdit':
@@ -75,10 +76,11 @@
                 $userProfileCtrl = new userProfileController();
                 echo $userProfileCtrl->view_editProfile();
                 break;
-
+            
+            //edit
             case $baseURL.'/indexAdmin':
-                require_once "control/indexAdminController.php";
-                $idxCtrl = new indexAdminController();
+                require_once "control/adminController.php";
+                $idxCtrl = new adminController();
                 echo $idxCtrl->view_mainpageAdmin();
                 break;
 
@@ -224,6 +226,13 @@
                 $buyCtrl = new userTopupController();
                 echo $buyCtrl->insert_log();
                 header('Location: transaction-progress');
+                break;
+
+            //klik login di admin
+            case $baseURL.'/adminLogin':
+                require_once "control/adminController.php";
+                $Ctrl = new adminController();
+                echo $Ctrl->klik_login();
                 break;
 
             default :

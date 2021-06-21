@@ -6,11 +6,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     text-align: center;
     align-items: center;
-    height: 100%;
-    margin-top: 150px;
+    margin-top: 200px;
 }
 #judul {
 	width: 500px;
@@ -106,6 +104,7 @@
     height: 120%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     border: 0px solid black;
     border-radius: 35px;
     color:#432F2F ;

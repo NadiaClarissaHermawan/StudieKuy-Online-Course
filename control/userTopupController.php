@@ -112,6 +112,7 @@
                       FROM transaksi_saldo t INNER JOIN member m
                       ON t.id_member = m.id_member
                       WHERE m.id_pengguna = '$id_pengguna'
+                      ORDER BY tanggal_transaksi_saldo DESC
                      ";
             $transaksi_user = $this->db->executeSelectQuery($query);
 
