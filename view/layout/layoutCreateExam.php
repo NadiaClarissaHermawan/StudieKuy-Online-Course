@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/createExam.css"/>
     </head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <body>
         <div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>

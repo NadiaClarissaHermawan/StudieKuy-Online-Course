@@ -159,6 +159,7 @@ hr {
     cursor: pointer;
 }
 .modal {
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 20%;
@@ -168,6 +169,7 @@ hr {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    visibility: hidden;
 }
 
 .tulisanHitam {
