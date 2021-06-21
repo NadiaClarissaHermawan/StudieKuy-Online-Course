@@ -209,6 +209,18 @@
                 echo $acCtrl->rejectTopUp();
                 header ('Location: verificationTopUp');
                 break;
+
+            case $baseURL.'/teacherProfile':
+                require_once "control/indexTeacherController.php";
+                $teacherProfileCtrl = new teacherProfileController();
+                echo $teacherProfileCtrl->view_teacherProfile();
+                break;
+
+            case $baseURL.'/signOutTeacher':
+                require_once "control/indexTeacherController.php";
+                $teacherProfileCtrl = new indexTeacherController();
+                echo $teacherProfileCtrl->signOut();
+                break;
     
             default :
                 echo '404 not found';
