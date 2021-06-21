@@ -180,6 +180,12 @@
                 echo $hisCtrl->view_topupHistory();
                 break; 
 
+            case $baseURL.'/teacherCourse':
+                require_once "control/indexTeacherController.php";
+                $hisCtrl = new teacherCourseController();
+                echo $hisCtrl->view_teacherCourse();
+                break; 
+
             default :
                 echo '404 not found';
                 break;

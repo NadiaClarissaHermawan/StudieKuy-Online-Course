@@ -46,4 +46,15 @@
             return View::createViewCreateExam('createExam.php', []);
         }
     }
+    class teacherCourseController{
+        protected $db;
+
+        public function __construct(){
+            $this->db = new MySQLDB("localhost", "root", "", "tubes");
+        }
+
+        public function view_teacherCourse(){
+            return View::createViewTeacherCourse('teacherCourse.php', []);
+        }
+    }
 ?>

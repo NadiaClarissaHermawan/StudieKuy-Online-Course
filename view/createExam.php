@@ -52,14 +52,13 @@
 <button class="button" id="button" onclick="addQuestion()" >Add New Question</button>
 <a href="uploadModul"><button class="buttonL">Back</button></a>
 <!-- button Submit ga bs pake <a> krn modalnya keluar cepet -->
-<button class="buttonR" id="myBtn">Submit</button>
+<button class="buttonR" id="myBtn" onsubmit="">Submit</button>
 <div id="myModal" class="modal">
     <div class="modal-content">
         <p class="tulisanHitam">Course has been created!</p>
         <!-- Test button sementara mau arahin ke home dlu -->
         <a href="indexTeacher"><button class="buttonM tulisanCoklat hurufSedang">Go to Course</button></a>
     </div>
-
 </div>
 
 <script>
@@ -151,6 +150,7 @@
     // When the user clicks the button, open the modal 
     btn.onclick = function() {
       modal.style.display = "block";
+      modal.style.visibility = "visible";
     }
 
     // When the user clicks on <span> (x), close the modal
