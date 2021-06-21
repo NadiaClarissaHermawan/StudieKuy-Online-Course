@@ -46,7 +46,7 @@
                         $resQuery = $this->db->executeSelectQuery($query);
                         
                         $_SESSION['id_pengguna'] = $resQuery[0]['id_pengguna'];
-                        $_SESSION['status'] = 1;
+                        $_SESSION['status'] = 2;
                         header('Location: indexAdmin?status=1');
 
                     //password salah

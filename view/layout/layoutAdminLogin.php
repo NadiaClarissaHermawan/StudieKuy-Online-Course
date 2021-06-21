@@ -16,7 +16,7 @@
             <a href="" class="menuNav">Admin Login </a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
+                if(isset($_SESSION['status']) && $_SESSION['status'] == 2){
                     echo ' <a href="userProfile" class="menuNav">My Profile</a>';
                 }
             ?>
