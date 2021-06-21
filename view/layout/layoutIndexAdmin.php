@@ -14,7 +14,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav" id="home">Home</a>
+            <a href="indexAdmin" class="menuNav">Home</a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
                 if(isset($_SESSION['status']) && $_SESSION['status'] == 2){

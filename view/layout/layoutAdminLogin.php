@@ -10,7 +10,8 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
-    	</div>
+    	    <button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">ADMIN</button>
+        </div>
         
         <div class="nav">
             <a href="" class="menuNav">Admin Login </a>

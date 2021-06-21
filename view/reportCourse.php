@@ -2,50 +2,74 @@
     <div class="tulisanPutih hurufBesar">Courses Member Report</div>
 </div>
 <hr>
-<div class="content2 tulisanPutih">
-        <div class="content2-1">Member Name:</div>
-        <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-        <div class="content2-3">Completeness Status :</div>
-        <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-</div>
-<div class="content2 tulisanPutih">
-        <div class="content2-1">Final Score :</div>
-        <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-        <div class="content-kanan"><button class="button tulisanPutih" id="search">Search</button></div>
-</div>
+<form>
+    <div class="content2 tulisanPutih">
+            <div class="content2-1">Member Name</div>
+            <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center; margin-left:0.3%">:</div>
+            <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat" style="margin-right: -4%;"></div>
+            
+            <div class="content2-3">Completeness Status</div>
+            <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center">:</div>
+            <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+    </div>
+    <div class="content2 tulisanPutih">
+            <div class="content2-1" style="width: 13.6%;">Final Score</div>
+            <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center">:</div>
+            <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat" style="width: 89%;"></div>
+            <button type="submit" class="content-kanan tulisanPutih" id="search">Search</button>
+    </div>
+</form>
 <div class="table">
     <table>
         <tr>
-            <th>Id Transaksi</th>
-            <th>Tanggal</th>
-            <th>Harga Course</th>
-            <th>Saldo Awal</th>
-            <th>Saldo Akhir</th>
+            <th>No.</th>
+            <th>Nama</th>
+            <th>Nilai Akhir</th>
+            <th>Status Ketuntasan</th>
+            <th>Status Verifikasi</th>
+            <th>Tanggal Tuntas</th>
             <th>Nama Course</th>
-            <th>Verifikasi</th>
-        </tr>
-        <!-- Test Contoh -->
-        <tr>
-            <td>1</td>
-            <td>2021-01-05</td>
-            <td>50.000</td>
-            <td>25.000</td>
-            <td>75.000</td>
-            <td>Java Basic Programming</td>
-            <td>1</td>
+            <th>Syarat Nilai Minimum</th>
+            <th>Nama Bidang</th>
         </tr>
 
-        <tr>
-            <td>2</td>
-            <td>2021-02-20</td>
-            <td>75.000</td>
-            <td>5.000</td>
-            <td>80.000</td>
-            <td>Pemrograman Python</td>
-            <td>0</td>
-        </tr>
+        <?php 
+            $nomor = 1;
+            foreach($result as $key => $row){
+                echo '<tr>';
+                echo '<td>'.$nomor.'</td>';
+                echo '<td>'.$row->getRealName().'</td>';
+
+                $tempNilaiAkhir = $row->getNilaiAkhir();
+                if($tempNilaiAkhir == null){
+                    $tempNilaiAkhir = "-";
+                }
+                echo '<td>'.$tempNilaiAkhir.'</td>';
+
+                echo '<td>'.$row->getStatusKetuntasan().'</td>';
+
+                $tempStatusVerifikasi = $row->getStatusVerifikasi();
+                if($tempStatusVerifikasi == null){
+                    $tempStatusVerifikasi = "-";
+                }
+                echo '<td>'.$tempStatusVerifikasi.'</td>';
+
+                $tempTanggalTuntas = $row->getTanggalTuntas();
+                if($tempTanggalTuntas == null){
+                    $tempTanggalTuntas = "-";
+                }
+                echo '<td>'.$tempTanggalTuntas.'</td>';
+
+                echo '<td>'.$row->getNamaCourse().'</td>';
+                echo '<td>'.$row->getBatasNilai().'</td>';
+                echo '<td>'.$row->getNamaBidang().'</td>';
+                echo '<tr>';
+                
+                $nomor = $nomor+1;
+            }
+        ?>
+      
     </table>
 </div>
-<button class="button" id="back">
-    <a href="indexAdmin">Back</a>
-</button>
+<br>
+<a href="indexAdmin" id="back">Back</a>

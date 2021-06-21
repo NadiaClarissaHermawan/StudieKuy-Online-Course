@@ -83,7 +83,7 @@
         }
         //____________________________________________________________________________________________________________________________________________
 
-        //test ajax upload profile picture
+        //ajax upload profile picture
         public function upload(){
             $tempUser = $_SESSION['id_pengguna'];
 

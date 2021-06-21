@@ -46,8 +46,8 @@
                         $resQuery = $this->db->executeSelectQuery($query);
                         
                         $_SESSION['id_pengguna'] = $resQuery[0]['id_pengguna'];
-                        $_SESSION['status'] = 2;
-                        header('Location: indexAdmin?status=1');
+                        $_SESSION['statusAdmin'] = 2;
+                        header('Location: indexAdmin');
 
                     //password salah
                     }else{
@@ -58,9 +58,26 @@
             }
         }
 
+        public function getAdminProfile(){
+            $adminId = $_SESSION['id_pengguna'];
+            $query ="SELECT nama_user, real_name, email, profile_picture, pass
+                     FROM pengguna 
+                     WHERE id_pengguna = '$adminId' 
+                    ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            
+            foreach($resQuery as $key=>$value){
+                $result[] = new Admin ($value['nama_user'], $value['real_name'], $value['pass'], $value['email'], $value['profile_picture']);
+            }
+            return $result;
+        }
+
         //main page admin
         public function view_mainpageAdmin(){
-            return View::createViewMainPageAdmin('indexAdmin.php', []);
+            $result = $this->getAdminProfile();
+            return View::createViewMainPageAdmin('indexAdmin.php', [
+                "result" => $result
+            ]);
         }
     }
 ?>
