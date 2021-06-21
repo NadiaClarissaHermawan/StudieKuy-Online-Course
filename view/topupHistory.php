@@ -6,33 +6,39 @@
 </div>
 
 <div id="history">
-    <table>
-        <tr>
-            <th>Nominal Top up</th>
-            <th>Saldo Awal</th>
-            <th>Saldo Akhir</th>
-            <th>Tanggal</th>
-            <th>Status</th>
-        </tr>
+    
+    <?php
+        foreach($result as $key => $row){
+            
+            echo '<div class="bubble-history">';
+            echo '<div class="bubble-kiri tulisanCoklat" style="text-align: left;">';
+            echo 'Top up Saldo <br>';
 
-        <?php
-            foreach($result as $key => $row){
-                echo "<tr>";
-                echo "<td>".$row->getNominal()."</td>";
-                echo "<td>".$row->getSaldoAwal()."</td>";
-                echo "<td>".$row->getSaldoAkhir()."</td>";
-                echo "<td>".$row->getTanggal()."</td>";
-
-                $status = $row->getStatusVerifikasi();
-                //belum di verifikasi
-                if($status == 0){
-                    echo "<td>Pending</td>";
-                //sudah di verif
-                }else{
-                    echo "<td>Succeed</td>";
-                }
-                echo "</tr>";
+            $saldoAwal = $row->getSaldoAwal();
+            $saldoAkhir = $row->getSaldoAkhir();
+            if($saldoAwal == '0.000'){
+                $saldoAwal = 0;
             }
-        ?>
-    </table>
+            if($saldoAkhir == '0.000'){
+                $saldoAkhir = 0;
+            }
+            echo 'Saldo Awal  : Rp '.$saldoAwal.',-<br>';
+            echo 'Saldo Akhir : Rp '.$saldoAkhir.',-';
+            echo '</div>';
+            echo '<div class="bubble-kanan tulisanCoklat" style="text-align: right;">';
+            echo '+ Rp '.$row->getNominal().',-';
+            echo '<div class="tgl">'.$row->getTanggal().'</div>';
+
+            $status = $row->getStatusVerifikasi();
+            //belum di verifikasi
+            if($status == 0){
+                echo '<div class="pending">Pending</div>';
+            //sudah di verif
+            }else{
+                echo '<div class="succeed">Succeed</div>';
+            }
+        
+            echo '</div></div>';
+        }
+    ?>
 </div>
