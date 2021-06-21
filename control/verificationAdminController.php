@@ -43,6 +43,7 @@
 
         //kalau sertif udah di acc
         public function acceptSertif(){
+            
             $verif = $_GET['verif'];
             $idMemCourse = $_GET['id'];
 
@@ -57,12 +58,12 @@
 
         //kalau sertif di reject
         public function rejectSertif(){
-            $verif = $_GET['verif'];
+            $verif = $_GET['verif2'];
             $idMemCourse = $_GET['id'];
 
             if(isset($verif) && $verif!= ""){
                 $query = "UPDATE member_course
-                          SET status_verifikasi = 0
+                          SET status_verifikasi = 2
                           WHERE  id_memCourse = '$idMemCourse'
                          ";
                 $this->db->executeNonSelectQuery($query);

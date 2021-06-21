@@ -29,13 +29,13 @@
                     //acc button
                     echo "<form method='GET' action='acceptSertif'>";
                     echo '<input type="hidden" name="id" value="'.$row->getIdMemCourse().'"/>';
-                    echo '<button type="submit" value="1" name="verif" class="button-kiri">Accept</button>';
+                    echo '<button type="submit" value="accept" name="verif" class="button-kiri">Accept</button>';
                     echo "</form>";
 
                     //reject button
                     echo "<form method='GET' action='rejectSertif'>";
                     echo '<input type="hidden" name="id" value="'.$row->getIdMemCourse().'"/>';
-                    echo '<button type="submit" value="0" name="verif" class="button-kanan">Reject</button>';
+                    echo '<button type="submit" value="decline" name="verif2" class="button-kanan">Reject</button>';
                     echo "</form>";
                 
                 //kalau sudah di accept
@@ -43,7 +43,7 @@
                     echo '<button class="button-verified">Verified</button>';
                 
                 //kalau di reject
-                }else if($row->getStatus() == 0){
+                }else if($row->getStatus() == 2){
                     echo '<button class="button-rejected">Rejected</button>';
                 }
 

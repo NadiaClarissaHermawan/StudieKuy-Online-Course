@@ -68,10 +68,16 @@ a {
     flex-direction: column;
     margin-right: 5%;
     background-color: #BFEA88;
+    border: none;
     border-radius: 20px;
     font-size: 18px;
     font-family: Reem Kufi;
     padding: 10px;
+}
+.button-kiri:hover{
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.2s;
 }
 .button-kanan {
     width: 50%;
@@ -81,15 +87,22 @@ a {
     text-align: center;
     align-items: center;
     flex-direction: column;
+    border: none;
     background-color: #E16354;
     border-radius: 20px;
     font-size: 18px;
     font-family: Reem Kufi;
     padding: 10px;
 }
+.button-kanan:hover{
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.2s;
+}
 .button-verified {
     width: 100%;
     height: 70%;
+    border: none;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -101,9 +114,15 @@ a {
     font-family: Reem Kufi;
     padding: 10px;
 }
+.button-verified:hover{
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.2s;
+}
 .button-rejected {
     width: 100%;
     height: 70%;
+    border: none;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -113,6 +132,11 @@ a {
     font-size: 18px;
     font-family: Reem Kufi;
     padding: 10px;
+}
+.button-rejected:hover{
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 #back {

@@ -193,12 +193,14 @@
                 $acCtrl = new verificationAdminController();
                 echo $acCtrl->acceptSertif();
                 header ('Location: verificationSertif');
+                break;
 
             case $baseURL.'/rejectSertif':
                 require_once "control/verificationAdminController.php";
                 $acCtrl = new verificationAdminController();
                 echo $acCtrl->rejectSertif();
                 header ('Location: verificationSertif');
+                break;
     
             default :
                 echo '404 not found';
