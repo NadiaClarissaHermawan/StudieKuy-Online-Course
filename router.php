@@ -103,12 +103,6 @@
                 echo $sertifCtrl->view_verifSertif();
                 break;
 
-            case $baseURL.'/verificationCourse':
-                require_once "control/verificationAdminController.php";
-                $courseCtrl = new verificationAdminController();
-                echo $courseCtrl->view_verifCourse();
-                break;
-
             case $baseURL.'/verificationTopUp':
                 require_once "control/verificationAdminController.php";
                 $topUpCtrl = new verificationAdminController();

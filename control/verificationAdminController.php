@@ -76,11 +76,7 @@
                 "result" => $result
             ]);
         }
-
-        public function view_verifCourse(){
-           return View::createViewVerification('verificationCourse.php', []);
-        }
-
+        
         public function view_verifTopUp(){
             return View::createViewVerification('verificationTopUp.php', []);
         }
