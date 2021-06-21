@@ -2,6 +2,7 @@
     require_once "control/services/viewVerificationAdmin.php";
     require_once "control/services/mysqlDB.php";
     require_once "model/sertificateRequest.php";
+    require_once "model/TopUpRequest.php";
 
     class verificationAdminController{
         protected $db;
@@ -77,8 +78,57 @@
             ]);
         }
         
+        //ambil keterangan top up
+        public function getTopUpRequest(){
+            //cari yang belom diverifikasi & nilai akhir tidak null
+            //status verif 0 = rejected
+            $query = "SELECT ts.id_transaksi_saldo, ts.tanggal_transaksi_saldo, p.real_name, ts.nominal_pengisian, ts.saldo_awal, ts.saldo_akhir, ts.bukti_trf, ts.status_verifikasi, ts.id_member
+                      FROM transaksi_saldo ts INNER JOIN member m
+                      ON ts.id_member = m.id_member INNER JOIN pengguna p
+                      ON m.id_pengguna = p.id_pengguna
+                      WHERE ts.status_verifikasi IS NULL;
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+
+            foreach($resQuery as $key => $value){
+                $result[] = new TopUpRequest($value['id_transaksi_saldo'], $value['tanggal_transaksi_saldo'], $value['real_name'], $value['nominal_pengisian'], $value['saldo_awal'], $value['saldo_akhir'], $value['bukti_trf'], $value['status_verifikasi'], $value['id_member']);
+            }
+            return $result;
+        }
+
+        //kalau topup udah di acc
+        public function acceptTopUp(){
+            
+            $verif = $_GET['verif'];
+            $idMember = $_GET['id'];
+
+            if(isset($verif) && $verif!= ""){
+                $query = "UPDATE transaksi_saldo
+                          SET status_verifikasi = 1
+                          WHERE  id_member = '$idMember'
+                         ";
+                $this->db->executeNonSelectQuery($query);
+            }
+        }
+
+        //kalau topup di reject
+        public function rejectTopUp(){
+            $verif = $_GET['verif2'];
+            $idMember = $_GET['id'];
+
+            if(isset($verif) && $verif!= ""){
+                $query = "UPDATE transaksi_saldo
+                          SET status_verifikasi = 2
+                          WHERE  id_member = '$idMember'
+                         ";
+                $this->db->executeNonSelectQuery($query);
+            }
+        }        
         public function view_verifTopUp(){
-            return View::createViewVerification('verificationTopUp.php', []);
+            $result = $this->getTopUpRequest();
+            return View::createViewVerification('verificationTopUp.php', [
+                "result" => $result
+            ]);
         }
     }
 ?>

@@ -195,6 +195,20 @@
                 echo $acCtrl->rejectSertif();
                 header ('Location: verificationSertif');
                 break;
+
+            case $baseURL.'/acceptTopUp':
+                require_once "control/verificationAdminController.php";
+                $acCtrl = new verificationAdminController();
+                echo $acCtrl->acceptTopUp();
+                header ('Location: verificationTopUp');
+                break;
+
+            case $baseURL.'/rejectTopUp':
+                require_once "control/verificationAdminController.php";
+                $acCtrl = new verificationAdminController();
+                echo $acCtrl->rejectTopUp();
+                header ('Location: verificationTopUp');
+                break;
     
             default :
                 echo '404 not found';

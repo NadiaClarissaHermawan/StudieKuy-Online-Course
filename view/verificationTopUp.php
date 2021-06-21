@@ -5,54 +5,62 @@
 <div class="table">
     <table>
         <tr>
+            <th>No.</th>
             <th>Id Transaksi</th>
+            <th>Tanggal Transaksi</th>
             <th>Nama</th>
             <th>Nominal Top-Up</th>
             <th>Saldo Awal</th>
             <th>Saldo Akhir</th>
-            <th>Kode Transfer</th>
+            <th>Bukti Transfer</th>
             <th>Verifikasi</th>
         </tr>
-        <!-- Test Contoh -->
         
-        <tr>
-            <td>1</td>
-            <td>Tasha</td>
-            <td>50.000</td>
-            <td>0</td>
-            <td>50.000</td>
-            <td>123</td>
-            <td class="button">
-                <button type="submit" class="button-kiri">Accept</button>
-                <button type="submit" class="button-kanan">Reject</button>
-            </td>
-        
-        <tr>
-            <td>2</td>
-            <td>Tasha Boen</td>
-            <td>100.000</td>
-            <td>60.000</td>
-            <td>160.000</td>
-            <td>229</td>
-            <td class="button">
-                <button class="button-verified">Verified</button>
-            </td>
-        </tr>
+        <?php
+            $nomor = 1;
+            foreach($result as $key => $row){
+                echo '<tr>';
+                echo '<td>'.$nomor.'</td>';
+                echo '<td>'.$row->getID().'</td>';
+                echo '<td>'.$row->getTanggal().'</td>';
+                echo '<td>'.$row->getRealName().'</td>';
+                echo '<td>'.$row->getNominal().'</td>';
+                echo '<td>'.$row->getSaldoAwal().'</td>';
+                echo '<td>'.$row->getSaldoAkhir().'</td>';
+                echo '<td>'.$row->getBuktiTrf().'</td>';
 
-        <tr>
-            <td>3</td>
-            <td>Natasha</td>
-            <td>25.000</td>
-            <td>45.000</td>
-            <td>70.000</td>
-            <td>345</td>
-            <td class="button">
-                <button class="button-rejected">Rejected</button>
-            </td>
-        </tr>
+                echo '<td class="button">';
+
+                //kalau belum diverifikasi
+                if($row->getStatus() == null){
+                    //acc button
+                    echo "<form method='GET' action='acceptSertif'>";
+                    echo '<input type="hidden" name="id" value="'.$row->getIdPengguna().'"/>';
+                    echo '<button type="submit" value="accept" name="verif" class="button-kiri">Accept</button>';
+                    echo "</form>";
+
+                    //reject button
+                    echo "<form method='GET' action='rejectSertif'>";
+                    echo '<input type="hidden" name="id" value="'.$row->getIdPengguna().'"/>';
+                    echo '<button type="submit" value="decline" name="verif2" class="button-kanan">Reject</button>';
+                    echo "</form>";
+                
+                //kalau sudah di accept
+                }else if($row->getStatus() == 1){
+                    echo '<button class="button-verified">Verified</button>';
+                
+                //kalau di reject
+                }else if($row->getStatus() == 2){
+                    echo '<button class="button-rejected">Rejected</button>';
+                }
+
+                echo '</td>';
+                echo '</tr>';
+              
+                $nomor = $nomor+1;
+            }
+        ?>
+
     </table>
 </div>
-
-<button class="button" id="back">
-    <a href="verificationAdmin">Back</a>
-</button>
+<a class="button" id="back" href="verificationAdmin">Back</a>
