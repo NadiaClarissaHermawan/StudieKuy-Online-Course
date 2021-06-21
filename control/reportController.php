@@ -3,6 +3,7 @@
     require_once "control/services/mysqlDB.php";
     require_once "model/CourseReport.php";
     require_once "model/TopUpReport.php";
+    require_once "model/CourseTransactionReport.php";
 
     class reportController{
         protected $db;
@@ -35,15 +36,28 @@
             }
             return $result;
         }
-
-        //view course report
-        public function view_courseReport(){
-            $result = $this->getCourseReport();
-            return View::createView('reportCourse.php', [
-                "result"=>$result
-            ]);
+        public function getCourseTransactionReport(){
+            $query = "SELECT tc.id_transaksi_course, tc.tanggal_transaksi_course,
+                            c.tarif, tc.saldo_awal, tc.saldo_akhir,
+                            c.nama_course, mm.status_verifikasi
+                      FROM pengguna p INNER JOIN member m 
+                            ON p.id_pengguna = m.id_pengguna
+                            INNER JOIN member_course mm
+                            ON mm.id_member = m.id_member
+                            INNER JOIN transaksi_course tc
+                            ON tc.id_member = m.id_member
+                            INNER JOIN courses c 
+                            ON c.id_courses = tc.id_courses
+                      ORDER BY tc.id_transaksi_course ASC
+                     ";
+            $queryResult = $this->db->executeSelectQuery($query);
+            // var_dump($queryResult);
+            // die;
+            foreach($queryResult as $key => $value) {
+                $result[] = new TransactionCourseReport($value['id_transaksi_course'], $value['tanggal_transaksi_course'], $value['tarif'], $value['saldo_awal'], $value['saldo_akhir'], $value['nama_course'], $value['status_verifikasi']);
+            }
+            return $result;
         }
-
         //ambil top-up report 
         public function getTopUpReport(){
             $query = "SELECT id_transaksi_saldo, tanggal_transaksi_saldo, nominal_pengisian, saldo_awal, saldo_akhir, status_verifikasi
@@ -57,6 +71,13 @@
             }
             return $result;
         }
+        //view course report
+        public function view_courseReport(){
+            $result = $this->getCourseReport();
+            return View::createView('reportCourse.php', [
+                "result"=>$result
+            ]);
+        }
 
         public function view_topUpReport(){
             $result = $this->getTopUpReport();
@@ -66,7 +87,10 @@
         }
 
         public function view_courseTransactionReport(){
-            return View::createView('reportCourseTransaction.php', []);
+            $result = $this->getCourseTransactionReport();
+            return View::createView('reportCourseTransaction.php', [
+                "result"=>$result
+            ]);
         }
     }
 ?>

@@ -34,8 +34,25 @@
             <th>Nama Course</th>
             <th>Verifikasi</th>
         </tr>
+        <?php 
+            foreach($result as $key => $row){
+                echo '<tr>';
+                echo '<td>'.$row->getIdTransaksi().'</td>';
+                echo '<td>'.$row->getTanggal().'</td>';
+                echo '<td>'.$row->getHarga().'</td>';
+                echo '<td>'.$row->getSaldoAwal().'</td>';
+                echo '<td>'.$row->getSaldoAkhir().'</td>';
+                echo '<td>'.$row->getNamaCourse().'</td>';
+                $tempStatusVerifikasi = $row->getStatusVerifikasi();
+                if($tempStatusVerifikasi == null){
+                    $tempStatusVerifikasi = "-";
+                }
+                echo '<td>'.$tempStatusVerifikasi.'</td>';
+                echo '<tr>';
+            }
+        ?>
         <!-- Test Contoh -->
-        <tr>
+        <!-- <tr>
             <td>1</td>
             <td>2021-01-05</td>
             <td>50.000</td>
@@ -53,7 +70,7 @@
             <td>80.000</td>
             <td>Pemrograman Python</td>
             <td>0</td>
-        </tr>
+        </tr> -->
     </table>
 </div>
 <button class="button" id="back">
