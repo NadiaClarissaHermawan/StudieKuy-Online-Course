@@ -51,7 +51,16 @@
 
 <button class="button" id="button" onclick="addQuestion()" >Add New Question</button>
 <a href="uploadModul"><button class="buttonL">Back</button></a>
-<a href=""><button class="buttonR">Next</button></a>
+<!-- button Submit ga bs pake <a> krn modalnya keluar cepet -->
+<button class="buttonR" id="myBtn">Submit</button>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p class="tulisanHitam">Course has been created!</p>
+        <!-- Test button sementara mau arahin ke home dlu -->
+        <a href="indexTeacher"><button class="buttonM tulisanCoklat hurufSedang">Go to Course</button></a>
+    </div>
+
+</div>
 
 <script>
     function addQuestion(){
@@ -129,5 +138,30 @@
         let button = document.getElementById("button");
         document.body.insertBefore(content2, button);
         document.body.insertBefore(content3, button);
+    }
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
 </script>
