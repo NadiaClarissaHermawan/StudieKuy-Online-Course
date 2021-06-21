@@ -5,7 +5,7 @@
         <hr>
     </div>
     <div class="tulisanPutih" style="font-size: 2vw;">We will inform you once the transaction succeed !</div>
-    <img src="view/images/topupProcess.png">
+    <img src="view/images/topupProcess.png" class="process-img">
 
-    <a href="index" style="text-decoration:none; background-color:#BDFFE7; border-radius:24px; padding:10px; font-size:1.5vw" class="tulisanCoklat">Return to Main Page</a>
+    <a href="index"  class="tulisanCoklat" id="return-to-main">Return to Main Page</a>
 </div>

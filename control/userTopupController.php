@@ -3,6 +3,7 @@
     require_once "control/services/viewUserTopup.php";
     require_once "control/services/mysqlDB.php";
     require_once "model/saldo.php";
+    require_once "model/transaksi_saldo.php";
 
     class userTopupController{
         protected $db;
@@ -105,7 +106,22 @@
 
         //lihat riwayat transaksi saldo user
         public function view_topupHistory(){
-            
+            $id_pengguna = $_SESSION['id_pengguna'];
+
+            $query = "SELECT *
+                      FROM transaksi_saldo t INNER JOIN member m
+                      ON t.id_member = m.id_member
+                      WHERE m.id_pengguna = '$id_pengguna'
+                     ";
+            $transaksi_user = $this->db->executeSelectQuery($query);
+
+            foreach($transaksi_user as $key =>$value){
+                $result[] = new Transaksi_Saldo($value['saldo_awal'], $value['saldo_akhir'], $value['status_verifikasi'], $value['tanggal_transaksi_saldo'], $value['nominal_pengisian'], $value['saldo']);
+            }
+
+            return View::createView('topupHistory.php', [
+                "result"=>$result
+            ]);
         }
     }
 ?>

@@ -13,7 +13,7 @@
 
             <?php 
                 //history transaksi
-                echo '<a href="history" style="float:right; margin-right: 14%; margin-top: 1.5%;" class="material-icons md-362">history</a>';
+                echo '<a href="history" style="float:right; margin-right: 250px; margin-top: 25px;" class="material-icons md-362">history</a>';
 
                 //saldo
                 $saldoUser = $result[0]->getSaldo();

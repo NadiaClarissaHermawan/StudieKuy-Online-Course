@@ -203,7 +203,6 @@
         }
 		
 		function errorHandler(){
-			console.log(dupli.textContent);
 			if(dupli.textContent === 'UsernameEmail'){
 				idU.textContent = 'Username sudah terdaftar !';
 				idU.style.marginLeft = "4.5%";
