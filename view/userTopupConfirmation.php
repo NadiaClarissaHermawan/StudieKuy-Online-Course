@@ -24,8 +24,9 @@
                 </div>
                 
                 <div id="confirm-upload-bukti" class="tulisanPutih">
-                    <input  type="file" name="file" style="margin-left:20%">
+                    <input  type="file" id="file" name="file"  accept="image/*" style="margin-left:20%">
                     <input type="hidden" name="nominal" value="<?php echo $nominal?>"/>
+                    <div id="error" style="color: red; font-size:1vw"></div>
                     <div class="gambar-submit">
                         <img src="" id="gambar" style="visibility: hidden;"/>
                     </div>
@@ -68,14 +69,19 @@
 
 
     //cek apakah sudah ada uploadan file
-    const bukti = document.getElementById("file");
+    const bukti = document.getElementById("gambar");
+    let err = document.getElementById("error");
 
     function beli(){
         if(bukti.getAttribute('src') == ""){
             event.preventDefault();
-            alert("empty");
+            err.textContent = "Mohon upload bukti transaksi";
+            err.style.visibility = "visible";
+            return false;
         }else{
-            alert("HAS a value");
+            err.textContent = "";
+            err.style.visibility= "hidden";
+            return true;
         }
     }
 </script>
