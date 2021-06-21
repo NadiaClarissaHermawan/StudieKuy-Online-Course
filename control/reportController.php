@@ -36,6 +36,7 @@
             }
             return $result;
         }
+
         public function getCourseTransactionReport(){
             $query = "SELECT tc.id_transaksi_course, tc.tanggal_transaksi_course,
                             c.tarif, tc.saldo_awal, tc.saldo_akhir,
@@ -58,6 +59,7 @@
             }
             return $result;
         }
+
         //ambil top-up report 
         public function getTopUpReport(){
             $query = "SELECT id_transaksi_saldo, tanggal_transaksi_saldo, nominal_pengisian, saldo_awal, saldo_akhir, status_verifikasi
@@ -71,6 +73,7 @@
             }
             return $result;
         }
+        
         //view course report
         public function view_courseReport(){
             $result = $this->getCourseReport();
@@ -91,6 +94,63 @@
             return View::createView('reportCourseTransaction.php', [
                 "result"=>$result
             ]);
+        }
+
+        //filtering course report
+        public function filterReportCourse(){
+            $filterNama = $_GET['filterName'];
+            $filterCompleteStatus = $_GET['filterCompleteStatus'];
+            $filterFinalScore = $_GET['filterFinalScore'];
+
+            //kalau ketiga filter terisi
+            if(isset($filterNama) && $filterNama != "" && isset($filterCompleteStatus) && $filterCompleteStatus != "" && isset($filterFinalScore) && $filterFinalScore != ""){
+                $query = "SELECT p.real_name, mm.nilai_akhir, mm.status_ketuntasan, 
+                                 mm.status_verifikasi, mm.tanggal_tuntas,
+                                 c.nama_course, c.batas_nilai_minimum, bb.nama_bidang
+                            FROM pengguna p INNER JOIN member m 
+                                ON p.id_pengguna = m.id_pengguna
+                                INNER JOIN member_course mm
+                                ON mm.id_member = m.id_member
+                                INNER JOIN courses c 
+                                ON c.id_courses = mm.id_courses
+                                INNER JOIN bidang_course b 
+                                ON b.id_courses = c.id_courses
+                                INNER JOIN bidang bb 
+                                ON bb.id_bidang = b.id_bidang
+                            WHERE p.real_name LIKE '%$filterNama%' 
+                                AND mm.status_ketuntasan = '$filterCompleteStatus'
+                                AND mm.nilai_akhir = '$filterFinalScore'
+                            ORDER BY p.real_name ASC
+                          ";
+                $queryRes = $this->db->executeSelectQuery($query);
+                foreach($queryRes as $key => $value) {
+                    $result[] = new CourseReport($value['real_name'], $value['nilai_akhir'], $value['status_ketuntasan'], $value['status_verifikasi'], $value['tanggal_tuntas'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang']);
+                }
+                return $result;
+                
+
+            //filter nama & complete status
+            }else if(isset($filterNama) && $filterNama != "" && isset($filterCompleteStatus) && $filterCompleteStatus != ""){
+
+            //filter nama & final score
+            }else if(isset($filterNama) && $filterNama != "" && isset($filterFinalScore) && $filterFinalScore!=""){
+
+            //filter complete status & final score 
+            }else if(isset($filterCompleteStatus) && $filterCompleteStatus != "" && isset($filterFinalScore) && $filterFinalScore!=""){
+
+            //filter nama
+            }else if(isset($filterNama) && $filterNama != ""){
+
+            //filter complete status
+            }else if(isset($filterCompleteStatus) && $filterCompleteStatus != ""){
+
+            //filter filter final score
+            }else if(isset($filterFinalScore) && $filterFinalScore!=""){
+
+            //filter kosong
+            }else{
+
+            }
         }
     }
 ?>

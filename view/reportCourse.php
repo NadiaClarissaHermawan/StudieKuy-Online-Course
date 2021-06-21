@@ -2,23 +2,51 @@
     <div class="tulisanPutih hurufBesar">Courses Member Report</div>
 </div>
 <hr>
-<form>
+<form id="form">
     <div class="content2 tulisanPutih">
+            <!-- 1 -->
             <div class="content2-1">Member Name</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center; margin-left:0.3%">:</div>
-            <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat" style="margin-right: -4%;"></div>
+            <div class="content2-2"><input type="text" id="filterName" name="filterName" class="kotakInput tulisanCoklat" style="margin-right: -4%;"></div>
             
+            <!-- 2 -->
             <div class="content2-3">Completeness Status</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center">:</div>
-            <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+            <div class="content2-4"><input type="text" id="filterCompleteStatus" name="filterCompleteStatus" class="kotakInput tulisanCoklat"></div>
     </div>
     <div class="content2 tulisanPutih">
+            <!-- 3 -->
             <div class="content2-1" style="width: 13.6%;">Final Score</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center">:</div>
-            <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat" style="width: 89%;"></div>
+            <div class="content2-2"><input type="text" id="filterFinalScore" name="filterFinalScore" class="kotakInput tulisanCoklat" style="width: 89%;"></div>
             <button type="submit" class="content-kanan tulisanPutih" id="search">Search</button>
     </div>
 </form>
+<!-- 
+<script type="text/javascript">
+    let form = document.getElementById("form");
+    form.addEventListener("submit", onSubmit);
+
+    function onSubmit(event){
+        event.preventDefault();
+        let formElements = event.currentTarget.elements;
+        let input = new URLSearchParams(new FormData(form)).toString();
+
+        //ajax fetchAPI
+        const promise = fetch('filterReportCourse?'+input);
+        promise.then(function(response){
+            console.log(response.status);
+            if(response.status == 200){
+                console.log(response);
+                // console.log(JSON.parse(response));
+                // response.text().then(function(text){
+                //     console.log(JSON.stringify(text));
+                // });
+            }
+        });
+    }
+</script> -->
+
 <div class="table">
     <table>
         <tr>
@@ -68,7 +96,6 @@
                 $nomor = $nomor+1;
             }
         ?>
-      
     </table>
 </div>
 <br>

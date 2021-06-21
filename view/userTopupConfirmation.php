@@ -25,7 +25,7 @@
                 
                 <div id="confirm-upload-bukti" class="tulisanPutih">
                     <input  type="file" id="file" name="file"  accept="image/*" style="margin-left:20%">
-                    <input type="hidden" name="nominal" value="<?php echo $nominal?>"/>
+                    <input type="hidden" name="nominal" value="<?php echo $nominal?>" onchange="beli()"/>
                     <div id="error" style="color: red; font-size:1vw"></div>
                     <div class="gambar-submit">
                         <img src="" id="gambar" style="visibility: hidden;"/>

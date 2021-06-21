@@ -64,7 +64,6 @@
                 echo $userProfileCtrl->signOut();
                 break;
 
-            //done
             case $baseURL.'/adminLogin':
                 require_once "control/adminController.php";
                 $Ctrl = new adminController();
@@ -77,7 +76,6 @@
                 echo $userProfileCtrl->view_editProfile();
                 break;
             
-            //edit
             case $baseURL.'/indexAdmin':
                 require_once "control/adminController.php";
                 $idxCtrl = new adminController();
@@ -96,7 +94,6 @@
                 echo $verifCtrl->view_verifpageAdmin();
                 break;
 
-            //edit
             case $baseURL.'/verificationSertif':
                 require_once "control/verificationAdminController.php";
                 $sertifCtrl = new verificationAdminController();
@@ -208,6 +205,12 @@
                 $acCtrl = new verificationAdminController();
                 echo $acCtrl->rejectTopUp();
                 header ('Location: verificationTopUp');
+                break;
+
+            case $baseURL.'/filterReportCourse':
+                require_once "control/reportController.php";
+                $filterCtrl = new reportController();
+                echo $filterCtrl->filterReportCourse();
                 break;
     
             default :
