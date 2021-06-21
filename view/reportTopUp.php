@@ -5,7 +5,7 @@
 <div class="content2 tulisanPutih">
         <div class="content2-1">Transaction ID :</div>
         <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-        <div class="content2-3">Verification Status :</div>
+        <div class="content2-3" style="width: 16%;">Verification Status :</div>
         <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
 </div>
 <div class="content2 tulisanPutih">
@@ -44,6 +44,4 @@
         ?>
     </table>
 </div>
-<button class="button" id="back">
-    <a href="indexAdmin">Back</a>
-</button>
+<a id="back" href="indexAdmin" >Back</a>

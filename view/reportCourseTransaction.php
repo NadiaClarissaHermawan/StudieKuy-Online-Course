@@ -3,21 +3,21 @@
 </div>
 <hr>
 <div class="content2 tulisanPutih">
-        <div class="content2-1">Course :</div>
-        <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-        <div class="content2-3">Verification Status :</div>
-        <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-1">Course</div>
+        <div class="content2-2" style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-3">Verification Status</div>
+        <div class="content2-4" style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
 </div>
 <div class="content2 tulisanPutih">
-        <div class="content2-1">Transaction ID :</div>
-        <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-        <div class="content2-3">Course Rate :</div>
-        <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-1">Transaction ID</div>
+        <div class="content2-2"  style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-3">Course Rate</div>
+        <div class="content2-4"  style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
 </div>
 <div class="content2 tulisanPutih">
-        <div class="content2-1">Transaction Date :</div>
-        <div class="content2-2">
-            <input type="date" name="" class="kotakDate tulisanCoklat">
+        <div class="content2-1">Transaction Date</div>
+        <div class="content2-2" style="font-size: 1.8vw">:
+            <input type="date" name="" class="kotakDate tulisanCoklat" style="margin-left:3%">
             <div id="strip">-</div>
             <input type="date" name="" class="kotakDate tulisanCoklat">
         </div>
@@ -51,28 +51,6 @@
                 echo '<tr>';
             }
         ?>
-        <!-- Test Contoh -->
-        <!-- <tr>
-            <td>1</td>
-            <td>2021-01-05</td>
-            <td>50.000</td>
-            <td>25.000</td>
-            <td>75.000</td>
-            <td>Java Basic Programming</td>
-            <td>1</td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>2021-02-20</td>
-            <td>75.000</td>
-            <td>5.000</td>
-            <td>80.000</td>
-            <td>Pemrograman Python</td>
-            <td>0</td>
-        </tr> -->
     </table>
 </div>
-<button class="button" id="back">
-    <a href="indexAdmin">Back</a>
-</button>
+<a id="back" href="indexAdmin" >Back</a>

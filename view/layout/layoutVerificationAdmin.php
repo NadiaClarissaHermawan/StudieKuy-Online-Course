@@ -14,7 +14,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav" id="verif">Verification </a>
+            <a href="" class="menuNav">Verification </a>
             <div class="menuNavKanan">
                 <a href="indexAdmin" class="material-icons md-36">home</a>
             </div>
