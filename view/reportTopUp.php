@@ -3,15 +3,15 @@
 </div>
 <hr>
 <div class="content2 tulisanPutih">
-        <div class="content2-1">Transaction ID :</div>
-        <div class="content2-2"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
-        <div class="content2-3" style="width: 16%;">Verification Status :</div>
-        <div class="content2-4"><input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-1">Transaction ID</div>
+        <div class="content2-2"  style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-3" style="width: 16%;">Verification Status</div>
+        <div class="content2-4"  style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
 </div>
 <div class="content2 tulisanPutih">
-        <div class="content2-1">Transaction Date :</div>
-        <div class="content2-2">
-            <input type="date" name="" class="kotakDate tulisanCoklat">
+        <div class="content2-1">Transaction Date</div>
+        <div class="content2-2"  style="font-size: 1.8vw">:
+            <input type="date" name="" class="kotakDate tulisanCoklat" style="margin-left: 3%;">
             <div id="strip">-</div>
             <input type="date" name="" class="kotakDate tulisanCoklat">
         </div>
