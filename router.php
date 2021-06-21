@@ -239,6 +239,12 @@
                 $registerCtrl = new registerUserController();
                 echo $registerCtrl->klik_register();
                 break;
+            
+            case $baseURL.'/userTeacherRegister':
+                require_once "control/registerTeacherController.php";
+                $registerCtrl = new registerTeacherController();
+                echo $registerCtrl->klik_register();
+                break;
 
             //upload profile text 
             case $baseURL.'/profileTextEdit':
