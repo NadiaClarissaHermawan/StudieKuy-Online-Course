@@ -20,7 +20,7 @@
             //cari yang belom diverifikasi & nilai akhir tidak null
             //status verif 0 = rejected
             $query = "SELECT p.real_name, mc.nilai_akhir, c.nama_course, 
-                             c.batas_nilai_minimum, b.nama_bidang
+                             c.batas_nilai_minimum, b.nama_bidang, mc.status_verifikasi, mc.id_memCourse
                       FROM member m INNER JOIN pengguna p
                             ON m.id_pengguna = p.id_pengguna
                             INNER JOIN member_course mc 
@@ -31,19 +31,42 @@
                             ON bc.id_courses = c.id_courses
                             INNER JOIN bidang b
                             ON bc.id_bidang = b.id_bidang
-                       WHERE mc.nilai_akhir IS NOT NULL AND mc.status_verifikasi IS NULL
+                       WHERE mc.nilai_akhir IS NOT NULL AND mc.status_ketuntasan IS NOT NULL
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
 
             foreach($resQuery as $key => $value){
-                $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang']);
+                $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang'], $value['status_verifikasi'], $value['id_memCourse']);
             }
             return $result;
         }
 
         //kalau sertif udah di acc
         public function acceptSertif(){
+            $verif = $_GET['verif'];
+            $idMemCourse = $_GET['id'];
 
+            if(isset($verif) && $verif!= ""){
+                $query = "UPDATE member_course
+                          SET status_verifikasi = 1
+                          WHERE  id_memCourse = '$idMemCourse'
+                         ";
+                $this->db->executeNonSelectQuery($query);
+            }
+        }
+
+        //kalau sertif di reject
+        public function rejectSertif(){
+            $verif = $_GET['verif'];
+            $idMemCourse = $_GET['id'];
+
+            if(isset($verif) && $verif!= ""){
+                $query = "UPDATE member_course
+                          SET status_verifikasi = 0
+                          WHERE  id_memCourse = '$idMemCourse'
+                         ";
+                $this->db->executeNonSelectQuery($query);
+            }
         }
 
         public function view_verifSertif(){
