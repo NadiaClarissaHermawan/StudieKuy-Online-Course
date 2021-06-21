@@ -96,20 +96,22 @@
                 echo $verifCtrl->view_verifpageAdmin();
                 break;
 
+            //edit
             case $baseURL.'/verificationSertif':
-                require_once "control/verificationTableController.php";
-                $sertifCtrl = new verificationTableController();
+                require_once "control/verificationAdminController.php";
+                $sertifCtrl = new verificationAdminController();
                 echo $sertifCtrl->view_verifSertif();
                 break;
 
             case $baseURL.'/verificationCourse':
-                require_once "control/verificationTableController.php";
-                $courseCtrl = new verificationTableController();
+                require_once "control/verificationAdminController.php";
+                $courseCtrl = new verificationAdminController();
                 echo $courseCtrl->view_verifCourse();
                 break;
+
             case $baseURL.'/verificationTopUp':
-                require_once "control/verificationTableController.php";
-                $topUpCtrl = new verificationTableController();
+                require_once "control/verificationAdminController.php";
+                $topUpCtrl = new verificationAdminController();
                 echo $topUpCtrl->view_verifTopUp();
                 break;
 

@@ -20,21 +20,27 @@
         public function getNilaiAkhir(){
             return $this->nilai_akhir;
         }
+
         public function getStatusKetuntasan(){
             return $this->status_ketuntasan;
         }
+
         public function getStatusVerifikasi(){
             return $this->status_verifikasi;
         }
+
         public function getTanggalTuntas(){
             return $this->tanggal_tuntas;
         }
+
         public function getNamaCourse(){
             return $this->nama_course;
         }
+
         public function getBatasNilai(){
             return $this->batas_nilai_minimum;
         }
+        
         public function getNamaBidang(){
             return $this->nama_bidang;
         }
