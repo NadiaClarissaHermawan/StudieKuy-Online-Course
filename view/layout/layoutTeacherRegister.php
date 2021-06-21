@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/teacherLoginRegister.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/userLoginRegister.css"/>
     </head>
     <body>
     	<div class="header">

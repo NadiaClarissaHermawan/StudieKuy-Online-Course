@@ -57,7 +57,7 @@
 	            </div>
 
 				<div class="rowLogin tulisanCoklat" style="width: 61%;">
-					<label for="sel" class="txt hurufSedang">City</label>
+					<label for="sel" class="txt hurufSedang" style="margin-left: -19%;">City</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<div class="">
 						<select id="sel" size = "1" name="ucity" class="input-option">
