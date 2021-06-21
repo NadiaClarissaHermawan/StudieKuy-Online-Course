@@ -20,31 +20,28 @@
 <div class="table">
     <table>
         <tr>
-            <th>Id Transaksi</th>
+            <th>No.</th>
             <th>Tanggal</th>
             <th>Top Up</th>
             <th>Saldo Awal</th>
             <th>Saldo Akhir</th>
             <th>Verifikasi</th>
         </tr>
-        <!-- Test Contoh -->
-        <tr>
-            <td>1</td>
-            <td>2021-01-05</td>
-            <td>50.000</td>
-            <td>25.000</td>
-            <td>75.000</td>
-            <td>1</td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>2021-02-20</td>
-            <td>75.000</td>
-            <td>5.000</td>
-            <td>80.000</td>
-            <td>0</td>
-        </tr>
+        
+        <?php
+            $nomor = 1;
+            foreach ($result as $key => $row) {
+                echo '<tr>';
+                echo '<td>'.$nomor.'</td>';
+                echo '<td>'.$row->getTanggalTopUp().'</td>';
+                echo '<td>'.$row->getNominal().'</td>';
+                echo '<td>'.$row->getSaldoAwal().'</td>';
+                echo '<td>'.$row->getSaldoAkhir().'</td>';
+                echo '<td>'.$row->getStatusVerifikasi().'</td>';
+                echo '<tr>';                
+                $nomor = $nomor+1;
+            }
+        ?>
     </table>
 </div>
 <button class="button" id="back">

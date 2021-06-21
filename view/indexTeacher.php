@@ -8,7 +8,7 @@
             <p class="tulisanPutih welcome" >
                 WELCOME, (nama_Teacher)!
             </p>
-            <a href="" class="menuCourse-button">
+            <a href="teacherCourse" class="menuCourse-button">
                 <div class="menuCourse-kiri">
                     <img src="view/images/menuCourse.jpg" class="menuCourse-image">
                 </div>
