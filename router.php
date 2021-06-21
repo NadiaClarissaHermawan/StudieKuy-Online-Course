@@ -188,6 +188,12 @@
                 echo $hisCtrl->view_teacherCourse();
                 break; 
 
+            case $baseURL.'/acceptSertif':
+                require_once "control/verificationAdminController.php";
+                $acCtrl = new verificationAdminController();
+                echo $acCtrl->acceptSertif();
+                header ('Location: verificationSertif');
+
             default :
                 echo '404 not found';
                 break;

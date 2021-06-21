@@ -4,13 +4,39 @@
 <div class="table">
     <table>
         <tr>
-            <th>Id Course</th>
+            <th>No.</th>
             <th>Nama</th>
             <th>Nama Course</th>
             <th>Nilai Ujian</th>
             <th>Nilai Minimum</th>
             <th>Verifikasi</th>
         </tr>
+
+        <?php
+            $nomor = 1;
+            foreach($result as $key => $row){
+                echo '<tr>';
+                echo '<td>'.$nomor.'</td>';
+                echo '<td>'.$row->getRealName().'</td>';
+                echo '<td>'.$row->getNamaCourse().'</td>';
+                echo '<td>'.$row->getNilaiAkhir().'</td>';
+                echo '<td>'.$row->getBatasNilai().'</td>';
+
+                //w8ting 4 verification
+                echo "<form method='GET' action='acceptSertif'>";
+                echo '<button type="submit" value="1" class="button-kiri">Accept</button>';
+                echo "</form>";
+
+                echo '<td class="button">';
+                echo '<button type="submit" class="button-kanan">Reject</button>';
+                echo '</td>';
+                echo '</tr>';
+
+                $nomor = $nomor+1;
+            }
+        ?>
+
+
         <!-- Test Contoh -->
         <tr>
             <td>1</td>
@@ -72,6 +98,4 @@
         </tr>
     </table>
 </div>
-<button class="button" id="back">
-    <a href="verificationAdmin">Back</a>
-</button>
+<a class="button" id="back" href="verificationAdmin">Back</a>
