@@ -52,7 +52,7 @@ class MySQLDB{
 	}
 
 	public function escapeString($realname){
-		$mysqli = new mysqli("localhost","root","","ide");
+		$mysqli = new mysqli("localhost","root","","tubes");
 		$escapedname = $mysqli->real_escape_string($realname);
 
 		return $escapedname;
