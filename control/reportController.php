@@ -202,14 +202,9 @@
             $query = "SELECT tc.id_transaksi_course, tc.tanggal_transaksi_course,
                             c.tarif, tc.saldo_awal, tc.saldo_akhir,
                             c.nama_course
-                    FROM pengguna p INNER JOIN member m 
-                            ON p.id_pengguna = m.id_pengguna
-                            INNER JOIN member_course mm
-                            ON mm.id_member = m.id_member
-                            INNER JOIN transaksi_course tc
-                            ON tc.id_member = m.id_member
-                            INNER JOIN courses c 
-                            ON c.id_courses = tc.id_courses
+                    FROM transaksi_course tc INNER JOIN
+                        courses c ON tc.id_courses =
+                        c.id_courses                   
                     ";
 
 
@@ -280,6 +275,8 @@
             }
 
             $queryResult = $this->db->executeSelectQuery($query);
+            // var_dump($queryResult);
+            // die;
             $result = [];
             foreach($queryResult as $key => $value) {
                 $result[] = new TransactionCourseReport($value['id_transaksi_course'], $value['tanggal_transaksi_course'], $value['tarif'], $value['saldo_awal'], $value['saldo_akhir'], $value['nama_course']);
