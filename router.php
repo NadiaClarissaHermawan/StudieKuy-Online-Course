@@ -206,12 +206,26 @@
                 echo $acCtrl->rejectTopUp();
                 header ('Location: verificationTopUp');
                 break;
-
+            
+            //ajax report
             case $baseURL.'/reportCourseFilter':
                 require_once "control/reportController.php";
                 $courseCtrl = new reportController();
                 echo $courseCtrl->getCourseReport_filter();
                 break;
+
+            case $baseURL.'/topupReportFilter':
+                require_once "control/reportController.php";
+                $courseCtrl = new reportController();
+                echo $courseCtrl->getTopupReport_filter();
+                break;
+
+            case $baseURL.'/courseTransactionFilter':
+                require_once "control/reportController.php";
+                $courseCtrl = new reportController();
+                echo $courseCtrl->getTransactionReport_filter();
+                break;
+            //ajax report end
 
             case $baseURL.'/teacherProfile':
                 require_once "control/indexTeacherController.php";

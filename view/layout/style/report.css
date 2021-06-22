@@ -53,6 +53,7 @@ a {
 .table {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     margin-top: 5%;

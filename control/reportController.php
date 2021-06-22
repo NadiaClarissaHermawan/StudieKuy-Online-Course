@@ -44,6 +44,7 @@
             if($complete != ""){
                 if($cekFilter == 0){
                     $query .= " WHERE mm.status_ketuntasan = '$complete'";
+                    $cekFilter = 1;
                 }else{
                     $query .= " AND mm.status_ketuntasan = '$complete'";
                 }
@@ -53,6 +54,7 @@
             if($nilai != ""){
                 if($cekFilter == 0){
                     $query .= " WHERE mm.nilai_akhir = '$nilai'";
+                    $cekFilter = 1;
                 }else{
                     $query .= " AND mm.nilai_akhir = '$nilai'";
                 }
@@ -65,56 +67,19 @@
                 $result[] = new CourseReport($value['real_name'], $value['nilai_akhir'], $value['status_ketuntasan'], $value['status_verifikasi'], $value['tanggal_tuntas'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang']);
             }
             return $result;
-        }
+        }   
 
         public function getCourseReport_filter(){
             $nama = $_GET['name']; 
             $complete = $_GET['complete'];
             $nilai = $_GET['nilai'];
-            
+
             $result = $this->getCourseReport($nama, $complete, $nilai);
             return View::createViewFilter('ajaxCourseReport.php',[
                 "result"=>$result
             ]);
         }
 
-        public function getCourseTransactionReport(){
-            $query = "SELECT tc.id_transaksi_course, tc.tanggal_transaksi_course,
-                            c.tarif, tc.saldo_awal, tc.saldo_akhir,
-                            c.nama_course, mm.status_verifikasi
-                      FROM pengguna p INNER JOIN member m 
-                            ON p.id_pengguna = m.id_pengguna
-                            INNER JOIN member_course mm
-                            ON mm.id_member = m.id_member
-                            INNER JOIN transaksi_course tc
-                            ON tc.id_member = m.id_member
-                            INNER JOIN courses c 
-                            ON c.id_courses = tc.id_courses
-                      ORDER BY tc.id_transaksi_course ASC
-                     ";
-            $queryResult = $this->db->executeSelectQuery($query);
-            // var_dump($queryResult);
-            // die;
-            foreach($queryResult as $key => $value) {
-                $result[] = new TransactionCourseReport($value['id_transaksi_course'], $value['tanggal_transaksi_course'], $value['tarif'], $value['saldo_awal'], $value['saldo_akhir'], $value['nama_course'], $value['status_verifikasi']);
-            }
-            return $result;
-        }
-
-        //ambil top-up report 
-        public function getTopUpReport(){
-            $query = "SELECT id_transaksi_saldo, tanggal_transaksi_saldo, nominal_pengisian, saldo_awal, saldo_akhir, status_verifikasi
-                      FROM transaksi_saldo
-                      ORDER BY id_transaksi_saldo ASC
-                     ";
-            $queryResult = $this->db->executeSelectQuery($query);
-
-            foreach($queryResult as $key => $value) {
-                $result[] = new TopUpReport($value['id_transaksi_saldo'], $value['tanggal_transaksi_saldo'], $value['nominal_pengisian'], $value['saldo_awal'], $value['saldo_akhir'], $value['status_verifikasi']);
-            }
-            return $result;
-        }
-        
         //view course report
         public function view_courseReport(){
             $result = $this->getCourseReport("", "", "");
@@ -123,9 +88,145 @@
             ]);
         }
 
+//TOP UP REPORT____________________________________________________________________________________________________________________________________________
+
+        //ambil top-up report 
+        public function getTopUpReport($id, $status, $tglAwal, $tglAkhir){
+            $query = "SELECT id_transaksi_saldo, tanggal_transaksi_saldo, nominal_pengisian, saldo_awal, saldo_akhir, status_verifikasi
+                      FROM transaksi_saldo
+                     ";
+
+            $cekFilter = 0;
+            //cek filter id
+            if($id != ""){
+                $query .= " WHERE id_transaksi_saldo = '$id'";
+                $cekFilter = 1;
+            }
+
+            //cek status verifikasi
+            if($status != ""){
+                if($cekFilter == 0){
+                    if(strpos($status, "v") || strpos($status, "ve") || strpos($status, "ver") || strpos($status, "veri")|| strpos($status, "verif")|| strpos($status, "verifi")|| strpos($status, "verifie")|| strpos($status, "verified")){
+                        $status = 1;
+                    }else if(strpos($status, "r") || strpos($status, "re") || strpos($status, "rej") || strpos($status, "reje")|| strpos($status, "rejec")|| strpos($status, "reject")|| strpos($status, "rejecte")|| strpos($status, "rejected")){
+                        $status = 2;
+                    }else if(strpos($status, "n") || strpos($status, "no") || strpos($status, "not") || strpos($status, "not v")|| strpos($status, "not ve")|| strpos($status, "not ver")|| strpos($status, "not veri")|| strpos($status, "not verif") || strpos($status, "not verifi") || strpos($status, "not verifie")|| strpos($status, "not verified") || strpos($status, "not verified y") || strpos($status, "not verified ye") || strpos($status, "not verified yet")){
+                        $status = 0;
+                    }
+                    $query .= " WHERE status_verifikasi = '$status'";
+                    $cekFilter = 1;
+                }else{  
+                    if(strpos($status, "v") || strpos($status, "ve") || strpos($status, "ver") || strpos($status, "veri")|| strpos($status, "verif")|| strpos($status, "verifi")|| strpos($status, "verifie")|| strpos($status, "verified")){
+                        $status = 1;
+                    }else if(strpos($status, "r") || strpos($status, "re") || strpos($status, "rej") || strpos($status, "reje")|| strpos($status, "rejec")|| strpos($status, "reject")|| strpos($status, "rejecte")|| strpos($status, "rejected")){
+                        $status = 2;
+                    }else if(strpos($status, "n") || strpos($status, "no") || strpos($status, "not") || strpos($status, "not v")|| strpos($status, "not ve")|| strpos($status, "not ver")|| strpos($status, "not veri")|| strpos($status, "not verif") || strpos($status, "not verifi") || strpos($status, "not verifie")|| strpos($status, "not verified") || strpos($status, "not verified y") || strpos($status, "not verified ye") || strpos($status, "not verified yet")){
+                        $status = 0;
+                    }
+                    
+                    $query .= " AND status_verifikasi = '$status'";
+                    $cekFilter = 1;
+                }
+            }
+
+            //cek range tanggal
+            if($tglAwal != ""){
+                if($cekFilter == 0){
+                    if($tglAkhir != ""){
+                        $query .= " WHERE tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $cekFilter = 1;
+                    }else{
+                        $query .= " WHERE tanggal_transaksi_saldo >= '$tglAwal'";
+                        $cekFilter = 1;
+                    }
+                }else{
+                    if($tglAkhir != ""){
+                        $query .= " AND tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $cekFilter = 1;
+                    }else{
+                        $query .= " AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $cekFilter = 1;
+                    }
+                }
+            }else if($tglAkhir != ""){
+                if($cekFilter == 0){
+                    if($tglAwal != ""){
+                        $query .= " WHERE tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $cekFilter = 1;
+                    }else{
+                        $query .= " WHERE tanggal_transaksi_saldo <= '$tglAkhir'";
+                        $cekFilter = 1;
+                    }
+                }else{
+                    if($tglAwal != ""){
+                        $query .= " AND tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $cekFilter = 1;
+                    }else{
+                        $query .= " AND tanggal_transaksi_saldo <= '$tglAkhir'";
+                        $cekFilter = 1;
+                    }
+                }
+            }
+
+            $queryResult = $this->db->executeSelectQuery($query);
+
+            $result = [];
+            foreach($queryResult as $key => $value) {
+                $result[] = new TopUpReport($value['id_transaksi_saldo'], $value['tanggal_transaksi_saldo'], $value['nominal_pengisian'], $value['saldo_awal'], $value['saldo_akhir'], $value['status_verifikasi']);
+            }
+            return $result;
+        }
+
+        public function getTopupReport_filter(){
+            $id = $_GET['id']; 
+            $status = $_GET['status'];
+            $tglAwal = $_GET['tglAwal'];
+            $tglAkhir = $_GET['tglAkhir'];
+
+            $result = $this->getTopupReport($id, $status, $tglAwal, $tglAkhir);
+            return View::createViewFilter('ajaxTopupReport.php',[
+                "result"=>$result
+            ]);
+        }
+
         public function view_topUpReport(){
-            $result = $this->getTopUpReport();
+            $result = $this->getTopUpReport("", "", "", "");
             return View::createView('reportTopUp.php', [
+                "result"=>$result
+            ]);
+        }
+
+//COURSE TRANSACTION REPORT____________________________________________________________________________________________________________________________________________
+                
+        public function getCourseTransactionReport(){
+            $query = "SELECT tc.id_transaksi_course, tc.tanggal_transaksi_course,
+                            c.tarif, tc.saldo_awal, tc.saldo_akhir,
+                            c.nama_course, mm.status_verifikasi
+                    FROM pengguna p INNER JOIN member m 
+                            ON p.id_pengguna = m.id_pengguna
+                            INNER JOIN member_course mm
+                            ON mm.id_member = m.id_member
+                            INNER JOIN transaksi_course tc
+                            ON tc.id_member = m.id_member
+                            INNER JOIN courses c 
+                            ON c.id_courses = tc.id_courses
+                    ORDER BY tc.id_transaksi_course ASC
+                    ";
+            $queryResult = $this->db->executeSelectQuery($query);
+            foreach($queryResult as $key => $value) {
+                $result[] = new TransactionCourseReport($value['id_transaksi_course'], $value['tanggal_transaksi_course'], $value['tarif'], $value['saldo_awal'], $value['saldo_akhir'], $value['nama_course'], $value['status_verifikasi']);
+            }
+            return $result;
+        }
+
+        //onprogress
+        public function getTransactionReport_filter(){
+            $nama = $_GET['name']; 
+            $complete = $_GET['complete'];
+            $nilai = $_GET['nilai'];
+
+            $result = $this->getCourseReport($nama, $complete, $nilai);
+            return View::createViewFilter('ajaxCourseReport.php',[
                 "result"=>$result
             ]);
         }
