@@ -42,7 +42,7 @@
                 <?php 
                     //jgn lupa ini status udah login, di add di header controller bersangkutan
                     if(isset($_SESSION['status'])){
-                        echo ' <a href="#userCourse" class="material-icons md-36">reorder</a>';
+                        echo ' <a href="coursesList" class="material-icons md-36">reorder</a>';
                     }
                 ?>
             </div>
