@@ -258,6 +258,12 @@
                 $bidCtrl = new indexController();
                 echo $bidCtrl->view_bidangCourse();
                 break; 
+            
+            case $baseURL.'/adminLogout':
+                require_once "control/adminController.php";
+                $bidCtrl = new adminController();
+                echo $bidCtrl->logout();
+                break; 
 
             default :
                 echo '404 not found';

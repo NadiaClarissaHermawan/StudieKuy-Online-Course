@@ -48,7 +48,28 @@
                 echo '<td>'.$row->getNominal().'</td>';
                 echo '<td>'.$row->getSaldoAwal().'</td>';
                 echo '<td>'.$row->getSaldoAkhir().'</td>';
-                echo '<td>'.$row->getBuktiTrf().'</td>';
+                echo '<td><img class="" src="'.$row->getBuktiTrf().'"/></td>';
+                
+                // //keluarin image bukti trf 
+                // echo '<div class="row">';
+                // echo '<div class="column">';
+                // echo '<img src="img_nature.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">';
+                // echo '</div>';
+
+
+                // echo '<div id="myModal" class="modal">';
+                // echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
+                // echo '<div class="modal-content">';
+
+                // echo '<div class="mySlides">
+                // echo '<img src="img_nature_wide.jpg" style="width:100%">
+                // echo '</div>
+
+                // echo '<div class="caption-container">
+                // echo '<p id="caption"></p>
+                // echo '</div>
+                // echo '</div>
+                // echo '</div>
 
                 echo '<td class="button">';
 

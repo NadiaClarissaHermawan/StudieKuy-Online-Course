@@ -10,7 +10,7 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
-            <button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">ADMIN</button>
+            <a href="adminLogout"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">ADMIN LOG OUT</button></a> 
         </div>
         
         <div class="nav">
@@ -23,12 +23,6 @@
             ?>
             <div class="menuNavKanan">
                 <a href="verificationAdmin" class="material-icons md-36">notifications</a>
-                <?php 
-                    //jgn lupa ini status udah login, di add di header controller bersangkutan
-                    if(isset($_SESSION['status'])){
-                        echo ' <a href="#userCourse" class="material-icons md-36">reorder</a>';
-                    }
-                ?>
             </div>
         </div>
         

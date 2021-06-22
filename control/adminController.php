@@ -79,5 +79,12 @@
                 "result" => $result
             ]);
         }
+
+        //logout
+        public function logout(){
+            session_destroy();
+            header('Location: adminLogin');
+            die;
+        }
     }
 ?>
