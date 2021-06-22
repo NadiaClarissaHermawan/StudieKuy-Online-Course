@@ -53,10 +53,10 @@
             //cek filter nilai akhir
             if($nilai != ""){
                 if($cekFilter == 0){
-                    $query .= " WHERE mm.nilai_akhir = '$nilai'";
+                    $query .= " WHERE mm.nilai_akhir LIKE '%$nilai%'";
                     $cekFilter = 1;
                 }else{
-                    $query .= " AND mm.nilai_akhir = '$nilai'";
+                    $query .= " AND mm.nilai_akhir = '%$nilai%'";
                 }
             }
 
@@ -218,20 +218,20 @@
             //cek filter id
             if($id != ""){
                 if($cekFilter == 0){
-                    $query .= " WHERE tc.id_transaksi_course = '$id'";
+                    $query .= " WHERE tc.id_transaksi_course LIKE '%$id%'";
                     $cekFilter = 1;
                 }else{
-                    $query .= " AND tc.id_transaksi_course = '$id'";
+                    $query .= " AND tc.id_transaksi_course LIKE '%$id%'";
                 }
             }
 
             //cek filter harga
             if($rate != ""){
                 if($cekFilter == 0){
-                    $query .= " WHERE c.tarif = '$rate'";
+                    $query .= " WHERE c.tarif LIKE '%$rate%'";
                     $cekFilter = 1;
                 }else{
-                    $query .= " AND c.tarif = '$rate'";
+                    $query .= " AND c.tarif LIKE '%$rate%'";
                 }
             }
 
