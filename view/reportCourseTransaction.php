@@ -4,15 +4,15 @@
 <hr>
 <div class="content2 tulisanPutih">
         <div class="content2-1">Course</div>
-        <div class="content2-2" style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-2" style="font-size: 1.8vw">:<input type="text" name="filterCourse" id="filterCourse" placeholder="Cari Course.." class="kotakInput tulisanCoklat"></div>
         <div class="content2-3">Verification Status</div>
-        <div class="content2-4" style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-4" style="font-size: 1.8vw">:<input type="text" name="filterStatus" id="filterStatus" placeholder="Cari Status Verifikasi.." class="kotakInput tulisanCoklat"></div>
 </div>
 <div class="content2 tulisanPutih">
         <div class="content2-1">Transaction ID</div>
-        <div class="content2-2"  style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-2"  style="font-size: 1.8vw">:<input type="text" id="filterId" name="filterId" placeholder="Cari Id Transaksi.." class="kotakInput tulisanCoklat"></div>
         <div class="content2-3">Course Rate</div>
-        <div class="content2-4"  style="font-size: 1.8vw">:<input type="text" name="" class="kotakInput tulisanCoklat"></div>
+        <div class="content2-4"  style="font-size: 1.8vw">:<input type="text" id="filterRate" name="filterRate" placeholder="Cari Harga Course.." class="kotakInput tulisanCoklat"></div>
 </div>
 <div class="content2 tulisanPutih">
         <div class="content2-1">Transaction Date</div>
@@ -54,3 +54,104 @@
     </table>
 </div>
 <a id="back" href="indexAdmin" >Back</a>
+
+<script>
+    //ambil elemen" yg diperlukan
+    let filterCourse = document.getElementById('filterCourse');
+    let filterStatus = document.getElementById('filterStatus');
+    let filterId = document.getElementById('filterId');
+    let filterRate = document.getElementById('filterRate');
+    let tombolCari = document.getElementById('search');
+    let container = document.getElementById('container');
+
+    //event listener course
+    filterCourse.addEventListener('keyup', function(){
+
+        //buat objek ajax
+        let xhr = new XMLHttpRequest();
+
+        //cek status ajax
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //apapun isi dr sumber (checker ajax jalan ga)
+                console.log(xhr.responseText);
+
+                container.innerHTML = xhr.responseText;
+            }
+        }
+
+        //eksekusi ajax (method, source, true for asyncronus)
+        xhr.open('GET', 'reportCourseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&Id='+filterId.value+'&rate='+filterRate.value, true);
+        xhr.send();
+    });
+
+    //_________________________________________________________________________________________________________________________________________
+
+    //event listener status verifikasi
+    filterStatus.addEventListener('keyup', function(){
+
+        //buat objek ajax
+        let xhr = new XMLHttpRequest();
+
+        //cek status ajax
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //apapun isi dr sumber (checker ajax jalan ga)
+                console.log(xhr.responseText);
+
+                container.innerHTML = xhr.responseText;
+            }
+        }
+
+        //eksekusi ajax (method, source, true for asyncronus)
+        xhr.open('GET', 'reportCourseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&Id='+filterId.value+'&rate='+filterRate.value, true);
+        xhr.send();
+    });
+
+    //_________________________________________________________________________________________________________________________________________
+
+    //event listener id transaksi
+    filterId.addEventListener('keyup', function(){
+
+        //buat objek ajax
+        let xhr = new XMLHttpRequest();
+
+        //cek status ajax
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //apapun isi dr sumber (checker ajax jalan ga)
+                console.log(xhr.responseText);
+
+                container.innerHTML = xhr.responseText;
+            }
+        }
+
+        //eksekusi ajax (method, source, true for asyncronus)
+        xhr.open('GET', 'reportCourseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&Id='+filterId.value+'&rate='+filterRate.value, true);
+        xhr.send();
+    });
+
+    //_________________________________________________________________________________________________________________________________________
+
+    //event listener course rate
+    filterRate.addEventListener('keyup', function(){
+
+    //buat objek ajax
+    let xhr = new XMLHttpRequest();
+
+    //cek status ajax
+    xhr.onreadystatechange = function (){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            //apapun isi dr sumber (checker ajax jalan ga)
+            console.log(xhr.responseText);
+
+            container.innerHTML = xhr.responseText;
+        }
+    }
+
+    //eksekusi ajax (method, source, true for asyncronus)
+    xhr.open('GET', 'reportCourseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&Id='+filterId.value+'&rate='+filterRate.value, true);
+    xhr.send();
+    });
+
+</script>
