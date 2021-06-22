@@ -207,12 +207,12 @@
                 header ('Location: verificationTopUp');
                 break;
 
-            case $baseURL.'/filterReportCourse':
+            case $baseURL.'/reportCourseFilter':
                 require_once "control/reportController.php";
-                $filterCtrl = new reportController();
-                echo $filterCtrl->filterReportCourse();
+                $courseCtrl = new reportController();
+                echo $courseCtrl->getCourseReport_filter();
                 break;
-    
+
             default :
                 echo '404 not found';
                 break;
@@ -266,6 +266,13 @@
                 require_once "control/adminController.php";
                 $Ctrl = new adminController();
                 echo $Ctrl->klik_login();
+                break;
+
+            
+            case $baseURL.'/reportCourse':
+                require_once "control/reportController.php";
+                $courseCtrl = new reportController();
+                echo $courseCtrl->view_courseReport();
                 break;
 
             default :
