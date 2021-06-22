@@ -16,10 +16,12 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewList($view, $param){
+
+        public static function createViewList($view, $param, $saldo){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $saldo = $saldo[0]->getSaldo();
 
             ob_start();
             include 'view/'.$view;
@@ -32,6 +34,7 @@
             ob_end_clean();
             return $include;
         }
+
         public static function createViewCourseDetail($view, $param){
             foreach($param as $key => $value){
                 $$key = $value;

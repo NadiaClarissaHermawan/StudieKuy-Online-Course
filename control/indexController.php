@@ -2,6 +2,7 @@
     require_once "control/services/viewIndex.php";
     require_once "control/services/mysqlDB.php";
     require_once "model/saldo.php";
+    require_once "model/listMemberCourse.php";
 
     class indexController{
         protected $db;
@@ -49,16 +50,32 @@
                         ";
                 $saldoUser = $this->db->executeSelectQuery($query);
                 foreach($saldoUser as $key =>$value){
-                    $result[] = new Saldo($value['saldo']);
+                    $saldo[] = new Saldo($value['saldo']);
+                }
+
+                //query matkul yg uda diambil user
+                $query = "SELECT mc.id_memCourse, mc.id_courses, c.nama_course
+                          FROM member_course mc INNER JOIN courses c
+                          ON mc.id_courses = c.id_courses
+                          WHERE mc.id_member = (SELECT m.id_member 
+                                                FROM member m INNER JOIN pengguna p
+                                                ON m.id_pengguna = p.id_pengguna
+                                                WHERE p.id_pengguna = '$id'
+                                                )
+                         ";
+                $queryResult = $this->db->executeSelectQuery($query);
+                $result = [];
+                foreach($queryResult as $key =>$value){
+                    $result[] = new ListMemberCourse($value['id_memCourse'], $value['id_courses'], $value['nama_course']);
                 }
                 return View::createViewList('list.php', [
                     "result" => $result
-                ]);
+                ], $saldo);
             
             //belum login
             }else{
                 session_destroy();
-                return View::createViewList('list.php', []);
+                return View::createView('userLogin.php', []);
             }
         }
 

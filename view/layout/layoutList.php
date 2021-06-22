@@ -19,12 +19,11 @@
                 if(isset($_SESSION['status']) == false){
                     echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
                 }else{
-                    $saldoUser = $result[0]->getSaldo();
-                    if($saldoUser == 0.000){
-                        $saldoUser = 0;
+                    if($saldo == 0.000){
+                        $saldo = 0;
                     }
                     $statusLogin = $_SESSION['status'];
-                    echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
+                    echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldo.'</button></a>';
                 }
             ?>
         </div>
