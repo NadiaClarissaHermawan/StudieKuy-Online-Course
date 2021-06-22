@@ -161,7 +161,7 @@
         xhr.onreadystatechange = function (){
             if(xhr.readyState == 4 && xhr.status == 200){
                 //apapun isi dr sumber (checker ajax jalan ga)
-                console.log(xhr.responseText);
+                console.log(filterTglAwal.value);
                 container.innerHTML = xhr.responseText;
             }
         }

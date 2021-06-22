@@ -10,7 +10,7 @@
 
         <?php
             if($result != null){
-                $nomor = 1;
+                 $nomor = 1;
                 foreach($result as $key => $row){
                     echo '<tr>';
                     echo '<td>'.$nomor.'</td>';

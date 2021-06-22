@@ -244,36 +244,36 @@
             if($tglAwal != ""){
                 if($cekFilter == 0){
                     if($tglAkhir != ""){
-                        $query .= " WHERE tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $query .= " WHERE tanggal_transaksi_course <= '$tglAkhir' AND tanggal_transaksi_course >= '$tglAwal'";
                         $cekFilter = 1;
                     }else{
-                        $query .= " WHERE tanggal_transaksi_saldo >= '$tglAwal'";
+                        $query .= " WHERE tanggal_transaksi_course >= '$tglAwal'";
                         $cekFilter = 1;
                     }
                 }else{
                     if($tglAkhir != ""){
-                        $query .= " AND tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $query .= " AND tanggal_transaksi_course <= '$tglAkhir' AND tanggal_transaksi_course >= '$tglAwal'";
                         $cekFilter = 1;
                     }else{
-                        $query .= " AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $query .= " AND tanggal_transaksi_course >= '$tglAwal'";
                         $cekFilter = 1;
                     }
                 }
             }else if($tglAkhir != ""){
                 if($cekFilter == 0){
                     if($tglAwal != ""){
-                        $query .= " WHERE tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $query .= " WHERE tanggal_transaksi_course <= '$tglAkhir' AND tanggal_transaksi_course >= '$tglAwal'";
                         $cekFilter = 1;
                     }else{
-                        $query .= " WHERE tanggal_transaksi_saldo <= '$tglAkhir'";
+                        $query .= " WHERE tanggal_transaksi_course <= '$tglAkhir'";
                         $cekFilter = 1;
                     }
                 }else{
                     if($tglAwal != ""){
-                        $query .= " AND tanggal_transaksi_saldo <= '$tglAkhir' AND tanggal_transaksi_saldo >= '$tglAwal'";
+                        $query .= " AND tanggal_transaksi_course <= '$tglAkhir' AND tanggal_transaksi_course >= '$tglAwal'";
                         $cekFilter = 1;
                     }else{
-                        $query .= " AND tanggal_transaksi_saldo <= '$tglAkhir'";
+                        $query .= " AND tanggal_transaksi_course <= '$tglAkhir'";
                         $cekFilter = 1;
                     }
                 }
