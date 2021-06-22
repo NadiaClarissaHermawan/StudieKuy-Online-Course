@@ -32,8 +32,8 @@
             <div class="content2-1" style="width: 13.6%;">Final Score</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center">:</div>
             <div class="content2-2"><input type="text" id="filterFinalScore" placeholder="Cari nilai akhir.." name="filterFinalScore" class="kotakInput tulisanCoklat" style="width: 89%;"></div>
-            <button type="submit" name="cari" class="content-kanan tulisanPutih" id="search">Search</button>
-    </div>
+
+           </div>
 </form>
 
 <div class="table" id="container">
@@ -97,8 +97,13 @@
     let filterName = document.getElementById('filterName');
     let filterCompleteStatus = document.getElementById('filterCompleteStatus');
     let filterNilai = document.getElementById('filterFinalScore');
-    let tombolCari = document.getElementById('search');
     let container = document.getElementById('container');
+    let form = document.getElementById('form');
+    
+    //event listener biar button submit ga ngesubmit
+    form.addEventListener('submit', function(){
+        event.preventDefault();
+    })
 
     //event listener name
     filterName.addEventListener('keyup', function(){
