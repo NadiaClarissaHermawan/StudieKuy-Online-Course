@@ -12,7 +12,7 @@
 ?>
 <div id="content-history">
     <div class="tulisanPutih" id="judul-history">
-        Top Up History
+        Top up History
         <hr style="width: 80%; height:10%">
     </div>
 </div>
@@ -21,7 +21,7 @@
     
     <?php
         foreach($result as $key => $row){
-            
+        
             echo '<div class="bubble-history">';
             echo '<div class="bubble-kiri tulisanCoklat" style="text-align: left;">';
             echo 'Top up Saldo <br>';
@@ -52,5 +52,6 @@
         
             echo '</div></div>';
         }
+        
     ?>
 </div>
