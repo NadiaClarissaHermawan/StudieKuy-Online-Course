@@ -1,3 +1,15 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['statusAdmin'])){
+        header("Location: adminLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <table>
         <tr>
             <th>No.</th>

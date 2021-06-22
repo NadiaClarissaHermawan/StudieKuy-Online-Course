@@ -1,3 +1,15 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <div id="topup-content">
     <div id="topup-content1">
         <h1 id="judulTopup" class="tulisanPutih hurufBesar">Top up Menu</h1>
