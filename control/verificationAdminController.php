@@ -197,12 +197,22 @@
                      ";
             $saldoNow = $this->db->executeSelectQuery($query);
             $saldoNow = $saldoNow[0]['saldo']*1000/1000;
-
             $saldoNow = $saldoNow + $topup;
+
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            $idPengguna = $_SESSION['id_pengguna'];
+            $query = "SELECT id_admin 
+                      FROM admin 
+                      WHERE id_pengguna = '$idPengguna'
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            $resQuery = $resQuery[0]['id_admin'];
 
             if(isset($verif) && $verif!= ""){
                 $query = "UPDATE transaksi_saldo
-                          SET status_verifikasi = 1
+                          SET status_verifikasi = 1, id_admin = '$resQuery'
                           WHERE  id_member = '$idMember' AND id_transaksi_saldo = '$idTrans'
                          ";
                 $this->db->executeNonSelectQuery($query);
@@ -221,9 +231,19 @@
             $idMember = $_GET['id'];
             $idTrans = $_GET['idTrans'];
 
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            $idPengguna = $_SESSION['id_pengguna'];
+            $query = "SELECT id_admin 
+                      FROM admin 
+                      WHERE id_pengguna = '$idPengguna'
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            $resQuery = $resQuery[0]['id_admin'];
             if(isset($verif) && $verif!= ""){
                 $query = "UPDATE transaksi_saldo
-                          SET status_verifikasi = 2
+                          SET status_verifikasi = 2, id_admin = '$resQuery'
                           WHERE  id_member = '$idMember' AND id_transaksi_saldo = '$idTrans'
                          ";
                 $this->db->executeNonSelectQuery($query);
