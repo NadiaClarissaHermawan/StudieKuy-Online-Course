@@ -57,12 +57,14 @@
                     //acc button
                     echo "<form method='GET' action='acceptTopUp'>";
                     echo '<input type="hidden" name="id" value="'.$row->getIDMember().'"/>';
+                    echo '<input type="hidden" name="idTrans" value="'.$row->getID().'"/>';
                     echo '<input type="hidden" name="topup" value="'.$row->getNominal().'"/>';
                     echo '<button type="submit" value="accept" name="verif" class="button-kiri">Accept</button>';
                     echo "</form>";
 
                     //reject button
                     echo "<form method='GET' action='rejectTopUp'>";
+                    echo '<input type="hidden" name="idTrans" value="'.$row->getID().'"/>';
                     echo '<input type="hidden" name="id" value="'.$row->getIDMember().'"/>';
                     echo '<button type="submit" value="decline" name="verif2" class="button-kanan">Reject</button>';
                     echo "</form>";

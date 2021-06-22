@@ -16,6 +16,8 @@
             return View::createView('verificationAdmin.php', []);
         }
 
+//VERIFIKASI SERTIFIKAT___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-
+  
         //ambil request sertifikat 
         public function getSertificateRequest(){
             //cari yang belom diverifikasi & nilai akhir tidak null
@@ -33,7 +35,7 @@
                             INNER JOIN bidang b
                             ON bc.id_bidang = b.id_bidang
                        WHERE mc.nilai_akhir IS NOT NULL AND mc.status_ketuntasan IS NOT NULL
-                       ORDER BY mc.id_memCourse
+                       ORDER BY mc.id_memCourse DESC
                      ";
             
             $resQuery = $this->db->executeSelectQuery($query);
@@ -101,6 +103,7 @@
             
             //all
             if($status == -1){
+                $query .= " ORDER BY mc.id_memCourse DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -115,7 +118,7 @@
             //belum diverifikasi
             }else if($status == 0){
                 $query .= " AND mc.status_verifikasi = 0
-                           ORDER BY mc.id_memCourse";
+                           ORDER BY mc.id_memCourse DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -130,7 +133,7 @@
             //accepted
             }else if($status == 1){
                 $query .= " AND mc.status_verifikasi = 1
-                            ORDER BY mc.id_memCourse";
+                            ORDER BY mc.id_memCourse DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -145,7 +148,7 @@
             //rejected
             }else if($status == 2){
                 $query .= " AND mc.status_verifikasi = 2
-                            ORDER BY mc.id_memCourse";
+                            ORDER BY mc.id_memCourse DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -169,6 +172,7 @@
                       FROM transaksi_saldo ts INNER JOIN member m
                       ON ts.id_member = m.id_member INNER JOIN pengguna p
                       ON m.id_pengguna = p.id_pengguna
+                      ORDER BY ts.id_transaksi_saldo DESC
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
 
@@ -184,27 +188,27 @@
             
             $verif = $_GET['verif'];
             $idMember = $_GET['id'];
+            $idTrans = $_GET['idTrans'];
             $topup = $_GET['topup']*1000/1000;
 
             $query = "SELECT saldo
                       FROM member
-                      WHERE id_member = '$idMember'
+                      WHERE id_member = '$idMember' 
                      ";
             $saldoNow = $this->db->executeSelectQuery($query);
             $saldoNow = $saldoNow[0]['saldo']*1000/1000;
 
             $saldoNow = $saldoNow + $topup;
-           
 
             if(isset($verif) && $verif!= ""){
                 $query = "UPDATE transaksi_saldo
                           SET status_verifikasi = 1
-                          WHERE  id_member = '$idMember'
+                          WHERE  id_member = '$idMember' AND id_transaksi_saldo = '$idTrans'
                          ";
                 $this->db->executeNonSelectQuery($query);
 
                 $query = "UPDATE member
-                          SET saldo = '$topup'
+                          SET saldo = '$saldoNow'
                           WHERE id_member = '$idMember'
                          ";
                 $this->db->executeNonSelectQuery($query);
@@ -215,11 +219,12 @@
         public function rejectTopUp(){
             $verif = $_GET['verif2'];
             $idMember = $_GET['id'];
+            $idTrans = $_GET['idTrans'];
 
             if(isset($verif) && $verif!= ""){
                 $query = "UPDATE transaksi_saldo
                           SET status_verifikasi = 2
-                          WHERE  id_member = '$idMember'
+                          WHERE  id_member = '$idMember' AND id_transaksi_saldo = '$idTrans'
                          ";
                 $this->db->executeNonSelectQuery($query);
             }
@@ -242,6 +247,7 @@
             
             //all
             if($status == -1){
+                $query .= " ORDER BY ts.id_transaksi_saldo DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -256,7 +262,7 @@
             //belum diverifikasi
             }else if($status == 0){
                 $query .= " WHERE ts.status_verifikasi = 0
-                           ORDER BY ts.id_member";
+                           ORDER BY ts.id_transaksi_saldo DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -271,7 +277,7 @@
             //accepted
             }else if($status == 1){
                 $query .= " WHERE ts.status_verifikasi = 1
-                            ORDER BY ts.id_member";
+                            ORDER BY ts.id_transaksi_saldo DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];
@@ -286,7 +292,7 @@
             //rejected
             }else if($status == 2){
                 $query .= " WHERE ts.status_verifikasi = 2
-                            ORDER BY ts.id_member";
+                            ORDER BY ts.id_transaksi_saldo DESC";
                 $resQuery = $this->db->executeSelectQuery($query);
 
                 $result = [];

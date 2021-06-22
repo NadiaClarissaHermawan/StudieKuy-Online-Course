@@ -76,10 +76,9 @@
             $id_pengguna = $_SESSION['id_pengguna'];
             $nominal = $_POST['nominal'];
             $saldo_awal = $this->getSaldoUser()[0]->getSaldo();
-            $saldo_akhir = $saldo_awal + ($nominal*1000);
+            $saldo_akhir = ($saldo_awal*1000) + ($nominal*1000);
 
             $saldo_akhir = $saldo_akhir/1000;
-            $saldo_awal = $saldo_awal/1000;
 
             $query = "SELECT id_member
                       FROM member
