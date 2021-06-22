@@ -149,14 +149,15 @@
 		const diploma = document.getElementById('udiploma');
 		const upload = document.getElementById('upload');
         
-        const idU = document.getElementById('userError');
+        let idU = document.getElementById('userError');
+		const idName = document.getElementById('nameError');
         const idPw = document.getElementById('pwError');
         const idAddr = document.getElementById('addrError');
-        const idCity = document.getElementById('cityError');
-        const idEmail = document.getElementById('emailError');
+        let idEmail = document.getElementById('emailError');
         const idPhone = document.getElementById('phoneError');
 		const idDiploma = document.getElementById('diplomaError');
 		const idUpload = document.getElementById('uploadError');
+		const dupli = document.getElementById('error');
 
         function checkValidation() {
         	if(checkUName() && checkPw() && checkAddress() && checkEmail() && checkPhone() && checkDiploma() && checkUpload()){
@@ -172,9 +173,6 @@
                 }
                 if(!checkAddress()){
                     setError(addr, idAddr);
-                }
-                if(!checkCity()){
-                    setError(city, idCity);
                 }
                 if(!checkEmail()){
                     setError(email, idEmail);
@@ -292,7 +290,7 @@
         	const dipval = diploma.value;
         	
         	if(dipval == ''){
-        		setError(diploma,idDIploma);
+        		setError(diploma,idDiploma);
         		return false;
         	}
         	else {

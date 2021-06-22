@@ -19,18 +19,18 @@
         ?>
         <div class="content1-kanan tulisanPutih hurufBesar">
             <table class="profileTable">
-                <tr >
-                    <td style="width: 40%;">Username</td>
-                    <td>:</td>
-                    <?php   
-                        echo '<td>'.$result[0]->getUsername().'</td>';
-                    ?>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>:</td>
                     <?php   
                         echo '<td>'.$result[0]->getRealname().'</td>';
+                    ?>
+                </tr>
+                <tr >
+                    <td style="width: 40%;">Username</td>
+                    <td>:</td>
+                    <?php   
+                        echo '<td>'.$result[0]->getUsername().'</td>';
                     ?>
                 </tr>
                 <tr>
@@ -41,17 +41,10 @@
                     ?>
                 </tr>
                 <tr>
-                    <td>Address</td>
+                    <td>Pendidikan Terakhir</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$result[0]->getAddress().'</td>';
-                    ?>
-                </tr>
-                <tr>
-                    <td>Phone Number</td>
-                    <td>:</td>
-                    <?php   
-                        echo '<td>'.$result[0]->getPhone().'</td>';
+                        echo '<td>'.$result[0]->getPendidikanTerakhir().'</td>';
                     ?>
                 </tr>
             </table>

@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/teacherLoginRegister.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/userLoginRegister.css"/>
     </head>
     <body>
     	<div class="header">
@@ -16,9 +17,9 @@
             <a href="" class="menuNav" id="login">Lecturer Register </a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
-                    echo ' <a href="userProfile" class="menuNav">My Profile</a>';
-                }
+                // if(isset($_SESSION['status'])){
+                //     echo ' <a href="userProfile" class="menuNav">My Profile</a>';
+                // }
             ?>
             <div class="menuNavKanan">
                 <a href="index" class="material-icons md-36">home</a>

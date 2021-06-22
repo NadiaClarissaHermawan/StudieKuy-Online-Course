@@ -213,6 +213,18 @@
                 echo $courseCtrl->getCourseReport_filter();
                 break;
 
+            case $baseURL.'/teacherProfile':
+                require_once "control/indexTeacherController.php";
+                $teacherProfileCtrl = new teacherProfileController();
+                echo $teacherProfileCtrl->view_teacherProfile();
+                break;
+
+            case $baseURL.'/signOutTeacher':
+                require_once "control/indexTeacherController.php";
+                $teacherProfileCtrl = new indexTeacherController();
+                echo $teacherProfileCtrl->signOut();
+                break;
+    
             default :
                 echo '404 not found';
                 break;
@@ -228,6 +240,12 @@
             case $baseURL.'/userRegister':
                 require_once "control/registerUserController.php";
                 $registerCtrl = new registerUserController();
+                echo $registerCtrl->klik_register();
+                break;
+            
+            case $baseURL.'/userTeacherRegister':
+                require_once "control/registerTeacherController.php";
+                $registerCtrl = new registerTeacherController();
                 echo $registerCtrl->klik_register();
                 break;
 
