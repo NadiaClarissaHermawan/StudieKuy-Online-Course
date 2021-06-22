@@ -227,6 +227,13 @@
                 break;
             //ajax report end
 
+            //ajax verifikasi
+            case $baseURL.'/verifStatusFilter':
+                require_once "control/verificationAdminController.php";
+                $verifCtrl = new verificationAdminController();
+                echo $verifCtrl->verifStatusFilter();
+                break;
+
             case $baseURL.'/teacherProfile':
                 require_once "control/indexTeacherController.php";
                 $teacherProfileCtrl = new teacherProfileController();

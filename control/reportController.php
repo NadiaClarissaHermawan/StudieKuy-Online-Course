@@ -279,7 +279,6 @@
                 }
             }
 
-
             $queryResult = $this->db->executeSelectQuery($query);
             $result = [];
             foreach($queryResult as $key => $value) {
