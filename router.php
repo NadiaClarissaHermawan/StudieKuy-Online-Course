@@ -233,6 +233,13 @@
                 $verifCtrl = new verificationAdminController();
                 echo $verifCtrl->verifStatusFilter();
                 break;
+            
+            case $baseURL.'/verifTopupFilter':
+                require_once "control/verificationAdminController.php";
+                $verifCtrl = new verificationAdminController();
+                echo $verifCtrl->verifTopupFilter();
+                break;
+            //ajax verifikasi end
 
             case $baseURL.'/teacherProfile':
                 require_once "control/indexTeacherController.php";

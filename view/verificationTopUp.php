@@ -1,8 +1,29 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['statusAdmin'])){
+        header("Location: adminLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <div class="content1">
     <div class="tulisanPutih hurufBesar">Top-Up Verification</div>
 </div>
+<form id="form">
+    <h5 class="tulisanPutih" style="font-size: 1.3vw; margin-right:1%">Status Verifikasi :</h5>
+    <select id="statusVerif" class="status tulisanCoklat">
+        <option value="-1" selected>All</option>
+        <option value="0">Not Verified Yet</option>
+        <option value="1">Verified</option>
+        <option value="2">Rejected</option>
+    </select>
+</form>
 
-<div class="table">
+<div class="table" id="container">
     <table>
         <tr>
             <th>No.</th>
@@ -32,15 +53,16 @@
                 echo '<td class="button">';
 
                 //kalau belum diverifikasi
-                if($row->getStatus() == null){
+                if($row->getStatus() == 0){
                     //acc button
-                    echo "<form method='GET' action='acceptSertif'>";
+                    echo "<form method='GET' action='acceptTopUp'>";
                     echo '<input type="hidden" name="id" value="'.$row->getIDMember().'"/>';
+                    echo '<input type="hidden" name="topup" value="'.$row->getNominal().'"/>';
                     echo '<button type="submit" value="accept" name="verif" class="button-kiri">Accept</button>';
                     echo "</form>";
 
                     //reject button
-                    echo "<form method='GET' action='rejectSertif'>";
+                    echo "<form method='GET' action='rejectTopUp'>";
                     echo '<input type="hidden" name="id" value="'.$row->getIDMember().'"/>';
                     echo '<button type="submit" value="decline" name="verif2" class="button-kanan">Reject</button>';
                     echo "</form>";
@@ -64,3 +86,28 @@
     </table>
 </div>
 <a class="button" id="back" href="verificationAdmin">Back</a>
+
+
+<script>
+    let filterStatus = document.getElementById('statusVerif');
+    let container = document.getElementById('container');
+
+    filterStatus.addEventListener('change', function(){
+         //buat objek ajax
+         let xhr = new XMLHttpRequest();
+
+        //cek status ajax
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                //apapun isi dr sumber (checker ajax jalan ga)
+                console.log(filterStatus.value);
+                container.innerHTML = xhr.responseText;
+            }
+        }
+
+        //eksekusi ajax (method, source, true for asyncronus/tidak refresh)
+        xhr.open('GET', 'verifTopupFilter?status='+filterStatus.value, true);
+        xhr.send();
+    });
+
+</script>
