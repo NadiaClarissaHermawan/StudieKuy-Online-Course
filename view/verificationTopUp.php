@@ -48,29 +48,30 @@
                 echo '<td>'.$row->getNominal().'</td>';
                 echo '<td>'.$row->getSaldoAwal().'</td>';
                 echo '<td>'.$row->getSaldoAkhir().'</td>';
-                echo '<td><img class="" src="'.$row->getBuktiTrf().'"/></td>';
                 
-                // //keluarin image bukti trf 
-                // echo '<div class="row">';
-                // echo '<div class="column">';
-                // echo '<img src="img_nature.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">';
-                // echo '</div>';
+                //keluarin image bukti trf 
+                echo '<td style="width:120px; height:100px;">';
+                echo '<div class="row">';
+                echo '<div class="column">';
+                echo '<img style="width:300%" src="view/images/buktitransfer/'.$row->getBuktiTrf().'" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">';
+                echo '</div>';
 
+                echo '<div id="myModal" class="modal">';
+                echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
+                echo '<div class="modal-content">';
 
-                // echo '<div id="myModal" class="modal">';
-                // echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
-                // echo '<div class="modal-content">';
+                echo '<div class="mySlides">';
+                echo '<img src="view/images/buktitransfer/'.$row->getBuktiTrf().'" style="width:100%">';
+                echo '</div>';
 
-                // echo '<div class="mySlides">
-                // echo '<img src="img_nature_wide.jpg" style="width:100%">
-                // echo '</div>
+                echo '<div class="caption-container">';
+                echo '<p id="caption"></p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</td>';
 
-                // echo '<div class="caption-container">
-                // echo '<p id="caption"></p>
-                // echo '</div>
-                // echo '</div>
-                // echo '</div>
-
+                //button verifikasi
                 echo '<td class="button">';
 
                 //kalau belum diverifikasi
@@ -112,6 +113,8 @@
 
 
 <script>
+//Script filter status verifikasi_________________________________________________________________________________________
+    
     let filterStatus = document.getElementById('statusVerif');
     let container = document.getElementById('container');
 
@@ -132,5 +135,36 @@
         xhr.open('GET', 'verifTopupFilter?status='+filterStatus.value, true);
         xhr.send();
     });
+
+//script gedein image bukti trf________________________________________________________________________________________________________________________________
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
 
 </script>
