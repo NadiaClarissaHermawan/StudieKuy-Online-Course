@@ -274,7 +274,6 @@
                 }
             }
 
-
             $queryResult = $this->db->executeSelectQuery($query);
             // var_dump($queryResult);
             // die;

@@ -11,15 +11,15 @@
             $this->db = new MySQLDB("localhost", "root", "", "tubes");
         }
 
-        //tampilan menu 
+        //tampilan menu mau verifikasi yang mana 
         public function view_verifpageAdmin(){
             return View::createView('verificationAdmin.php', []);
         }
 
-        //ambil keterangan sertifikat
+        //ambil request sertifikat 
         public function getSertificateRequest(){
             //cari yang belom diverifikasi & nilai akhir tidak null
-            //status verif 0 = rejected
+            //status verif 0 = not verified, 1 = accepted, 2 = rejected
             $query = "SELECT p.real_name, mc.nilai_akhir, c.nama_course, 
                              c.batas_nilai_minimum, b.nama_bidang, mc.status_verifikasi, mc.id_memCourse
                       FROM member m INNER JOIN pengguna p
@@ -33,9 +33,12 @@
                             INNER JOIN bidang b
                             ON bc.id_bidang = b.id_bidang
                        WHERE mc.nilai_akhir IS NOT NULL AND mc.status_ketuntasan IS NOT NULL
+                       ORDER BY mc.id_memCourse
                      ";
+            
             $resQuery = $this->db->executeSelectQuery($query);
 
+            $result = [];
             foreach($resQuery as $key => $value){
                 $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang'], $value['status_verifikasi'], $value['id_memCourse']);
             }
@@ -71,6 +74,7 @@
             }
         }
 
+        //show smua log sertif
         public function view_verifSertif(){
             $result = $this->getSertificateRequest();
             return View::createViewVerification('verificationSertif.php', [
@@ -129,6 +133,83 @@
             return View::createViewVerification('verificationTopUp.php', [
                 "result" => $result
             ]);
+        }
+
+        public function verifStatusFilter(){
+            $status = $_GET['status'];
+            $query = "SELECT p.real_name, mc.nilai_akhir, c.nama_course, 
+                            c.batas_nilai_minimum, b.nama_bidang, mc.status_verifikasi, mc.id_memCourse
+                        FROM member m INNER JOIN pengguna p
+                            ON m.id_pengguna = p.id_pengguna
+                            INNER JOIN member_course mc 
+                            ON mc.id_member = m.id_member
+                            INNER JOIN courses c 
+                            ON c.id_courses = mc.id_courses
+                            INNER JOIN bidang_course bc
+                            ON bc.id_courses = c.id_courses
+                            INNER JOIN bidang b
+                            ON bc.id_bidang = b.id_bidang
+                        WHERE mc.nilai_akhir IS NOT NULL 
+                        ";
+            
+            //all
+            if($status == -1){
+                $resQuery = $this->db->executeSelectQuery($query);
+
+                $result = [];
+                foreach($resQuery as $key => $value){
+                    $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang'], $value['status_verifikasi'], $value['id_memCourse']);
+                }
+                
+                return View::createViewAjaxVerif('verificationAjaxSertif.php', [
+                    "result" => $result
+                ]);
+
+            //belum diverifikasi
+            }else if($status == 0){
+                $query .= " AND mc.status_verifikasi = 0
+                           ORDER BY mc.id_memCourse";
+                $resQuery = $this->db->executeSelectQuery($query);
+
+                $result = [];
+                foreach($resQuery as $key => $value){
+                    $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang'], $value['status_verifikasi'], $value['id_memCourse']);
+                }
+
+                return View::createViewAjaxVerif('verificationAjaxSertif.php', [
+                    "result" => $result
+                ]);
+            
+            //accepted
+            }else if($status == 1){
+                $query .= " AND mc.status_verifikasi = 1
+                            ORDER BY mc.id_memCourse";
+                $resQuery = $this->db->executeSelectQuery($query);
+
+                $result = [];
+                foreach($resQuery as $key => $value){
+                    $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang'], $value['status_verifikasi'], $value['id_memCourse']);
+                }
+                
+                return View::createViewAjaxVerif('verificationAjaxSertif.php', [
+                    "result" => $result
+                ]);
+
+            //rejected
+            }else if($status == 2){
+                $query .= " AND mc.status_verifikasi = 2
+                            ORDER BY mc.id_memCourse";
+                $resQuery = $this->db->executeSelectQuery($query);
+
+                $result = [];
+                foreach($resQuery as $key => $value){
+                    $result[] = new SertificateRequest($value['real_name'], $value['nilai_akhir'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang'], $value['status_verifikasi'], $value['id_memCourse']);
+                }
+                
+                return View::createViewAjaxVerif('verificationAjaxSertif.php', [
+                    "result" => $result
+                ]);
+            }
         }
     }
 ?>
