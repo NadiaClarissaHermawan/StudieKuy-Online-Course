@@ -1,3 +1,15 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['statusTeacher'])){
+        header("Location: teacherLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <div class="tcourse-main">
     <div class="tcourse-judul">
         <h1>TEACHER COURSE LIST</h1>

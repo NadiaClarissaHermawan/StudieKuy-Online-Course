@@ -1,3 +1,15 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <div id="content-history">
     <div class="tulisanPutih" id="judul-history">
         Top Up History

@@ -1,4 +1,17 @@
 <!-- teacherProfile.php -->
+
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['statusTeacher'])){
+        header("Location: teacherLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <div id="contentMainPage">
     <!-- judul -->
     <div class="title">
