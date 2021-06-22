@@ -130,8 +130,7 @@
                 echo $idxCtrl->view_coursesList();
                 break;
 
-            //Contoh halaman course tertentu misal nama course = Java Basic Programming
-            case $baseURL.'/JavaBasicProgramming':
+            case $baseURL.'/coursesDetail':
                 require_once "control/indexController.php";
                 $idxCtrl = new indexController();
                 echo $idxCtrl->view_coursesDetail();

@@ -16,7 +16,7 @@
 <?php
     foreach($result as $key=>$row){
         //lanjutin ke menu exam / course / progress 1 taken course
-        echo '<form method="GET" action="">';
+        echo '<form method="GET" action="coursesDetail">';
         echo '<div class="content2 tulisanPutih">';
         echo '<div class="content2-1 hurufSedang">'.$row->getNamaCourse().'</div>';
         echo '<input type="hidden" value="'.$row->getIdMemCourse().'" name="idMemCourse">';
