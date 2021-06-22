@@ -16,10 +16,20 @@
                 echo '<a href="history" style="float:right; margin-right: 250px; margin-top: 25px;" class="material-icons md-362">history</a>';
 
                 //saldo
-                $saldoUser = $result[0]->getSaldo();
-                if($saldoUser == 0.000){
-                    $saldoUser = 0;
+                if(session_status() == PHP_SESSION_NONE){
+                    session_start();
                 }
+                $saldoUser = 0;
+                if($result != null){
+                    $saldoUser = $result[0]->getSaldo();
+                    if($saldoUser == 0.000){
+                        $saldoUser = 0;
+                    }
+                }else{
+                    $saldoUser = $_SESSION['tempS'];
+                    $saldoUser = $saldoUser->getSaldo();
+                }
+                
                 $statusLogin = $_SESSION['status'];
                 echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
             ?>

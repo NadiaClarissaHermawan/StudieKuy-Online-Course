@@ -22,6 +22,7 @@
                       WHERE id_pengguna = '$id'
                      ";
             $saldoUser = $this->db->executeSelectQuery($query);
+            $result = [];
             foreach($saldoUser as $key =>$value){
                 $result[] = new Saldo($value['saldo']);
             }
@@ -75,6 +76,7 @@
         public function insert_log(){
             $id_pengguna = $_SESSION['id_pengguna'];
             $nominal = $_POST['nominal'];
+            
             $saldo_awal = $this->getSaldoUser()[0]->getSaldo();
             $saldo_akhir = ($saldo_awal*1000) + ($nominal*1000);
 
@@ -114,9 +116,14 @@
                       ORDER BY tanggal_transaksi_saldo DESC
                      ";
             $transaksi_user = $this->db->executeSelectQuery($query);
-
+            
+            $result = [];
             foreach($transaksi_user as $key =>$value){
                 $result[] = new Transaksi_Saldo($value['saldo_awal'], $value['saldo_akhir'], $value['status_verifikasi'], $value['tanggal_transaksi_saldo'], $value['nominal_pengisian'], $value['saldo']);
+            }
+            
+            if($result == null){
+                $_SESSION['tempS'] = $this->getSaldoUser()[0];
             }
 
             return View::createView('topupHistory.php', [

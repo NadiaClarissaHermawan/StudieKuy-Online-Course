@@ -197,6 +197,7 @@
                      ";
             $saldoNow = $this->db->executeSelectQuery($query);
             $saldoNow = $saldoNow[0]['saldo']*1000/1000;
+            $saldoAwalTopUp = $saldoNow;
             $saldoNow = $saldoNow + $topup;
 
             if(session_status() == PHP_SESSION_NONE){
@@ -220,6 +221,12 @@
                 $query = "UPDATE member
                           SET saldo = '$saldoNow'
                           WHERE id_member = '$idMember'
+                         ";
+                $this->db->executeNonSelectQuery($query);
+
+                $query = "UPDATE transaksi_saldo
+                          SET saldo_awal = '$saldoAwalTopUp'
+                          WHERE id_member = '$idMember' AND status_verifikasi = 0
                          ";
                 $this->db->executeNonSelectQuery($query);
             }
