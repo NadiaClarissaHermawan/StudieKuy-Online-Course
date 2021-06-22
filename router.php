@@ -265,6 +265,12 @@
                 echo $bidCtrl->logout();
                 break; 
 
+            case $baseURL.'/userCourseModul':
+                require_once "control/indexController.php";
+                $modCtrl = new indexController();
+                echo $modCtrl->view_courseModul();
+                break; 
+
             default :
                 echo '404 not found';
                 break;

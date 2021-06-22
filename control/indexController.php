@@ -91,5 +91,9 @@
         public function view_bidangCourse(){
             return View::createViewBidangCourse('bidangCourse.php', []);
         }
+
+        public function view_courseModul(){
+            return View::createViewCourseModul('courseModul.php', []);
+        }
     }
 ?>
