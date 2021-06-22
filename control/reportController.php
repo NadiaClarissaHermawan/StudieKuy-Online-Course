@@ -198,10 +198,10 @@
 
 //COURSE TRANSACTION REPORT____________________________________________________________________________________________________________________________________________
                 
-        public function getCourseTransactionReport($course, $status, $id, $rate, $tglAwal, $tglAkhir){
+        public function getCourseTransactionReport($course, $id, $rate, $tglAwal, $tglAkhir){
             $query = "SELECT tc.id_transaksi_course, tc.tanggal_transaksi_course,
                             c.tarif, tc.saldo_awal, tc.saldo_akhir,
-                            c.nama_course, mm.status_verifikasi
+                            c.nama_course
                     FROM pengguna p INNER JOIN member m 
                             ON p.id_pengguna = m.id_pengguna
                             INNER JOIN member_course mm
@@ -218,32 +218,6 @@
             if($course != ""){
                 $query .= " WHERE c.nama_course LIKE '%$course%'";
                 $cekFilter = 1;
-            }
-
-            //cek filter status verifikasi
-            if($status != ""){
-                if($cekFilter == 0){
-                    if(strpos($status, "v") || strpos($status, "ve") || strpos($status, "ver") || strpos($status, "veri")|| strpos($status, "verif")|| strpos($status, "verifi")|| strpos($status, "verifie")|| strpos($status, "verified")){
-                        $status = 1;
-                    }else if(strpos($status, "r") || strpos($status, "re") || strpos($status, "rej") || strpos($status, "reje")|| strpos($status, "rejec")|| strpos($status, "reject")|| strpos($status, "rejecte")|| strpos($status, "rejected")){
-                        $status = 2;
-                    }else if(strpos($status, "n") || strpos($status, "no") || strpos($status, "not") || strpos($status, "not v")|| strpos($status, "not ve")|| strpos($status, "not ver")|| strpos($status, "not veri")|| strpos($status, "not verif") || strpos($status, "not verifi") || strpos($status, "not verifie")|| strpos($status, "not verified") || strpos($status, "not verified y") || strpos($status, "not verified ye") || strpos($status, "not verified yet")){
-                        $status = 0;
-                    }
-                    $query .= " WHERE status_verifikasi = '$status'";
-                    $cekFilter = 1;
-                }else{  
-                    if(strpos($status, "v") || strpos($status, "ve") || strpos($status, "ver") || strpos($status, "veri")|| strpos($status, "verif")|| strpos($status, "verifi")|| strpos($status, "verifie")|| strpos($status, "verified")){
-                        $status = 1;
-                    }else if(strpos($status, "r") || strpos($status, "re") || strpos($status, "rej") || strpos($status, "reje")|| strpos($status, "rejec")|| strpos($status, "reject")|| strpos($status, "rejecte")|| strpos($status, "rejected")){
-                        $status = 2;
-                    }else if(strpos($status, "n") || strpos($status, "no") || strpos($status, "not") || strpos($status, "not v")|| strpos($status, "not ve")|| strpos($status, "not ver")|| strpos($status, "not veri")|| strpos($status, "not verif") || strpos($status, "not verifi") || strpos($status, "not verifie")|| strpos($status, "not verified") || strpos($status, "not verified y") || strpos($status, "not verified ye") || strpos($status, "not verified yet")){
-                        $status = 0;
-                    }
-                    
-                    $query .= " AND status_verifikasi = '$status'";
-                    $cekFilter = 1;
-                }
             }
 
             //cek filter id
@@ -307,28 +281,28 @@
 
 
             $queryResult = $this->db->executeSelectQuery($query);
+            $result = [];
             foreach($queryResult as $key => $value) {
-                $result[] = new TransactionCourseReport($value['id_transaksi_course'], $value['tanggal_transaksi_course'], $value['tarif'], $value['saldo_awal'], $value['saldo_akhir'], $value['nama_course'], $value['status_verifikasi']);
+                $result[] = new TransactionCourseReport($value['id_transaksi_course'], $value['tanggal_transaksi_course'], $value['tarif'], $value['saldo_awal'], $value['saldo_akhir'], $value['nama_course']);
             }
             return $result;
         }
 
         public function getTransactionReport_filter(){
             $course = $_GET['course'];
-            $status = $_GET['status'];
             $id = $_GET['id'];
             $rate = $_GET['rate'];
             $tglAwal= $_GET['tglAwal'];
             $tglAkhir= $_GET['tglAkhir'];
 
-            $result = $this->getCourseTransactionReport($course, $status, $id, $rate, $tglAwal, $tglAkhir);
+            $result = $this->getCourseTransactionReport($course, $id, $rate, $tglAwal, $tglAkhir);
             return View::createViewFilter('ajaxCourseTransactionReport.php',[
                 "result"=>$result
             ]);
         }
 
         public function view_courseTransactionReport(){
-            $result = $this->getCourseTransactionReport("", "", "", "", "", "");
+            $result = $this->getCourseTransactionReport("", "", "", "", "");
             return View::createView('reportCourseTransaction.php', [
                 "result"=>$result
             ]);

@@ -101,7 +101,7 @@
 
     form.addEventListener('submit', function(){
         event.preventDefault();
-    });
+    })
 
     //event listener id
     filterId.addEventListener('keyup', function(){

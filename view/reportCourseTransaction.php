@@ -20,19 +20,14 @@
             <!-- 1 -->
             <div class="content2-1">Course</div>
             <div class="content2-2" style="font-size: 1.8vw">:<input type="text" name="filterCourse" id="filterCourse" placeholder="Cari Course.." class="kotakInput tulisanCoklat"></div>
-            <!-- 2 -->
-            <div class="content2-3">Verification Status</div>
-            <div class="content2-4" style="font-size: 1.8vw">:<input type="text" name="filterStatus" id="filterStatus" placeholder="Cari Status Verifikasi.." class="kotakInput tulisanCoklat"></div>
-    </div>
-    <div class="content2 tulisanPutih">
             <!-- 3 -->
             <div class="content2-1">Transaction ID</div>
             <div class="content2-2"  style="font-size: 1.8vw">:<input type="text" id="filterId" name="filterId" placeholder="Cari Id Transaksi.." class="kotakInput tulisanCoklat"></div>
-            <!-- 4 -->
-            <div class="content2-3">Course Price</div>
-            <div class="content2-4"  style="font-size: 1.8vw">:<input type="text" id="filterRate" name="filterRate" placeholder="Cari Harga Course.." class="kotakInput tulisanCoklat"></div>
     </div>
     <div class="content2 tulisanPutih">
+            <!-- 4 -->
+            <div class="content2-3" style="width: 12.5%;">Course Price</div>
+            <div class="content2-4"  style="font-size: 1.8vw; justify-content:flex-start; margin-left: 20px; width:41%">:<input style="width:81%;" type="text" id="filterRate" name="filterRate" placeholder="Cari Harga Course.." class="kotakInput tulisanCoklat"></div>
             <!-- 5 -->
             <div class="content2-1">Transaction Date</div>
             <div class="content2-2" style="font-size: 1.8vw">:
@@ -53,7 +48,6 @@
             <th>Saldo Awal</th>
             <th>Saldo Akhir</th>
             <th>Nama Course</th>
-            <th>Verifikasi</th>
         </tr>
         <?php 
             if($result != null){
@@ -77,16 +71,6 @@
                     echo '<td>'.$saldoAkhir.'</td>';
         
                     echo '<td>'.$row->getNamaCourse().'</td>';
-        
-                    $tempStatusVerifikasi = $row->getStatusVerifikasi();
-                    if($tempStatusVerifikasi == 0){
-                        $tempStatusVerifikasi = "Not Verified Yet";
-                    }else if($tempStatusVerifikasi == 1){
-                        $tempStatusVerifikasi = "Verified";
-                    }else if($tempStatusVerifikasi == 2){
-                        $tempStatusVerifikasi = "Rejected";
-                    }
-                    echo '<td>'.$tempStatusVerifikasi.'</td>';
                     echo '</tr>';
 
                     $nomor = $nomor +1;
@@ -100,7 +84,6 @@
 
 <script>
     let filterCourse = document.getElementById('filterCourse');
-    let filterStatus = document.getElementById('filterStatus');
     let filterId = document.getElementById('filterId');
     let filterRate = document.getElementById('filterRate');
     let filterTglAwal = document.getElementById('filterTglAwal');
@@ -127,26 +110,7 @@
         }
 
         //eksekusi ajax (method, source, true for asyncronus/tidak refresh)
-        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
-        xhr.send();
-    });
-
-    //event listener status
-    filterStatus.addEventListener('keyup', function(){
-        //buat objek ajax
-        let xhr = new XMLHttpRequest();
-
-        //cek status ajax
-        xhr.onreadystatechange = function (){
-            if(xhr.readyState == 4 && xhr.status == 200){
-                //apapun isi dr sumber (checker ajax jalan ga)
-                console.log(xhr.responseText);
-                container.innerHTML = xhr.responseText;
-            }
-        }
-
-        //eksekusi ajax (method, source, true for asyncronus)
-        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
+        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
         xhr.send();
     });
 
@@ -165,7 +129,7 @@
         }
 
         //eksekusi ajax (method, source, true for asyncronus)
-        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
+        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
         xhr.send();
     });
 
@@ -184,7 +148,7 @@
         }
 
         //eksekusi ajax (method, source, true for asyncronus)
-        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
+        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
         xhr.send();
     });
 
@@ -203,7 +167,7 @@
         }
 
         //eksekusi ajax (method, source, true for asyncronus)
-        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
+        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
         xhr.send();
     });
 
@@ -222,7 +186,7 @@
         }
 
         //eksekusi ajax (method, source, true for asyncronus)
-        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&status='+filterStatus.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
+        xhr.open('GET', 'courseTransactionFilter?course='+filterCourse.value+'&id='+filterId.value+'&rate='+filterRate.value+'&tglAwal='+filterTglAwal.value+'&tglAkhir='+filterTglAkhir.value, true);
         xhr.send();
     });
 </script>

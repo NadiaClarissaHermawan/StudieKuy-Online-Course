@@ -7,7 +7,6 @@
         <th>Saldo Awal</th>
         <th>Saldo Akhir</th>
         <th>Nama Course</th>
-        <th>Verifikasi</th>
     </tr>
     <?php 
         if($result != null){
@@ -31,16 +30,6 @@
                 echo '<td>'.$saldoAkhir.'</td>';
     
                 echo '<td>'.$row->getNamaCourse().'</td>';
-    
-                $tempStatusVerifikasi = $row->getStatusVerifikasi();
-                if($tempStatusVerifikasi == 0){
-                    $tempStatusVerifikasi = "Not Verified Yet";
-                }else if($tempStatusVerifikasi == 1){
-                    $tempStatusVerifikasi = "Verified";
-                }else if($tempStatusVerifikasi == 2){
-                    $tempStatusVerifikasi = "Rejected";
-                }
-                echo '<td>'.$tempStatusVerifikasi.'</td>';
                 echo '</tr>';
 
                 $nomor = $nomor +1;
