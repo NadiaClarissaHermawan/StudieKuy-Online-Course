@@ -99,7 +99,7 @@
             $cekFilter = 0;
             //cek filter id
             if($id != ""){
-                $query .= " WHERE id_transaksi_saldo = '$id'";
+                $query .= " WHERE id_transaksi_saldo LIKE '%$id%'";
                 $cekFilter = 1;
             }
 
