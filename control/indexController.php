@@ -87,5 +87,9 @@
                 return View::createViewCourseDetail('coursesDetail.php', []);
             }
         }
+
+        public function view_bidangCourse(){
+            return View::createViewBidangCourse('bidangCourse.php', []);
+        }
     }
 ?>

@@ -238,7 +238,13 @@
                 $teacherProfileCtrl = new indexTeacherController();
                 echo $teacherProfileCtrl->signOut();
                 break;
-    
+            
+            case $baseURL.'/bidangCourse':
+                require_once "control/indexController.php";
+                $bidCtrl = new indexController();
+                echo $bidCtrl->view_bidangCourse();
+                break; 
+
             default :
                 echo '404 not found';
                 break;

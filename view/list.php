@@ -3,18 +3,18 @@
 </div>
 <div class="content2 tulisanPutih">
     <div class="content2-1 hurufSedang">Java Basic Programming</div>
-    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+    <a class="kotak hurufKecil tulisanCoklat" href="">Go to Course</a>
 </div>
 <!-- Test Contoh -->
 <div class="content2 tulisanPutih">
     <div class="content2-1 hurufSedang">Python for Data Science</div>
-    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+    <a class="kotak hurufKecil tulisanCoklat" href="">Go to Course</a>
 </div>
 <div class="content2 tulisanPutih">
     <div class="content2-1 hurufSedang">Basic Accounting</div>
-    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+    <a class="kotak hurufKecil tulisanCoklat" href="">Go to Course</a>
 </div>
 <div class="content2 tulisanPutih">
     <div class="content2-1 hurufSedang">Creative Economy</div>
-    <div class="content2-2"><a href="" class="kotak hurufKecil">Go to Course</a></div>
+    <a class="kotak hurufKecil tulisanCoklat" href="">Go to Course</a>
 </div>
