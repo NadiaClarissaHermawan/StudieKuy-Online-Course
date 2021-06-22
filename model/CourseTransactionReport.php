@@ -1,15 +1,14 @@
 <?php 
     class TransactionCourseReport{
-        protected $id_transaksi, $tanggal, $harga_course, $saldo_awal, $saldo_akhir, $nama_course, $status_verifikasi;
+        protected $id_transaksi, $tanggal, $harga_course, $saldo_awal, $saldo_akhir, $nama_course;
 
-        public function __construct($id_transaksi, $tanggal, $harga_course, $saldo_awal, $saldo_akhir, $nama_course, $status_verifikasi){
+        public function __construct($id_transaksi, $tanggal, $harga_course, $saldo_awal, $saldo_akhir, $nama_course){
             $this->id_transaksi = $id_transaksi;
             $this->tanggal = $tanggal;
             $this->harga_course = $harga_course;
             $this->saldo_awal = $saldo_awal;
             $this->saldo_akhir = $saldo_akhir;
             $this->nama_course = $nama_course;
-            $this->status_verifikasi = $status_verifikasi;
         }
 
         public function getIdTransaksi(){
@@ -30,9 +29,6 @@
         }
         public function getNamaCourse(){
             return $this->nama_course;
-        }
-        public function getStatusVerifikasi(){
-            return $this->status_verifikasi;
         }
     }
 ?>

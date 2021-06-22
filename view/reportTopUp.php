@@ -15,7 +15,7 @@
     <div class="tulisanPutih hurufBesar">Top Up Transaction Report</div>
 </div>
 <hr>
-<form id="form" method="POST">
+<form id="form">
     <div class="content2 tulisanPutih">
             <!-- 1 -->
             <div class="content2-1">Transaction ID</div>
@@ -27,7 +27,7 @@
     </div>
     <div class="content2 tulisanPutih">
             <!-- 3 -->
-            <div class="content2-1">Transaction Date</div>
+            <div class="content2-1" style="width: 14%;">Transaction Date</div>
             <div class="content2-2"  style="font-size: 1.8vw">:
                 <input type="date" name="filterTglAwal" id="filterTglAwal" class="kotakDate tulisanCoklat" style="margin-left: 3%;">
                 <div id="strip">-</div>
