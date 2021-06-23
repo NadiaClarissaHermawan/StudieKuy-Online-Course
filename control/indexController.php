@@ -112,5 +112,9 @@
         public function view_courseModul(){
             return View::createViewCourseModul('courseModul.php', []);
         }
+
+        public function view_courseExam(){
+            return View::createViewCourseExam('courseExam.php', []);
+        }
     }
 ?>
