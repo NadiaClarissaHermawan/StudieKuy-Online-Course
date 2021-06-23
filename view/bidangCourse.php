@@ -8,7 +8,7 @@
         <div class="text">Java Basic Programming</div>
     </a>
     <a class="card" href="">
-        <img src="view/images/course3.png" class="card-img">
+        <img src="view/images/course4.png" class="card-img">
         <div class="text">Java Basic Programming</div>
     </a>
     <a class="card" href="">
