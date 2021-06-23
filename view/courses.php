@@ -1,28 +1,57 @@
+<div class="putih">
+    <div class="baris1">
+        <a href=""><img src="view/images/course1.png" class="pic" style="background-color: #27283D"></a>
+        <a href=""><img src="view/images/course2.png" class="pic" style="background-color: #AEF5FF"></a>
+        <a href=""><img src="view/images/course3.png" class="pic" style="background-color: #FFDEAC"></a>
+    </div>
+    <div class="baris1">
+        <a href=""><img src="view/images/course4.png" class="pic" style="background-color: #B1EA8E"></a>
+        <a href=""><img src="view/images/course5.png" class="pic" style="background-color: #F7AB36"></a>
+        <a href=""><img src="view/images/course6.png" class="pic" style="background-color: #F6ADF4"></a>
+    </div>
+</div>
+<!-- <script>
+    function show(){
+        let t1 = getElementById("txt1");
+        t1.style.visibility = "visible";
+    }
+    function hide(){
+        let t1 = getElementById("txt1");
+        t1.style.visibility = "hidden";
+    }
+</script> -->
+<!-- 
 <div class="main">
     <div class="white-box">
-        <div class="card" onmouseover="over1()" onmouseout="out1()" style="background-color: #FFDEDE;">
-            <img src="view/images/courseee.png" class="card-img">
-            <h1 class="display-info">Computer</h1>
+        <div class="row2">
+            <div class="card" onmouseover="over1()" onmouseout="out1()" style="background-color: #FFDEDE;">
+                <img src="view/images/courseee.png" class="card-img">
+                <h1 class="display-info">Computer</h1>
+            </div>
+            <div class="card" onmouseover="over4()" onmouseout="out4()" style="background-color: #B1EA8E;">
+                <img src="view/images/course4.png" class="card-img">
+                <h1 class="display-info">Arts</h1>
+            </div>
         </div>
-        <div class="card" onmouseover="over2()" onmouseout="out2()" style="background-color: #AEF5FF;">
-            <img src="view/images/course2.png" class="card-img">
-            <h1 class="display-info">Economy</h1>
+        <div class="row2">
+            <div class="card" onmouseover="over2()" onmouseout="out2()" style="background-color: #AEF5FF;">
+                <img src="view/images/course2.png" class="card-img">
+                <h1 class="display-info">Economy</h1>
+            </div>
+            <div class="card" onmouseover="over5()" onmouseout="out5()" style="background-color: #F7AB36;">
+                <img src="view/images/course5.png" class="card-img">
+                <h1 class="display-info">Science</h1>
+            </div>
         </div>
-        <div class="card" onmouseover="over3()" onmouseout="out3()" style="background-color: #FFDEAC;">
-            <img src="view/images/course3.png" class="card-img">
-            <h1 class="display-info">Law</h1>
-        </div>
-        <div class="card" onmouseover="over4()" onmouseout="out4()" style="background-color: #B1EA8E;">
-            <img src="view/images/course4.png" class="card-img">
-            <h1 class="display-info">Arts</h1>
-        </div>
-        <div class="card" onmouseover="over5()" onmouseout="out5()" style="background-color: #F7AB36;">
-            <img src="view/images/course5.png" class="card-img">
-            <h1 class="display-info">Science</h1>
-        </div>
-        <div class="card" onmouseover="over6()" onmouseout="out6()" style="background-color: #F6ADF4;">
-            <img src="view/images/course6.png " class="card-img">
-            <h1 class="display-info">Language & Culture</h1>
+        <div class="row2">
+            <div class="card" onmouseover="over3()" onmouseout="out3()" style="background-color: #FFDEAC;">
+                <img src="view/images/course3.png" class="card-img">
+                <h1 class="display-info">Law</h1>
+            </div>
+            <div class="card" onmouseover="over6()" onmouseout="out6()" style="background-color: #F6ADF4;">
+                <img src="view/images/course6.png " class="card-img">
+                <h1 class="display-info">Language & Culture</h1>
+            </div>    
         </div>
     </div>
 </div>
@@ -108,4 +137,4 @@
         img[5].classList.remove('img-hover');
         info[5].classList.remove('info-hover');
     }
-</script>
+</script> -->

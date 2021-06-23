@@ -1,14 +1,14 @@
 <?php
-    if(session_status() == PHP_SESSION_NONE){
-        session_start();
-    }
+    // if(session_status() == PHP_SESSION_NONE){
+    //     session_start();
+    // }
 
-    //kalo belom login gabisa kesini
-    if(!isset($_SESSION['statusTeacher'])){
-        header("Location: teacherLogin");
-        session_destroy();
-        exit;
-    }
+    // //kalo belom login gabisa kesini
+    // if(!isset($_SESSION['statusTeacher'])){
+    //     header("Location: teacherLogin");
+    //     session_destroy();
+    //     exit;
+    // }
 ?>
 <div class="content1">
     <div class="tulisanPutih hurufBesar">New Course Detail</div>
