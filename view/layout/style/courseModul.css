@@ -90,13 +90,22 @@ a {
     color: #FFFFFF;
     font-size: 25px;
     list-style-type: none;
-    margin: 10px;
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+
+}
+
+.videoModul{
+    width: 70%;
+    height: 50%;
+    border-radius: 10px;
 }
 
 .menu:hover {
     background-color: white;
     color: #432F2F;
-    margin: 10px;
 }
 
 .vidShow {
@@ -110,4 +119,13 @@ a {
     align-items: center;
     justify-content: center;
     border-radius: 30px;
+    padding: 20px;
+}
+
+.batas {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 90%;
+    
 }

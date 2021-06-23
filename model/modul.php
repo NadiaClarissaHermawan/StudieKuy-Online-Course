@@ -18,7 +18,6 @@
             return $this->id_courses;
         }
 
-
         public function getNamaModul(){
             return $this->nama_modul;
         }

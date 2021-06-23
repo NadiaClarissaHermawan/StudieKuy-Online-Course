@@ -68,12 +68,13 @@
             return $include;
         }
 
-        public static function createViewCourseModul($view, $param, $saldo){
+        public static function createViewCourseModul($view, $param, $saldo, $sumberModul){
             foreach($param as $key => $value){
                 $$key = $value;
             }
             $saldoUser = $saldo;
-
+            $sumberModul = $sumberModul;
+            
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();

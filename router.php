@@ -345,6 +345,12 @@
                 $courseCtrl = new reportController();
                 echo $courseCtrl->view_courseReport();
                 break;
+            
+            case $baseURL.'/cekJawaban':
+                require_once "control/indexController.php";
+                $examCtrl = new indexController();
+                echo $examCtrl->cekJawaban();
+                break;
 
             default :
                 echo '404 not found';

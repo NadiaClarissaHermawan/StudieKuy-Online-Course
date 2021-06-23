@@ -116,6 +116,7 @@
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
+
             //sudah login
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
@@ -134,22 +135,40 @@
 
                 //ambil direktori modul" dari course bersangkutan
                 $query = "SELECT isi_modul, nama_modul, keterangan_modul, nama_course, c.id_courses
-                        FROM modul INNER JOIN courses c
+                            FROM modul INNER JOIN courses c
                                     ON modul.id_courses = c.id_courses
-                        WHERE modul.id_courses = (SELECT id_courses
+                            WHERE modul.id_courses = (SELECT id_courses
                                                     FROM member_course
                                                     WHERE id_memCourse = '$id_memCourse'
                                                     )
-                         ";
+                            ORDER BY id_modul ASC
+                        ";
+                
                 $resQuery = $this->db->executeSelectQuery($query);
                 $result = [];
                 foreach($resQuery as $key =>$value){
                     $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['keterangan_modul'], $value['nama_course'], $value['id_courses']);
                 }
 
+                //cek apakah sudah klik salah satu modul?
+                //kalau sudah, ambil sumber video modul
+                $sumberModul = "";
+                if(isset($_GET['namaModul']) && $_GET['namaModul'] != ""){
+                    $namaModul = $_GET['namaModul'];
+                    $query = "SELECT isi_modul
+                              FROM modul
+                              WHERE nama_modul = '$namaModul'
+                             ";
+                    $sumberModul = $this->db->executeSelectQuery($query);
+                    $sumberModul = $sumberModul[0]['isi_modul'];
+                }else{
+                    $sumberModul = $resQuery[0]['isi_modul'];
+                }
+                
+
                 return View::createViewCourseModul('courseModul.php', [
                     "result" => $result
-                ], $saldo);
+                ], $saldo, $sumberModul);
             
             //belum login
             }else{
@@ -212,6 +231,49 @@
             }else{
                 session_destroy();
                 return View::createView('index.php', []);
+            }
+        }
+
+        public function cekJawaban(){
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            $id_course = $_POST['idCourse'];
+            $id_memCourse = $_SESSION['idMemCourse'];
+
+            //ambil kunjaw
+            $query = "SELECT *
+                      FROM soal_ujian
+                      WHERE id_courses = (SELECT id_courses
+                                          FROM member_course
+                                          WHERE id_memCourse = '$id_memCourse'
+                                         )
+                      ORDER BY nomor_soal ASC
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            $benar = 0;
+            //cek jawaban benar
+            foreach($resQuery as $key => $value){
+                if(isset($_POST['opt'.$key]) && $_POST['opt'.$key] == $value['kunci_jawaban']){
+                    $benar ++;
+                }
+            }
+            $panjangResQuery = count($resQuery);
+            //nilai akhir
+            $benar = $benar / $panjangResQuery * 100;
+
+            //update nilai akhir
+            $query = "UPDATE member_course
+                      SET nilai_akhir = '$benar', tanggal_tuntas = now()
+                      WHERE id_memCourse = '$id_memCourse'
+                     ";
+            $this->db->executeNonSelectQuery($query);
+
+            //tidak timeout
+            if($_POST['timeOutStatus'] == 0){
+                header('Location: progress');
+            }else{
+                header('Location: timeOut');
             }
         }
     }

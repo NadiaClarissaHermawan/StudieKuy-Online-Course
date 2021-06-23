@@ -1,42 +1,31 @@
 <?php
-    // if(session_status() == PHP_SESSION_NONE){
-    //     session_start();
-    // }
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
 
-    // // kalo belom login gabisa kesini
-    // if(!isset($_SESSION['status'])){
-    //     header("Location: userLogin");
-    //     session_destroy();
-    //     exit;
-    // }
+    // kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
 ?>
 <div>
-    <!-- <div class="navKiri">
-        <div class="menu">Modul 1</div>
-        <div class="menu">Modul 2</div>
-        <div class="menu">Modul 3</div>
-        <div class="menu">Modul 4</div>
-    </div> -->
-    <ul class="navKiri">
-        <li class="menu">Modul 1</li>
-        <li class="menu">Modul 2</li>
-        <li class="menu">Modul 3</li>
+    <ul class="navKiri" style="padding:0px">
+        <?php
+            if(isset($result) && $result != null){
+                foreach($result as $key => $row){
+                    echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
+                    echo '<hr class="batas">';
+                }
+            }
+        ?>
     </ul>
     <div class="vidShow tulisanCoklat hurufBesar">
-        //Video
+        <?php 
+            echo '<video controls autoplay class="videoModul">';
+            echo '<source src="view/modul/'.$sumberModul.'" type="video/mp4">';
+            echo '</video>';
+        ?>
     </div>
 </div>
-
-<!-- <div class="white-box">
-    <?php
-        // if(isset($result) && $result!=null){
-        //     foreach($result as $key => $row){
-        //         echo '<a class="modul">';
-        //         echo '<i class="material-icons md-36" id="down">cloud_download</i>';
-        //         echo '<div class="text">Modul'.$row->getNamaModul().'</div>';
-        //         echo '</a>';
-        //     }
-        // }
-    ?>
-
-</div> -->
