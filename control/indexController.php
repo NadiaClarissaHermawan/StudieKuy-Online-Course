@@ -112,6 +112,10 @@
             return View::createViewBidangCourse('bidangCourse.php', []);
         }
 
+        public function view_courseInfo(){
+            return View::createViewCourseInfo('courseInfo.php', []);
+        }
+
         public function view_courseModul(){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
