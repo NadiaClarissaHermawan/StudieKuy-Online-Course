@@ -11,25 +11,20 @@
     }
 ?>
 <div class="content1">
-    <div class="tulisanPutih hurufBesar">$course_name Modules</div>
-</div>
+    <div class="tulisanPutih hurufBesar"><?php echo $result[0]->getNamaCourse()?> Modules</div>
+</div>  
 <hr>
+
 <div class="white-box">
-    <a class="modul">
-        <i class="material-icons md-36" id="down">cloud_download</i>
-        <div class="text">Module $ke</div>
-    </a>
-    <a class="modul">
-        <i class="material-icons md-36" id="down">cloud_download</i>
-        <div class="text">Module $ke</div>
-    </a>
-    <a class="modul">
-        <i class="material-icons md-36" id="down">cloud_download</i>
-        <div class="text">Module $ke</div>
-    </a>
-    <a class="modul">
-        <i class="material-icons md-36" id="down">cloud_download</i>
-        <div class="text">Module $ke</div>
-    </a>
+    <?php
+        if(isset($result) && $result!=null){
+            foreach($result as $key => $row){
+                echo '<a class="modul">';
+                echo '<i class="material-icons md-36" id="down">cloud_download</i>';
+                echo '<div class="text">Modul'.$row->getNamaModul().'</div>';
+                echo '</a>';
+            }
+        }
+    ?>
 
 </div>

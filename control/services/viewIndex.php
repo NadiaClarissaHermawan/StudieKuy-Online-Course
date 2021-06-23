@@ -67,11 +67,12 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewCourseModul($view, $param){
+        public static function createViewCourseModul($view, $param, $saldo){
             foreach($param as $key => $value){
                 $$key = $value;
             }
-
+            $saldoUser = $saldo;
+            
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();

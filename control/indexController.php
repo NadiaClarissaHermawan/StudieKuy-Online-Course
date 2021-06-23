@@ -3,6 +3,7 @@
     require_once "control/services/mysqlDB.php";
     require_once "model/saldo.php";
     require_once "model/listMemberCourse.php";
+    require_once "model/modul.php";
 
     class indexController{
         protected $db;
@@ -124,20 +125,35 @@
                         ";
                 $saldoUser = $this->db->executeSelectQuery($query);
                 foreach($saldoUser as $key =>$value){
-                    $result[] = new Saldo($value['saldo']);
+                    $res1[] = new Saldo($value['saldo']);
+                }
+                $saldo = $res1[0]->getSaldo();
+
+                //ambil direktori modul" dari course bersangkutan
+                $id_memCourse = $_SESSION['idMemCourse'];
+                $query = "SELECT isi_modul, nama_modul, keterangan_modul, nama_course, c.id_courses
+                        FROM modul INNER JOIN courses c
+                                    ON modul.id_courses = c.id_courses
+                        WHERE modul.id_courses = (SELECT id_courses
+                                                    FROM member_course
+                                                    WHERE id_memCourse = '$id_memCourse'
+                                                    )
+                         ";
+                $resQuery = $this->db->executeSelectQuery($query);
+                $result = [];
+                foreach($resQuery as $key =>$value){
+                    $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['keterangan_modul'], $value['nama_course'], $value['id_courses']);
                 }
 
-                //ambil modul" dari course bersangkutan
-                return View::createViewCourseDetail('courseModul.php', [
+                return View::createViewCourseModul('courseModul.php', [
                     "result" => $result
-                ]);
+                ], $saldo);
             
             //belum login
             }else{
                 session_destroy();
-                return View::createViewCourseDetail('courseModul.php', []);
+                return View::createView('index.php', []);
             }
-            return View::createViewCourseModul('courseModul.php', []);
         }
 
         public function view_courseExam(){
