@@ -124,18 +124,6 @@
                 echo $courseCtrl->view_courseTransactionReport();
                 break;
 
-            case $baseURL.'/coursesList':
-                require_once "control/indexController.php";
-                $idxCtrl = new indexController();
-                echo $idxCtrl->view_coursesList();
-                break;
-
-            case $baseURL.'/coursesDetail':
-                require_once "control/indexController.php";
-                $idxCtrl = new indexController();
-                echo $idxCtrl->view_coursesDetail();
-                break;
-
             case $baseURL.'/createCourse':
                 require_once "control/indexTeacherController.php";
                 $crsCtrl = new createCourseController();
@@ -263,6 +251,19 @@
                 $bidCtrl = new adminController();
                 echo $bidCtrl->logout();
                 break; 
+            
+            //member course
+            case $baseURL.'/coursesList':
+                require_once "control/indexController.php";
+                $idxCtrl = new indexController();
+                echo $idxCtrl->view_coursesList();
+                break;
+
+            case $baseURL.'/coursesDetail':
+                require_once "control/indexController.php";
+                $idxCtrl = new indexController();
+                echo $idxCtrl->view_coursesDetail();
+                break;
 
             case $baseURL.'/userCourseModul':
                 require_once "control/indexController.php";
@@ -275,7 +276,8 @@
                 $modCtrl = new indexController();
                 echo $modCtrl->view_courseExam();
                 break; 
-
+            //member course end
+            
             default :
                 echo '404 not found';
                 break;

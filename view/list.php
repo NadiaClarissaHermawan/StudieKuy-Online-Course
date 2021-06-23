@@ -20,7 +20,6 @@
         echo '<div class="content2 tulisanPutih">';
         echo '<div class="content2-1 hurufSedang">'.$row->getNamaCourse().'</div>';
         echo '<input type="hidden" value="'.$row->getIdMemCourse().'" name="idMemCourse">';
-        echo '<input type="hidden" value="'.$row->getIdCourse().'" name="idCourse">';
         echo '<button type="submit" class="kotak hurufKecil tulisanCoklat">Go to Course</button>';
         echo '</div>';
         echo '</form>';

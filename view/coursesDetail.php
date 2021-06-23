@@ -1,28 +1,26 @@
 <?php
-    // if(session_status() == PHP_SESSION_NONE){
-    //     session_start();
-    // }
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
 
-    // //kalo belom login gabisa kesini
-    // if(!isset($_SESSION['status'])){
-    //     header("Location: userLogin");
-    //     session_destroy();
-    //     exit;
-    // }
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
 ?>
 <div class="content1">
     <div class="tulisanPutih hurufBesar">Java Basic Programming</div>
 </div>
 <hr>
 <div class="content2">
-    <img class="menu-in-course content2-1" src="view/images/module.png">
-    <!-- <a href="userCourseModul" class="menu-in-course content2-1"><img class="menu-in-course" src="view/images/module.png"></a> -->
-	<!-- <a href="" class="content2-3" style="height:70%"><img class="menu-in-course" src="view/images/progress.png"></a> -->
-    <img class="menu-in-course content2-3" src="view/images/progress.png">
-    <!-- <a href="" class="content2-2" style="width: 33%;height:70%" id="myBtn" onsubmit=""><img class="menu-in-course" src="view/images/exam.png" id="myBtn"></a> -->
-
+    <?php
+        $_SESSION['idMemCourse'] = $_GET['idMemCourse'];
+    ?>
+    <a href="userCourseModul" class="menu-in-course content2-1"><img style="width:107%; height:100%" class="menu-in-course" src="view/images/module.png"></a>
+	<a href="" class="content2-3" style="height:70%"><img style="width:95%; height:100%" class="menu-in-course" src="view/images/progress.png"></a>
     <img class="menu-in-course content2-2" src="view/images/exam.png" id="myBtn">
-    <!-- <button class="buttonR" id="myBtn" onsubmit="">Submit</button> -->
 </div>
 <!-- if exam belom di take -->
 <div id="myModal" class="modal">

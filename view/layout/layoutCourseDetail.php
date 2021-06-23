@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/coursesDetail.css"/>
     </head>
-    <body>
+    <body style="overflow-x: hidden;">
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
