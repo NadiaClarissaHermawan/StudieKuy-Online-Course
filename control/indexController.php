@@ -4,6 +4,7 @@
     require_once "model/saldo.php";
     require_once "model/listMemberCourse.php";
     require_once "model/modul.php";
+    require_once "model/soalUjian.php";
 
     class indexController{
         protected $db;
@@ -118,6 +119,8 @@
             //sudah login
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
+                $id_memCourse = $_SESSION['idMemCourse'];
+
                 //ambil saldo member
                 $query = "SELECT saldo 
                         FROM member 
@@ -130,7 +133,6 @@
                 $saldo = $res1[0]->getSaldo();
 
                 //ambil direktori modul" dari course bersangkutan
-                $id_memCourse = $_SESSION['idMemCourse'];
                 $query = "SELECT isi_modul, nama_modul, keterangan_modul, nama_course, c.id_courses
                         FROM modul INNER JOIN courses c
                                     ON modul.id_courses = c.id_courses
@@ -157,7 +159,60 @@
         }
 
         public function view_courseExam(){
-            return View::createViewCourseExam('courseExam.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+
+            //sudah login
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $id_memCourse = $_SESSION['idMemCourse'];
+
+                //ambil saldo member
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                foreach($saldoUser as $key =>$value){
+                    $res1[] = new Saldo($value['saldo']);
+                }
+                $saldo = $res1[0]->getSaldo();
+
+                //ambil nama course
+                $query = "SELECT nama_course 
+                          FROM courses
+                          WHERE id_courses = (SELECT id_courses 
+                                              FROM member_course
+                                              WHERE id_memCourse = '$id_memCourse'
+                                             )
+                         ";
+                $namaCourse = $this->db->executeSelectQuery($query);
+                $namaCourse = $namaCourse[0]['nama_course'];
+
+                //ambil soal" ujian di course bersangkutan
+                $query = "SELECT *
+                          FROM soal_ujian 
+                          WHERE id_courses = ( SELECT id_courses
+                                               FROM member_course
+                                               WHERE id_memCourse = '$id_memCourse'
+                                             )
+                          ORDER BY nomor_soal ASC
+                         ";
+                $resultQuery = $this->db->executeSelectQuery($query);
+                $result = [];
+                foreach($resultQuery as $key => $value){
+                    $result[] = new SoalUjian($value['id_soal_ujian'], $value['nomor_soal'], $value['soal'], $value['opsi1'], $value['opsi2'], $value['opsi3'], $value['kunci_jawaban'], $value['id_courses']);
+                }
+
+                return View::createViewCourseExam('courseExam.php', [
+                    "result" => $result
+                ], $saldo, $namaCourse);
+
+            }else{
+                session_destroy();
+                return View::createView('index.php', []);
+            }
         }
     }
 ?>

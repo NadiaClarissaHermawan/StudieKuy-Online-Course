@@ -67,12 +67,13 @@
             ob_end_clean();
             return $include;
         }
+
         public static function createViewCourseModul($view, $param, $saldo){
             foreach($param as $key => $value){
                 $$key = $value;
             }
             $saldoUser = $saldo;
-            
+
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();
@@ -85,10 +86,12 @@
             return $include;
         }
 
-        public static function createViewCourseExam($view, $param){
+        public static function createViewCourseExam($view, $param, $saldo, $namaCourse){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $saldoUser = $saldo;
+            $namaCourse = $namaCourse;
 
             ob_start();
             include 'view/'.$view;
