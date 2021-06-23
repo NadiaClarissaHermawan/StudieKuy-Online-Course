@@ -12,7 +12,6 @@
 ?>
 
 <div class="content1">
-    <p id="demo"></p>
     <div class="tulisanPutih hurufBesar"><?php echo $namaCourse?> Exam</div>
 </div>
 <hr>
@@ -39,6 +38,7 @@
     <button id="submit-answer">Submit Answer</button>
 </form>
 
+<!-- count down waktu exam  -->
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date();

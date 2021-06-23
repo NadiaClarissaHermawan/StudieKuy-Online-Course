@@ -62,18 +62,7 @@
                 $oldName = $_FILES["file"]["tmp_name"];
                 //dirname => naik 1 directory
                 //__DIR__ => directory file ini skrg (controller/Controller.php)
-
-                //query ambil id transaksi terakhir + 1 --> otw bikin
-                $query = "SELECT id_transaksi_saldo 
-                          FROM transaksi_saldo 
-                          ORDER BY id_transaksi_saldo DESC
-                         ";
-                $resQuery = $this->db->executeSelectQuery($query);
-                $resQuery = $resQuery[0]['id_transaksi_saldo'] +1;
-
-                $newName = dirname(__DIR__)."\\view\\images\\buktitransfer\\".$resQuery.".jpg";
-                $_SESSION['bukti'] = $resQuery;
-
+                $newName = dirname(__DIR__)."\\view\\images\\buktitransfer\\".$_SESSION['id_pengguna'].".jpg";
                 if(move_uploaded_file($oldName, $newName)){
                     printf("File [%s] has successfully uploaded to [%s]",
                     $oldName, $newName);
@@ -98,21 +87,12 @@
                       WHERE id_pengguna = '$id_pengguna'
                      ";
             $id_member = $this->db->executeSelectQuery($query)[0]["id_member"];
+            $bukti_trf = $id_pengguna.".jpg";
 
-            //cari nama bukti trf by id_transaksi yg akan dibuat
-            $query = "SELECT id_transaksi_saldo 
-                     FROM transaksi_saldo 
-                     ORDER BY id_transaksi_saldo DESC
-                    ";
-            $resQuery = $this->db->executeSelectQuery($query);
-            $resQuery = $resQuery[0]['id_transaksi_saldo'] +1;
-            $resQuery = $resQuery.'.jpg';
-
-            //masukin log transaksi
             $query = "INSERT INTO transaksi_saldo
                       (saldo_awal, saldo_akhir, status_verifikasi, tanggal_transaksi_saldo, nominal_pengisian, id_member, bukti_trf)
                       VALUES 
-                      ($saldo_awal, $saldo_akhir, 0, now(), $nominal, $id_member, '$resQuery')
+                      ($saldo_awal, $saldo_akhir, 0, now(), $nominal, $id_member, '$bukti_trf')
                      ";
             $this->db->executeNonSelectQuery($query);
         }

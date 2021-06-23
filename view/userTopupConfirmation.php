@@ -76,8 +76,7 @@
 		let gambar = document.getElementById("gambar");
         gambar.style.visibility = "visible";
         gambar.src="";
-		gambar.src = "/TugasBesar/view/images/buktitransfer/".concat(<?php echo $_SESSION['bukti']?>);
-        console.log(gambar.src);
+		gambar.src = "/TugasBesar/view/images/buktitransfer/".concat(<?php echo $_SESSION['id_pengguna']?>).concat(".jpg");
 	}
 
 

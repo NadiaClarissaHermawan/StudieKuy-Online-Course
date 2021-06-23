@@ -11,6 +11,7 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
+            <p id="demo" class="count-down"></p>
 
             <!-- muncul ilangin tombol login  -->
             <?php 
