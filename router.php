@@ -270,6 +270,12 @@
                 echo $modCtrl->view_courseModul();
                 break; 
 
+            case $baseURL.'/userCourseExam':
+                require_once "control/indexController.php";
+                $modCtrl = new indexController();
+                echo $modCtrl->view_courseExam();
+                break; 
+
             default :
                 echo '404 not found';
                 break;
