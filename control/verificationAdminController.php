@@ -191,6 +191,7 @@
             $idTrans = $_GET['idTrans'];
             $topup = $_GET['topup']*1000/1000;
 
+            //cari saldo member skrg + nominal topup
             $query = "SELECT saldo
                       FROM member
                       WHERE id_member = '$idMember' 
@@ -204,6 +205,7 @@
                 session_start();
             }
             $idPengguna = $_SESSION['id_pengguna'];
+            //cari id admin yang verifikasi topupnya
             $query = "SELECT id_admin 
                       FROM admin 
                       WHERE id_pengguna = '$idPengguna'
@@ -212,20 +214,23 @@
             $resQuery = $resQuery[0]['id_admin'];
 
             if(isset($verif) && $verif!= ""){
+                //update status verifikasi & tambahin id admin yg verifikasi
                 $query = "UPDATE transaksi_saldo
                           SET status_verifikasi = 1, id_admin = '$resQuery'
                           WHERE  id_member = '$idMember' AND id_transaksi_saldo = '$idTrans'
                          ";
                 $this->db->executeNonSelectQuery($query);
 
+                //tambahin saldo member
                 $query = "UPDATE member
                           SET saldo = '$saldoNow'
                           WHERE id_member = '$idMember'
                          ";
                 $this->db->executeNonSelectQuery($query);
 
+                //update log transaksi yg masih pending biar saldo awalnya = saldo skrg
                 $query = "UPDATE transaksi_saldo
-                          SET saldo_awal = '$saldoAwalTopUp'
+                          SET saldo_awal = '$saldoNow'
                           WHERE id_member = '$idMember' AND status_verifikasi = 0
                          ";
                 $this->db->executeNonSelectQuery($query);
@@ -242,6 +247,7 @@
                 session_start();
             }
             $idPengguna = $_SESSION['id_pengguna'];
+            //cari id admin yg verifikasi
             $query = "SELECT id_admin 
                       FROM admin 
                       WHERE id_pengguna = '$idPengguna'
@@ -249,6 +255,7 @@
             $resQuery = $this->db->executeSelectQuery($query);
             $resQuery = $resQuery[0]['id_admin'];
             if(isset($verif) && $verif!= ""){
+                //update status verifikasi jadi rejected 
                 $query = "UPDATE transaksi_saldo
                           SET status_verifikasi = 2, id_admin = '$resQuery'
                           WHERE  id_member = '$idMember' AND id_transaksi_saldo = '$idTrans'

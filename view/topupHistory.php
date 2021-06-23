@@ -45,9 +45,12 @@
             //belum di verifikasi
             if($status == 0){
                 echo '<div class="pending">Pending</div>';
-            //sudah di verif
-            }else{
+            //accepted
+            }else if($status == 1){
                 echo '<div class="succeed">Succeed</div>';
+            //rejected
+            }else{
+                echo '<div class="rejected">Rejected</div>';
             }
         
             echo '</div></div>';

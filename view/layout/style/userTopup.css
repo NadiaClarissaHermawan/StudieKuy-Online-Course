@@ -291,11 +291,15 @@
     display: flex;
 }
 .pending {
-    color:red;
+    color:orange;
     font-size: 1vw;
 }
 .succeed {
     color: green;
+    font-size: 1vw;
+}
+.rejected {
+    color:red;
     font-size: 1vw;
 }
 
