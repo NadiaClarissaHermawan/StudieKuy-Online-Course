@@ -1,0 +1,74 @@
+.content1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 15%;
+}
+hr {
+    border: 4px solid #F3A2A2;
+    width: 80%;
+}
+.course-img {
+    width: 80%;
+    margin: 5%;
+    border-radius: 30px;
+    display: table;
+    text-align: center;
+    transition: 0.1s;
+    background-color: #FFDEDE;
+}
+.course-detail-isi {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+.course-detail-kiri {
+    margin-left: 10%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-detail-kanan {
+    color: white;
+    width: 60%;
+    text-align: left;
+    padding: 25px;
+}
+
+.course-detail-button {
+    display: flex;
+    background-color: #EFF4B7;
+    width: 60%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    border: none;
+    transition: 0.1s;
+}
+
+.course-detail-button:hover {
+    background-color: lightpink;
+    color: #432F2F;
+    transition: 0.1s;
+}
+
+.tulisanPutih {
+    font-weight: bold;
+}
+
+.list {
+    text-align: left;
+    padding: 15px;
+    margin-left: 10%;
+}

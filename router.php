@@ -276,6 +276,13 @@
                 $modCtrl = new indexController();
                 echo $modCtrl->view_courseExam();
                 break; 
+
+            case $baseURL.'/userCourseInfo':
+                require_once "control/indexController.php";
+                $modCtrl = new indexController();
+                echo $modCtrl->view_courseInfo();
+                break; 
+
             //member course end
             
             default :
