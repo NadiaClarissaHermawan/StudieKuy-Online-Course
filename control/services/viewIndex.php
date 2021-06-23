@@ -74,7 +74,7 @@
             }
             $saldoUser = $saldo;
             $sumberModul = $sumberModul;
-            
+
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();

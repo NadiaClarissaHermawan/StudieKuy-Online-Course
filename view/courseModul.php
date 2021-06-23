@@ -14,6 +14,7 @@
     <ul class="navKiri" style="padding:0px">
         <?php
             if(isset($result) && $result != null){
+                echo '<hr class="batas">';
                 foreach($result as $key => $row){
                     echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
                     echo '<hr class="batas">';
@@ -23,7 +24,7 @@
     </ul>
     <div class="vidShow tulisanCoklat hurufBesar">
         <?php 
-            echo '<video controls autoplay class="videoModul">';
+            echo '<video controls class="videoModul">';
             echo '<source src="view/modul/'.$sumberModul.'" type="video/mp4">';
             echo '</video>';
         ?>

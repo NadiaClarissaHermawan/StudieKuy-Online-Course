@@ -11,22 +11,10 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
+
+            <!-- count down time -->
             <p id="demo" class="count-down"></p>
 
-            <!-- muncul ilangin tombol login  -->
-            <?php 
-                $statusLogin = 0;
-
-                if(isset($_SESSION['status']) == false){
-                    echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
-                }else{
-                    if($saldoUser == 0.000){
-                        $saldoUser = 0;
-                    }
-                    $statusLogin = $_SESSION['status'];
-                    echo '<a href="userTopup"><button type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
-                }
-            ?>
         </div>
         
         <div class="nav">
