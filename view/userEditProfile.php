@@ -17,8 +17,8 @@
     <div class="title">
         <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
         <div class="title-kanan">
-            <a href="signOutUser" class="tulisanPutih hurufSedang" style="width: 10%;"></a>
-            <a href="signOutUser" class="tulisanPutih hurufSedang">Sign Out</a>
+            <span class="material-icons md-36" id="del">delete</span>
+            <a href="signOutUser" class="tulisanPutih hurufSedang" id="out">Sign Out</a>
         </div>
     </div>
     <hr>

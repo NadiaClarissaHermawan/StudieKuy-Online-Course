@@ -25,7 +25,7 @@
 }
 
 .title-tengah {
-    width: 10%;
+    width: 20;
     display: flex;
     justify-content: flex-end;
     text-align: center;
@@ -34,7 +34,7 @@
 }
 
 .title-kanan {
-    width: 10%;
+    width: 20%;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -197,18 +197,13 @@ form {
 }
 
 .kotakInput.error {
-    
     background-color: #ce3232;
 }
 
 .errorMessage {
     color: #e74c3c;
-    /*position: relative;*/
-    /*bottom: 0;
-    left: 0;*/
     color: red;
     font-weight: bold;
-    /*margin-left: 200px;*/
     visibility: hidden;
     font-size: 1vw;
     width: 200%;
@@ -217,4 +212,16 @@ form {
 
 .errorMessage.show {
     visibility: visible;
+}
+
+#del {
+    color: white;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+#del:hover {
+    color: #CB6F6F;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 10px;
 }
