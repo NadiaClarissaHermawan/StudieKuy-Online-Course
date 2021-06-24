@@ -62,6 +62,9 @@
         public function view_teacherCourseModul(){
             return View::createViewTeacherModul('teacherModul.php', []);
         }
+        public function view_teacherCourseExam(){
+            return View::createViewTeacherExam('teacherExam.php', []);
+        }
     }  
 
     class teacherProfileController{

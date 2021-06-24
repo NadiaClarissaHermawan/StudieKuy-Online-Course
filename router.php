@@ -330,6 +330,12 @@
                 break;
             //user sertif end
 
+            case $baseURL.'/teacherCourseExam':
+                require_once "control/indexTeacherController.php";
+                $teacherExamCtrl = new teacherCourseController();
+                echo $teacherExamCtrl->view_teacherCourseExam();
+                break;
+            
             default :
                 echo '404 not found';
                 break;

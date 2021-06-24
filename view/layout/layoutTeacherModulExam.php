@@ -1,8 +1,10 @@
 <!-- terhubung ke :
         viewIndexTeacher.php
         indexTeacherController.php
-        teacherCourse.php
-        teacherCourse.css
+        teacherModul.php
+        teacherModul.css
+        teacherExam.php
+        teacherExam.css
  -->
 <!DOCTYPE html>
 <html>
@@ -10,7 +12,8 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
-        <link rel="stylesheet" type="text/css" href="view/layout/style/teacherCourse.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/teacherModul.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/teacherExam.css"/>
     </head>
     <body>
         <div class="header">
@@ -20,7 +23,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">Courses List</a>
+            <a href="" class="menuNav">Module and Exam</a>
             <div class="menuNavKanan">
                 <a href="indexTeacher" class="material-icons md-36">home</a>
             </div>
