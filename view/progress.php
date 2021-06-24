@@ -57,7 +57,7 @@
     <div class="kotakMerah" id="certificate">
         Certificate
         <hr class="garis">
-        <button class="isiKotak tulisanPutih hurufKecil" id="unReqButton">Request</button>
+        <button class="isiKotak tulisanPutih hurufBesar" id="unReqButton">Request</button>
     </div>
 </div>
 <div id="myModal" class="modal">
