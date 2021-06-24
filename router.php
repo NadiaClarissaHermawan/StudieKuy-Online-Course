@@ -308,6 +308,12 @@
                 echo $timeCtrl->view_progress();
                 break;
             //member course end
+
+            case $baseURL.'/teacherCourseModul':
+                require_once "control/indexTeacherController.php";
+                $teacherModulCtrl = new teacherCourseController();
+                echo $teacherModulCtrl->view_teacherCourseModul();
+                break;
             
             default :
                 echo '404 not found';
