@@ -299,7 +299,7 @@
             case $baseURL.'/timeOut';
                 require_once "control/indexController.php";
                 $timeCtrl = new indexController();
-                echo $timeCtrl->timeOut();
+                echo $timeCtrl->view_timeOut();
                 break;
             //member course end
             

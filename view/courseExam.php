@@ -43,7 +43,7 @@
     <div class="modal-content">
         <p class="tulisanHitam">Are you sure that you want to submit the answers?</p>
         <a href="examFinished"><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
-        <a href=""><button id="close" class="buttonM tulisanCoklat hurufSedang">No</button></a>
+        <button id="close" class="buttonM tulisanCoklat hurufSedang">No</button>
     </div>
 </div>
 

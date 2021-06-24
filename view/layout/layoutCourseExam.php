@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="View/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/courseExam.css"/>
         <link rel="stylesheet" type="text/css" href="View/layout/style/examFinished.css"/>
+        <link rel="stylesheet" type="text/css" href="View/layout/style/timeOut.css"/>
     </head>
     <body>
     	<div class="header">

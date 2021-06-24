@@ -375,22 +375,27 @@
             //sudah login --> 
             if(isset($_SESSION['status']) && $_SESSION['status'] != ""){
                 //kalau saldo cukup
-                if(){
+                // if(){
 
                 
-                //kalau saldo tidak cukup
-                }else{
-                    header
-                }
+                // //kalau saldo tidak cukup
+                // }else{
+                //     header
+                // }
 
             //belum login --> tendang :v
             }else{
                 session_destroy();
                 header('Location: userLogin');
             }
+        }
 
         public function view_examFinished(){
             return View::createViewExamFinished('examFinished.php', []);
         }
+
+        public function view_timeOut(){
+            return View::createViewTimeOut('timeOut.php', []);
+        }        
     }
 ?>
