@@ -6,7 +6,7 @@
 <div class="course-detail-isi">
     <div class="course-detail-kiri">
         <img src="view/images/gambarcourses/<?php echo $result[0]->getGambarCourse()?>" class="course-img" style="margin-top: 12%;">
-        <a class="course-detail-button" href="buyCourse">
+        <a class="course-detail-button" href="buyCourse?tarif=<?php echo $result[0]->getTarif()?>&idCourse=<?php echo $result[0]->getIdCourse()?>">
             <h2 style="margin: 0; font-size:1.5vw" class="tulisanHitam">Enroll Now for only<br>Rp.<?php echo $result[0]->getTarif()?>,-</h2>
         </a>
     </div>
