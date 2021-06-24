@@ -5,6 +5,7 @@
     require_once "model/listMemberCourse.php";
     require_once "model/modul.php";
     require_once "model/soalUjian.php";
+    require_once "model/bidangCourse.php";
 
     class indexController{
         protected $db;
@@ -110,14 +111,43 @@
 
         //view courses dalam 1 bidang
         public function view_bidangCourse(){
-            $namaBidang = $_GET['bidang'];
-
-            //cari course" dalam bidang yg dipilih
-            $query = "SELECT 
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
             
-                     ";
+            //sudah login - > ambil saldo user
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                $saldoUser = $saldoUser[0]['saldo'];
 
-            return View::createViewBidangCourse('bidangCourse.php', []);
+            //belum login
+            }else{
+                session_destroy();
+                $saldoUser = "";
+            }
+            
+            $namaBidang = $_GET['bidang'];
+            //cari course" dalam bidang yg dipilih
+            $query = "SELECT c.id_courses, c.nama_course, c.gambar_courses
+                      FROM courses c INNER JOIN bidang_course bc
+                      ON c.id_courses = bc.id_courses
+                      INNER JOIN bidang b
+                      ON b.id_bidang = bc.id_bidang
+                      WHERE b.nama_bidang = '$namaBidang'
+                     ";
+            $courses = $this->db->executeSelectQuery($query);
+            $result = [];
+            foreach($courses as $key => $value){
+                $result[] = new BidangCourse($value['id_courses'], $value['nama_course'], $value['gambar_courses']);
+            }
+            return View::createViewBidangCourse('bidangCourse.php', [
+                "result" => $result
+            ], $saldoUser, $namaBidang);
         }
 
         public function view_courseInfo(){

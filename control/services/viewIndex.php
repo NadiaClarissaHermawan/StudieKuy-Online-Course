@@ -51,10 +51,13 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewBidangCourse($view, $param){
+
+        public static function createViewBidangCourse($view, $param, $saldoUser, $nama_bidang){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $saldoUser = $saldoUser;
+            $nama_bidang = $nama_bidang;
 
             ob_start();
             include 'view/'.$view;

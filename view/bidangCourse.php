@@ -1,34 +1,19 @@
 <div class="content1">
-    <div class="tulisanPutih hurufBesar">$bidang Course List</div>
+    <div class="tulisanPutih hurufBesar"><?php echo $nama_bidang?></div>
 </div>
 
 <hr>
 <div class="white-box">
-    <a class="card" href="">
-        <img src="view/images/course3.png" class="card-img">
-        <div class="text">Java Basic Programming</div>
-    </a>
-
+    <?php
+        if(isset($result) && $result != null){
+            foreach($result as $key => $row){
+                echo '<a class="card" href="userCourseInfo?course='.$row->getNamaCourse().'">';
+                echo '<img src="view/images/gambarcourses/'.$row->getGambarCourse().'" class="card-img">';
+                echo '<div class="text">'.$row->getNamaCourse().'</div>';
+                echo '</a>';
+            }
+        }
+    ?>
     
-    <a class="card" href="">
-        <img src="view/images/course4.png" class="card-img">
-        <div class="text">Java Basic Programming</div>
-    </a>
-    <a class="card" href="">
-        <img src="view/images/course3.png" class="card-img">
-        <div class="text">Java Basic Programming</div>
-    </a>
-    <a class="card" href="">
-        <img src="view/images/course3.png" class="card-img">
-        <div class="text">Java Basic Programming</div>
-    </a>
-    <a class="card" href="">
-        <img src="view/images/course3.png" class="card-img">
-        <div class="text">Java Basic Programming</div>
-    </a>
-    <a class="card" href="">
-        <img src="view/images/course3.png" class="card-img">
-        <div class="text">Java Basic Programming</div>
-    </a>
     <!-- <a class="content2-kanan" href="verificationTopUp">Top-Up Transaction Verification</a> -->
 </div>

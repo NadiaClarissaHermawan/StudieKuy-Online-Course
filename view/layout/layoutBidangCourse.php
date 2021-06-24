@@ -24,7 +24,6 @@
                 if(isset($_SESSION['status']) == false){
                     echo '<a href="userLogin"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">Log in</button></a>';
                 }else{
-                    $saldoUser = $result[0]->getSaldo();
                     if($saldoUser == 0.000){
                         $saldoUser = 0;
                     }
@@ -35,13 +34,9 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">Courses</a>
-            <?php 
-                //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
-                    echo ' <a href="userProfile" class="menuNav">My Profile</a>';
-                }
-            ?>
+            <a href="courses" class="menuNav">Courses  /</a>
+            <a href="" class="menuNav"><?php echo $nama_bidang?></a>
+
             <div class="menuNavKanan">
                 <a href="index" class="material-icons md-36">home</a>
                 <?php 

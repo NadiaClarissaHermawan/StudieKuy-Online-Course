@@ -47,6 +47,7 @@ html {
     padding: 10px;
     text-decoration: none;
     font-size: 25px;
+    color: #432F2F;
 }
 
 a {
@@ -60,6 +61,8 @@ a {
     align-items: center;
     width: 100%;
     transition: 0.1s;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 .content1 {
     display: flex;
