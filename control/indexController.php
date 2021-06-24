@@ -388,6 +388,9 @@
                 session_destroy();
                 header('Location: userLogin');
             }
+
+        public function view_examFinished(){
+            return View::createViewExamFinished('examFinished.php', []);
         }
     }
 ?>
