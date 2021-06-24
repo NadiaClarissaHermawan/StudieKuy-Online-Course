@@ -63,7 +63,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span id="tutup">&times;</span>
-        <p class="tulisanHitam">Take the Exam First!</p>
+        <p class="tulisanHitam">You should retake the Exam.</p>
     </div>
 </div>
 
