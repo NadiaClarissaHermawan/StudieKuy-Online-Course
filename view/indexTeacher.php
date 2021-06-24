@@ -1,14 +1,14 @@
 <?php
-    if(session_status() == PHP_SESSION_NONE){
-        session_start();
-    }
+    // if(session_status() == PHP_SESSION_NONE){
+    //     session_start();
+    // }
 
-    //kalo belom login gabisa kesini
-    if(!isset($_SESSION['statusTeacher'])){
-        header("Location: teacherLogin");
-        session_destroy();
-        exit;
-    }
+    // //kalo belom login gabisa kesini
+    // if(!isset($_SESSION['statusTeacher'])){
+    //     header("Location: teacherLogin");
+    //     session_destroy();
+    //     exit;
+    // }
 ?>
 <div id="contentMainPage">
     <!-- blok coklat paling atas  -->

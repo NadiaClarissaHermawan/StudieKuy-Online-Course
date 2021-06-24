@@ -367,28 +367,34 @@
         }
 
         //beli course 
-        public function buyCourse(){
-            if(session_status() == PHP_SESSION_NONE){
-                session_start();
-            }
+        // Sementara
+        public function view_buyCourse(){
+            return View::createViewBuyCourse('buyCourse.php', []);
+        }
 
-            //sudah login --> 
-            if(isset($_SESSION['status']) && $_SESSION['status'] != ""){
-                //kalau saldo cukup
-                // if(){
+
+        // public function view_buyCourse(){
+        //     if(session_status() == PHP_SESSION_NONE){
+        //         session_start();
+        //     }
+
+        //     //sudah login --> 
+        //     if(isset($_SESSION['status']) && $_SESSION['status'] != ""){
+        //         //kalau saldo cukup
+        //         // if(){
 
                 
-                // //kalau saldo tidak cukup
-                // }else{
-                //     header
-                // }
+        //         // //kalau saldo tidak cukup
+        //         // }else{
+        //         //     header
+        //         // }
 
-            //belum login --> tendang :v
-            }else{
-                session_destroy();
-                header('Location: userLogin');
-            }
-        }
+        //     //belum login --> tendang :v
+        //     }else{
+        //         session_destroy();
+        //         header('Location: userLogin');
+        //     }
+        // }
 
         public function view_examFinished(){
             return View::createViewExamFinished('examFinished.php', []);

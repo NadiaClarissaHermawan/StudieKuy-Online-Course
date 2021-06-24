@@ -287,7 +287,7 @@
             case $baseURL.'/buyCourse';
                 require_once "control/indexController.php";
                 $buyCtrl = new indexController();
-                echo $buyCtrl->buyCourse();
+                echo $buyCtrl->view_buyCourse();
                 break;
 
             case $baseURL.'/examFinished':
@@ -336,8 +336,8 @@
             //upload profile text 
             case $baseURL.'/profileTextEdit':
                 require_once "control/userProfileController.php";
-                $userTopupCtrl = new userProfileController();
-                $userTopupCtrl->profileTextEdit();
+                $editTextCtrl = new userProfileController();
+                $editTextCtrl->profileTextEdit();
                 header('Location: userProfile');
                 break;
 
