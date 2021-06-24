@@ -1,15 +1,15 @@
-<!-- nyambung ke layoutCourseExam.php, courseExam.css -->
+<!-- nyambung ke layoutCourseExam.php, timeOut.css -->
 <?php
-    // if(session_status() == PHP_SESSION_NONE){
-    //     session_start();
-    // }
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
 
-    // // kalo belom login gabisa kesini
-    // if(!isset($_SESSION['status'])){
-    //     header("Location: userLogin");
-    //     session_destroy();
-    //     exit;
-    // }
+    // kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
 ?>
 
 <div class="info">

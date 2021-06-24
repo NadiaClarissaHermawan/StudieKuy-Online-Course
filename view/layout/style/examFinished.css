@@ -9,7 +9,7 @@
     margin-top: 2%;
     border-radius: 40px;
 }
-.buttonM {
+.buttonEx {
     background-color: #F7AB36;
     color: black;
     border-radius: 20px;
@@ -27,7 +27,7 @@
     font-size: 20px;
 }
 
-.buttonM:hover, .buttonM:focus {
+.buttonEx:hover, .buttonEx:focus {
     background-color: #DB6E61;
     color: white;
     transition: 0.5s;

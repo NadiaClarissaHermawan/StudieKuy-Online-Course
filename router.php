@@ -301,6 +301,12 @@
                 $timeCtrl = new indexController();
                 echo $timeCtrl->view_timeOut();
                 break;
+
+            case $baseURL.'/progress';
+                require_once "control/indexController.php";
+                $timeCtrl = new indexController();
+                echo $timeCtrl->view_progress();
+                break;
             //member course end
             
             default :

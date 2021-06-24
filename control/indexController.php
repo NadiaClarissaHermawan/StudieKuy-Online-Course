@@ -396,6 +396,10 @@
 
         public function view_timeOut(){
             return View::createViewTimeOut('timeOut.php', []);
-        }        
+        }
+
+        public function view_progress(){
+            return View::createViewProgress('progress.php', []);
+        }
     }
 ?>
