@@ -518,6 +518,9 @@
 
         //view sertifikat page kalau sdh di verifikasi
         public function view_sertif(){
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
             $id = $_SESSION['id_pengguna'];
             $id_memCourse = $_SESSION['idMemCourse'];
 
