@@ -15,9 +15,9 @@
 	<hr class="garis">
 	<p class="subJudul">CERTIFICATE OF COMPLETION</p>
 	<p class="txt"> This certificate is presented to :</p>
-	<p class="nama"><?php echo $real_name?></p>
-	<p class="txt">for successfully completing <?php echo $nama_sertif?> Course</p>
-	<p class="txt">Given on the <?php echo $tanggal_tuntas?></p>
+	<p class="nama"><?php echo $result[0]->getRealName()?></p>
+	<p class="txt">for successfully completing <?php echo $result[0]->getSertif()?> Course</p>
+	<p class="txt">Given on the <?php echo $result[0]->getTanggal()?></p>
 
 	<div class="ttd">
 		<div class="ttd1">

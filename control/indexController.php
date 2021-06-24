@@ -8,6 +8,7 @@
     require_once "model/bidangCourse.php";
     require_once "model/course.php";
     require_once "model/progress.php";
+    require_once "model/sertifikat.php";
 
     class indexController{
         protected $db;
@@ -575,8 +576,10 @@
                       INNER JOIN sertifikat s ON s.id_courses = mc.id_courses
                       WHERE p.id_pengguna = '$id' AND mc.id_memCourse = '$id_memCourse'
                      ";
-            $result = $this->db->executeSelectQuery($query);
-
+            $resQuery = $this->db->executeSelectQuery($query);
+            foreach($resQuery as $key => $value){
+                $result[] = new Sertifikat($value['real_name'], $value['tanggal_tuntas'], $value['nama_sertif']);
+            }
             return View::createViewSertif('sertifikat.php', [
                 "result"=>$result
             ], $saldo);

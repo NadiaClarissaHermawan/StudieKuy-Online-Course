@@ -206,18 +206,19 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewSertif($view, $param){
+
+        public static function createViewSertif($view, $param, $saldo){
             foreach($param as $key => $value){
                 $$key = $value;
             }
-
+            $saldoUser = $saldo;
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();
             ob_end_clean();
 
             ob_start();
-            include 'view/layout/layoutIndex.php';
+            include 'view/layout/layoutSertif.php';
             $include = ob_get_contents();
             ob_end_clean();
             return $include;
