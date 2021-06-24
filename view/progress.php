@@ -1,15 +1,15 @@
 <!-- nyambung ke layoutCourseExam.php, progress.css -->
 <?php
-    // if(session_status() == PHP_SESSION_NONE){
-    //     session_start();
-    // }
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
 
-    // // kalo belom login gabisa kesini
-    // if(!isset($_SESSION['status'])){
-    //     header("Location: userLogin");
-    //     session_destroy();
-    //     exit;
-    // }
+    // kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
 ?>
 
 <div class="progress tulisanPutih hurufBesar">

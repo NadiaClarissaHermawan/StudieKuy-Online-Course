@@ -99,14 +99,24 @@
                 foreach($saldoUser as $key =>$value){
                     $result[] = new Saldo($value['saldo']);
                 }
+
+                $id_memCourse = $_GET['idMemCourse'];
+                //cari nama course
+                $query = "SELECT nama_course 
+                          FROM courses
+                          WHERE id_courses = (SELECT id_courses FROM member_course WHERE id_memCourse = '$id_memCourse')
+                         ";
+                $namaCourse = $this->db->executeSelectQuery($query);
+                $namaCourse = $namaCourse[0]['nama_course'];
+
                 return View::createViewCourseDetail('coursesDetail.php', [
                     "result" => $result
-                ]);
+                ], $namaCourse);
             
             //belum login
             }else{
                 session_destroy();
-                return View::createViewCourseDetail('coursesDetail.php', []);
+                return View::createView('index.php', []);
             }
         }
 
@@ -314,7 +324,7 @@
 
                 return View::createViewCourseExam('courseExam.php', [
                     "result" => $result
-                ], $saldo, $namaCourse);
+                ], $saldo, $namaCourse, $id_memCourse);
 
             }else{
                 session_destroy();
@@ -358,11 +368,9 @@
                      ";
             $this->db->executeNonSelectQuery($query);
 
-            //tidak timeout
+            //timeout
             if($_POST['timeOutStatus'] == 0){
-                header('Location: progress');
-            }else{
-                header('Location: timeOut');
+                header('Location: timeOut?idMemCourse='.$id_memCourse);
             }
         }
 
@@ -391,7 +399,8 @@
         }
 
         public function view_examFinished(){
-            return View::createViewExamFinished('examFinished.php', []);
+            $id_memCourse = $_GET['idMemCourse'];
+            return View::createViewExamFinished('examFinished.php', [], $id_memCourse);
         }
 
         public function view_timeOut(){
@@ -399,7 +408,38 @@
         }
 
         public function view_progress(){
-            return View::createViewProgress('progress.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            
+            //sudah login
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $id_memCourse = $_SESSION['idMemCourse'];
+                var_dump($id_memCourse);
+                die;
+
+                //ambil saldo member
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                foreach($saldoUser as $key =>$value){
+                    $res1[] = new Saldo($value['saldo']);
+                }
+                $saldo = $res1[0]->getSaldo();
+
+                //ambil nilai akhir 
+                $query = "SELECT *
+                          FROM 
+                         ";
+                return View::createViewProgress('progress.php', [], $saldo);
+            
+            }else{
+                session_destroy();
+                header('Location: index');
+            }
         }
     }
 ?>

@@ -12,6 +12,8 @@
         exit;
     }
 ?>
-<div class="content1 tulisanPutih hurufBesar">CONGRATULATION</div>
-<img src="view/images/congrats.jpg" class="pic">
-<button class="buttonEx">See My Progress</button>
+<div style="height: 100%; width:100%">
+    <div class="content1 tulisanPutih hurufBesar">CONGRATULATION<br>you have submitted your answers</div>
+    <img src="view/images/congrats.jpg" class="pic">
+    <a href="progress" class="buttonEx">See My Progress</a>
+</div>

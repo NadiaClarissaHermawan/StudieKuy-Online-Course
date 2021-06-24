@@ -17,7 +17,7 @@
     <div class="kanan">
         <p class="tulisanPutih">Sorry, your time is up!</p>
         <a href="userCourseExam"><button class="buttonM tulisanCoklat hurufSedang">Retake Exam</button></a>
-        <a href="coursesDetail"><button class="buttonM tulisanCoklat hurufSedang">Back to Course</button></a>    
+        <a href="coursesDetail?idMemCourse=<?php echo $_GET['idMemCourse']?>"><button class="buttonM tulisanCoklat hurufSedang">Back to Course</button></a>    
     </div>
     
 </div>
