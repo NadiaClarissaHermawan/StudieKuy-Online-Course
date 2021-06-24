@@ -1,0 +1,73 @@
+.sertif {
+	display: block;
+	margin: 5%;
+	margin-top: 15%;
+	height: auto;
+	background-color: #F9F1E4;
+	border: #971C1F 20px solid;
+	padding: 20px;
+}
+
+.judul {
+	font-size: 60px;
+	font-family: Calligraffitti;
+	font-weight: bold;
+	text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+	line-height: 10px;
+}
+
+.garis {
+	border: 2px solid #CB6F6F;
+	background-color: #CB6F6F;
+	border-radius: 30px;
+	width: 90%;
+}
+
+.subJudul {
+	color: #EBCB78;
+	font-size: 35px;
+	font-family: Reem Kufi;
+	font-weight: bold;
+	text-align: center;
+}
+
+.txt {
+	color: black;
+	font-size: 25px;
+	font-family: Itim;
+	text-align: center;
+}
+
+.nama {
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+	margin: auto;
+}
+
+.ttd {
+	display: flex;
+	text-align: center;
+	padding-top: 5%;
+}
+
+.ttd1 {
+	width: 33%;
+}
+.ttd2 {
+	width: 33%;
+}
+.ttd3 {
+	width: 33%;
+}
+.hrttd {
+	border: 1px solid black;
+	background-color: black;
+	width: 70%;
+	margin-bottom: 1%;
+}
+.sign {
+	font-family: Calligraffitti;
+	font-size: 40px;
+	line-height: 40px;
+}
