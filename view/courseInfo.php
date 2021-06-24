@@ -1,22 +1,27 @@
 
 <div class="content1">
-    <div class="tulisanPutih hurufBesar">$nama_course</div>
+    <div class="tulisanPutih hurufBesar"><?php echo $namaCourse?></div>
 </div>
 
 <hr>
 <div class="course-detail-isi">
     <div class="course-detail-kiri">
-        <img src="view/images/course1.png" class="course-img">
+        <img src="view/images/gambarcourses/<?php echo $result[0]->getGambarCourse()?>" class="course-img" style="margin-top: 12%;">
         <button type="submit" class="course-detail-button" href="">
-            <h2 style="margin: 0;">Enroll Now for only<br> Rp. 50,000</h2>
+            <h2 style="margin: 0;">Enroll Now for only<br><?php echo $result[0]->getTarif()?></h2>
         </button>
     </div>
     <div class="course-detail-kanan">
-        <p class="tulisanPutih hurufSedang">Java Basic Programming Course berisi :</p>
-        <ol class="tulisanPutih hurufKecil">
-            <li class="list">Modul Data Types</li>
-            <li class="list">Modul IF-ELSE</li>
-            <li class="list">Modul While/ For Loops</li>
+        <p  style="text-align: justify;line-height:140%" class="tulisanPutihx hurufSedang"><?php echo $result[0]->getKeterangan()?></p> 
+        <p class="tulisanPutihx hurufSedang" style="text-align: left;"><?php echo $namaCourse?> course includes :</p>
+        <ol class="tulisanPutihx hurufKecil" style="font-size: 1.4vw; padding-left:0px">
+            <?php
+                if($namaModul != null){
+                    foreach ($namaModul as $key => $row){
+                        echo '<li class="list" style="text-align:left">'.$row['nama_modul'].'</li>';
+                    }
+                }
+            ?>
             <li class="list">Soal Ujian akhir</li>
         </ol>
     </div>

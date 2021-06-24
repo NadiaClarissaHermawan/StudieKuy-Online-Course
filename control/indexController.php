@@ -6,6 +6,7 @@
     require_once "model/modul.php";
     require_once "model/soalUjian.php";
     require_once "model/bidangCourse.php";
+    require_once "model/course.php";
 
     class indexController{
         protected $db;
@@ -150,8 +151,50 @@
             ], $saldoUser, $namaBidang);
         }
 
+        //lihat detail dari salah 1 course
         public function view_courseInfo(){
-            return View::createViewCourseInfo('courseInfo.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            
+            //sudah login - > ambil saldo user
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                $saldoUser = $saldoUser[0]['saldo'];
+
+            //belum login
+            }else{
+                session_destroy();
+                $saldoUser = "";
+            }
+
+            $namaCourse = $_GET['course'];
+            $namaBidang = $_GET['bidang'];
+            //cari full info course tsb
+            $query = "SELECT *
+                     FROM courses
+                     WHERE nama_course  = '$namaCourse'
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            foreach($resQuery as $key => $value){
+                $result[] = new Course($value['id_courses'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses']);
+            }
+
+            //cari nama" modul dari course tsb
+            $query = "SELECT nama_modul
+                      FROM modul
+                      WHERE id_courses = (SELECT id_courses FROM courses WHERE nama_course = '$namaCourse')
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            
+            return View::createViewCourseInfo('courseInfo.php', [
+                "result"=>$result
+            ], $resQuery, $saldoUser, $namaBidang, $namaCourse);
         }
 
         public function view_courseModul(){

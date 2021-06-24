@@ -35,7 +35,7 @@
         
         <div class="nav">
             <a href="courses" class="menuNav">Courses  /</a>
-            <a href="" class="menuNav"><?php echo $nama_bidang?></a>
+            <a href="" class="menuNavNow"><?php echo $nama_bidang?></a>
 
             <div class="menuNavKanan">
                 <a href="index" class="material-icons md-36">home</a>

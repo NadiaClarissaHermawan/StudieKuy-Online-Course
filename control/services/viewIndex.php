@@ -110,10 +110,14 @@
             return $include;
         }
 
-        public static function createViewCourseInfo($view, $param){
+        public static function createViewCourseInfo($view, $param, $namaModul, $saldoUser, $namaBidang, $namaCourse){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $saldoUser = $saldoUser;
+            $namaCourse = $namaCourse;
+            $namaBidang = $namaBidang;
+            $namaModul = $namaModul;
 
             ob_start();
             include 'view/'.$view;
