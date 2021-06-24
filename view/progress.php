@@ -43,9 +43,17 @@
         echo '<div class="kotakMerah" id="certificate">';
         echo 'Certificate';
         echo '<hr class="garis">';
-        echo '<form method="POST" action="">';
-        echo '<button class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</button>';
-        echo '</form>';
+
+        //kalau sdh diverifikasi
+        if($result[0]->getStatusVerifikasi() == 1){
+            echo '<a href="sertifikat" class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</a>';
+
+        //kalau blm diverifikasi
+        }else{
+            echo 'alert("Sertifikat belum di verifikasi, mohon coba beberapa saat lagi")';
+            echo '<a href="requestSertifikat" class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</a>';
+        }
+        
         echo '</div>';
         echo '</div>';
 

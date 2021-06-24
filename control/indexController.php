@@ -514,5 +514,36 @@
                 header('Location: index');
             }
         }
+
+
+        //view sertifikat page kalau sdh di verifikasi
+        public function view_sertif(){
+            $id = $_SESSION['id_pengguna'];
+            $id_memCourse = $_SESSION['idMemCourse'];
+
+            //ambil saldo member
+            $query = "SELECT saldo 
+                    FROM member 
+                    WHERE id_pengguna = '$id'
+                    ";
+            $saldoUser = $this->db->executeSelectQuery($query);
+            foreach($saldoUser as $key =>$value){
+                $res1[] = new Saldo($value['saldo']);
+            }
+            $saldo = $res1[0]->getSaldo();
+
+            //ambil keterangan sertifikat
+            $query = "SELECT p.real_name, mc.tanggal_tuntas, s.nama_sertif
+                      FROM pengguna p INNER JOIN member m ON p.id_pengguna = m.id_pengguna
+                      INNER JOIN member_course mc ON mc.id_member=m.id_member
+                      INNER JOIN sertifikat s ON s.id_courses = mc.id_courses
+                      WHERE p.id_pengguna = '$id' AND mc.id_memCourse = '$id_memCourse'
+                     ";
+            $result = $this->db->executeSelectQuery($query);
+
+            return View::createViewProgress('sertifikat.php', [
+                "result"=>$result
+            ], $saldo);
+        }
     }
 ?>

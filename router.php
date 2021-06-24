@@ -314,7 +314,22 @@
                 $teacherModulCtrl = new teacherCourseController();
                 echo $teacherModulCtrl->view_teacherCourseModul();
                 break;
-            
+
+            //user sertif
+            case $baseURL.'/sertifikat':
+                require_once "control/indexController.php";
+                $sertifCtrl = new indexController();
+                echo $sertifCtrl->view_sertif();
+                break;
+
+            case $baseURL.'/requestSertifikat':
+                require_once "control/indexController.php";
+                $sertifCtrl = new indexController();
+                echo $sertifCtrl->req_sertif();
+                header('Location: progress');
+                break;
+            //user sertif end
+
             default :
                 echo '404 not found';
                 break;
