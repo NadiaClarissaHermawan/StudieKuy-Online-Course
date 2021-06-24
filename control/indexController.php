@@ -375,13 +375,13 @@
             //sudah login --> 
             if(isset($_SESSION['status']) && $_SESSION['status'] != ""){
                 //kalau saldo cukup
-                if(){
+                // if(){
 
                 
                 //kalau saldo tidak cukup
-                }else{
-                    header
-                }
+                // }else{
+                    
+                // }
 
             //belum login --> tendang :v
             }else{
