@@ -437,6 +437,12 @@
                              WHERE id_member = '$idMember'
                              ";
                     $this->db->executeNonSelectQuery($query);
+
+                    //masukin course ke dlm member_course
+                    $query = "INSERT INTO member_course (status_ketuntasan, status_verifikasi, id_member, id_courses)
+                              VALUES (0, 0, $idMember, $id_course)
+                             ";
+                    $this->db->executeNonSelectQuery($query);
     
                     return View::createViewBuyCourse('buyCourse.php', [], 1, $namaCourse, $saldo-$tarif);
     
