@@ -58,8 +58,8 @@
         public function view_teacherCourse(){
             return View::createViewTeacherCourse('teacherCourse.php', []);
         }
-    }
-
+    }  
+    
     class teacherProfileController{
         protected $db;
 
