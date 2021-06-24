@@ -40,7 +40,7 @@
                 $$key = $value;
             }
             $namaCourse = $namaCourse;
-            
+
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();
@@ -133,11 +133,12 @@
             return $include;
         }
 
-        public static function createViewExamFinished($view, $param, $id_memCourse){
+        public static function createViewExamFinished($view, $param, $id_memCourse, $saldoUser){
             foreach($param as $key => $value){
                 $$key = $value;
             }
             $id_memCourse = $id_memCourse;
+            $saldoUser = $saldoUser;
 
             ob_start();
             include 'view/'.$view;
@@ -145,15 +146,16 @@
             ob_end_clean();
 
             ob_start();
-            include 'view/layout/layoutCourseExam.php';
+            include 'view/layout/layoutProgress.php';
             $include = ob_get_contents();
             ob_end_clean();
             return $include;
         }
-        public static function createViewTimeOut($view, $param){
+        public static function createViewTimeOut($view, $param, $saldoUser){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $saldoUser = $saldoUser;
 
             ob_start();
             include 'view/'.$view;
@@ -161,15 +163,16 @@
             ob_end_clean();
 
             ob_start();
-            include 'view/layout/layoutCourseExam.php';
+            include 'view/layout/layoutProgress.php';
             $include = ob_get_contents();
             ob_end_clean();
             return $include;
         }
-        public static function createViewProgress($view, $param){
+        public static function createViewProgress($view, $param, $saldoUser){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $saldoUser = $saldoUser;
 
             ob_start();
             include 'view/'.$view;
@@ -177,7 +180,7 @@
             ob_end_clean();
 
             ob_start();
-            include 'view/layout/layoutCourseExam.php';
+            include 'view/layout/layoutProgress.php';
             $include = ob_get_contents();
             ob_end_clean();
             return $include;

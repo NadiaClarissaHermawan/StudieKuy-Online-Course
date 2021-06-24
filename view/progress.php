@@ -10,62 +10,70 @@
         session_destroy();
         exit;
     }
-?>
 
-<div class="progress tulisanPutih hurufBesar">
-    <div class="kotakMerah" id="myExam">
-        My Exam
-        <hr class="garis">
-        <div class="isiKotak">Not Taken Yet</div>
-    </div>
-    <div class="kotakMerah" id="certificate">
-        Certificate
-        <hr class="garis">
-        <button class="isiKotak tulisanPutih hurufBesar" id="unReqButton">Request</button>
-    </div>
-</div>
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span id="tutup">&times;</span>
-        <p class="tulisanHitam">Take the Exam First!</p>
-    </div>
-</div>
-<!-- Template utk status lainnya -->
-<!-- Lulus -->
-<div class="progress tulisanPutih hurufBesar">
-    <div class="kotakMerah" id="myExam">
-        My Exam
-        <hr class="garis">
-        <div class="isiKotak">100/100</div>
-    </div>
-    <div class="kotakMerah" id="certificate">
-        Certificate
-        <hr class="garis">
-        <button class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</button>
-    </div>
-</div>
-<!-- belom lulus -->
-<div class="progress tulisanPutih hurufBesar">
-    <div class="kotakMerah" id="myExam">
-        My Exam
-        <hr class="garis">
-        <div class="isiKotak2">40/100
-            <p class="ket hurufKecil">Sorry you didn't pass the exam.</p>
-            <a href="coursesDetail"><button id="retake" class="tulisanCoklat hurufKecil">Retake Exam</button></a>
-        </div>
-    </div>
-    <div class="kotakMerah" id="certificate">
-        Certificate
-        <hr class="garis">
-        <button class="isiKotak tulisanPutih hurufBesar" id="unReqButton">Request</button>
-    </div>
-</div>
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span id="tutup">&times;</span>
-        <p class="tulisanHitam">You should retake the Exam.</p>
-    </div>
-</div>
+    //belum ikut ujian
+    if($result[0]->getStatusKetuntasan() == 0){
+        echo '<div class="progress tulisanPutih hurufBesar">';
+        echo '<div class="kotakMerah" id="myExam">';
+        echo 'My Exam';
+        echo '<hr class="garis">';
+        echo '<div class="isiKotak">Not Taken Yet</div>';
+        echo '</div>';
+        echo '<div class="kotakMerah" id="certificate">';
+        echo 'Certificate';
+        echo '<hr class="garis">';
+        echo '<button class="isiKotak tulisanPutih hurufBesar" id="unReqButton">Request</button>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div id="myModal" class="modal">';
+        echo '<div class="modal-content">';
+        echo '<span id="tutup">&times;</span>';
+        echo '<p class="tulisanHitam">Take the Exam First!</p>';
+        echo '</div>';
+        echo '</div>';
+
+    //lulus
+    }else if($result[0]->getStatusKetuntasan() == 1){
+        echo '<div class="progress tulisanPutih hurufBesar">';
+        echo '<div class="kotakMerah" id="myExam">';
+        echo 'My Exam';
+        echo '<hr class="garis">';
+        echo '<div class="isiKotak">'.$result[0]->getNilaiAkhir().'/100</div>';
+        echo '</div>';
+        echo '<div class="kotakMerah" id="certificate">';
+        echo 'Certificate';
+        echo '<hr class="garis">';
+        echo '<form method="POST" action="">';
+        echo '<button class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</button>';
+        echo '</form>';
+        echo '</div>';
+        echo '</div>';
+
+    //tdk lulus
+    }else{
+        echo '<div class="progress tulisanPutih hurufBesar">';
+        echo '<div class="kotakMerah" id="myExam">';
+        echo 'My Exam';
+        echo '<hr class="garis">';
+        echo '<div class="isiKotak2">'.$result[0]->getNilaiAkhir().'/100';
+        echo '<p class="ket hurufKecil">Sorry you did not pass the exam.</p>';
+        echo '<a href="userCourseExam"><button id="retake" class="tulisanCoklat hurufKecil">Retake Exam</button></a>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="kotakMerah" id="certificate">';
+        echo 'Certificate';
+        echo '<hr class="garis">';
+        echo '<button class="isiKotak tulisanPutih hurufBesar" id="unReqButton">Request</button>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div id="myModal" class="modal">';
+        echo '<div class="modal-content">';
+        echo '<span id="tutup">&times;</span>';
+        echo '<p class="tulisanHitam">You should retake the Exam.</p>';
+        echo '</div>';
+        echo '</div>';
+    }
+?>
 
 <script>
     let modal = document.getElementById("myModal");

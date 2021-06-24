@@ -19,7 +19,7 @@
 <form action="cekJawaban" class="white-box" method="POST" id="form">
     <ol>
         <?php 
-            if(isset($result) && $result != null){
+            if($result != null ){
                 foreach($result as $key => $row){
                     echo '<li class="pertanyaan">'.$row->getSoal().'</li>';
                     echo '<input type="radio" name="opt'.$key.'" value="1"><label class="radio">'.$row->getOpsi1().'</label><br>';
@@ -35,17 +35,19 @@
 
     <!-- status time out, 0 tidak time out -->
     <input type="hidden" name="timeOutStatus" id="statusTimeOut" value="0"/>
-    <!-- <button id="submit-answer">Submit Answer</button> -->
+    <button id="submit-answer">Submit Answer</button>
 </form>
 
-<button id="submit-answer">Submit Answer</button>
+<!-- ini popup -->
+<!-- <button id="submit-answer">Submit Answer</button>
 <div id="myModal" class="modal">
     <div class="modal-content">
         <p class="tulisanHitam">Are you sure that you want to submit the answers?</p>
-        <a href="examFinished?idMemCourse=<?php echo $id_memCourse?>"><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
+        <!-- ini ga submit jawaban  -->
+        <!-- <a href="examFinished?idMemCourse=<?php //echo $id_memCourse?>"><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
         <button id="close" class="buttonM tulisanCoklat hurufSedang">No</button>
     </div>
-</div>
+</div> --> 
 
 <!-- count down waktu exam  -->
 <script>

@@ -7,6 +7,7 @@
     require_once "model/soalUjian.php";
     require_once "model/bidangCourse.php";
     require_once "model/course.php";
+    require_once "model/progress.php";
 
     class indexController{
         protected $db;
@@ -337,6 +338,7 @@
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
+
             $id_course = $_POST['idCourse'];
             $id_memCourse = $_SESSION['idMemCourse'];
 
@@ -361,16 +363,35 @@
             //nilai akhir
             $benar = $benar / $panjangResQuery * 100;
 
-            //update nilai akhir
-            $query = "UPDATE member_course
-                      SET nilai_akhir = '$benar', tanggal_tuntas = now()
+            //ambil batas nilai minimum course
+            $query = "SELECT batas_nilai_minimum
+                      FROM courses
+                      WHERE id_courses = '$id_course'
+                     ";
+            $batas = $this->db->executeSelectQuery($query);
+            $batas = $batas[0]['batas_nilai_minimum'];
+
+            //update nilai akhir & status ketuntasan
+            //lulus
+            if($benar >= $batas){
+                $query = "UPDATE member_course
+                SET nilai_akhir = '$benar', tanggal_tuntas = now(), status_ketuntasan = '1'
+                WHERE id_memCourse = '$id_memCourse'
+               ";
+            //tidak lulus
+            }else{
+                $query = "UPDATE member_course
+                      SET nilai_akhir = '$benar', tanggal_tuntas = now(), status_ketuntasan = '2'
                       WHERE id_memCourse = '$id_memCourse'
                      ";
+            }
             $this->db->executeNonSelectQuery($query);
 
             //timeout
-            if($_POST['timeOutStatus'] == 0){
+            if($_POST['timeOutStatus'] == 1){
                 header('Location: timeOut?idMemCourse='.$id_memCourse);
+            }else{
+                header('Location: examFinished?idMemCourse='.$id_memCourse);
             }
         }
 
@@ -400,11 +421,49 @@
 
         public function view_examFinished(){
             $id_memCourse = $_GET['idMemCourse'];
-            return View::createViewExamFinished('examFinished.php', [], $id_memCourse);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            $saldo = 0;
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $id_memCourse = $_SESSION['idMemCourse'];
+
+                //ambil saldo member
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                foreach($saldoUser as $key =>$value){
+                    $res1[] = new Saldo($value['saldo']);
+                }
+                $saldo = $res1[0]->getSaldo();
+            }
+            return View::createViewExamFinished('examFinished.php', [], $id_memCourse, $saldo);
         }
 
         public function view_timeOut(){
-            return View::createViewTimeOut('timeOut.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            $saldo = 0;
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $id_memCourse = $_SESSION['idMemCourse'];
+
+                //ambil saldo member
+                $query = "SELECT saldo 
+                        FROM member 
+                        WHERE id_pengguna = '$id'
+                        ";
+                $saldoUser = $this->db->executeSelectQuery($query);
+                foreach($saldoUser as $key =>$value){
+                    $res1[] = new Saldo($value['saldo']);
+                }
+                $saldo = $res1[0]->getSaldo();
+            }
+            return View::createViewTimeOut('timeOut.php', [], $saldo);
         }
 
         public function view_progress(){
@@ -416,8 +475,6 @@
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
                 $id_memCourse = $_SESSION['idMemCourse'];
-                var_dump($id_memCourse);
-                die;
 
                 //ambil saldo member
                 $query = "SELECT saldo 
@@ -431,10 +488,20 @@
                 $saldo = $res1[0]->getSaldo();
 
                 //ambil nilai akhir 
-                $query = "SELECT *
-                          FROM 
+                $query = "SELECT mc.id_memCourse, mc.nilai_akhir, mc.status_ketuntasan, mc.tanggal_tuntas, c.batas_nilai_minimum, mc.status_verifikasi
+                          FROM member_course mc INNER JOIN courses c
+                          ON mc.id_courses = c.id_courses
+                          WHERE id_memCourse = '$id_memCourse'
                          ";
-                return View::createViewProgress('progress.php', [], $saldo);
+                $resQuery = $this->db->executeSelectQuery($query);
+                $result= [];
+                foreach($resQuery as $key => $value){
+                    $result[] = new Progress($value['id_memCourse'], $value['nilai_akhir'], $value['status_ketuntasan'], $value['tanggal_tuntas'], $value['status_verifikasi']);
+                }
+
+                return View::createViewProgress('progress.php', [
+                    "result" => $result
+                ], $saldo);
             
             }else{
                 session_destroy();

@@ -308,7 +308,6 @@
                 echo $timeCtrl->view_progress();
                 break;
             //member course end
-            
             default :
                 echo '404 not found';
                 break;
