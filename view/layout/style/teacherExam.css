@@ -1,0 +1,216 @@
+html,
+body {
+    background-color: #432F2F;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+#judul {
+    width: 500px;
+}
+#header-loginButton {
+    background-color: #EEFFBF;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Itim;
+    font-weight: bold;
+}
+.contentExam {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 15%;
+}
+hr {
+    border: 4px solid #F3A2A2;
+    width: 80%;
+}
+
+.white-box {
+    margin-top: 5%;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 15px;
+}
+
+.pertanyaan {
+    font-size: 1.5vw;
+}
+.bts {
+    border: 1px solid black;
+    width: 95%;
+    margin-left: 0%;
+}
+
+li {
+    margin-bottom: 1%;
+    width: 95%;
+}
+
+.no {
+    width: auto;
+}
+
+.modul {
+    width: 125px;
+    height: 150px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #FDFFAA;
+    margin: 5%;
+    border-radius: 30px;
+    color: #432F2F;
+    padding: 10px;
+}
+
+.text {
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    padding-top: 0px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #FDFFAA;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#down {
+    font-size: 100px;
+}
+a {
+    text-decoration: none;
+}
+.radio {
+    font-size: 1.4vw;
+}
+.display-info {
+    display: none;
+    vertical-align: middle;
+    transition: 0.1s;
+    width: 100%;
+    height: 100%;
+}
+.count-down{
+    color: #432F2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 13%;
+    text-align: center;
+    border-radius: 30px;
+    margin-left: 86%;
+    font-size: 2vw;
+    margin-top: 0.7%;
+}
+
+#edit-exam{
+    background-color: #F7AB36;
+    color: black;
+    border-radius: 20px;
+    width: 20%;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: Reem Kufi;
+    font-size: 20px;
+}
+
+#edit-exam:hover {
+    background-color: #DB6E61;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+p {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+  }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    visibility: hidden;
+}
+
+.tulisanHitam {
+    font-family: Reem Kufi;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+    margin: 20px;
+    line-height: 100%;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.buttonM {
+    background-color: #F7AB36;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    width: 150px;
+    margin: auto;
+    text-align: center;
+}
+
+.buttonM:hover, .buttonM:focus {
+    color: #F7AB36;
+    background-color: #432F2F;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

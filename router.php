@@ -314,6 +314,12 @@
                 $teacherModulCtrl = new teacherCourseController();
                 echo $teacherModulCtrl->view_teacherCourseModul();
                 break;
+
+            case $baseURL.'/teacherCourseExam':
+                require_once "control/indexTeacherController.php";
+                $teacherExamCtrl = new teacherCourseController();
+                echo $teacherExamCtrl->view_teacherCourseExam();
+                break;
             
             default :
                 echo '404 not found';
