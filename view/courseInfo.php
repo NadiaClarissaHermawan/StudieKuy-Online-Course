@@ -7,9 +7,9 @@
 <div class="course-detail-isi">
     <div class="course-detail-kiri">
         <img src="view/images/gambarcourses/<?php echo $result[0]->getGambarCourse()?>" class="course-img" style="margin-top: 12%;">
-        <button type="submit" class="course-detail-button" href="">
-            <h2 style="margin: 0;">Enroll Now for only<br><?php echo $result[0]->getTarif()?></h2>
-        </button>
+        <a class="course-detail-button" href="buyCourse">
+            <h2 style="margin: 0; font-size:1.5vw" class="tulisanHitam">Enroll Now for only<br>Rp.<?php echo $result[0]->getTarif()?>,-</h2>
+        </a>
     </div>
     <div class="course-detail-kanan">
         <p  style="text-align: justify;line-height:140%" class="tulisanPutihx hurufSedang"><?php echo $result[0]->getKeterangan()?></p> 

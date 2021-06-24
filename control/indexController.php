@@ -191,7 +191,7 @@
                       WHERE id_courses = (SELECT id_courses FROM courses WHERE nama_course = '$namaCourse')
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
-            
+
             return View::createViewCourseInfo('courseInfo.php', [
                 "result"=>$result
             ], $resQuery, $saldoUser, $namaBidang, $namaCourse);
@@ -363,6 +363,30 @@
                 header('Location: progress');
             }else{
                 header('Location: timeOut');
+            }
+        }
+
+        //beli course 
+        public function buyCourse(){
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+
+            //sudah login --> 
+            if(isset($_SESSION['status']) && $_SESSION['status'] != ""){
+                //kalau saldo cukup
+                if(){
+
+                
+                //kalau saldo tidak cukup
+                }else{
+                    header
+                }
+
+            //belum login --> tendang :v
+            }else{
+                session_destroy();
+                header('Location: userLogin');
             }
         }
     }

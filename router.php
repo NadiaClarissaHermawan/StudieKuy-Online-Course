@@ -284,6 +284,12 @@
                 echo $modCtrl->view_courseInfo();
                 break; 
 
+            case $baseURL.'/buyCourse';
+                require_once "control/indexController.php";
+                $buyCtrl = new indexController();
+                echo $buyCtrl->buyCourse();
+                break;
+                
             //member course end
             
             default :

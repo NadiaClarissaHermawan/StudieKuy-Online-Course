@@ -83,6 +83,14 @@ body {
     color: #432F2F;
 }
 
+.tulisanHitam {
+    font-family: Reem Kufi;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    color: black;
+}
+
 .hurufBesar {
     font-size: 2.6vw;
     line-height: 45px;
