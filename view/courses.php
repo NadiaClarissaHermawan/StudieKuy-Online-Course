@@ -1,13 +1,13 @@
 <div class="putih">
     <div class="baris1">
-        <a href=""><img src="view/images/course1.png" class="pic" style="background-color: #27283D"></a>
-        <a href=""><img src="view/images/course2.png" class="pic" style="background-color: #AEF5FF"></a>
-        <a href=""><img src="view/images/course3.png" class="pic" style="background-color: #FFDEAC"></a>
+        <a href="bidangCourse?bidang='Computer'"><img src="view/images/course1.png" class="pic" style="background-color: #27283D"></a>
+        <a href="bidangCourse?bidang='Economy'"><img src="view/images/course2.png" class="pic" style="background-color: #AEF5FF"></a>
+        <a href="bidangCourse?bidang='Law'"><img src="view/images/course3.png" class="pic" style="background-color: #FFDEAC"></a>
     </div>
     <div class="baris1">
-        <a href=""><img src="view/images/course4.png" class="pic" style="background-color: #B1EA8E"></a>
-        <a href=""><img src="view/images/course5.png" class="pic" style="background-color: #F7AB36"></a>
-        <a href=""><img src="view/images/course6.png" class="pic" style="background-color: #F6ADF4"></a>
+        <a href="bidangCourse?bidang='Art'"><img src="view/images/course4.png" class="pic" style="background-color: #B1EA8E"></a>
+        <a href="bidangCourse?bidang='Science'"><img src="view/images/course5.png" class="pic" style="background-color: #F7AB36"></a>
+        <a href="bidangCourse?bidang='Language'"><img src="view/images/course6.png" class="pic" style="background-color: #F6ADF4"></a>
     </div>
 </div>
 <!-- <script>

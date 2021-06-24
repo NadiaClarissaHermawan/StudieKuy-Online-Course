@@ -15,9 +15,17 @@
         <?php
             if(isset($result) && $result != null){
                 echo '<hr class="batas">';
+                $nomor = 1;
                 foreach($result as $key => $row){
-                    echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
+                    if($row->getNamaModul() == $selectedModulName){
+                        echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
+                    }else if($selectedModulName == "" && $nomor == 1){
+                        echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
+                    }else{
+                        echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
+                    }
                     echo '<hr class="batas">';
+                    $nomor ++;
                 }
             }
         ?>
@@ -25,6 +33,8 @@
     <div class="vidShow tulisanCoklat hurufBesar">
         <?php 
             echo '<video controls class="videoModul">';
+
+            //sumber modul berupa hasil concat $id_modul.'mp4'
             echo '<source src="view/modul/'.$sumberModul.'" type="video/mp4">';
             echo '</video>';
         ?>

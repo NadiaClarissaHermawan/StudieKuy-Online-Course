@@ -108,7 +108,15 @@
             }
         }
 
+        //view courses dalam 1 bidang
         public function view_bidangCourse(){
+            $namaBidang = $_GET['bidang'];
+
+            //cari course" dalam bidang yg dipilih
+            $query = "SELECT 
+            
+                     ";
+
             return View::createViewBidangCourse('bidangCourse.php', []);
         }
 
@@ -157,6 +165,7 @@
                 //cek apakah sudah klik salah satu modul?
                 //kalau sudah, ambil sumber video modul
                 $sumberModul = "";
+                $selectedModulName = "";
                 if(isset($_GET['namaModul']) && $_GET['namaModul'] != ""){
                     $namaModul = $_GET['namaModul'];
                     $query = "SELECT isi_modul
@@ -165,14 +174,16 @@
                              ";
                     $sumberModul = $this->db->executeSelectQuery($query);
                     $sumberModul = $sumberModul[0]['isi_modul'];
+                    $selectedModulName = $namaModul;
+
+                //kalau ga, ambil & pick video pertama
                 }else{
                     $sumberModul = $resQuery[0]['isi_modul'];
                 }
                 
-
                 return View::createViewCourseModul('courseModul.php', [
                     "result" => $result
-                ], $saldo, $sumberModul);
+                ], $saldo, $sumberModul, $selectedModulName);
             
             //belum login
             }else{
@@ -238,6 +249,7 @@
             }
         }
 
+        //periksa jawaban
         public function cekJawaban(){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();

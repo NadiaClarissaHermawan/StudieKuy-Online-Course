@@ -240,6 +240,7 @@
                 echo $teacherProfileCtrl->signOut();
                 break;
             
+            //course dlm 1 bidang
             case $baseURL.'/bidangCourse':
                 require_once "control/indexController.php";
                 $bidCtrl = new indexController();

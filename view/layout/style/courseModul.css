@@ -96,7 +96,9 @@ a {
     padding-left: 5px;
 
 }
-
+.selected {
+    color: #432F2F;
+}
 .videoModul{
     width: 70%;
     height: 50%;
