@@ -289,7 +289,24 @@
                 $buyCtrl = new indexController();
                 echo $buyCtrl->buyCourse();
                 break;
-                
+
+            case $baseURL.'/examFinished':
+                require_once "control/indexController.php";
+                $finCtrl = new indexController();
+                echo $finCtrl->view_examFinished();
+                break; 
+
+            case $baseURL.'/timeOut';
+                require_once "control/indexController.php";
+                $timeCtrl = new indexController();
+                echo $timeCtrl->view_timeOut();
+                break;
+
+            case $baseURL.'/progress';
+                require_once "control/indexController.php";
+                $timeCtrl = new indexController();
+                echo $timeCtrl->view_progress();
+                break;
             //member course end
             
             default :

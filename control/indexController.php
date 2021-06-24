@@ -378,9 +378,9 @@
                 // if(){
 
                 
-                //kalau saldo tidak cukup
+                // //kalau saldo tidak cukup
                 // }else{
-                    
+                //     header
                 // }
 
             //belum login --> tendang :v
@@ -388,6 +388,18 @@
                 session_destroy();
                 header('Location: userLogin');
             }
+        }
+
+        public function view_examFinished(){
+            return View::createViewExamFinished('examFinished.php', []);
+        }
+
+        public function view_timeOut(){
+            return View::createViewTimeOut('timeOut.php', []);
+        }
+
+        public function view_progress(){
+            return View::createViewProgress('progress.php', []);
         }
     }
 ?>

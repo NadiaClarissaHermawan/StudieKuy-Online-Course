@@ -35,40 +35,69 @@
 
     <!-- status time out, 0 tidak time out -->
     <input type="hidden" name="timeOutStatus" id="statusTimeOut" value="0"/>
-    <button id="submit-answer">Submit Answer</button>
+    <!-- <button id="submit-answer">Submit Answer</button> -->
 </form>
+
+<button id="submit-answer">Submit Answer</button>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p class="tulisanHitam">Are you sure that you want to submit the answers?</p>
+        <a href="examFinished"><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
+        <button id="close" class="buttonM tulisanCoklat hurufSedang">No</button>
+    </div>
+</div>
 
 <!-- count down waktu exam  -->
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date();
-countDownDate.setHours(countDownDate.getHours()+1);
-countDownDate.getTime();
+    // Set the date we're counting down to
+    let countDownDate = new Date();
+    countDownDate.setHours(countDownDate.getHours()+1);
+    countDownDate.getTime();
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+    // Update the count down every 1 second
+    let x = setInterval(function() {
 
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    let status_timeout = document.getElementById('statusTimeOut');
-    status_timeout.textContent = "1";
+      // Get today's date and time
+      let now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      let distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        let status_timeout = document.getElementById('statusTimeOut');
+        status_timeout.textContent = "1";
 
-    let form = document.getElementById('form');
-    form.submit();
-  }
-}, 1000);
+        let form = document.getElementById('form');
+        form.submit();
+      }
+    }, 1000);
+
+    //modal
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("submit-answer");
+    let span = document.getElementById("close");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+        modal.style.visibility = "visible";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>
