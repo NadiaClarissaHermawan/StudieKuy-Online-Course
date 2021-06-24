@@ -67,7 +67,7 @@
 					<label for="sel" class="txt hurufSedang" style="margin-left: -19%;">City</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<div class="">
-						<select id="sel" size = "1" name="ucity" class="input-option">
+						<select id="sel" size = "1" name="ucity" id="ucity" class="input-option">
 							<?php 
 								foreach($result as $key => $row){
 									echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';

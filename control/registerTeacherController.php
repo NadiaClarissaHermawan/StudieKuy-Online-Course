@@ -35,6 +35,7 @@
             $phone = $_POST['uphone'];
             $address = $_POST['uaddress'];
             $kota = $_POST['ucity'];
+            $diploma = $_POST['udiploma'];
 
             $username = $this->db->escapeString($username);
             $realname = $this->db->escapeString($realname);
@@ -43,12 +44,13 @@
             $phone = $this->db->escapeString($phone);
             $address = $this->db->escapeString($address);
             $kota = $this->db->escapeString($kota);
+            $diploma = $this->db->escapeString($diploma);
 
             //cek validitas input
             if(isset($_POST['registerButton']) && isset($username) && $username!="" 
             && isset($password) && $password!= "" && isset($email) && $email !="" 
             && isset($phone) && $phone!= "" && isset($address) && $address!= "" && isset($kota) && $kota!=""
-            && isset($realname) && $realname!=""){
+            && isset($realname) && $realname!=""&& isset($diploma) && $diploma!=""){
 
                 //cek apakah uname & email sdh ada ato blm
                 $queryUname = "SELECT id_pengguna
@@ -65,14 +67,14 @@
                 //belum ada
                 if(empty($resQueryUname) && empty($resQueryEmail)){
                     $profpic = "baseProfilePic.jpg";
-                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture) VALUES (3, '$username', '$realname' ,'$email','$password', '$profpic')";
+                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture) VALUES (2, '$username', '$realname' ,'$email','$password', '$profpic')";
                     $this->db->executeNonSelectQuery($query);
 
                     $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND pass = '$password' AND email = '$email'";
                     $id_pengguna = $this->db->executeSelectQuery($query);
                     $id_pengguna = $id_pengguna[0]['id_pengguna'];
 
-                    $query = "INSERT INTO member (saldo, kontak, alamat, id_kota, id_pengguna) VALUES (0, '$phone', '$address','$kota', '$id_pengguna')";
+                    $query = "INSERT INTO pengajar (pendidikan_terakhir, id_pengguna) VALUES ('$diploma', '$id_pengguna')";
                     $this->db->executeNonSelectQuery($query);
 
                     header('Location: teacherLogin');
