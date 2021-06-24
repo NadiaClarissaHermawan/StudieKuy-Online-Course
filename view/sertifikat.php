@@ -1,3 +1,15 @@
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
+?>
 <div class="sertif">
 	<p class="judul tulisanCoklat">Studie Kuy !</p>
 	<hr class="garis">
