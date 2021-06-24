@@ -3,9 +3,9 @@
 	<hr class="garis">
 	<p class="subJudul">CERTIFICATE OF COMPLETION</p>
 	<p class="txt"> This certificate is presented to :</p>
-	<p class="nama">Natasha Benedicta Bunnardi</p>
-	<p class="txt">for successfully completing Java Basic Programming Course</p>
-	<p class="txt">Given on the 17th of August 2022</p>
+	<p class="nama"><?php echo $real_name?></p>
+	<p class="txt">for successfully completing <?php echo $nama_sertif?> Course</p>
+	<p class="txt">Given on the <?php echo $tanggal_tuntas?></p>
 
 	<div class="ttd">
 		<div class="ttd1">
