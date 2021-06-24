@@ -435,11 +435,11 @@
                          ";
                 $this->db->executeNonSelectQuery($query);
 
-                return View::createViewBuyCourse('buyCourse.php', [], 1, $namaCourse);
+                return View::createViewBuyCourse('buyCourse.php', [], 1, $namaCourse, $saldo-$tarif);
 
             //saldo tdk cukup
             }else{
-                return View::createViewBuyCourse('buyCourse.php', [], 0, $namaCourse);
+                return View::createViewBuyCourse('buyCourse.php', [], 0, $namaCourse, $saldo);
             }
         }
 

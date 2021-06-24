@@ -187,12 +187,13 @@
             return $include;
         }
 
-        public static function createViewBuyCourse($view, $param, $indikator, $namaCourse){
+        public static function createViewBuyCourse($view, $param, $indikator, $namaCourse, $saldoUser){
             foreach($param as $key => $value){
                 $$key = $value;
             }
             $indikator = $indikator;
             $namaCourse = $namaCourse;
+            $saldoUser = $saldoUser;
 
             ob_start();
             include 'view/'.$view;
