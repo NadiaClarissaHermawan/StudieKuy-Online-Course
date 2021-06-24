@@ -19,7 +19,7 @@
         $_SESSION['idMemCourse'] = $_GET['idMemCourse'];
     ?>
     <a href="userCourseModul" class="menu-in-course content2-1"><img style="width:107%; height:100%" class="menu-in-course" src="view/images/module.png"></a>
-	<a href="" class="content2-3" style="height:70%"><img style="width:95%; height:100%" class="menu-in-course" src="view/images/progress.png"></a>
+	<a href="progress" class="content2-3" style="height:70%"><img style="width:95%; height:100%" class="menu-in-course" src="view/images/progress.png"></a>
     <img class="menu-in-course content2-2" src="view/images/exam.png" id="myBtn">
 </div>
 <!-- if exam belom di take -->
