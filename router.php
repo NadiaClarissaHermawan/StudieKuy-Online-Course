@@ -323,11 +323,9 @@
                 break;
 
             case $baseURL.'/requestSertifikat':
-                require_once "control/indexController.php";
-                $sertifCtrl = new indexController();
-                echo $sertifCtrl->req_sertif();
                 header('Location: progress');
                 break;
+                
             //user sertif end
 
             case $baseURL.'/teacherCourseExam':

@@ -11,15 +11,22 @@
         exit;
     }
 
-    //belum ikut ujian
-    if($result[0]->getStatusKetuntasan() == 0){
+    //belum ikut ujian atau rejected
+    if($result[0]->getStatusKetuntasan() == 0 || $result[0]->getStatusVerifikasi() == 2){
         echo '<div class="progress tulisanPutih hurufBesar">';
         echo '<div class="kotakMerah" id="myExam">';
         echo 'My Exam';
         echo '<hr class="garis">';
-        echo '<div class="isiKotak">Not Taken Yet</div>';
-        echo '</div>';
-        echo '<div class="kotakMerah" id="certificate">';
+        if($result[0]->getStatusKetuntasan() == 0 ){
+            echo '<div class="isiKotak">Not Taken Yet</div>';
+            echo '</div>';
+            echo '<div class="kotakMerah" id="certificate">';
+        }else{
+            echo '<div class="isiKotak">Certificate Rejected</div>';
+            echo '</div>';
+            echo '<div class="kotakMerah" id="certificate">';
+        }
+        
         echo 'Certificate';
         echo '<hr class="garis">';
         echo '<button class="isiKotak tulisanPutih hurufBesar" id="unReqButton">Request</button>';
@@ -42,16 +49,15 @@
         echo '</div>';
         echo '<div class="kotakMerah" id="certificate">';
         echo 'Certificate';
-        echo '<hr class="garis">';
+        echo '<hr class="garis" style="margin-bottom:100px">';
 
         //kalau sdh diverifikasi
         if($result[0]->getStatusVerifikasi() == 1){
-            echo '<a href="sertifikat" class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</a>';
+            echo '<a href="sertifikat" class="isiKotak tulisanPutih hurufBesar" style="" id="ReqButton">Request</a>';
 
         //kalau blm diverifikasi
         }else{
-            echo 'alert("Sertifikat belum di verifikasi, mohon coba beberapa saat lagi")';
-            echo '<a href="requestSertifikat" class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</a>';
+            echo '<a href="requestSertifikat" onclick="notVerified()" class="isiKotak tulisanPutih hurufBesar" id="ReqButton">Request</a>';
         }
         
         echo '</div>';
@@ -101,5 +107,10 @@
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+
+
+    function notVerified() {
+        alert("Sertifikat sedang di verifikasi, mohon coba lagi beberapa saat kemudian");
     }
 </script>
