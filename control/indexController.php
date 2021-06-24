@@ -517,7 +517,7 @@
 
 
         //view sertifikat page kalau sdh di verifikasi
-        public function view_sertif(){
+        public function view_sertif2(){
             $id = $_SESSION['id_pengguna'];
             $id_memCourse = $_SESSION['idMemCourse'];
 
@@ -541,9 +541,12 @@
                      ";
             $result = $this->db->executeSelectQuery($query);
 
-            return View::createViewProgress('sertifikat.php', [
+            return View::createViewSertif('sertifikat.php', [
                 "result"=>$result
             ], $saldo);
+        }
+        public function view_sertif(){
+            return View::createViewSertif('sertifikat.php', []);
         }
     }
 ?>
