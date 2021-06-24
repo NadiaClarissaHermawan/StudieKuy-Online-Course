@@ -1,4 +1,17 @@
 <!-- buyCourse.css, layoutUserTopup.php, indexController.php, viewIndex -->
+<?php
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    //kalo belom login gabisa kesini
+    if(!isset($_SESSION['status'])){
+        header("Location: userLogin");
+        session_destroy();
+        exit;
+    }
+?>
+
 <?php 
     //saldo cukup
      if($indikator == 1){
