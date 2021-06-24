@@ -396,34 +396,52 @@
         }
 
         //beli course 
-        // Sementara
         public function view_buyCourse(){
-            return View::createViewBuyCourse('buyCourse.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            $id_pengguna = $_SESSION['id_pengguna'];
+            //ambil saldo user skrg & id membernya
+            $query = "SELECT saldo, id_member
+                      FROM member
+                      WHERE id_pengguna = '$id_pengguna'
+                     ";
+            $resQuery = $this->db->executeSelectQuery($query);
+            $saldo = $resQuery[0]['saldo'];
+            $idMember = $resQuery[0]['id_member'];
+           
+            //ambil harga course & id course
+            $tarif = $_GET['tarif'];
+            $id_course = $_GET['idCourse'];
+
+            //get nama course
+            $query = "SELECT nama_course
+                      FROM courses
+                      WHERE id_courses = '$id_course'
+                     ";
+            $namaCourse = $this->db->executeSelectQuery($query)[0]['nama_course']; 
+
+            //saldo cukup
+            if($saldo >= $tarif){
+                $query = "INSERT INTO transaksi_course (saldo_awal, saldo_akhir, tanggal_transaksi_course, id_courses, id_member)
+                          VALUES ($saldo, ($saldo - $tarif), now(), $id_course, $idMember)
+                         ";
+                $this->db->executeNonSelectQuery($query);
+
+                //update saldo now user
+                $query = "UPDATE member
+                         SET saldo = ($saldo-$tarif)
+                         WHERE id_member = '$idMember'
+                         ";
+                $this->db->executeNonSelectQuery($query);
+
+                return View::createViewBuyCourse('buyCourse.php', [], 1, $namaCourse);
+
+            //saldo tdk cukup
+            }else{
+                return View::createViewBuyCourse('buyCourse.php', [], 0, $namaCourse);
+            }
         }
-
-
-        // public function view_buyCourse(){
-        //     if(session_status() == PHP_SESSION_NONE){
-        //         session_start();
-        //     }
-
-        //     //sudah login --> 
-        //     if(isset($_SESSION['status']) && $_SESSION['status'] != ""){
-        //         //kalau saldo cukup
-        //         // if(){
-
-                
-        //         // //kalau saldo tidak cukup
-        //         // }else{
-        //         //     header
-        //         // }
-
-        //     //belum login --> tendang :v
-        //     }else{
-        //         session_destroy();
-        //         header('Location: userLogin');
-        //     }
-        // }
 
         public function view_examFinished(){
             $id_memCourse = $_GET['idMemCourse'];

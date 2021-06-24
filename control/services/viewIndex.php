@@ -168,6 +168,7 @@
             ob_end_clean();
             return $include;
         }
+
         public static function createViewProgress($view, $param, $saldoUser){
             foreach($param as $key => $value){
                 $$key = $value;
@@ -185,10 +186,13 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewBuyCourse($view, $param){
+
+        public static function createViewBuyCourse($view, $param, $indikator, $namaCourse){
             foreach($param as $key => $value){
                 $$key = $value;
             }
+            $indikator = $indikator;
+            $namaCourse = $namaCourse;
 
             ob_start();
             include 'view/'.$view;
