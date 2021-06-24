@@ -4,16 +4,6 @@ html {
     width: 100%;
     height: 100%;
 }
-
-.main {
-    margin-top: 5%;
-    width: 100%;
-    height: 100%;
-    display: table;
-    justify-content: center;
-    align-items: center;
-}
-
 .white-box {
     margin-top: 5%;
     width: 80%;

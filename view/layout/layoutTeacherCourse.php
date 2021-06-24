@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/teacherCourse.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/teacherModul.css"/>
     </head>
     <body>
         <div class="header">

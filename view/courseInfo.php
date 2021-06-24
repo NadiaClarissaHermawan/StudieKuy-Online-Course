@@ -1,4 +1,3 @@
-
 <div class="content1">
     <div class="tulisanPutih hurufBesar"><?php echo $namaCourse?></div>
 </div>

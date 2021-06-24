@@ -287,7 +287,7 @@
             case $baseURL.'/buyCourse';
                 require_once "control/indexController.php";
                 $buyCtrl = new indexController();
-                echo $buyCtrl->buyCourse();
+                echo $buyCtrl->view_buyCourse();
                 break;
 
             case $baseURL.'/examFinished':
@@ -308,6 +308,13 @@
                 echo $timeCtrl->view_progress();
                 break;
             //member course end
+
+            case $baseURL.'/teacherCourseModul':
+                require_once "control/indexTeacherController.php";
+                $teacherModulCtrl = new teacherCourseController();
+                echo $teacherModulCtrl->view_teacherCourseModul();
+                break;
+            
             default :
                 echo '404 not found';
                 break;
@@ -335,8 +342,8 @@
             //upload profile text 
             case $baseURL.'/profileTextEdit':
                 require_once "control/userProfileController.php";
-                $userTopupCtrl = new userProfileController();
-                $userTopupCtrl->profileTextEdit();
+                $editTextCtrl = new userProfileController();
+                $editTextCtrl->profileTextEdit();
                 header('Location: userProfile');
                 break;
 

@@ -58,7 +58,11 @@
         public function view_teacherCourse(){
             return View::createViewTeacherCourse('teacherCourse.php', []);
         }
-    }
+
+        public function view_teacherCourseModul(){
+            return View::createViewTeacherModul('teacherModul.php', []);
+        }
+    }  
 
     class teacherProfileController{
         protected $db;

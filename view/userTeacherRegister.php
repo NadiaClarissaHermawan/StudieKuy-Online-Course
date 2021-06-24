@@ -37,7 +37,14 @@
 				<div class="rowLogin">
 	                <span class="errorMessage" id="userError">Username harus terdiri lebih dari 8 karakter</span>
 	            </div>
-
+				<div class="rowLogin tulisanCoklat">
+					<label for="urealname" class="txt hurufSedang">Name</label>
+					<span style="width: 7px;" class="hurufSedang">:</span>
+					<input type="text" class="kotakInput" id="urealname" name="urealname" placeholder="Enter your name" oninput="checkURealName()" />
+				</div>
+				<div class="rowLogin">
+	                <span class="errorMessage" id="nameError" style="margin-left: 100px;">Nama harus lebih dari 3 karakter</span>
+	            </div>
 				<div class="rowLogin tulisanCoklat">
 					<label for="upass" class="txt hurufSedang">Password</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
@@ -56,11 +63,11 @@
 	                <span class="errorMessage" id="addrError">Address harus diisi!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat" style="width: 61%;">
-					<label for="sel" class="txt hurufSedang">City</label>
+				<div class="rowLogin tulisanCoklat">
+					<label for="sel" class="txt hurufSedang" style="margin-left: -19%;">City</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<div class="">
-						<select id="sel" size = "1" name="ucity" class="input-option">
+						<select id="sel" size = "1" name="ucity" id="ucity" class="input-option">
 							<?php 
 								foreach($result as $key => $row){
 									echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
@@ -141,6 +148,7 @@
 
         const form = document.getElementById('main');
         const user = document.getElementById('uname');
+		const name = document.getElementById('urealname');
         const pass = document.getElementById('upass');
         const addr = document.getElementById('uaddress');
         const city = document.getElementById('ucity');
@@ -160,14 +168,18 @@
 		const dupli = document.getElementById('error');
 
         function checkValidation() {
-        	if(checkUName() && checkPw() && checkAddress() && checkEmail() && checkPhone() && checkDiploma() && checkUpload()){
+        	if(checkUName() && checkPw() && checkAddress() && checkEmail() && checkPhone() && checkDiploma() && checkUpload()&&checkURealName()){
         		return true;
         	}
         	else{
         		event.preventDefault();
                 if(!checkUName()){
+					idU.textContent = "Username harus terdiri lebih dari 8 karakter!";
                     setError(user, idU);
                 }
+				if(!checkURealName()){
+					setError(name, idName);
+				}
                 if(!checkPw()){
                     setError(pass, idPw);
                 }
@@ -175,6 +187,8 @@
                     setError(addr, idAddr);
                 }
                 if(!checkEmail()){
+					idEmail.textContent = "Email tidak valid!";
+					idEmail.style.marginLeft = "0px";
                     setError(email, idEmail);
                 }
                 if(!checkPhone()){
@@ -232,7 +246,18 @@
                 return true;
             }
         }
+		function checkURealName(){
+			const namee = name.value.trim();
 
+            if(namee === '' || namee.length < 3){
+                setError(name, idName);
+                return false;
+            }
+            else {
+                setSuccess(name, idName);
+                return true;
+            }
+		}
         function checkPw() {
             const password = pass.value;
 

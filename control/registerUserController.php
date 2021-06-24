@@ -17,12 +17,6 @@
             ]);
         }
 
-        // public function view_registerTeacherUserPage(){
-        //     $result = $this->getAllKota();
-        //     return View::createView('userTeacherRegister.php', [
-        //         "result"=>$result
-        //     ]);
-        // }
 
         public function getAllKota(){
             $query = "  SELECT id_kota, nama_kota
