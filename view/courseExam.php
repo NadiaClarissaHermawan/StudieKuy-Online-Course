@@ -42,7 +42,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <p class="tulisanHitam">Are you sure that you want to submit the answers?</p>
-        <a href="examFinished"><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
+        <a href="examFinished?idMemCourse=<?php echo $id_memCourse?>"><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
         <button id="close" class="buttonM tulisanCoklat hurufSedang">No</button>
     </div>
 </div>
@@ -51,6 +51,7 @@
 <script>
     // Set the date we're counting down to
     let countDownDate = new Date();
+    //set berapa jam di plus disini
     countDownDate.setHours(countDownDate.getHours()+1);
     countDownDate.getTime();
 
@@ -70,7 +71,7 @@
       // Output the result in an element with id="demo"
       document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
         
-      // If the count down is over, write some text 
+      // If the count down is over
       if (distance < 0) {
         clearInterval(x);
         let status_timeout = document.getElementById('statusTimeOut');

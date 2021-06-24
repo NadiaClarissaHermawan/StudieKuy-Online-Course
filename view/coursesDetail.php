@@ -11,7 +11,7 @@
     }
 ?>
 <div class="content1">
-    <div class="tulisanPutih hurufBesar">Java Basic Programming</div>
+    <div class="tulisanPutih hurufBesar"><?php echo $namaCourse?></div>
 </div>
 <hr>
 <div class="content2">
