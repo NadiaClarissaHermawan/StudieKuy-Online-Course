@@ -25,7 +25,7 @@
                     <img src="view/images/menuCourse.jpg" style="width:100%" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat"  style="height: 20px;">Course</p>
+                    <p class="tulisanCoklat"  style="height: 20px; font-size:1.5vw">Course</p>
                 </div>
             </a>
             <a href="createCourse" class="menuCourse-button">
@@ -33,7 +33,7 @@
                     <img src="view/images/createCourse.jpg" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">Create Course</p>
+                    <p class="tulisanCoklat" style=" font-size:1.5vw">Create Course</p>
                 </div>
             </a>
             <a href="" class="menuCourse-button" style="height: 109px;">
@@ -41,7 +41,7 @@
                     <img src="view/images/myProfile.jpg" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">My Profile</p>
+                    <p class="tulisanCoklat" style="font-size:1.5vw">My Profile</p>
                 </div>
             </a>
         </div>

@@ -1,26 +1,26 @@
-<!-- terhubung ke :
-        viewIndexTeacher.php
-        indexTeacherController.php
-        teacherCourse.php
-        teacherCourse.css
- -->
 <!DOCTYPE html>
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
-        <link rel="stylesheet" type="text/css" href="view/layout/style/teacherCourse.css"/>
+        <link rel="stylesheet" type="text/css" href="view/layout/style/indexTeacher.css"/>
     </head>
     <body>
-        <div class="header">
+    	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
-            <h1 id="judul" style="display: inline-block;"> Teacher Studie Kuy !</h1>
-            <button name="loginButton" class="tulisanCoklat" id="header-loginButton">TEACHER</button>
+    		<h1 id="judul" style="display: inline-block;"> Teacher Studie Kuy !</h1>
+            <a href="teacherLogout"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">TEACHER LOG OUT</button></a> 
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">Courses List</a>
+            <a href="" class="menuNav"></a>
+            <?php 
+                //jgn lupa ini status udah login, di add di header controller bersangkutan
+                if(isset($_SESSION['status'])){
+                    echo ' <a href="teacherProfile" class="menuNavNow">My Profile</a>';
+                }
+            ?>
             <div class="menuNavKanan">
                 <a href="indexTeacher" class="material-icons md-36">home</a>
             </div>
