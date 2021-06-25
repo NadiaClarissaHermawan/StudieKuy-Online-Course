@@ -350,9 +350,10 @@
             
             case $baseURL.'/reportCoursePdf':
                 require_once "control/reportController.php";
-                $reportCtrl = new reportController();
-                echo $reportCtrl->generateReportCourse()();
+                $courseCtrl = new reportController();
+                echo $courseCtrl->generateReportCourse();
                 break;
+                
             default :
                 echo '404 not found';
                 break;

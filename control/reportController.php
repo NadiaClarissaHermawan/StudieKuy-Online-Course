@@ -4,7 +4,6 @@
     require_once "model/CourseReport.php";
     require_once "model/TopUpReport.php";
     require_once "model/CourseTransactionReport.php";
-    require_once "model/dompdf/autoload.inc.php";
     class reportController{
         protected $db;
 
