@@ -307,6 +307,12 @@
                 $timeCtrl = new indexController();
                 echo $timeCtrl->view_progress();
                 break;
+
+            case $baseURL.'/delete':
+                require_once "control/userProfileController.php";
+                $loginCtrl = new userProfileController();
+                echo $loginCtrl->delete();
+                break;
             //member course end
 
             case $baseURL.'/teacherCourseModul':
