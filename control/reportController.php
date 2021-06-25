@@ -409,11 +409,78 @@
                 $pdf->Cell(42,10,$row->getTanggal(),1,0,'C');
                 $pdf->Cell(42,10,$row->getHarga(),1,0,'C');
                 $pdf->Cell(42,10,$row->getSaldoAwal(),1,0,'C');
-                $pdf->Cell(42,10,$row->getSaldoAkhir(),1,0,'C');
+                if($row->getSaldoAkhir()==0.000){
+                    $pdf->Cell(42,10,0,1,0,'C');
+                }
+                else{
+                    $pdf->Cell(42,10,$row->getSaldoAkhir(),1,0,'C');
+                }
                 $pdf->Cell(50,10,$row->getNamaCourse(),1,1,'C');
                 $nomor++;
             }
-            $pdf->Output('I','CourseReportStudieKuy!.pdf');
+            $pdf->Output('I','CourseTransactionReportStudieKuy!.pdf');
+        }
+        public function generateTopUp(){
+            require_once "fpdf183/fpdf.php";
+            $pdf = new FPDF('L', 'mm', 'A4');
+            $pdf->AddPage();
+            //judul
+            $pdf->SetFont('Arial','B', 20);
+            $pdf->Cell(277,15,"Studie Kuy!", 0, 1,'C');
+            //nama report
+            $pdf->SetFont('Arial','B', 16);
+            $pdf->Cell(277,10,"Course Report",0,1,'C');
+            $pdf->Cell(277,15,"",0,1,'C');
+            //buat tabel judul
+            $pdf->SetFont('Arial','B', 12);
+            $pdf->Cell(17,10,"No.",1,0,'C');
+            $pdf->Cell(42,10,"Id Transaksi",1,0,'C');
+            $pdf->Cell(42,10,"Tanggal",1,0,'C');
+            $pdf->Cell(42,10,"Top Up",1,0,'C');
+            $pdf->Cell(42,10,"Saldo Awal",1,0,'C');
+            $pdf->Cell(42,10,"Saldo Akhir",1,0,'C');
+            $pdf->Cell(50,10,"Verifikasi",1,1,'C');
+            $pdf->SetFont('Arial','', 10);
+            $result = $this->getTopUpReport("", "", "", "");
+            $nomor = 1;
+            foreach($result as $key => $row){
+                $pdf->Cell(17,10,$nomor,1,0,'C');
+                $pdf->Cell(42,10,$row->getIdTopUp(),1,0,'C');
+                $pdf->Cell(42,10,$row->getTanggalTopUp(),1,0,'C');
+                if($row->getNominal()==0.000){
+                    $pdf->Cell(42,10,0,1,0,'C');
+                }
+                else{
+                    $pdf->Cell(42,10,$row->getNominal(),1,0,'C');
+                }
+                
+                if($row->getSaldoAwal()==0.000){
+                    $pdf->Cell(42,10,0,1,0,'C');
+                }
+                else{
+                    $pdf->Cell(42,10,$row->getSaldoAwal(),1,0,'C');
+                }
+                
+                if($row->getSaldoAkhir()==0.000){
+                    $pdf->Cell(42,10,0,1,0,'C');
+                }
+                else{
+                    $pdf->Cell(42,10,$row->getSaldoAkhir(),1,0,'C');
+                }
+                
+                if($row->getStatusVerifikasi()== 0){
+                    $pdf->Cell(50,10,"Rejected",1,1,'C');
+                }
+                else if($row->getStatusVerifikasi()== 1){
+                    $pdf->Cell(50,10,"Verified",1,1,'C');
+                }
+                else{
+                    $pdf->Cell(50,10,"Not Verified Yet",1,1,'C');
+                }
+                
+                $nomor++;
+            }
+            $pdf->Output('I','TopUpReportStudieKuy!.pdf');
         }
     }
 ?>
