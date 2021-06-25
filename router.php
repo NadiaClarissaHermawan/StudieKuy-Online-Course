@@ -346,14 +346,12 @@
                 $logoutCtrl = new teacherLoginController();
                 echo $logoutCtrl->logout();
                 break;
-
             
             case $baseURL.'/reportCoursePdf':
                 require_once "control/reportController.php";
-                $courseCtrl = new reportController();
-                echo $courseCtrl->generateReportCourse();
+                $reportCtrl = new reportController();
+                echo $reportCtrl->generateReportCourse()();
                 break;
-                
             default :
                 echo '404 not found';
                 break;
