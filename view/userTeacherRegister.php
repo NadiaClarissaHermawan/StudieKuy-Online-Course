@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <body>
-	<!-- <div class="nav">
-        <a href="courses" class="menuNav">Courses</a>
-        <a href="index#anchor-aboutUs" class="menuNav">About Us</a>
-        <a href="faq" class="menuNav">FAQ</a>
-    </div> -->
-
 	<form method="POST" action="userTeacherRegister">
 		<?php
 			if (session_status() == PHP_SESSION_NONE) {
@@ -23,11 +17,11 @@
 				echo ' <div id="error" hidden >Email</div>';
 			}
 		?>
-		<div id="main" style="margin-top: 170px;">
+		<div id="main" >
 			<img class="imgLogin"  src="view/images/loginTeacher.jpg">
 			<div class="contentLogin">
 				<div class="rowLogin tulisanCoklat">
-					<h1><label for="uJudul" class="txt hurufSedang">Lecturer's Register</label></hi>
+					<h1><label for="uJudul" class="txt hurufSedang" style="width: 400px; text-align:center; margin-right:0px">Lecturer's Register</label></hi>
 				</div>
 				<div class="rowLogin tulisanCoklat">
 					<label for="uname" class="txt hurufSedang">Username</label>
@@ -60,7 +54,7 @@
 					<input type="text" class="kotakInput" id="uaddress" name="uaddress" placeholder="Enter home address" oninput="checkAddress()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="addrError">Address harus diisi!</span>
+	                <span class="errorMessage" style="margin-left:10px" id="addrError">Address harus diisi!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -95,7 +89,7 @@
 					<input type="text" class="kotakInput" id="uphone" name="uphone" placeholder="Enter phone number" oninput="checkPhone()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="phoneError">Phone tidak valid!</span>
+	                <span class="errorMessage"  style="margin-left:8px" id="phoneError">Phone tidak valid!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
@@ -104,13 +98,13 @@
 					<input type="text" class="kotakInput" id="udiploma" name="udiploma" placeholder="Enter your diploma" oninput="checkDiploma()" />
 				</div>
 				<div class="rowLogin">
-	                <span class="errorMessage" id="diplomaError">Gelar tidak valid!</span>
+	                <span class="errorMessage"  style="margin-left:0px" id="diplomaError">Gelar tidak valid!</span>
 	            </div>
 
 				<div class="rowLogin tulisanCoklat">
 					<label for="upload" class="txt hurufSedang">Upload Image</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="file" name="upload" id="upload" class="kotakInput" oninput="checkUpload()" >
+					<input type="file" name="upload" id="upload" class="kotakInput" onsubmit="checkUpload()" >
 				</div>
 				<div class="rowLogin">
 	                <span class="errorMessage" id="uploadError">Gambar belum tercantum</span>
