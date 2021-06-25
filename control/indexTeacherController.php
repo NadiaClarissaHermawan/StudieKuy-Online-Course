@@ -12,6 +12,9 @@
         }
 
         public function view_mainpageTeacher(){
+            //ambil semua keterangan teacher
+            
+
             return View::createView('indexTeacher.php', []);
         }
     }
@@ -48,6 +51,8 @@
             return View::createViewCreateExam('createExam.php', []);
         }
     }
+
+    //show all course yg udah dbikin teacher
     class teacherCourseController{
         protected $db;
 

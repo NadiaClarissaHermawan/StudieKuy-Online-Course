@@ -17,7 +17,7 @@
     <div class="title">
         <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
         <div class="title-kanan">
-            <span class="material-icons md-36" id="del" style="color:white" onclick="deleteAccount()">delete</span>
+            <span class="material-icons md-36" id="del" onclick="deleteAccount()">delete</span>
             <a href="signOutUser" class="tulisanPutih hurufSedang" id="out">Sign Out</a>
         </div>
     </div>
