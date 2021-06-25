@@ -135,6 +135,18 @@ a {
     color: white;
 }
 
+#download-btn{
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    width: 100px;
+    font-family: Reem Kufi;
+    border-radius: 30px;
+    padding: 10px;
+    color: #432F2F;
+    font-size: 1.4vw;
+}
+
 hr {
     border: 4px solid #F3A2A2;
     border-top: none;
