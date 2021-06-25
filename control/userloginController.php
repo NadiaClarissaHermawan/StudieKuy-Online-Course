@@ -43,7 +43,7 @@
                 }
                 else{
                     //password benar
-                    if($upass == $pass_asli[0]['pass']){
+                    if($upass == $pass_asli){
                         $query = "SELECT p.id_pengguna 
                                   FROM pengguna p
                                   WHERE nama_user = '$uname' AND pass = '$upass'

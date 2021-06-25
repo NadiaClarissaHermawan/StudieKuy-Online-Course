@@ -22,10 +22,10 @@
             </p>
             <a href="teacherCourse" class="menuCourse-button">
                 <div class="menuCourse-kiri">
-                    <img src="view/images/menuCourse.jpg" class="menuCourse-image">
+                    <img src="view/images/menuCourse.jpg" style="width:100%" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">Course</p>
+                    <p class="tulisanCoklat"  style="height: 100px;">Course</p>
                 </div>
             </a>
             <a href="createCourse" class="menuCourse-button">
@@ -41,7 +41,7 @@
                     <img src="view/images/myProfile.jpg" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat">My Profile</p>
+                    <p class="tulisanCoklat" style="height: 100px;">My Profile</p>
                 </div>
             </a>
         </div>
