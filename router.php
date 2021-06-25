@@ -243,7 +243,7 @@
             case $baseURL.'/profileEditTeacher':
                 require_once "control/indexTeacherController.php";
                 $editCtrl = new indexTeacherController();
-                echo $editCtrl->edit();
+                echo $editCtrl->view_editProfile();
                 break;
             
             //course dlm 1 bidang
