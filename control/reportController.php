@@ -469,7 +469,7 @@
             $pdf->Cell(277,15,"Studie Kuy!", 0, 1,'C');
             //nama report
             $pdf->SetFont('Arial','B', 16);
-            $pdf->Cell(277,10,"Course  Transaction Report",0,1,'C');
+            $pdf->Cell(277,10,"Course Transaction Report",0,1,'C');
             $pdf->Cell(277,15,"",0,1,'C');
             //buat tabel judul
             $pdf->SetFont('Arial','B', 12);
