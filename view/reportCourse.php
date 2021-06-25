@@ -91,6 +91,7 @@
 </div>
 <br>
 <a href="indexAdmin" id="back">Back</a>
+<a href="reportCoursePdf" class="material-icons md-36">cloud_download</a>
 
 <script>
     //ambil elemen" yg diperlukan
