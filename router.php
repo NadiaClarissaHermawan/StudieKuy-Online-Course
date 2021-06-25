@@ -397,7 +397,7 @@
 
             //klik login di teacher
             case $baseURL.'/teacherLogin':
-                require_once "control/adminController.php";
+                require_once "control/teacherLoginController.php";
                 $Ctrl = new teacherLoginController();
                 echo $Ctrl->klik_login();
                 break;
