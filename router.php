@@ -239,6 +239,12 @@
                 $teacherProfileCtrl = new indexTeacherController();
                 echo $teacherProfileCtrl->signOut();
                 break;
+
+            case $baseURL.'/profileEditTeacher':
+                require_once "control/indexTeacherController.php";
+                $editCtrl = new indexTeacherController();
+                echo $editCtrl->edit();
+                break;
             
             //course dlm 1 bidang
             case $baseURL.'/bidangCourse':

@@ -136,20 +136,34 @@
             ]);
         }
 
-        // Database teacher belum terupdate. Masih kurang utk alamat, kota, save bukti pendidikan terakhir(ijasah), phone number blm
         public function getTeacherProfile(){
-            $id = $_SESSION['id_pengguna'];
-            $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, p.pendidikan_terakhir, u.profile_picture 
-                      FROM pengguna u INNER JOIN pengajar p
-                      ON u.id_pengguna = p.id_pengguna
-                      WHERE p.id_pengguna = '$id' 
-                     ";
-            $resQuery = $this->db->executeSelectQuery($query);
-
-            foreach($resQuery as $key=> $value){
-                $result[] = new Teacher ($value['real_name'], $value['name_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
             }
-            return $result;
+
+            //sudah login
+            if(isset($_SESSION['statusTeacher']) && $_SESSION['statusTeacher'] != ""){
+                $id = $_SESSION['id_pengguna'];
+                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, p.pendidikan_terakhir, u.profile_picture 
+                          FROM pengguna u INNER JOIN pengajar p
+                          ON u.id_pengguna = p.id_pengguna
+                          WHERE p.id_pengguna = '$id' 
+                        ";
+                $resQuery = $this->db->executeSelectQuery($query);
+
+                foreach($resQuery as $key=> $value){
+                    $result[] = new Teacher ($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
+                }
+                
+                return View::createViewTeacherProfile('teacherProfile.php', [
+                    "result"=>$result
+                ]);
+
+            //belum login
+            }else{
+                session_destroy();
+                header('Location: teacherLogin');
+            }
         }
 
         public function signOut(){

@@ -101,7 +101,8 @@
 .menuCourse-kanan {
     width: 67%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     align-items: center;
+    margin-left: 3%;
 }
