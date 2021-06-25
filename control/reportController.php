@@ -133,7 +133,7 @@
             $result = $this->getCourseReport2($nama, $complete, $nilai, 0);
 
             return View::createViewFilter('ajaxCourseReport.php',[
-                "result"=>$result, 
+                "result"=>$result
             ]);
         }
 

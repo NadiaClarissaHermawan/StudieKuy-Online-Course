@@ -154,10 +154,15 @@
                 foreach($resQuery as $key=> $value){
                     $result = new Teacher ($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
                 }
+<<<<<<< Updated upstream
                 return $result;
                 // return View::createViewTeacherProfile('teacherProfile.php', [
                 //     "result"=>$result
                 // ]);
+=======
+                
+                return $result;
+>>>>>>> Stashed changes
 
             //belum login
             }else{
