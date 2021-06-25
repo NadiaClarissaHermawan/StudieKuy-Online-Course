@@ -37,14 +37,12 @@
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: teacherLogin');
 
-                }
-                else if($stat == 0) {
+                }else if($stat == 0) {
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: teacherLogin');                  
-                }
-                else{
+                }else{
                    //password benar
-                   if($upass == $pass_asli[0]['pass']){
+                   if($upass == $pass_asli){
                     $query = "SELECT p.id_pengguna 
                               FROM pengguna p
                               WHERE nama_user = '$uname' AND pass = '$upass'

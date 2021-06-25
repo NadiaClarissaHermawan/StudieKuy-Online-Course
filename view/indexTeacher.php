@@ -25,23 +25,23 @@
                     <img src="view/images/menuCourse.jpg" style="width:100%" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat"  style="height: 100px;">Course</p>
+                    <p class="tulisanCoklat"  style="height: 20px;">Course</p>
                 </div>
             </a>
             <a href="createCourse" class="menuCourse-button">
-                <div class="menuCourse-kiri">
+                <div class="menuCourse-kiri" style="height: 100px;">
                     <img src="view/images/createCourse.jpg" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
                     <p class="tulisanCoklat">Create Course</p>
                 </div>
             </a>
-            <a href="" class="menuCourse-button">
-                <div class="menuCourse-kiri">
+            <a href="" class="menuCourse-button" style="height: 109px;">
+                <div class="menuCourse-kiri"  style="height: 100px;">
                     <img src="view/images/myProfile.jpg" class="menuCourse-image">
                 </div>
                 <div class="menuCourse-kanan hurufKecil">
-                    <p class="tulisanCoklat" style="height: 100px;">My Profile</p>
+                    <p class="tulisanCoklat">My Profile</p>
                 </div>
             </a>
         </div>

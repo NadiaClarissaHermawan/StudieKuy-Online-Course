@@ -36,12 +36,10 @@
                 if(empty($pass_asli)){
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: userLogin');
-                }
-                else if($stat == 0) {
+                }else if($stat == 0) {
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: userLogin');                    
-                }
-                else{
+                }else{
                     //password benar
                     if($upass == $pass_asli){
                         $query = "SELECT p.id_pengguna 
