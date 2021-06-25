@@ -15,7 +15,7 @@
                         session_destroy();
                 ?>  
                     <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
-                    <div id="error" hidden >Username not found</div>
+                    <div id="error" hidden style="margin-left: 20px;">Username not found</div>
                 <?php
                     }else{
                         $tempUname = $_SESSION['unameNotFound'];
@@ -93,8 +93,7 @@
                 setError(user,isiError);
                 isiError.textContent = "Username harus terdiri lebih dari 8 karakter";
                 return false;
-            }
-            else {
+            }else {
                 setSuccess(user, isiError);
                 return true;
             }
