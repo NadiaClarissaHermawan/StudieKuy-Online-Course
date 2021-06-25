@@ -14,8 +14,30 @@
         public function view_mainpageTeacher(){
             //ambil semua keterangan teacher
             
-
-            return View::createView('indexTeacher.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            //sudah login
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, t.profpic, t.alamat, t.kontak
+                        FROM pengajar t INNER JOIN pengguna u
+                        ON t.id_pengguna = u.id_pengguna
+                        WHERE id_pengguna = '$id'
+                        ";
+                $teach = $this->db->executeSelectQuery($query);
+                foreach($teach as $key =>$value){
+                    $result[] = new Teacher($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profpic'], $value['alamat'], $value['kontak']);
+                }
+                return View::createView('indexTeacher.php', [
+                    "result" => $result 
+                ]);
+            //belum login
+            }
+            else{
+                session_destroy();
+                return View::createView('indexTeacher.php', []);
+            }
         }
     }
     class createCourseController{

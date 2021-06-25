@@ -18,7 +18,7 @@
         </div>
         <div class="content1-kanan">
             <p class="tulisanPutih welcome" >
-                WELCOME, (nama_Teacher)!
+                WELCOME, <?php echo $result[0]['real_name']?>!
             </p>
             <a href="teacherCourse" class="menuCourse-button">
                 <div class="menuCourse-kiri">
