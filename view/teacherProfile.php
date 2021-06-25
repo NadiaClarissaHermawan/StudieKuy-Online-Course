@@ -27,8 +27,9 @@
 
     <div class="content1">
         <?php
-            $pic = 'view/images/profilepicture/'.$result[0]->getProfpic();
-            echo '<img src="'.$pic.'" class="content1-image content1-kiri">';
+            var_dump($result);
+            $pic = 'view/images/profilepicture/'.$result->getProfpic();
+            echo '<img src="view/images/profilepicture/'.$result->getProfpic().'" class="content1-image content1-kiri">';
         ?>
         <div class="content1-kanan tulisanPutih hurufBesar">
             <table class="profileTable">
@@ -36,28 +37,30 @@
                     <td>Name</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$result[0]->getRealname().'</td>';
+                        //echo '<img src="view/images/profilepicture/'.$result[0]->getProfpic().'" class="content1-image content1-kiri">';
+       
+                        echo '<td>'.$result->getProfpic().'</td>';
                     ?>
                 </tr>
                 <tr >
                     <td style="width: 40%;">Username</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$result[0]->getUsername().'</td>';
+                        echo '<td>'.$result->getUsername().'</td>';
                     ?>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$result[0]->getEmail().'</td>';
+                        echo '<td>'.$result->getEmail().'</td>';
                     ?>
                 </tr>
                 <tr>
                     <td>Pendidikan Terakhir</td>
                     <td>:</td>
                     <?php   
-                        echo '<td>'.$result[0]->getPendidikanTerakhir().'</td>';
+                        echo '<td>'.$result->getPendidikanTerakhir().'</td>';
                     ?>
                 </tr>
             </table>

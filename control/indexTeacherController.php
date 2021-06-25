@@ -150,9 +150,9 @@
                           WHERE p.id_pengguna = '$id' 
                         ";
                 $resQuery = $this->db->executeSelectQuery($query);
-
+                
                 foreach($resQuery as $key=> $value){
-                    $result[] = new Teacher ($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
+                    $result = new Teacher ($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
                 }
                 return $result;
                 // return View::createViewTeacherProfile('teacherProfile.php', [
