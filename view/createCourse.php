@@ -26,19 +26,19 @@
 
     <div class="content2 tulisanPutih">
         <label for="courseCat" class="content2-1">Course Category</label>
-        <div class="content2-2">:<input type="text" name="courseCat" class="kotakInput tulisanCoklat" id="courseCat" placeholder="Enter course category" oninput="checkCat()"></div>
-        <!-- <div class="kotakInput tulisanCoklat">
-            <select id="sel" size = "1" name="ucategory" class="input-option kotakInput tulisanCoklat">
-                <?php 
-                    // foreach($result as $key => $row){
-                    //     echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
-                    // }
-                ?>
-            </select>
-        </div> -->
+        <div class="content2-2">:
+            <div class="kotakOpt">
+                <input type="radio" name="opt" value="1" class="tulisanCoklat" id="courseCat">Computer
+                <input type="radio" name="opt" value="2" class="tulisanCoklat" id="courseCat">Art
+                <input type="radio" name="opt" value="3" class="tulisanCoklat" id="courseCat">Law
+                <input type="radio" name="opt" value="4" class="tulisanCoklat" id="courseCat">Science
+                <input type="radio" name="opt" value="5" class="tulisanCoklat" id="courseCat">Language
+                <input type="radio" name="opt" value="6" class="tulisanCoklat" id="courseCat">Economy
+            </div>
+        </div>
     </div>
     <div class="content2">
-        <span class="errorMessage" id="catError">Category Course harus diisi!</span>
+        <span class="errorMessage" id="catError">Category Course harus dipilih!</span>
     </div>
 
     <div class="content2 tulisanPutih">
@@ -83,7 +83,7 @@
     const img = document.getElementById('courseImg');
     
     let idName = document.getElementById('nameError');
-    let idCat = document.getElementById('catError');
+    // let idCat = document.getElementById('catError');
     let idDesc = document.getElementById('descError');
     let idCost = document.getElementById('costError');
     let idKKM = document.getElementById('kkmError');
@@ -122,21 +122,18 @@
         }
         else {
             setSuccess(name, idName);
-            alert('success');
             return true;
         }
     }
 
-    function checkCat(){
-        const cat = category.value;
-
-        if(cat === ''){
-            setError(category, idCat);
-            return false;
+    function checkCat() {
+        let selectedValue = document.querySelector('input[name=opt]:checked');
+        
+        if(selectedValue != null){
+            setSuccess(category, idCat);
         }
         else {
-            setSuccess(category, idCat);
-            return true;
+            setError(category, idCat);
         }
     }
 
