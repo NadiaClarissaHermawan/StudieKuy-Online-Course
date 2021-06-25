@@ -27,9 +27,8 @@
 
     <div class="content1">
         <?php
-            var_dump($result);
             $pic = 'view/images/profilepicture/'.$result->getProfpic();
-            echo '<img src="view/images/profilepicture/'.$result->getProfpic().'" class="content1-image content1-kiri">';
+            echo '<img src="'.$pic.'" class="content1-image content1-kiri">';
         ?>
         <div class="content1-kanan tulisanPutih hurufBesar">
             <table class="profileTable">
@@ -37,9 +36,7 @@
                     <td>Name</td>
                     <td>:</td>
                     <?php   
-                        //echo '<img src="view/images/profilepicture/'.$result[0]->getProfpic().'" class="content1-image content1-kiri">';
-       
-                        echo '<td>'.$result->getProfpic().'</td>';
+                        echo '<td>'.$result->getRealname().'</td>';
                     ?>
                 </tr>
                 <tr >

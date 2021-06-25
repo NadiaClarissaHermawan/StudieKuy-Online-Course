@@ -15,7 +15,7 @@
 </div>
 <hr>
 <form method="POST" action="" id="main">
-    <div class="content2 tulisanPutih">
+    <div class="content2 tulisanPutih" style="margin-top: 3%;">
         <label for="courseName" class="content2-1">Course Name</label>
         <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat" id="courseName" placeholder="Enter course name" oninput="checkName()"></div>
     </div>
