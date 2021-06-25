@@ -14,21 +14,21 @@
 
         public function view_mainpageTeacher(){
             //ambil semua keterangan teacher
-            
+
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
             //sudah login
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
-                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, t.profpic, t.alamat, t.kontak
+                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, t.profile_picture, t.alamat, t.kontak
                         FROM pengajar t INNER JOIN pengguna u
                         ON t.id_pengguna = u.id_pengguna
                         WHERE id_pengguna = '$id'
                         ";
                 $teach = $this->db->executeSelectQuery($query);
                 foreach($teach as $key =>$value){
-                    $result[] = new Teacher($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profpic'], $value['alamat'], $value['kontak']);
+                    $result[] = new Teacher($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture'], $value['alamat'], $value['kontak']);
                 }
 
                 return View::createView('indexTeacher.php', [
@@ -39,9 +39,6 @@
                 session_destroy();
                 return View::createView('indexTeacher.php', []);
             }
-
-
-            return View::createView('indexTeacher.php', []);
         }
     }
     class createCourseController{
@@ -98,6 +95,7 @@
                       WHERE id_pengajar = (SELECT id_pengajar FROM pengajar WHERE id_pengguna = '$id_pengguna')
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
+
             foreach($resQuery as $key => $value){
                 $result[] = new CourseTeacher($value['id_course'], $value['nama_course'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses']);
             }
