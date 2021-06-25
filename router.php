@@ -339,7 +339,6 @@
                 $teacherExamCtrl = new teacherCourseController();
                 echo $teacherExamCtrl->view_teacherCourseExam();
                 break;
-<<<<<<< Updated upstream
                 
             //logout teacher
             case $baseURL.'/teacherLogout':
@@ -348,14 +347,12 @@
                 echo $logoutCtrl->logout();
                 break;
 
-=======
             
             case $baseURL.'/reportCoursePdf':
                 require_once "control/reportController.php";
                 $reportCtrl = new reportController();
                 echo $reportCtrl->generateReportCourse()();
                 break;
->>>>>>> Stashed changes
             default :
                 echo '404 not found';
                 break;

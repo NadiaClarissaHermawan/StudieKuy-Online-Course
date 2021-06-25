@@ -21,10 +21,10 @@
             //sudah login
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
-                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, t.profile_picture, t.alamat, t.kontak
+                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, u.profile_picture, t.alamat, t.kontak
                         FROM pengajar t INNER JOIN pengguna u
                         ON t.id_pengguna = u.id_pengguna
-                        WHERE id_pengguna = '$id'
+                        WHERE t.id_pengguna = '$id'
                         ";
                 $teach = $this->db->executeSelectQuery($query);
                 foreach($teach as $key =>$value){
