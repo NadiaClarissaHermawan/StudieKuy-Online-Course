@@ -49,16 +49,16 @@
         </tr>
         
         <?php
-            $nomor = 1;
-            foreach ($result as $key => $row) {
+            $nomor = $indexStart;
+            for($i = 0; $i<count($result); $i++) {
                 echo '<tr>';
                 echo '<td>'.$nomor.'</td>';
-                echo '<td>'.$row->getIDTopUp().'</td>';
-                echo '<td>'.$row->getTanggalTopUp().'</td>';
+                echo '<td>'.$result[$i]->getIDTopUp().'</td>';
+                echo '<td>'.$result[$i]->getTanggalTopUp().'</td>';
 
-                $nominal = $row->getNominal();
-                $saldoAwal = $row->getSaldoAwal();
-                $saldoAkhir = $row->getSaldoAkhir();
+                $nominal = $result[$i]->getNominal();
+                $saldoAwal = $result[$i]->getSaldoAwal();
+                $saldoAkhir = $result[$i]->getSaldoAkhir();
                 if($nominal == '0.000'){
                     $nominal = 0;
                 }
@@ -72,7 +72,7 @@
                 echo '<td>'.$saldoAwal.'</td>';
                 echo '<td>'.$saldoAkhir.'</td>';
 
-                $statusVerif = $row->getStatusVerifikasi();
+                $statusVerif = $result[$i]->getStatusVerifikasi();
                 if($statusVerif == 0){
                     $statusVerif = "Rejected";
                 }else if($statusVerif == 1){
@@ -86,6 +86,14 @@
             }
         ?>
     </table>
+    <div style="display: flex;">
+        <?php
+            // pagination angka halamannya
+            for($i = 1; $i<=$jmlhPage; $i++){
+                echo '<a style="color:white; font-size:1vw; margin: 10px" href="reportTopUp?start='.$i.'">'.$i.'</a>';
+            }
+        ?>
+    </div>
 </div>
 <a id="back" href="indexAdmin" >Back</a>
 <!-- <a href="reportTopUpPdf" class="material-icons md-36">cloud_download</a> -->

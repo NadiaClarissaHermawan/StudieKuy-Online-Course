@@ -55,12 +55,12 @@
                 for($i = 0; $i<count($result); $i++){
                     echo '<tr>';
                     echo '<td>'.$nomor.'</td>';
-                    echo '<td>'.$row->getIdTransaksi().'</td>';
-                    echo '<td>'.$row->getTanggal().'</td>';
-                    echo '<td>'.$row->getHarga().'</td>';
+                    echo '<td>'.$result[$i]->getIdTransaksi().'</td>';
+                    echo '<td>'.$result[$i]->getTanggal().'</td>';
+                    echo '<td>'.$result[$i]->getHarga().'</td>';
         
-                    $saldoAwal = $row->getSaldoAwal();
-                    $saldoAkhir = $row->getSaldoAkhir();
+                    $saldoAwal = $result[$i]->getSaldoAwal();
+                    $saldoAkhir = $result[$i]->getSaldoAkhir();
                     if($saldoAwal == "0.000"){
                         $saldoAwal = 0;
                     }
@@ -70,7 +70,7 @@
                     echo '<td>'.$saldoAwal.'</td>';
                     echo '<td>'.$saldoAkhir.'</td>';
         
-                    echo '<td>'.$row->getNamaCourse().'</td>';
+                    echo '<td>'.$result[$i]->getNamaCourse().'</td>';
                     echo '</tr>';
 
                     $nomor = $nomor +1;
@@ -83,7 +83,7 @@
         <?php
             // pagination angka halamannya
             for($i = 1; $i<=$jmlhPage; $i++){
-                echo '<a style="color:white; font-size:1vw; margin: 10px" href="reportCourse?start='.$i.'">'.$i.'</a>';
+                echo '<a style="color:white; font-size:1vw; margin: 10px" href="reportCourseTransaction?start='.$i.'">'.$i.'</a>';
             }
         ?>
     </div>
