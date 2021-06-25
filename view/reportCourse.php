@@ -20,8 +20,15 @@
             <!-- 1 -->
             <div class="content2-1">Member Name</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center; margin-left:0.3%">:</div>
-            <div class="content2-2"><input type="text" id="filterName" name="filterName" placeholder="Cari nama Member.." class="kotakInput tulisanCoklat" autofocus style="margin-right: -4%;" autocomplete="off"></div>
-
+            <?php
+                //filter nama
+                if(isset($nama)){
+                    echo '<div class="content2-2"><input type="text" id="filterName" name="filterName" placeholder="Cari nama Member.." value="'.$nama.'" class="kotakInput tulisanCoklat" autofocus style="margin-right: -4%;" autocomplete="off"></div>';
+                }else{
+                    echo '<div class="content2-2"><input type="text" id="filterName" name="filterName" placeholder="Cari nama Member.." class="kotakInput tulisanCoklat" autofocus style="margin-right: -4%;" autocomplete="off"></div>';
+                }
+            ?>
+            
             <!-- 2 -->
             <div class="content2-3">Completeness Status</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center">:</div>
@@ -52,35 +59,36 @@
 
         <?php 
             if($result != null){
-                $nomor = 1;
-                foreach($result as $key => $row){
+                $nomor = $indexStart;
+                //loop page
+                for($i = 0; $i<count($result); $i++){
                     echo '<tr>';
                     echo '<td>'.$nomor.'</td>';
-                    echo '<td>'.$row->getRealName().'</td>';
+                    echo '<td>'.$result[$i]->getRealName().'</td>';
     
-                    $tempNilaiAkhir = $row->getNilaiAkhir();
+                    $tempNilaiAkhir = $result[$i]->getNilaiAkhir();
                     if($tempNilaiAkhir == null){
                         $tempNilaiAkhir = "-";
                     }
                     echo '<td>'.$tempNilaiAkhir.'</td>';
     
-                    echo '<td>'.$row->getStatusKetuntasan().'</td>';
+                    echo '<td>'.$result[$i]->getStatusKetuntasan().'</td>';
     
-                    $tempStatusVerifikasi = $row->getStatusVerifikasi();
+                    $tempStatusVerifikasi = $result[$i]->getStatusVerifikasi();
                     if($tempStatusVerifikasi == null){
                         $tempStatusVerifikasi = "-";
                     }
                     echo '<td>'.$tempStatusVerifikasi.'</td>';
     
-                    $tempTanggalTuntas = $row->getTanggalTuntas();
+                    $tempTanggalTuntas = $result[$i]->getTanggalTuntas();
                     if($tempTanggalTuntas == null){
                         $tempTanggalTuntas = "-";
                     }
                     echo '<td>'.$tempTanggalTuntas.'</td>';
     
-                    echo '<td>'.$row->getNamaCourse().'</td>';
-                    echo '<td>'.$row->getBatasNilai().'</td>';
-                    echo '<td>'.$row->getNamaBidang().'</td>';
+                    echo '<td>'.$result[$i]->getNamaCourse().'</td>';
+                    echo '<td>'.$result[$i]->getBatasNilai().'</td>';
+                    echo '<td>'.$result[$i]->getNamaBidang().'</td>';
                     echo '<tr>';
                     
                     $nomor = $nomor+1;
@@ -88,6 +96,15 @@
             }
         ?>
     </table>
+    
+    <div style="display: flex;">
+        <?php
+            // pagination angka halamannya
+            for($i = 1; $i<=$jmlhPage; $i++){
+                echo '<a style="color:white; font-size:1vw; margin: 10px" href="reportCourse?start='.$i.'">'.$i.'</a>';
+            }
+        ?>
+    </div>
 </div>
 <br>
 <a href="indexAdmin" id="back">Back</a>

@@ -66,7 +66,8 @@
 
         //tambahin modul yg sdh di create --> kacau
         public function addModul(){
-            var_dump($_POST['video1']);
+            var_dump($_POST);
+            var_dump($_FILES);
             die;
         }
     }

@@ -12,7 +12,64 @@
         }
 
         //ambil course report 
-        public function getCourseReport($nama, $complete, $nilai){
+        public function getCourseReport($nama, $complete, $nilai, $start){
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+
+            $query = "SELECT p.real_name, mm.nilai_akhir, mm.status_ketuntasan, 
+                             mm.status_verifikasi, mm.tanggal_tuntas,
+                             c.nama_course, c.batas_nilai_minimum, bb.nama_bidang
+                      FROM pengguna p INNER JOIN member m 
+                            ON p.id_pengguna = m.id_pengguna
+                            INNER JOIN member_course mm
+                            ON mm.id_member = m.id_member
+                            INNER JOIN courses c 
+                            ON c.id_courses = mm.id_courses
+                            INNER JOIN bidang_course b 
+                            ON b.id_courses = c.id_courses
+                            INNER JOIN bidang bb 
+                            ON bb.id_bidang = b.id_bidang
+                     ";
+
+            $cekFilter = 0;
+            //cek filter nama
+            if($nama != ""){
+                $query .= " WHERE p.real_name LIKE '%$nama%'";
+                $cekFilter = 1;
+            }
+
+            //cek filter status ketuntasan
+            if($complete != ""){
+                if($cekFilter == 0){
+                    $query .= " WHERE mm.status_ketuntasan = '$complete'";
+                    $cekFilter = 1;
+                }else{
+                    $query .= " AND mm.status_ketuntasan = '$complete'";
+                }
+            }
+
+            //cek filter nilai akhir
+            if($nilai != ""){
+                if($cekFilter == 0){
+                    $query .= " WHERE mm.nilai_akhir LIKE '%$nilai%'";
+                    $cekFilter = 1;
+                }else{
+                    $query .= " AND mm.nilai_akhir = '%$nilai%'";
+                }
+            }
+
+            $query .= " LIMIT 5 OFFSET $start";
+            $queryResult = $this->db->executeSelectQuery($query);
+
+            $result = [];
+            foreach($queryResult as $key => $value) {
+                $result[] = new CourseReport($value['real_name'], $value['nilai_akhir'], $value['status_ketuntasan'], $value['status_verifikasi'], $value['tanggal_tuntas'], $value['nama_course'], $value['batas_nilai_minimum'], $value['nama_bidang']);
+            }
+            return $result;
+        }   
+
+        public function getCourseReport2($nama, $complete, $nilai){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
@@ -73,17 +130,41 @@
             $complete = $_GET['complete'];
             $nilai = $_GET['nilai'];
 
-            $result = $this->getCourseReport($nama, $complete, $nilai);
+            $result = $this->getCourseReport2($nama, $complete, $nilai, 0);
+
             return View::createViewFilter('ajaxCourseReport.php',[
-                "result"=>$result
+                "result"=>$result, 
             ]);
         }
 
         //view course report
         public function view_courseReport(){
-            $result = $this->getCourseReport("", "", "");
+            $start = 0;
+
+            //di page ke 'start'
+            if(isset($_GET['start']) && $start != ""){
+                //5 = jumlah data di 1 page
+                $start = $_GET['start'];
+                $indexStart = (($start-1)*5)+1;
+                $result = $this->getCourseReport("","","",$indexStart);
+            
+            //awal
+            }else{
+                $indexStart = 0;
+                $result = $this->getCourseReport("", "", "", $start);
+            }
+
+            $resultSize = count($result);
+            $query = "SELECT COUNT(id_memCourse) AS 'jmlh'
+                      FROM member_course
+                     ";
+            $ress = $this->db->executeSelectQuery($query)[0]['jmlh'];
+            $jumlahPage = ($ress/5)+1;
+
             return View::createView('reportCourse.php', [
-                "result"=>$result
+                "result"=>$result,
+                "jmlhPage"=>$jumlahPage,
+                "indexStart"=>$indexStart
             ]);
         }
 

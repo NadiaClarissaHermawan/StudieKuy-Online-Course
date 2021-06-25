@@ -26,9 +26,9 @@
                 <div class="upload">Upload a Module</div>
                 <input type="file" style="margin-left: 15%; margin-top: 3%;" required="" id="video" name="video<?php echo $nomor?>" accept="mp4/*"/> 
             </div>
-            <div>
+            <!-- <div>
                 <input type="text" required="" >
-            </div>
+            </div> -->
         </div>
         <div hidden id="batasan"></div>
     
