@@ -3,7 +3,7 @@
     require_once "control/services/viewIndexTeacher.php";
     require_once "control/services/mysqlDB.php";
     require_once "model/teacher.php";
-    // require_once "model/courseTeacher";
+    require_once "model/courseTeacher.php";
 
     class indexTeacherController{
         protected $db;
@@ -14,6 +14,7 @@
 
         public function view_mainpageTeacher(){
             //ambil semua keterangan teacher
+
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
@@ -29,12 +30,12 @@
                 foreach($teach as $key =>$value){
                     $result[] = new Teacher($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture'], $value['alamat'], $value['kontak']);
                 }
+
                 return View::createView('indexTeacher.php', [
                     "result" => $result 
                 ]);
             //belum login
-            }
-            else{
+            }else{
                 session_destroy();
                 return View::createView('indexTeacher.php', []);
             }
@@ -94,10 +95,14 @@
                       WHERE id_pengajar = (SELECT id_pengajar FROM pengajar WHERE id_pengguna = '$id_pengguna')
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
-            foreach($resQuery as $key => $row){
 
+            foreach($resQuery as $key => $value){
+                $result[] = new CourseTeacher($value['id_course'], $value['nama_course'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses']);
             }
-            return View::createViewTeacherCourse('teacherCourse.php', []);
+
+            return View::createViewTeacherCourse('teacherCourse.php', [
+                "result"=>$result
+            ]);
         }
 
         public function view_teacherCourseModul(){
