@@ -132,14 +132,6 @@
         </form>
     </div>
 </div>
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <p class="tulisanHitam">Are you sure you want to delete this account?</p>
-        <!-- ini ga submit jawaban  -->
-        <a href=""><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
-        <button id="close" class="buttonM tulisanCoklat hurufSedang">No</button>
-    </div>
-</div> 
 
 <script defer>
 	let formData = new FormData();
