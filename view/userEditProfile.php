@@ -352,23 +352,4 @@
             alert("Account has been deleted.");
         }
     }
-
-    let modal = document.getElementById("myModal");
-    let btn = document.getElementById("del");
-    let span = document.getElementById("close");
-
-    btn.onclick = function() {
-        modal.style.display = "block";
-        modal.style.visibility = "visible";
-    }
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
 </script>
