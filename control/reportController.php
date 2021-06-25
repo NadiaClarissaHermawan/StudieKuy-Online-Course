@@ -421,7 +421,7 @@
                 // $pdf->Cell(38,10,"Syarat Nilai Minimum",1,0,'C');
                 // $pdf->Cell(32,10,"Nama Bidang",1,1,'C');
             // }
-            $result = $this->getCourseReport("", "", "");
+            $result = $this->getCourseReport("", "", "", 0);
             $nomor = 1;
             foreach($result as $key => $row){
                 $pdf->Cell(13,10,$nomor,1,0,'C');
