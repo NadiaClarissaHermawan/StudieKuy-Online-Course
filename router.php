@@ -432,6 +432,12 @@
                 echo $examCtrl->cekJawaban();
                 break;
 
+            case $baseURL.'/uploadModul':
+                require_once "control/indexTeacherController.php";
+                $crsCtrl = new uploadModulController();
+                echo $crsCtrl->addModul();
+                break;
+                
             default :
                 echo '404 not found';
                 break;

@@ -14,31 +14,28 @@
     <div class="tulisanPutih hurufBesar">Course Module</div>
 </div>
 <hr>
-<div class="content2 tulisanPutih" id="mod">
-    <div class="content2-1">Module 1</div>
-    <div class="content2-2">:</div>
-    <div class="content2-3">
-        <i class="material-icons md-36">cloud_upload</i>
-        <div class="upload">Upload a Module</div>
+<form id="container" action="uploadModul" method="POST" enctype="multipart/form-data">
+    <?php $nomor = 1?>
+    <div class="content2 tulisanPutih" id="mod">
+        <div class="content2-1"><input type="text" class="nama-modul" name="modul<?php echo $nomor?>" autofocus placeholder="Enter modul name.."></div>
+        <div class="content2-2">:</div>
+        <div class="content2-3">
+            <i class="material-icons md-36">cloud_upload</i>
+            <div class="upload">Upload a Module</div>
+            <input type="file" style="margin-left: 15%; margin-top: 3%;" id="video" name="video<?php echo $nomor?>" accept="mp4/*"/> 
+        </div>
     </div>
-</div>
-<div class="content2 tulisanPutih" id="mod">
-    <div class="content2-1">Module 2</div>
-    <div class="content2-2">:</div>
-    <!-- <form id="formUpload" enctype="multipart/form-data" style="margin-left: 3%">
-        <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:35%;">
-    </form> -->
-    <div class="content2-3">
-        <i class="material-icons md-36">cloud_upload</i>
-        <div class="upload">Upload a Module</div>
-    </div>
-</div>
+</form>
+
 <button class="button" id="button" onclick="addModule()" >Add New Module</button>
 <a href="createCourse"><button class="buttonL">Back</button></a>
-<a href="createExam"><button class="buttonR">Next</button></a>
+<a href="createExam"><button class="buttonR" onclick="submitModul()">Next</button></a>
 
 <script>
     function addModule(){
+        event.preventDefault();
+        <?php $nomor ++;?>
+
         let content2 = document.createElement("div");
         let content21 = document.createElement("div");
         let content22 = document.createElement("div");
@@ -46,6 +43,22 @@
         let icon = document.createElement("i");
         let upload = document.createElement("div");
         
+        //bikin input type buat nama modul --> format nama modul untuk di ambil : modul1, modul2, dst
+        let namaModul = document.createElement("input");
+        namaModul.setAttribute("name", "modul<?php echo $nomor?>");
+        namaModul.className = "nama-modul";
+        namaModul.setAttribute("type", "text");
+        namaModul.setAttribute("placeholder", "Enter modul name..");
+
+        //bikin input type buat video modul --> format nama video untuk di ambil : video1, video2, dst
+        let videoModul = document.createElement("input");
+        videoModul.setAttribute("type", "file");
+        videoModul.setAttribute("name", "video<?php echo $nomor?>");
+        videoModul.style.marginLeft = "15%";
+        videoModul.style.marginTop = "3%";
+        videoModul.setAttribute("id", "video");
+        videoModul.setAttribute("accept", "mp4/*");
+
         content2.className = "content2 tulisanPutih";
         content21.className = "content2-1";
         content22.className = "content2-2";
@@ -53,12 +66,12 @@
         icon.className = "material-icons md-36";
         upload.className = "upload";
 
-        let node21 = document.createTextNode("Module");
+        content21.appendChild(namaModul);
+
         let node22 = document.createTextNode(":");
         let nodeIcon = document.createTextNode("cloud_upload");
         let nodeUp = document.createTextNode("Upload a Module");
 
-        content21.appendChild(node21);
         content22.appendChild(node22);
         icon.appendChild(nodeIcon);
         upload.appendChild(nodeUp);
@@ -68,10 +81,15 @@
         content2.appendChild(content21);
         content2.appendChild(content22);
         content2.appendChild(content23);
-
-        document.body.appendChild(content2);
+        
+        content23.appendChild(videoModul);
 
         let button = document.getElementById("button");
         document.body.insertBefore(content2, button);
+    }
+
+    function submitModul(){
+        let form = document.getElementById("container");
+        form.submit();
     }
 </script>
