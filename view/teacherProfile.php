@@ -19,9 +19,6 @@
         <div class="title-tengah">
             <a href="profileEditTeacher" class="tulisanPutih hurufSedang">Edit</a>
         </div>
-        <div class="title-kanan">
-            <a href="signOutTeacher" class="tulisanPutih hurufSedang">Sign Out</a>
-        </div>
     </div>
     <hr>
 

@@ -358,16 +358,25 @@
                 $reportCtrl = new reportController();
                 echo $reportCtrl->generateReportCourse();
                 break;
+
             case $baseURL.'/reportTransactionCoursePdf':
                 require_once "control/reportController.php";
                 $reportCtrl = new reportController();
                 echo $reportCtrl->generateReportTransactionCourse();
                 break;
+
             case $baseURL.'/reportTopUpPdf':
                 require_once "control/reportController.php";
                 $reportCtrl = new reportController();
                 echo $reportCtrl->generateTopUp();
                 break;
+
+            case $baseURL.'/profileEditTeacher':
+                require_once "control/indexTeacherController.php";
+                $edit = new indexTeacherController();
+                echo $edit->viewEditTeacherProfile();
+                break;
+
             default :
                 echo '404 not found';
                 break;

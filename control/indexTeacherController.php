@@ -177,7 +177,7 @@
             }
 
             //sudah login
-            if(isset($_SESSION['statusTeacher']) && $_SESSION['statusTeacher'] != ""){
+            if(isset($_SESSION['statusTeacher']) && $_SESSION['statusTeacher'] != ""){  
                 $id = $_SESSION['id_pengguna'];
                 $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, p.pendidikan_terakhir, u.profile_picture 
                           FROM pengguna u INNER JOIN pengajar p
@@ -189,15 +189,7 @@
                 foreach($resQuery as $key=> $value){
                     $result = new Teacher ($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
                 }
-<<<<<<< Updated upstream
                 return $result;
-                // return View::createViewTeacherProfile('teacherProfile.php', [
-                //     "result"=>$result
-                // ]);
-=======
-                
-                return $result;
->>>>>>> Stashed changes
 
             //belum login
             }else{
@@ -255,12 +247,40 @@
                               WHERE id_pengguna = $tempUser
                              ";
                     $this->db->executeNonSelectQuery($query);
-                    
                 }else{
                     return '{"result":"error"}';
                 }   
-                
             }
+        }
+
+        //edit profile text info
+        public function viewEditTeacherProfile(){
+            $id_p = $_SESSION['id_pengguna'];
+            $uname = $_POST['uname'];
+            $urealname = $_POST['urealname'];
+            $uaddress = $_POST['uaddress'];
+            $uphone = $_POST['uphone'];
+            $upass = $_POST['upass'];
+
+            $uname = $this->db->escapeString($uname);
+            $urealname = $this->db->escapeString($urealname);
+            $uaddress= $this->db->escapeString($uaddress);
+            $uphone = $this->db->escapeString($uphone);
+            $upass = $this->db->escapeString($upass);
+
+            //update info yg ada di tabel pengguna
+            $query = "UPDATE pengguna 
+                      SET nama_user = '$uname', real_name = '$urealname', pass = '$upass'
+                      WHERE id_pengguna = '$id_p'
+                     ";
+            $this->db->executeNonSelectQuery($query);
+
+            //update info di tabel member
+            $query = "UPDATE member
+                      SET kontak = '$uphone', alamat = '$uaddress'
+                      WHERE id_pengguna = '$id_p'
+                     ";
+            $this->db->executeNonSelectQuery($query);
         }
     }
 ?>
