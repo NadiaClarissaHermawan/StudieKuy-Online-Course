@@ -454,6 +454,12 @@
                 echo $crsCtrl->addModul();
                 header('Location: createExam');
                 break;
+                
+             case $baseURL.'/createCourse':
+                require_once "control/indexTeacherController.php";
+                $createCtrl = new createCourseController();
+                echo $createCtrl->insertCourse();
+                break;
 
             default :
                 echo '404 not found';
