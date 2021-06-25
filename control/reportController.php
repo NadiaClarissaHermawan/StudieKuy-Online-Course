@@ -4,7 +4,7 @@
     require_once "model/CourseReport.php";
     require_once "model/TopUpReport.php";
     require_once "model/CourseTransactionReport.php";
-
+    require_once "model/dompdf/autoload.inc.php";
     class reportController{
         protected $db;
 
@@ -302,6 +302,87 @@
             return View::createView('reportCourseTransaction.php', [
                 "result"=>$result
             ]);
+        }
+
+        public function generateReportCourse(){
+            // use Dompdf/Dompdf
+            // $dompdf = new Dompdf();
+            // $res = $this->
+            // $dompdf->loadHTML($res)
+            require_once "fpdf183/fpdf.php";
+            $pdf = new FPDF('L', 'mm', 'A4');
+            $pdf->AddPage();
+            //judul
+            $pdf->SetFont('Arial','B', 20);
+            $pdf->Cell(277,15,"Studie Kuy!", 0, 1,'C');
+            //nama report
+            $pdf->SetFont('Arial','B', 16);
+            $pdf->Cell(277,10,"Course Report",0,1,'C');
+            $pdf->Cell(277,15,"",0,1,'C');
+            //buat tabel judul
+            $pdf->SetFont('Arial','B', 10);
+            $pdf->Cell(13,10,"No.",1,0,'C');
+            $pdf->Cell(30,10,"Nama",1,0,'C');
+            $pdf->Cell(30,10,"Nilai Akhir",1,0,'C');
+            $pdf->Cell(34,10,"Status Ketuntasan",1,0,'C');
+            $pdf->Cell(34,10,"Status Verifikasi",1,0,'C');
+            $pdf->Cell(32,10,"Tanggal Tuntas",1,0,'C');
+            $pdf->Cell(34,10,"Nama Course",1,0,'C');
+            $pdf->Cell(38,10,"Syarat Nilai Minimum",1,0,'C');
+            $pdf->Cell(32,10,"Nama Bidang",1,1,'C');
+            //tabel isi
+            $pdf->SetFont('Arial','', 8);
+            //dummy isi
+            // $n=100;
+            // for($i=0;$i<$n;$i++){
+                // $pdf->Cell(17,10,"No.",1,0,'C');
+                // $pdf->Cell(30,10,"Stanislaus Dendrio",1,0,'C');
+                // $pdf->Cell(30,10,"Nilai Akhir",1,0,'C');
+                // $pdf->Cell(34,10,"Status Ketuntasan",1,0,'C');
+                // $pdf->Cell(34,10,"Status Verifikasi",1,0,'C');
+                // $pdf->Cell(32,10,"Tanggal Tuntas",1,0,'C');
+                // $pdf->Cell(30,10,"Nama Course",1,0,'C');
+                // $pdf->Cell(38,10,"Syarat Nilai Minimum",1,0,'C');
+                // $pdf->Cell(32,10,"Nama Bidang",1,1,'C');
+            // }
+            $result = $this->getCourseReport("", "", "");
+            $nomor = 1;
+            foreach($result as $key => $row){
+                $pdf->Cell(13,10,$nomor,1,0,'C');
+                $pdf->Cell(30,10,$row->getRealName(),1,0,'C');
+
+                if($row->getNilaiAkhir()==NULL){
+                    $pdf->Cell(30,10,"-",1,0,'C');
+                }
+                else{
+                    $pdf->Cell(30,10,$row->getNilaiAkhir(),1,0,'C');
+                }
+                
+                $pdf->Cell(34,10,$row->getStatusKetuntasan(),1,0,'C');
+
+                if($row->getStatusVerifikasi()==NULL){
+                    $pdf->Cell(34,10,"-",1,0,'C');
+                }
+                else{
+                    $pdf->Cell(34,10,$row->getStatusVerifikasi(),1,0,'C');
+                }
+                
+                if($row->getTanggalTuntas()==NULL){
+                    $pdf->Cell(32,10,"-",1,0,'C');
+                }
+                else{
+                    $pdf->Cell(32,10,$row->getTanggalTuntas(),1,0,'C');
+                }
+                
+                $pdf->Cell(34,10,$row->getNamaCourse(),1,0,'C');
+                $pdf->Cell(38,10,$row->getBatasNilai(),1,0,'C');
+                $pdf->Cell(32,10,$row->getNamaBidang(),1,1,'C');
+                $nomor++;
+            }
+            // var_dump($result);
+            // die;
+            $pdf->Output('I','CourseReportStudieKuy!.pdf');
+            
         }
     }
 ?>
