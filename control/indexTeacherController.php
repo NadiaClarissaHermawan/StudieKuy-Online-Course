@@ -3,7 +3,7 @@
     require_once "control/services/viewIndexTeacher.php";
     require_once "control/services/mysqlDB.php";
     require_once "model/teacher.php";
-    require_once "model/courseTeacher";
+    // require_once "model/courseTeacher";
 
     class indexTeacherController{
         protected $db;
@@ -14,22 +14,20 @@
 
         public function view_mainpageTeacher(){
             //ambil semua keterangan teacher
-<<<<<<< Updated upstream
-            
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
             //sudah login
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
-                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, t.profpic, t.alamat, t.kontak
+                $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, t.profile_picture, t.alamat, t.kontak
                         FROM pengajar t INNER JOIN pengguna u
                         ON t.id_pengguna = u.id_pengguna
                         WHERE id_pengguna = '$id'
                         ";
                 $teach = $this->db->executeSelectQuery($query);
                 foreach($teach as $key =>$value){
-                    $result[] = new Teacher($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profpic'], $value['alamat'], $value['kontak']);
+                    $result[] = new Teacher($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture'], $value['alamat'], $value['kontak']);
                 }
                 return View::createView('indexTeacher.php', [
                     "result" => $result 
@@ -40,11 +38,6 @@
                 session_destroy();
                 return View::createView('indexTeacher.php', []);
             }
-=======
-
-
-            return View::createView('indexTeacher.php', []);
->>>>>>> Stashed changes
         }
     }
     class createCourseController{
@@ -101,7 +94,7 @@
                       WHERE id_pengajar = (SELECT id_pengajar FROM pengajar WHERE id_pengguna = '$id_pengguna')
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
-            foreach($resQuery as $key => $){
+            foreach($resQuery as $key => $row){
 
             }
             return View::createViewTeacherCourse('teacherCourse.php', []);
