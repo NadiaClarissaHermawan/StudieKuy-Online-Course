@@ -1,5 +1,5 @@
 <?php 
-    class Course{
+    class CourseTeacher{
         protected $id_course, $namaCourse, $tarif, $batas_nilai_minimum, $keterangan_course, $gambar_course;
             
         public function __construct($id_course, $namaCourse,$tarif, $batas_nilai_minimum, $keterangan_course, $gambar_course){
@@ -18,7 +18,7 @@
         public function getNamaCourse(){
             return $this->namaCourse;
         }
-        
+
         public function getTarif(){
             return $this->tarif;
         }

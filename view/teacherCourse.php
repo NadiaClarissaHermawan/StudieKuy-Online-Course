@@ -10,11 +10,11 @@
         exit;
     }
 ?>
-<div class="white-box" style="display: flex; height: 100%; width: 100%;">
+<div class="white-box">
     <?php
         if(isset($result) && $result != null){
             foreach($result as $key => $row){
-                echo '<a class="card" href="userCourseInfo?bidang='.$nama_bidang.'&course='.$row->getNamaCourse().'">';
+                echo '<a class="card" href="userCourseInfo?course='.$row->getNamaCourse().'">';
                 echo '<img src="view/images/gambarcourses/'.$row->getGambarCourse().'" class="card-img">';
                 echo '<div class="text">'.$row->getNamaCourse().'</div>';
                 echo '</a>';
