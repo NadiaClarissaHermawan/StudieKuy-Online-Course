@@ -110,7 +110,7 @@
 
         public function delete(){
             $tempUser = $_SESSION['id_pengguna'];
-            $query = "UPDATE pengguna SET status = 0; WHERE id_pengguna = $tempUser";
+            $query = "UPDATE pengguna SET status = 0 WHERE id_pengguna = $tempUser";
             $this->db->executeNonSelectQuery($query);
             session_destroy();
             header('Location: index');

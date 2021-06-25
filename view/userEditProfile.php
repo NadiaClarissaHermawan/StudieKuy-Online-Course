@@ -342,6 +342,7 @@
 
         if(del){
             alert("Account has been deleted.");
+            window.location.href = "delete";
         }
     }
 </script>
