@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <body>
-    <!-- action dihapus untuk ajax  -->
     <form id="main" method="POST" action="teacherLogin">
         <img class="imgLogin" src="view/images/loginTeacher.jpg">
         <div class="contentLogin">

@@ -395,6 +395,12 @@
                 echo $Ctrl->klik_login();
                 break;
 
+            //klik login di teacher
+            case $baseURL.'/teacherLogin':
+                require_once "control/adminController.php";
+                $Ctrl = new teacherLoginController();
+                echo $Ctrl->klik_login();
+                break;
             
             case $baseURL.'/reportCourse':
                 require_once "control/reportController.php";

@@ -5,7 +5,6 @@
         <link rel="stylesheet" type="text/css" href="view/layout/style/header.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/teacherLoginRegister.css"/>
         <link rel="stylesheet" type="text/css" href="view/layout/style/globalNeeds.css"/>
-        <link rel="stylesheet" type="text/css" href="view/layout/style/userLoginRegister.css"/>
     </head>
     <body>
     	<div class="header">
@@ -14,7 +13,7 @@
     	</div>
         
         <div class="nav">
-            <a href="" class="menuNav" id="login">Lecturer Register </a>
+            <a href="" class="menuNavNow" id="login">Lecturer Register </a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
                 // if(isset($_SESSION['status'])){
