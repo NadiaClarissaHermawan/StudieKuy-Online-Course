@@ -10,7 +10,7 @@
         exit;
     }
 ?>
-<div class="white-box">
+<div class="white-box" style="display: flex; height: 100%; width: 100%;">
     <?php
         if(isset($result) && $result != null){
             foreach($result as $key => $row){
