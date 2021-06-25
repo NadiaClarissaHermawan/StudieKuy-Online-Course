@@ -304,10 +304,6 @@
         }
 
         public function generateReportCourse(){
-            // use Dompdf/Dompdf
-            // $dompdf = new Dompdf();
-            // $res = $this->
-            // $dompdf->loadHTML($res)
             require_once "fpdf183/fpdf.php";
             $pdf = new FPDF('L', 'mm', 'A4');
             $pdf->AddPage();
@@ -382,6 +378,42 @@
             // die;
             $pdf->Output('I','CourseReportStudieKuy!.pdf');
             
+        }
+        public function generateReportTransactionCourse(){
+            require_once "fpdf183/fpdf.php";
+            $pdf = new FPDF('L', 'mm', 'A4');
+            $pdf->AddPage();
+            //judul
+            $pdf->SetFont('Arial','B', 20);
+            $pdf->Cell(277,15,"Studie Kuy!", 0, 1,'C');
+            //nama report
+            $pdf->SetFont('Arial','B', 16);
+            $pdf->Cell(277,10,"Course Report",0,1,'C');
+            $pdf->Cell(277,15,"",0,1,'C');
+            //buat tabel judul
+            $pdf->SetFont('Arial','B', 12);
+            $pdf->Cell(17,10,"No.",1,0,'C');
+            $pdf->Cell(42,10,"Id Transaksi",1,0,'C');
+            $pdf->Cell(42,10,"Tanggal",1,0,'C');
+            $pdf->Cell(42,10,"Harga Course",1,0,'C');
+            $pdf->Cell(42,10,"Saldo Awal",1,0,'C');
+            $pdf->Cell(42,10,"Saldo Akhir",1,0,'C');
+            $pdf->Cell(50,10,"Nama Course",1,1,'C');
+            //tabel isi
+            $pdf->SetFont('Arial','', 10);
+            $result = $this->getCourseTransactionReport("", "", "", "", "");
+            $nomor = 1;
+            foreach($result as $key => $row){
+                $pdf->Cell(17,10,$nomor,1,0,'C');
+                $pdf->Cell(42,10,$row->getIdTransaksi(),1,0,'C');
+                $pdf->Cell(42,10,$row->getTanggal(),1,0,'C');
+                $pdf->Cell(42,10,$row->getHarga(),1,0,'C');
+                $pdf->Cell(42,10,$row->getSaldoAwal(),1,0,'C');
+                $pdf->Cell(42,10,$row->getSaldoAkhir(),1,0,'C');
+                $pdf->Cell(50,10,$row->getNamaCourse(),1,1,'C');
+                $nomor++;
+            }
+            $pdf->Output('I','CourseReportStudieKuy!.pdf');
         }
     }
 ?>
