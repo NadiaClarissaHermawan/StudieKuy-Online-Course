@@ -91,9 +91,13 @@
 </div>
 <br>
 <a href="indexAdmin" id="back">Back</a>
-<a href="reportCoursePdf" class="material-icons md-36">cloud_download</a>
+<!-- <a href="reportCoursePdf" class="material-icons md-36">cloud_download</a> -->
 
 <script>
+    //add link ke pdf report
+    let link = document.getElementById("link");
+    link.href = "reportCoursePdf";
+
     //ambil elemen" yg diperlukan
     let filterName = document.getElementById('filterName');
     let filterCompleteStatus = document.getElementById('filterCompleteStatus');

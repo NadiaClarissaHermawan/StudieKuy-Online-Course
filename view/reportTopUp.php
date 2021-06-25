@@ -88,11 +88,15 @@
     </table>
 </div>
 <a id="back" href="indexAdmin" >Back</a>
-<a href="reportTopUpPdf" class="material-icons md-36">cloud_download</a>
+<!-- <a href="reportTopUpPdf" class="material-icons md-36">cloud_download</a> -->
 <div style="height:50px;"></div>
   
 
 <script>
+    //add link ke pdf report
+    let link = document.getElementById("link");
+    link.href = "reportTopUpPdf";
+
     let filterId = document.getElementById('filterId');
     let filterStatus = document.getElementById('filterVerifikasi');
     let filterTglAwal = document.getElementById('filterTglAwal');

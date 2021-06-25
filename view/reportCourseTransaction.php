@@ -80,10 +80,13 @@
     </table>
 </div>
 <a id="back" href="indexAdmin" >Back</a>
-<a href="reportTransactionCoursePdf" class="material-icons md-36">cloud_download</a>
 <div style="height:50px;"></div>
 
 <script>
+    //add link ke pdf report
+    let link = document.getElementById("link");
+    link.href = "reportTransactionCoursePdf";
+
     let filterCourse = document.getElementById('filterCourse');
     let filterId = document.getElementById('filterId');
     let filterRate = document.getElementById('filterRate');
