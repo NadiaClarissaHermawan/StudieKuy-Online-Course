@@ -51,8 +51,8 @@
         </tr>
         <?php 
             if($result != null){
-                $nomor = 1;
-                foreach($result as $key => $row){
+                $nomor = $indexStart;
+                for($i = 0; $i<count($result); $i++){
                     echo '<tr>';
                     echo '<td>'.$nomor.'</td>';
                     echo '<td>'.$row->getIdTransaksi().'</td>';
@@ -78,6 +78,15 @@
             }
         ?>
     </table>
+    
+    <div style="display: flex;">
+        <?php
+            // pagination angka halamannya
+            for($i = 1; $i<=$jmlhPage; $i++){
+                echo '<a style="color:white; font-size:1vw; margin: 10px" href="reportCourse?start='.$i.'">'.$i.'</a>';
+            }
+        ?>
+    </div>
 </div>
 <a id="back" href="indexAdmin" >Back</a>
 <div style="height:50px;"></div>
