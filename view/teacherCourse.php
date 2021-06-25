@@ -14,7 +14,8 @@
     <?php
         if(isset($result) && $result != null){
             foreach($result as $key => $row){
-                echo '<a class="card" href="userCourseInfo?course='.$row->getNamaCourse().'">';
+                //mengandung id course untuk penjurusan course yg dipilih
+                echo '<a class="card" href="teacherCourseInfo?course='.$row->getIdCourse().'">';
                 echo '<img src="view/images/gambarcourses/'.$row->getGambarCourse().'" class="card-img">';
                 echo '<div class="text">'.$row->getNamaCourse().'</div>';
                 echo '</a>';

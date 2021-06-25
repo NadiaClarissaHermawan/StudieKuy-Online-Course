@@ -79,7 +79,7 @@
             ob_end_clean();
 
             ob_start();
-            include 'view/layout/layoutIndexTeacher.php';
+            include 'view/layout/layoutTeacherCourse.php';
             $include = ob_get_contents();
             ob_end_clean();
             return $include;

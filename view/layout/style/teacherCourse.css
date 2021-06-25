@@ -15,7 +15,11 @@ body {
     font-family: Itim;
     font-weight: bold;
 }
-
+#container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
 .white-box {
     margin-top: 15%;
     width: 80%;

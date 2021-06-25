@@ -97,7 +97,7 @@
             $resQuery = $this->db->executeSelectQuery($query);
 
             foreach($resQuery as $key => $value){
-                $result[] = new CourseTeacher($value['id_course'], $value['nama_course'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses']);
+                $result[] = new CourseTeacher($value['id_courses'], $value['nama_course'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses']);
             }
 
             return View::createViewTeacherCourse('teacherCourse.php', [
