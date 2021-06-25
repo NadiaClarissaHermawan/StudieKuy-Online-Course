@@ -640,7 +640,7 @@
                 // $pdf->Cell(38,10,"Syarat Nilai Minimum",1,0,'C');
                 // $pdf->Cell(32,10,"Nama Bidang",1,1,'C');
             // }
-            $result = $this->getCourseReport("", "", "", 0);
+            $result = $this->getCourseReport2("", "", "", 0);
             $nomor = 1;
             foreach($result as $key => $row){
                 $pdf->Cell(13,10,$nomor,1,0,'C');
@@ -701,7 +701,7 @@
             $pdf->Cell(50,10,"Nama Course",1,1,'C');
             //tabel isi
             $pdf->SetFont('Arial','', 10);
-            $result = $this->getCourseTransactionReport("", "", "", "", "");
+            $result = $this->getCourseTransactionReport2("", "", "", "", "", 0);
             $nomor = 1;
             foreach($result as $key => $row){
                 $pdf->Cell(17,10,$nomor,1,0,'C');
@@ -741,7 +741,7 @@
             $pdf->Cell(42,10,"Saldo Akhir",1,0,'C');
             $pdf->Cell(50,10,"Verifikasi",1,1,'C');
             $pdf->SetFont('Arial','', 10);
-            $result = $this->getTopUpReport("", "", "", "");
+            $result = $this->getTopUpReport2("", "", "", "", 0);
             $nomor = 1;
             foreach($result as $key => $row){
                 $pdf->Cell(17,10,$nomor,1,0,'C');
