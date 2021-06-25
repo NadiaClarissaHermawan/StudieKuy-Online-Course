@@ -16,7 +16,8 @@
         <div class="nav">
             <a href="" class="menuNav">Report</a>
             <div class="menuNavKanan">
-                <a href="" class="material-icons md-36">cloud_download</a>
+                <!-- <a href="" class="material-icons md-36">cloud_download</a> -->
+                <a href="" id="link" class="material-icons md-36">cloud_download</a>
                 <a href="indexAdmin" class="material-icons md-36">home</a>
             </div>
         </div>

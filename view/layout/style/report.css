@@ -8,6 +8,7 @@ table, th, tr, td {
 }
 table {
     border-collapse: collapse;
+    margin-bottom: 5%;
 }
 th {
     padding: 15px;
@@ -23,7 +24,7 @@ td {
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 15%;
 }
 
 .button {

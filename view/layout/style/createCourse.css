@@ -86,3 +86,16 @@ hr {
     font-family: Itim;
     font-weight: bold;
 }
+
+.errorMessage {
+    color: #e74c3c;
+    font-size: 18px;
+    color: red;
+    margin-left: 45%;
+    /*margin-top: 5%;*/
+    visibility: hidden;
+    text-align: center;
+}
+.errorMessage.show {
+    visibility: visible;
+}

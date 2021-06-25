@@ -14,229 +14,217 @@
     <div class="tulisanPutih hurufBesar">New Course Detail</div>
 </div>
 <hr>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Course Name</div>
-    <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat"></div>
-</div>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Course Category</div>
-    <div class="content2-2">:<!-- <input type="text" name="courseCategory" class="kotakInput tulisanCoklat"></div> -->
-    <div class="kotakInput tulisanCoklat">
-        <select id="sel" size = "1" name="ucategory" class="input-option kotakInput tulisanCoklat">
-            <?php 
-                // foreach($result as $key => $row){
-                //     echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
-                // }
-            ?>
-        </select>
+<form method="POST" action="" id="main">
+    <div class="content2 tulisanPutih">
+        <label for="courseName" class="content2-1">Course Name</label>
+        <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat" id="courseName" placeholder="Enter course name" oninput="checkName()"></div>
     </div>
-</div>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Course Description</div>
-    <div class="content2-2">:<input type="text" name="courseDesc" class="kotakInput tulisanCoklat"></div>  
-</div>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Cost</div>
-    <div class="content2-2">:<input type="number" name="courseCost" class="kotakInput tulisanCoklat"></div>  
-</div>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Completeness Criteria</div>
-    <div class="content2-2">:<input type="number" name="courseKKM" class="kotakInput tulisanCoklat"></div>  
-</div>
-<a href="uploadModul"><img src="view/images/createCourse.jpg" class="content-image"></a>
+    <div class="content2">
+        <span class="errorMessage" id="nameError">Nama Course harus diisi!</span>
 
+    </div>
+
+    <div class="content2 tulisanPutih">
+        <label for="courseCat" class="content2-1">Course Category</label>
+        <div class="content2-2">:<input type="text" name="courseCat" class="kotakInput tulisanCoklat" id="courseCat" placeholder="Enter course category" oninput="checkCat()"></div>
+        <!-- <div class="kotakInput tulisanCoklat">
+            <select id="sel" size = "1" name="ucategory" class="input-option kotakInput tulisanCoklat">
+                <?php 
+                    // foreach($result as $key => $row){
+                    //     echo '<option value="'.$row->getIdKota().'">'.$row->getNamaKota().'</option>';
+                    // }
+                ?>
+            </select>
+        </div> -->
+    </div>
+    <div class="content2">
+        <span class="errorMessage" id="catError">Category Course harus diisi!</span>
+    </div>
+
+    <div class="content2 tulisanPutih">
+        <label for="courseDesc" class="content2-1">Course Description</label>
+        <div class="content2-2">:<input type="text" name="courseDesc" class="kotakInput tulisanCoklat" id="courseDesc" placeholder="Enter course description" oninput="checkDesc()"></div>  
+    </div>
+    <div class="content2">
+        <span class="errorMessage" id="descError">Description Course harus diisi!</span>
+    </div>
+
+    <div class="content2 tulisanPutih">
+        <label for="courseCost" class="content2-1">Course Cost</label>
+        <div class="content2-2">:<input type="number" name="courseCost" class="kotakInput tulisanCoklat" id="courseCost" placeholder="Enter course cost" oninput="checkCost()"></div>  
+    </div>
+    <div class="content2">
+        <span class="errorMessage" id="costError">Tarif Course harus diisi!</span>
+    </div>
+
+    <div class="content2 tulisanPutih">
+        <label for="courseKKM" class="content2-1">Completeness Criteria</label>
+        <div class="content2-2">:<input type="number" name="courseKKM" class="kotakInput tulisanCoklat" id="courseKKM" placeholder="Enter completeness criteria" oninput="checkKKM()"></div>  
+    </div>
+    <div class="content2">
+        <span class="errorMessage" id="kkmError">Nilai minimum Course harus diisi!</span>
+    </div>
+
+    <div class="content2 tulisanPutih">
+        <label for="courseImg" class="content2-1">Course Image</label>
+        <div class="content2-2">:<input type="file" name="courseImg" class="kotakInput tulisanCoklat" id="courseImg"></div>
+    </div>
+
+    <a href="uploadModul"><img src="view/images/createCourse.jpg" class="content-image" id="create" onclick="checkValidation()"></a>
+</form>
+    
 <script>
-    //script untuk scroll select-option kota
-        document.getElementById('sel').addEventListener('click', onClickHandler);
-        document.getElementById('sel').addEventListener('mousedown', onMouseDownHandler);
+    const form = document.getElementById('main');
+    const name = document.getElementById('courseName');
+    const category = document.getElementById('courseCat');
+    const desc = document.getElementById('courseDesc');
+    const cost = document.getElementById('courseCost');
+    const kkm = document.getElementById('courseKKM');
+    const img = document.getElementById('courseImg');
+    
+    let idName = document.getElementById('nameError');
+    let idCat = document.getElementById('catError');
+    let idDesc = document.getElementById('descError');
+    let idCost = document.getElementById('costError');
+    let idKKM = document.getElementById('kkmError');
 
-        function onMouseDownHandler(e){
-            var el = e.currentTarget;
-            
-            if(el.hasAttribute('size') && el.getAttribute('size') == '1'){
-                e.preventDefault();    
-            }
+    function checkValidation() {
+        if(checkName() && checkCat() && checkDesc() && checkCost() && checkKKM() && checkImg()){
+            return true;
         }
-        function onClickHandler(e) {
-            var el = e.currentTarget; 
-
-            if (el.getAttribute('size') == '1') {
-                el.className += " selectOpen";
-                el.setAttribute('size', '3');
-            }
-            else {
-                el.className = '';
-                el.className += " input-option";
-                el.setAttribute('size', '1');
-            }
-        }
-        // --------------------------------------------------------------------------------------------
-        const form = document.getElementById('main');
-        const user = document.getElementById('uname');
-        const name = document.getElementById('urealname');
-        const pass = document.getElementById('upass');
-        const addr = document.getElementById('uaddress');
-        const email = document.getElementById('uemail');
-        const phone = document.getElementById('uphone');
-        
-        let idU = document.getElementById('userError');
-        const idName = document.getElementById('nameError');
-        const idPw = document.getElementById('pwError');
-        const idAddr = document.getElementById('addrError');
-        let idEmail = document.getElementById('emailError');
-        const idPhone = document.getElementById('phoneError');
-        const dupli = document.getElementById('error');
-
-        function checkValidation() {
-            if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkURealName()){
-                return true;
-            }
-            else{
-                event.preventDefault();
-                if(!checkUName()){
-                    idU.textContent = "Username harus terdiri lebih dari 8 karakter!";
-                    setError(user, idU);
-                }
-                if(!checkURealName()){
-                    setError(name, idName);
-                }
-                if(!checkPw()){
-                    setError(pass, idPw);
-                }
-                if(!checkAddress()){
-                    setError(addr, idAddr);
-                }
-                if(!checkEmail()){
-                    idEmail.textContent = "Email tidak valid!";
-                    idEmail.style.marginLeft = "0px";
-                    setError(email, idEmail);
-                }
-                if(!checkPhone()){
-                    setError(phone, idPhone);
-                }
-                return false;
-            }
-        }
-        
-        function errorHandler(){
-            console.log(dupli.textContent);
-            if(dupli.textContent === 'UsernameEmail'){
-                idU.textContent = 'Username sudah terdaftar !';
-                idU.style.marginLeft = "4.5%";
-                idU.classList.remove('errorMessage');
-
-                idEmail.textContent = 'Email sudah terdaftar !';
-                idEmail.classList.remove('errorMessage');
-                idEmail.style.marginLeft = "2.4%";
-
-                dupli.textContent = "";
-
-            }else if(dupli.textContent === 'Username'){
-                idU.textContent = 'Username sudah terdaftar !';
-                idU.classList.remove('errorMessage');
-                idU.style.marginLeft = "4.5%";
-                dupli.textContent = "";
-
-            }else if(dupli.textContent = 'Email'){
-                idEmail.textContent = 'Email sudah terdaftar !';
-                idEmail.classList.remove('errorMessage');
-                idEmail.style.marginLeft = "2.4%";
-                dupli.textContent = "";
-
-            }else{
-                return;
-            }
-        }
-
-        function checkUName() {
-            const username = user.value.trim();
-
-            if(username === '' || username.length < 8){
-                idU.textContent = 'Username harus terdiri lebih dari 8 karakter';
-                setError(user, idU);
-                return false;
-            }
-            else {
-                setSuccess(user, idU);
-                return true;
-            }
-        }
-
-        function checkURealName(){
-            const namee = name.value.trim();
-
-            if(namee === '' || namee.length < 3){
+        else{
+            event.preventDefault();
+            if(!checkName()){
                 setError(name, idName);
-                return false;
             }
-            else {
-                setSuccess(name, idName);
-                return true;
+            if(!checkCat()){
+                setError(category, idCat);
             }
+            if(!checkDesc()){
+                setError(desc, idDesc);
+            }
+            if(!checkCost()){
+                setError(cost, idCost);
+            }
+            if(!checkKKM()){
+                setError(kkm, idKKM);
+            }
+            return false;
         }
+    }
 
-        function checkPw() {
-            const password = pass.value;
+    function checkName() {
+        const courseName = name.value;
 
-            if(password.length < 8 || password === ''){
-                setError(pass, idPw);
-                return false;
-            }
-            else {
-                setSuccess(pass, idPw);
-                return true;
-            }
+        if(courseName === ''){
+            setError(name, idName);
+            return false;
         }
-
-        function checkAddress() {
-            const address = addr.value;
-            
-            if(address === ''){
-                setError(addr, idAddr);
-                return false;
-            }
-            else {
-                setSuccess(addr, idAddr);
-                return true;
-            }
+        else {
+            setSuccess(name, idName);
+            alert('success');
+            return true;
         }
+    }
 
-        function checkEmail() {
-            const emailUser = email.value;
-            const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+    function checkCat(){
+        const cat = category.value;
 
-            if(!emailUser.match(emailFormat)){ 
-                idEmail.textContent = "Email tidak valid !"
-                setError(email, idEmail);
-                return false;
-            }
-            else {
-                setSuccess(email, idEmail);
-                return true;
-            }
+        if(cat === ''){
+            setError(category, idCat);
+            return false;
         }
-
-        function checkPhone() {
-            const phoneUser = phone.value;
-            if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
-                setSuccess(phone, idPhone);
-                return true;
-            }
-            else {
-                setError(phone, idPhone);
-                return false;
-            }
+        else {
+            setSuccess(category, idCat);
+            return true;
         }
+    }
 
-        function setError(input, idInput){
-            input.className = 'kotakInput error';
-            idInput.className = 'errorMessage show';
+    function checkDesc() {
+        const description = desc.value;
+
+        if(description === ''){
+            setError(desc, idDesc);
+            return false;
         }
-
-        function setSuccess(input, idInput){
-            input.className = 'kotakInput';
-            idInput.className = 'errorMessage';
+        else {
+            setSuccess(desc, idDesc);
+            return true;
         }
+    }
 
-        errorHandler();
+    function checkCost() {
+        const tarif = cost.value;
+
+        if(tarif == ''){ 
+            setError(cost, idCost);
+            return false;
+        }
+        else {
+            setSuccess(cost, idCost);
+            return true;
+        }
+    }
+
+    function checkKKM() {
+        const btsNilai = kkm.value;
+        
+        if(btsNilai == ''){
+            setError(kkm, idKKM);
+            return false;
+        }
+        else {
+            setSuccess(kkm, idKKM);
+            return true;
+        }
+    }
+
+    function checkImg() {
+        const images = img.value;
+        if(images === ""){ 
+            img.src = "empty.jpg";
+        }
+        return true;
+    }
+
+    function setError(input, idInput){
+        input.className = 'kotakInput error';
+        idInput.className = 'errorMessage show';
+    }
+
+    function setSuccess(input, idInput){
+        input.className = 'kotakInput';
+        idInput.className = 'errorMessage';
+    }
+    
+    function errorHandler(){
+        console.log(dupli.textContent);
+        if(dupli.textContent === 'UsernameEmail'){
+            idU.textContent = 'Username sudah terdaftar !';
+            idU.style.marginLeft = "4.5%";
+            idU.classList.remove('errorMessage');
+
+            idEmail.textContent = 'Email sudah terdaftar !';
+            idEmail.classList.remove('errorMessage');
+            idEmail.style.marginLeft = "2.4%";
+
+            dupli.textContent = "";
+
+        }else if(dupli.textContent === 'Username'){
+            idU.textContent = 'Username sudah terdaftar !';
+            idU.classList.remove('errorMessage');
+            idU.style.marginLeft = "4.5%";
+            dupli.textContent = "";
+
+        }else if(dupli.textContent = 'Email'){
+            idEmail.textContent = 'Email sudah terdaftar !';
+            idEmail.classList.remove('errorMessage');
+            idEmail.style.marginLeft = "2.4%";
+            dupli.textContent = "";
+
+        }else{
+            return;
+        }
+    }
+    errorHandler();
 </script>
