@@ -446,8 +446,9 @@
                 require_once "control/indexTeacherController.php";
                 $crsCtrl = new uploadModulController();
                 echo $crsCtrl->addModul();
+                header('Location: createExam');
                 break;
-                
+
             default :
                 echo '404 not found';
                 break;

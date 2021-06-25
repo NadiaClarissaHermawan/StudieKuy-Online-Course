@@ -14,18 +14,26 @@
     <div class="tulisanPutih hurufBesar">Course Module</div>
 </div>
 <hr>
-<form id="container" action="uploadModul" method="POST" enctype="multipart/form-data">
-    <?php $nomor = 1?>
-    <div class="content2 tulisanPutih" id="mod">
-        <div class="content2-1"><input type="text" class="nama-modul" name="modul<?php echo $nomor?>" autofocus placeholder="Enter modul name.."></div>
-        <div class="content2-2">:</div>
-        <div class="content2-3">
-            <i class="material-icons md-36">cloud_upload</i>
-            <div class="upload">Upload a Module</div>
-            <input type="file" style="margin-left: 15%; margin-top: 3%;" id="video" name="video<?php echo $nomor?>" accept="mp4/*"/> 
+<div>
+    <form class="insert-form" name="form" id="container" method="POST" action="uploadModul" enctype="multipart/form-data">
+        <?php $nomor = 1?>
+
+        <div class="content2 tulisanPutih" id="mod">
+            <div class="content2-1"><input type="text" required="" class="nama-modul" name="modul<?php echo $nomor?>" autofocus placeholder="Enter modul name.."></div>
+            <div class="content2-2">:</div>
+            <div class="content2-3">
+                <i class="material-icons md-36">cloud_upload</i>
+                <div class="upload">Upload a Module</div>
+                <input type="file" style="margin-left: 15%; margin-top: 3%;" required="" id="video" name="video<?php echo $nomor?>" accept="mp4/*"/> 
+            </div>
+            <div>
+                <input type="text" required="" >
+            </div>
         </div>
-    </div>
-</form>
+        <div hidden id="batasan"></div>
+    
+    </form>
+</div>
 
 <button class="button" id="button" onclick="addModule()" >Add New Module</button>
 <a href="createCourse"><button class="buttonL">Back</button></a>
@@ -84,11 +92,12 @@
         
         content23.appendChild(videoModul);
 
-        let button = document.getElementById("button");
-        document.body.insertBefore(content2, button);
+        let button = document.getElementById("container");
+        button.append(content2);
     }
 
     function submitModul(){
+        event.preventDefault();
         let form = document.getElementById("container");
         form.submit();
     }

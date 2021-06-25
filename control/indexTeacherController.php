@@ -52,6 +52,7 @@
             return View::createViewCreateCourse('createCourse.php', []);
         }
     }
+
     class uploadModulController{
         protected $db;
 
@@ -62,7 +63,14 @@
         public function view_uploadModul(){
             return View::createViewUploadModul('uploadModul.php', []);
         }
+
+        //tambahin modul yg sdh di create --> kacau
+        public function addModul(){
+            var_dump($_POST['video1']);
+            die;
+        }
     }
+
     class createExamController{
         protected $db;
 
