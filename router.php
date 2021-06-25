@@ -333,7 +333,14 @@
                 $teacherExamCtrl = new teacherCourseController();
                 echo $teacherExamCtrl->view_teacherCourseExam();
                 break;
-            
+                
+            //logout teacher
+            case $baseURL.'/teacherLogout':
+                require_once "control/teacherLoginController.php";
+                $logoutCtrl = new teacherLoginController();
+                echo $logoutCtrl->logout();
+                break;
+
             default :
                 echo '404 not found';
                 break;

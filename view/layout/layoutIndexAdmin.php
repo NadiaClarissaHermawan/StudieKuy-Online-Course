@@ -10,7 +10,7 @@
     	<div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Admin Studie Kuy !</h1>
-            <a href="adminLogout"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">ADMIN LOG OUT</button></a> 
+            <a href="adminLogout"><button type="submit" class="tulisanCoklat">ADMIN LOG OUT</button></a> 
         </div>
         
         <div class="nav">

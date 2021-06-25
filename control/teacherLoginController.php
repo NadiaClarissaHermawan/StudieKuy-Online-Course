@@ -32,7 +32,6 @@
                 $pass_asli = $resQuery[0]['pass'];
                 $stat = $resQuery[0]['status'];
 
-                //kalo username tdk tercantum di tabel Pengajar --> how biar ga redirect?
                 if(empty($pass_asli)){
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: teacherLogin');
@@ -57,9 +56,20 @@
                     }else{
                         $_SESSION['unameNotFound'] = $uname;
                         header('Location: teacherLogin');
+                        die;
                     }
                 }
             }
+        }
+
+        //logout teacher
+        public function logout(){
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+            session_destroy();
+            header('Location: teacherLogin');
+            die;
         }
     }
 ?>
