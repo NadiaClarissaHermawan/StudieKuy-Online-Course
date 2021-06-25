@@ -68,7 +68,7 @@
                 //belum ada
                 if(empty($resQueryUname) && empty($resQueryEmail)){
                     $profpic = "baseProfilePic.jpg";
-                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture) VALUES (3, '$username', '$realname' ,'$email','$password', '$profpic')";
+                    $query = "INSERT INTO pengguna (tipe, nama_user, real_name, email, pass, profile_picture, status) VALUES (3, '$username', '$realname' ,'$email','$password', '$profpic', '1')";
                     $this->db->executeNonSelectQuery($query);
 
                     $query = "SELECT id_pengguna FROM pengguna WHERE nama_user = '$username' AND pass = '$password' AND email = '$email'";
