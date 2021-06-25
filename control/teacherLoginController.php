@@ -18,7 +18,6 @@
         public function klik_login(){
             $uname = $_POST['uname'];
             $upass = $_POST['upass'];
-
             if(isset($uname) && $uname!="" && isset($upass) && $uname!=""){
                 $uname = $this->db->escapeString($uname);
                 $upass = $this->db->escapeString($upass);
@@ -31,7 +30,8 @@
                 $resQuery = $this->db->executeSelectQuery($query);
                 $pass_asli = $resQuery[0]['pass'];
                 $stat = $resQuery[0]['status'];
-
+               
+                //username not found
                 if(empty($pass_asli)){
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: teacherLogin');
@@ -50,11 +50,13 @@
                     
                     $_SESSION['id_pengguna'] = $resQuery[0]['id_pengguna'];
                     $_SESSION['statusTeacher'] = 1;
-                    header('Location: indexTeacher?');
+                    header('Location: indexTeacher');
 
                     //password salah
                     }else{
                         $_SESSION['unameNotFound'] = $uname;
+                        var_dump("salah");
+                        die;
                         header('Location: teacherLogin');
                         die;
                     }

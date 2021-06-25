@@ -19,7 +19,7 @@
                 session_start();
             }
             //sudah login
-            if(isset($_SESSION['status'])){
+            if(isset($_SESSION['statusTeacher'])){
                 $id = $_SESSION['id_pengguna'];
                 $query = "SELECT u.real_name, u.nama_user, u.email, u.pass, t.pendidikan_terakhir, u.profile_picture, t.alamat, t.kontak
                         FROM pengajar t INNER JOIN pengguna u
@@ -37,7 +37,7 @@
             //belum login
             }else{
                 session_destroy();
-                return View::createView('indexTeacher.php', []);
+                return View::createView('teacherLogin.php', []);
             }
         }
     }
