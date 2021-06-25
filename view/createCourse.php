@@ -17,15 +17,16 @@
 <form method="POST" action="" id="main">
     <div class="content2 tulisanPutih">
         <label for="courseName" class="content2-1">Course Name</label>
-        <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat" id="courseName" placeholder="Enter course name" onchange="checkName()"></div>
+        <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat" id="courseName" placeholder="Enter course name" oninput="checkName()"></div>
     </div>
     <div class="content2">
-        <span class="errorMessage" id="nameError" style="margin-left: 100px;">Nama Course harus diisi!</span>
+        <span class="errorMessage" id="nameError">Nama Course harus diisi!</span>
+
     </div>
 
     <div class="content2 tulisanPutih">
         <label for="courseCat" class="content2-1">Course Category</label>
-        <div class="content2-2">:<input type="text" name="courseCat" class="kotakInput tulisanCoklat" id="courseCat" placeholder="Enter course category" onchange="checkCat()"></div>
+        <div class="content2-2">:<input type="text" name="courseCat" class="kotakInput tulisanCoklat" id="courseCat" placeholder="Enter course category" oninput="checkCat()"></div>
         <!-- <div class="kotakInput tulisanCoklat">
             <select id="sel" size = "1" name="ucategory" class="input-option kotakInput tulisanCoklat">
                 <?php 
@@ -37,31 +38,31 @@
         </div> -->
     </div>
     <div class="content2">
-        <span class="errorMessage" id="catError" style="margin-left: 100px;">Category Course harus diisi!</span>
+        <span class="errorMessage" id="catError">Category Course harus diisi!</span>
     </div>
 
     <div class="content2 tulisanPutih">
         <label for="courseDesc" class="content2-1">Course Description</label>
-        <div class="content2-2">:<input type="text" name="courseDesc" class="kotakInput tulisanCoklat" id="courseDesc" placeholder="Enter course description" onchange="checkDesc()"></div>  
+        <div class="content2-2">:<input type="text" name="courseDesc" class="kotakInput tulisanCoklat" id="courseDesc" placeholder="Enter course description" oninput="checkDesc()"></div>  
     </div>
     <div class="content2">
-        <span class="errorMessage" id="descError" style="margin-left: 100px;">Description Course harus diisi!</span>
+        <span class="errorMessage" id="descError">Description Course harus diisi!</span>
     </div>
 
     <div class="content2 tulisanPutih">
         <label for="courseCost" class="content2-1">Course Cost</label>
-        <div class="content2-2">:<input type="number" name="courseCost" class="kotakInput tulisanCoklat" id="courseCost" placeholder="Enter course cost" onchange="checkCost()"></div>  
+        <div class="content2-2">:<input type="number" name="courseCost" class="kotakInput tulisanCoklat" id="courseCost" placeholder="Enter course cost" oninput="checkCost()"></div>  
     </div>
     <div class="content2">
-        <span class="errorMessage" id="costError" style="margin-left: 100px;">Tarif Course harus diisi!</span>
+        <span class="errorMessage" id="costError">Tarif Course harus diisi!</span>
     </div>
 
     <div class="content2 tulisanPutih">
         <label for="courseKKM" class="content2-1">Completeness Criteria</label>
-        <div class="content2-2">:<input type="number" name="courseKKM" class="kotakInput tulisanCoklat" id="courseKKM" placeholder="Enter completeness criteria" onchange="checkKKM()"></div>  
+        <div class="content2-2">:<input type="number" name="courseKKM" class="kotakInput tulisanCoklat" id="courseKKM" placeholder="Enter completeness criteria" oninput="checkKKM()"></div>  
     </div>
     <div class="content2">
-        <span class="errorMessage" id="kkmError" style="margin-left: 100px;">Nilai minimum Course harus diisi!</span>
+        <span class="errorMessage" id="kkmError">Nilai minimum Course harus diisi!</span>
     </div>
 
     <div class="content2 tulisanPutih">
@@ -73,7 +74,6 @@
 </form>
     
 <script>
-    document.getElementById("create").addEventListener("click", checkValidation());
     const form = document.getElementById('main');
     const name = document.getElementById('courseName');
     const category = document.getElementById('courseCat');
@@ -116,7 +116,7 @@
     function checkName() {
         const courseName = name.value;
 
-        if(courseName === '' || courseName.length < 10){
+        if(courseName === ''){
             setError(name, idName);
             return false;
         }
@@ -224,31 +224,6 @@
 
         }else{
             return;
-        }
-    }
-
-    //script untuk scroll select-option kota
-    document.getElementById('sel').addEventListener('click', onClickHandler);
-    document.getElementById('sel').addEventListener('mousedown', onMouseDownHandler);
-
-    function onMouseDownHandler(e){
-        var el = e.currentTarget;
-        
-        if(el.hasAttribute('size') && el.getAttribute('size') == '1'){
-            e.preventDefault();    
-        }
-    }
-    function onClickHandler(e) {
-        var el = e.currentTarget; 
-
-        if (el.getAttribute('size') == '1') {
-            el.className += " selectOpen";
-            el.setAttribute('size', '3');
-        }
-        else {
-            el.className = '';
-            el.className += " input-option";
-            el.setAttribute('size', '1');
         }
     }
     errorHandler();
