@@ -17,7 +17,7 @@
     <div class="title">
         <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
         <div class="title-kanan">
-            <span class="material-icons md-36" id="del">delete</span>
+            <span class="material-icons md-36" id="del" onclick="deleteAccount()">delete</span>
             <a href="signOutUser" class="tulisanPutih hurufSedang" id="out">Sign Out</a>
         </div>
     </div>
@@ -130,8 +130,16 @@
                         </td>
             </div>
         </form>
-    </div>    
+    </div>
 </div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p class="tulisanHitam">Are you sure you want to delete this account?</p>
+        <!-- ini ga submit jawaban  -->
+        <a href=""><button class="buttonM tulisanCoklat hurufSedang">Yes</button></a>
+        <button id="close" class="buttonM tulisanCoklat hurufSedang">No</button>
+    </div>
+</div> 
 
 <script defer>
 	let formData = new FormData();
@@ -185,155 +193,182 @@
     const dupli = document.getElementById('error');
 
     function checkValidation() {
-        	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkURealName()){
-        		return true;
-        	}
-        	else{
-        		event.preventDefault();
-                if(!checkUName()){
-					idU.textContent = "Username harus terdiri lebih dari 8 karakter!";
-                    setError(user, idU);
-                }
-				if(!checkURealName()){
-					setError(name, idName);
-				}
-                if(!checkPw()){
-                    setError(pass, idPw);
-                }
-                if(!checkAddress()){
-                    setError(addr, idAddr);
-                }
-                if(!checkEmail()){
-					idEmail.textContent = "Email tidak valid!";
-					idEmail.style.marginLeft = "0px";
-                    setError(email, idEmail);
-                }
-                if(!checkPhone()){
-                    setError(phone, idPhone);
-                }
-                return false;
-        	}
-        }
-		
-		function errorHandler(){
-			if(dupli.textContent === 'UsernameEmail'){
-				idU.textContent = 'Username sudah terdaftar !';
-				idU.style.marginLeft = "4.5%";
-				idU.classList.remove('errorMessage');
-
-				idEmail.textContent = 'Email sudah terdaftar !';
-				idEmail.classList.remove('errorMessage');
-				idEmail.style.marginLeft = "2.4%";
-
-				dupli.textContent = "";
-
-			}else if(dupli.textContent === 'Username'){
-				idU.textContent = 'Username sudah terdaftar !';
-				idU.classList.remove('errorMessage');
-				idU.style.marginLeft = "4.5%";
-				dupli.textContent = "";
-
-			}else if(dupli.textContent = 'Email'){
-				idEmail.textContent = 'Email sudah terdaftar !';
-				idEmail.classList.remove('errorMessage');
-				idEmail.style.marginLeft = "2.4%";
-				dupli.textContent = "";
-
-			}else{
-				return;
-			}
-		}
-
-        function checkUName() {
-            const username = user.value.trim();
-
-            if(username === '' || username.length < 8){
-				idU.textContent = 'Username harus terdiri lebih dari 8 karakter';
+    	if(checkUName() && checkPw() && checkAddress() && checkCity() && checkEmail() && checkPhone() && checkURealName()){
+    		return true;
+    	}
+    	else{
+    		event.preventDefault();
+            if(!checkUName()){
+				idU.textContent = "Username harus terdiri lebih dari 8 karakter!";
                 setError(user, idU);
-                return false;
             }
-            else {
-                setSuccess(user, idU);
-                return true;
-            }
-        }
-
-		function checkURealName(){
-			const namee = name.value.trim();
-
-            if(namee === '' || namee.length < 3){
-                setError(name, idName);
-                return false;
-            }
-            else {
-                setSuccess(name, idName);
-                return true;
-            }
-		}
-
-        function checkPw() {
-            const password = pass.value;
-
-            if(password.length < 8 || password === ''){
+			if(!checkURealName()){
+				setError(name, idName);
+			}
+            if(!checkPw()){
                 setError(pass, idPw);
-                return false;
             }
-            else {
-                setSuccess(pass, idPw);
-                return true;
+            if(!checkAddress()){
+                setError(addr, idAddr);
             }
+            if(!checkEmail()){
+				idEmail.textContent = "Email tidak valid!";
+				idEmail.style.marginLeft = "0px";
+                setError(email, idEmail);
+            }
+            if(!checkPhone()){
+                setError(phone, idPhone);
+            }
+            return false;
+    	}
+    }
+	
+	function errorHandler(){
+		if(dupli.textContent === 'UsernameEmail'){
+			idU.textContent = 'Username sudah terdaftar !';
+			idU.style.marginLeft = "4.5%";
+			idU.classList.remove('errorMessage');
+
+			idEmail.textContent = 'Email sudah terdaftar !';
+			idEmail.classList.remove('errorMessage');
+			idEmail.style.marginLeft = "2.4%";
+
+			dupli.textContent = "";
+
+		}else if(dupli.textContent === 'Username'){
+			idU.textContent = 'Username sudah terdaftar !';
+			idU.classList.remove('errorMessage');
+			idU.style.marginLeft = "4.5%";
+			dupli.textContent = "";
+
+		}else if(dupli.textContent = 'Email'){
+			idEmail.textContent = 'Email sudah terdaftar !';
+			idEmail.classList.remove('errorMessage');
+			idEmail.style.marginLeft = "2.4%";
+			dupli.textContent = "";
+
+		}else{
+			return;
+		}
+	}
+
+    function checkUName() {
+        const username = user.value.trim();
+
+        if(username === '' || username.length < 8){
+			idU.textContent = 'Username harus terdiri lebih dari 8 karakter';
+            setError(user, idU);
+            return false;
         }
-
-        function checkAddress() {
-        	const address = addr.value;
-        	
-        	if(address === ''){
-        		setError(addr, idAddr);
-        		return false;
-        	}
-        	else {
-        		setSuccess(addr, idAddr);
-        		return true;
-        	}
+        else {
+            setSuccess(user, idU);
+            return true;
         }
+    }
 
-        function checkEmail() {
-        	const emailUser = email.value;
-        	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+	function checkURealName(){
+		const namee = name.value.trim();
 
-        	if(!emailUser.match(emailFormat)){ 
-				idEmail.textContent = "Email tidak valid !"
-        		setError(email, idEmail);
-        		return false;
-        	}
-        	else {
-        		setSuccess(email, idEmail);
-        		return true;
-        	}
+        if(namee === '' || namee.length < 3){
+            setError(name, idName);
+            return false;
         }
-
-        function checkPhone() {
-        	const phoneUser = phone.value;
-         	if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
-         		setSuccess(phone, idPhone);
-        		return true;
-        	}
-        	else {
-        		setError(phone, idPhone);
-        		return false;
-        	}
+        else {
+            setSuccess(name, idName);
+            return true;
         }
+	}
 
-        function setError(input, idInput){
-            input.className = 'kotakInput2 error tulisanPutih';
-            input.style.width = "100%";
-            idInput.className = 'errorMessage show';
+    function checkPw() {
+        const password = pass.value;
+
+        if(password.length < 8 || password === ''){
+            setError(pass, idPw);
+            return false;
         }
-
-        function setSuccess(input, idInput){
-            input.className = 'edit-input-box tulisanPutih';
-            idInput.className = 'errorMessage';
+        else {
+            setSuccess(pass, idPw);
+            return true;
         }
+    }
 
-		errorHandler();
+    function checkAddress() {
+    	const address = addr.value;
+    	
+    	if(address === ''){
+    		setError(addr, idAddr);
+    		return false;
+    	}
+    	else {
+    		setSuccess(addr, idAddr);
+    		return true;
+    	}
+    }
+
+    function checkEmail() {
+    	const emailUser = email.value;
+    	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+    	if(!emailUser.match(emailFormat)){ 
+			idEmail.textContent = "Email tidak valid !"
+    		setError(email, idEmail);
+    		return false;
+    	}
+    	else {
+    		setSuccess(email, idEmail);
+    		return true;
+    	}
+    }
+
+    function checkPhone() {
+    	const phoneUser = phone.value;
+     	if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
+     		setSuccess(phone, idPhone);
+    		return true;
+    	}
+    	else {
+    		setError(phone, idPhone);
+    		return false;
+    	}
+    }
+
+    function setError(input, idInput){
+        input.className = 'kotakInput2 error tulisanPutih';
+        input.style.width = "100%";
+        idInput.className = 'errorMessage show';
+    }
+
+    function setSuccess(input, idInput){
+        input.className = 'edit-input-box tulisanPutih';
+        idInput.className = 'errorMessage';
+    }
+
+	errorHandler();
+
+    function deleteAccount(){
+        let del = confirm("Are you sure you want to delete this account?");
+
+        if(del){
+            alert("Account has been deleted.");
+        }
+    }
+
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("del");
+    let span = document.getElementById("close");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+        modal.style.visibility = "visible";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>

@@ -23,19 +23,25 @@
                 $uname = $this->db->escapeString($uname);
                 $upass = $this->db->escapeString($upass);
                 
-                $query = "SELECT p.pass
+                $query = "SELECT p.pass, p.status
                           FROM member m INNER JOIN pengguna p
                           ON m.id_pengguna = p.id_pengguna
                           WHERE m.id_pengguna = (SELECT id_pengguna FROM pengguna WHERE nama_user = '$uname')
                          ";
-                $pass_asli = $this->db->executeSelectQuery($query);
+                $resQuery = $this->db->executeSelectQuery($query);
+                $pass_asli = $resQuery[0]['pass'];
+                $stat = $resQuery[0]['status'];
 
                 //kalo username tdk tercantum di tabel MEMBER 
                 if(empty($pass_asli)){
                     $_SESSION['unameNotFound'] = 0;
                     header('Location: userLogin');
-
-                }else{
+                }
+                else if($stat == 0) {
+                    $_SESSION['unameNotFound'] = 0;
+                    header('Location: userLogin');                    
+                }
+                else{
                     //password benar
                     if($upass == $pass_asli[0]['pass']){
                         $query = "SELECT p.id_pengguna 
