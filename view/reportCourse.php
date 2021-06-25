@@ -20,14 +20,7 @@
             <!-- 1 -->
             <div class="content2-1">Member Name</div>
             <div style="font-size: 1.5vw; width:3%; display:flex; align-items:center; margin-left:0.3%">:</div>
-            <?php
-                //filter nama
-                if(isset($nama)){
-                    echo '<div class="content2-2"><input type="text" id="filterName" name="filterName" placeholder="Cari nama Member.." value="'.$nama.'" class="kotakInput tulisanCoklat" autofocus style="margin-right: -4%;" autocomplete="off"></div>';
-                }else{
-                    echo '<div class="content2-2"><input type="text" id="filterName" name="filterName" placeholder="Cari nama Member.." class="kotakInput tulisanCoklat" autofocus style="margin-right: -4%;" autocomplete="off"></div>';
-                }
-            ?>
+            <div class="content2-2"><input type="text" id="filterName" name="filterName" placeholder="Cari nama Member.." class="kotakInput tulisanCoklat" autofocus style="margin-right: -4%;" autocomplete="off"></div>
             
             <!-- 2 -->
             <div class="content2-3">Completeness Status</div>
