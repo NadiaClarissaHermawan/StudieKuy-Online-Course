@@ -47,6 +47,17 @@
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
             }
+
+            $start = 0;
+            if(isset($_GET['start']) && $_GET['start'] != ""){
+                //page
+                $start = $_GET['start'];
+                //index start
+                $indexStart = (($start-1)*3);
+            }else{
+                $indexStart = 0;
+            }
+
             //sudah login
             if(isset($_SESSION['status'])){
                 $id = $_SESSION['id_pengguna'];
@@ -69,13 +80,30 @@
                                                 WHERE p.id_pengguna = '$id'
                                                 )
                          ";
+                $query .= " LIMIT 3 OFFSET $indexStart";
                 $queryResult = $this->db->executeSelectQuery($query);
                 $result = [];
                 foreach($queryResult as $key =>$value){
                     $result[] = new ListMemberCourse($value['id_memCourse'], $value['id_courses'], $value['nama_course']);
                 }
+
+                //hitung jmlh page max
+                $resultSize = count($result);
+                $query = "SELECT COUNT(id_memCourse) AS 'jmlh'
+                          FROM member_course
+                          WHERE id_member = (SELECT m.id_member 
+                                                FROM member m INNER JOIN pengguna p
+                                                ON m.id_pengguna = p.id_pengguna
+                                                WHERE p.id_pengguna = '$id'
+                                            )
+                         ";
+                $ress = $this->db->executeSelectQuery($query)[0]['jmlh'];
+                $jumlahPage = ($ress/3)+1;
+
                 return View::createViewList('list.php', [
-                    "result" => $result
+                    "result" => $result,
+                    "jmlhPage"=>$jumlahPage,
+                    "indexStart"=>$indexStart
                 ], $saldo);
             
             //belum login
