@@ -371,6 +371,24 @@
                 echo $editTeach->viewEditTeacherProfile();
                 break;
 
+            case $baseURL.'/chartTransactionCourse':
+                require_once "control/reportController.php";
+                $reportCtrl = new reportController();
+                echo $reportCtrl->showTCourseChart();
+                break;
+
+            case $baseURL.'/chartCourse':
+                require_once "control/reportController.php";
+                $reportCtrl = new reportController();
+                echo $reportCtrl->showCourseChart();
+                break;
+
+            case $baseURL.'/chartTopupCourse':
+                require_once "control/reportController.php";
+                $reportCtrl = new reportController();
+                echo $reportCtrl->showTopupChart();
+                break;
+
             default :
                 echo '404 not found';
                 break;
