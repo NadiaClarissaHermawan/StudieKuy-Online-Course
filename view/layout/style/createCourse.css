@@ -98,9 +98,19 @@ hr {
 .errorMessage.show {
     visibility: visible;
 }
+.keterangan-bidang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    text-align: center;
+}
 
 .kotakOpt {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
     height: auto;
     width: 100%;
     /*background-color: #FFFFFF;*/
@@ -109,10 +119,20 @@ hr {
     font-size: 18px;
     padding: 5px;
     border-radius: 10px;
+    margin-left: 5%;
     /*margin-left: 25%;*/
 }
 
 #courseCat{
     /*display: flex;*/
     margin: 3%;
+}
+
+.tombol {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 3%;
 }

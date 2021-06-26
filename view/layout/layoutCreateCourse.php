@@ -21,7 +21,8 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">CreateCourse</a>
+            <a href="indexTeacher" class="menuNav">Home /</a>
+            <a href="#" class="menuNavNow">CreateCourse</a>
             <div class="menuNavKanan">
                 <a href="indexTeacher" class="material-icons md-36">home</a>
             </div>

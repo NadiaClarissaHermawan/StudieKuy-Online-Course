@@ -52,6 +52,7 @@
             return View::createViewCreateCourse('createCourse.php', []);
         }
 
+        //bikin keterangan awal course
         public function insertCourse(){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
@@ -62,11 +63,11 @@
                 $id = $_SESSION['id_pengguna'];
                 
                 $name = $_POST['courseName'];
-                $category = $_POST['courseCat'];
+                $category = $_POST['optVal'];
                 $desc = $_POST['courseDesc'];
                 $cost = $_POST['courseCost'];
                 $kkm = $_POST['courseKKM'];
-                $gbr = $_FILES["file"];
+                $gbr = $_FILES['courseImgx'];
 
                 $name = $this->db->escapeString($name);
                 $desc = $this->db->escapeString($desc);
@@ -77,9 +78,11 @@
                         ON t.id_pengguna = u.id_pengguna
                         WHERE t.id_pengguna = '$id'
                         ";
-                $idT = $this->db->executeSelectQuery($query);
+                $idT = $this->db->executeSelectQuery($query)[0]['id_pengajar'];
+                
                 $query = "INSERT INTO courses (nama_course, tarif, batas_nilai_minimum, keterangan_course, id_pengajar, gambar_courses) VALUES ('$name', '$cost', '$kkm', '$desc', '$idT', '$gbr')";
-                $this->db->executeNonSelectQuery($query);;
+                $this->db->executeNonSelectQuery($query);
+
             //belum login
             }else{
                 session_destroy();

@@ -14,13 +14,13 @@
     <div class="tulisanPutih hurufBesar">New Course Detail</div>
 </div>
 <hr>
-<form method="POST" action="" id="main">
+<form method="POST" action="createCourse" id="main" enctype="multipart/form-data">
     <div class="content2 tulisanPutih" style="margin-top: 3%;">
         <label for="courseName" class="content2-1">Course Name</label>
         <div class="content2-2">:<input type="text" name="courseName" class="kotakInput tulisanCoklat" id="courseName" placeholder="Enter course name" oninput="checkName()"></div>
     </div>
     <div class="content2">
-        <span class="errorMessage" id="nameError">Nama Course harus diisi!</span>
+        <span class="errorMessage" id="nameError" style="line-height: 24px;margin-left: 44%;">Nama Course harus diisi!</span>
 
     </div>
 
@@ -28,12 +28,30 @@
         <label for="courseCat" class="content2-1">Course Category</label>
         <div class="content2-2">:
             <div class="kotakOpt">
-                <input type="radio" name="opt" value="1" class="tulisanCoklat" id="courseCat">Computer
-                <input type="radio" name="opt" value="2" class="tulisanCoklat" id="courseCat">Art
-                <input type="radio" name="opt" value="3" class="tulisanCoklat" id="courseCat">Law
-                <input type="radio" name="opt" value="4" class="tulisanCoklat" id="courseCat">Science
-                <input type="radio" name="opt" value="5" class="tulisanCoklat" id="courseCat">Language
-                <input type="radio" name="opt" value="6" class="tulisanCoklat" id="courseCat">Economy
+                <div style="width: 20%; display:flex; align-items:center; justify-content:flex-start">
+                    <input type="radio" name="optVal" value="1" class="tulisanCoklat" id="courseCat1">
+                        <label name="optVal" class="keterangan-bidang" for="courseCat1">Computer</label>
+                </div>
+                <div style="width: 20%; display:flex; align-items:center; justify-content:flex-start; margin-left:4%">
+                    <input type="radio" name="optVal" value="2" class="tulisanCoklat" id="courseCat2">
+                    <label name="optVal" class="keterangan-bidang" for="courseCat2">Art</label>
+                </div>
+                <div style="width: 20%; display:flex; align-items:center; justify-content:flex-start">
+                    <input type="radio" name="optVal" value="3" class="tulisanCoklat" id="courseCat3">
+                    <label name="optVal" class="keterangan-bidang" for="courseCat3">Law</label>
+                </div>
+                <div style="width: 20%; display:flex; align-items:center; justify-content:flex-start">
+                    <input type="radio" name="optVal" value="4" class="tulisanCoklat" id="courseCat4">
+                    <label name="optVal" class="keterangan-bidang" for="courseCat4">Science</label>
+                </div>
+                <div style="width: 20%; display:flex; align-items:center; justify-content:flex-start; margin-left: 2%;margin-right: 4%;">
+                    <input type="radio" name="optVal" value="5" class="tulisanCoklat" id="courseCat5">
+                    <label name="optVal" class="keterangan-bidang" for="courseCat5">Language</label>
+                </div>
+                <div style="width: 20%; display:flex; align-items:center; justify-content:flex-start">
+                    <input type="radio" name="optVal" value="6" class="tulisanCoklat" id="courseCat6">
+                    <label  name="optVal" class="keterangan-bidang" for="courseCat6">Economy</label>
+                </div>
             </div>
         </div>
     </div>
@@ -66,12 +84,16 @@
     </div>
 
     <div class="content2 tulisanPutih">
-        <label for="courseImg" class="content2-1">Course Image</label>
-        <div class="content2-2">:<input type="file" name="courseImg" class="kotakInput tulisanCoklat" id="courseImg"></div>
+        <label for="courseImg" name="courseImg" class="content2-1">Course Image</label>
+        <div class="content2-2">:<input accept="img/*" type="file" name="courseImgx" class="kotakInput tulisanCoklat" id="courseImg"></div>
     </div>
-
-    <a href="uploadModul"><img src="view/images/createCourse.jpg" class="content-image" id="create" onclick="checkValidation()"></a>
-</form>
+    
+    <div class="tombol">
+        <button type="submit" style="padding: 0px; width: 5%; border-radius:20px; margin:0px; border: none">
+            <img src="view/images/createCourse.jpg" style="width: 100%;border-radius:20px" onclick="checkValidation()">
+        </button>
+    </div>
+</form> 
     
 <script>
     const form = document.getElementById('main');
