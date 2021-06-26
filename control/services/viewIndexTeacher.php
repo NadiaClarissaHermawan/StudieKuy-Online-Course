@@ -90,7 +90,7 @@
             }
             $selectedModulName = $selectedModulName;
             $sumberModul = $sumberModul;
-            
+
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();
@@ -102,7 +102,7 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewTeacherExam($view, $param){
+        public static function createViewTeacherExam($view, $param, $namaCourse, $idCourse){
             foreach($param as $key => $value){
                 $$key = $value;
             }

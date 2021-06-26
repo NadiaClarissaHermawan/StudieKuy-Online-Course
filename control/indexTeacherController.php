@@ -5,6 +5,7 @@
     require_once "model/teacher.php";
     require_once "model/courseTeacher.php";
     require_once "model/modul.php";
+    require_once "model/soalUjian.php";
 
     class indexTeacherController{
         protected $db;
@@ -352,12 +353,48 @@
             //belum login
             }else{
                 session_destroy();
-                return View::createViewTeacherModul('indexTeacher.php', []);
+                return View::createView('indexTeacher.php', []);
             }
         }
         
         public function view_teacherCourseExam(){
-            return View::createViewTeacherExam('teacherExam.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+
+            //sudah login
+            if(isset($_SESSION['status'])){
+                $id = $_SESSION['id_pengguna'];
+                // $id_memCourse = $_SESSION['idMemCourse'];
+                $idCourse = $_GET['course'];
+
+                //ambil nama course
+                $query = "SELECT nama_course 
+                          FROM courses
+                          WHERE id_courses = $idCourse";
+                $namaCourse = $this->db->executeSelectQuery($query);
+                $namaCourse = $namaCourse[0]['nama_course'];
+
+                //ambil soal" ujian di course bersangkutan
+                $query = "SELECT *
+                          FROM soal_ujian 
+                          WHERE id_courses = $idCourse
+                          ORDER BY nomor_soal ASC
+                         ";
+                $resultQuery = $this->db->executeSelectQuery($query);
+                $result = [];
+                foreach($resultQuery as $key => $value){
+                    $result[] = new SoalUjian($value['id_soal_ujian'], $value['nomor_soal'], $value['soal'], $value['opsi1'], $value['opsi2'], $value['opsi3'], $value['kunci_jawaban'], $value['id_courses']);
+                }
+
+                return View::createViewTeacherExam('teacherExam.php', [
+                    "result" => $result
+                ], $namaCourse, $idCourse);
+
+            }else{
+                session_destroy();
+                return View::createView('indexTeacher.php', []);
+            }
         }
     }  
 
