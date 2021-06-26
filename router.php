@@ -374,7 +374,7 @@
             case $baseURL.'/chartCourse':
                 require_once "control/reportController.php";
                 $reportCtrl = new reportController();
-                echo $reportCtrl->getCourseReport_filter();
+                echo $reportCtrl->showCourseChart();
                 break;
 
             case $baseURL.'/chartTopupCourse':
