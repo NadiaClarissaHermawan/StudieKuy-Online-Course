@@ -25,8 +25,8 @@
     <?php
         foreach ($result as $key => $value) {
             ?>
-            arrCourse.push(<?php echo $value[0]?>);
-            arrMember.push(<?php echo $value[1]?>);
+            arrCourse.push(<?php echo $value['nama_course']?>);
+            arrMember.push(<?php echo $value['rata2']?>);
             <?php
         }
     ?>
