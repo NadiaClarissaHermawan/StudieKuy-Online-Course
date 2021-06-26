@@ -782,5 +782,18 @@
             }
             $pdf->Output('I','TopUpReportStudieKuy!.pdf');
         }
+
+        //transaction course chart
+        public function showTCourseChart(){
+
+        }
+        //coure report chart
+        public function showCourseChart(){
+            
+        }
+        //top up report chart
+        public function showTopupChart(){
+            
+        }
     }
 ?>
