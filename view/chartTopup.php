@@ -27,9 +27,6 @@
             ?>
             arrTanggal.push('<?php echo $value['tanggal_transaksi_saldo']?>');
             arrJmlhTopup.push('<?php echo $value['total']?>');
-            r = Math.random() % 255;
-            g = Math.random() % 255;
-            b = Math.random() % 255;
             <?php
         }
     ?>
