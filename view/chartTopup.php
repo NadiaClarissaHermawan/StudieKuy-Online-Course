@@ -17,7 +17,7 @@
 <a href="reportTopUp" id="back">Back</a>
 <div style="height:50px;"></div>
 
-<script defer="">
+<script>
     let ch = document.getElementById('myChart').getContext('2d');
 
     var myChart = new Chart(ch, {

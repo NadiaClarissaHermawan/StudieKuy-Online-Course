@@ -380,7 +380,7 @@
             case $baseURL.'/chartCourse':
                 require_once "control/reportController.php";
                 $reportCtrl = new reportController();
-                echo $reportCtrl->showCourseChart();
+                echo $reportCtrl->getCourseReport_filter();
                 break;
 
             case $baseURL.'/chartTopupCourse':
@@ -388,7 +388,7 @@
                 $reportCtrl = new reportController();
                 echo $reportCtrl->showTopupChart();
                 break;
-
+                
             default :
                 echo '404 not found';
                 break;

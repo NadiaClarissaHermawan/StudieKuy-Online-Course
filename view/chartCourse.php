@@ -17,16 +17,27 @@
 <a href="reportCourse" id="back">Back</a>
 <div style="height:50px;"></div>
 
-<script defer="">
+<script defer>
     let ch = document.getElementById('myChart').getContext('2d');
+    let arrCourse = [];
+    let arrMember = [];
 
-    var myChart = new Chart(ch, {
+    <?php
+        foreach ($result as $key => $value) {
+            ?>
+            arrCourse.push(<?php echo $value[0]?>);
+            arrMember.push(<?php echo $value[1]?>);
+            <?php
+        }
+    ?>
+
+    let myChart = new Chart(ch, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: arrCourse,
         datasets: [{
             label: 'Courses Member Report',
-            data: [12, 19, 3, 5, 2, 3],
+            data: arrMember,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

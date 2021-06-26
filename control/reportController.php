@@ -789,10 +789,18 @@
                 // "result"=>$result
             ]);
         }
+
+
         //coure report chart
         public function showCourseChart(){
+            $query = "SELECT c.nama_course, AVG(mc.nilai_akhir) AS 'rata2'
+                      FROM member_course mc INNER JOIN courses c
+                      ON mc.id_courses = c.id_courses
+                      GROUP BY c.nama_course";
+            $result = $this->db->executeSelectQuery($query);
+
             return View::createViewChart('chartCourse.php',[
-                // "result"=>$result
+                "result"=>$result
             ]);
         }
         //top up report chart
