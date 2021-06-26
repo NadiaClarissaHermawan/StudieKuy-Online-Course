@@ -785,8 +785,14 @@
 
         //transaction course chart
         public function showTransactionCourseChart(){
+            $query = "SELECT c.nama_course, COUNT(id_member) AS 'jumlah'
+                      FROM transaksi_course tc INNER JOIN courses c
+                      ON tc.id_courses = c.id_courses
+                      GROUP BY c.nama_course";
+            $result = $this->db->executeSelectQuery($query);
+
             return View::createViewChart('chartTransactionCourse.php',[
-                // "result"=>$result
+                "result"=>$result
             ]);
         }
 
@@ -804,8 +810,13 @@
         }
         //top up report chart
         public function showTopupChart(){
+            $query = "SELECT tanggal_transaksi_saldo, SUM(nominal_pengisian) AS 'total'
+                      FROM transaksi_saldo
+                      GROUP BY tanggal_transaksi_saldo";
+            $result = $this->db->executeSelectQuery($query);
+
             return View::createViewChart('chartTopup.php',[
-                // "result"=>$result
+                "result"=>$result
             ]);
         }
     }
