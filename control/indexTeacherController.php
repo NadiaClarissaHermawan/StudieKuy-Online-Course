@@ -141,6 +141,7 @@
             // var_dump($_POST);
             // var_dump($_FILES);
             $id_courses = $_POST['id_courses'];
+            //dua var dibawah = array of input
             $namaModul = $_POST;
             $video = $_FILES;
 
@@ -203,6 +204,39 @@
 
         public function view_createExam(){
             return View::createViewCreateExam('createExam.php', []);
+        }
+
+        //delete smua yg tadi" udah dibikin & batal
+        public function batalBikin(){
+            $id_courses = $_GET['id_courses'];
+            
+            //delete modulnya
+            $query = "DELETE FROM modul
+                      WHERE id_courses = $id_courses
+                     ";
+            $this->db->executeNonSelectQuery($query);
+
+            //delete coursenya
+            $query = "DELETE FROM courses
+                      WHERE id_courses = $id_courses
+                     ";
+            $this->db->executeNonSelectQuery($query);
+
+            header('Location: teacherIndex');
+            die;
+        }
+
+        //fix jadi bikin course --> tinggal add exam
+        public function bikin(){
+            $id_courses = $_POST['id_courses'];
+            $arrayAll = $_POST;
+
+            foreach($arrayAll as $row){
+                //var_dump($row);
+
+                //pola tetap : question - 
+            }
+            
         }
     }
 

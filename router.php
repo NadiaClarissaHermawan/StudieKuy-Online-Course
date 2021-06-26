@@ -234,12 +234,6 @@
                 echo $teacherProfileCtrl->view_teacherProfile();
                 break;
 
-            case $baseURL.'/signOutTeacher':
-                require_once "control/indexTeacherController.php";
-                $teacherProfileCtrl = new indexTeacherController();
-                echo $teacherProfileCtrl->signOut();
-                break;
-            
             //course dlm 1 bidang
             case $baseURL.'/bidangCourse':
                 require_once "control/indexController.php";
@@ -389,6 +383,12 @@
                 echo $reportCtrl->showTopupChart();
                 break;
                 
+            case $baseURL.'/batalBikinCourse':
+                require_once "control/indexTeacherController.php";
+                $crsCtrl = new createExamController();
+                echo $crsCtrl->batalBikin();
+                break;
+
             default :
                 echo '404 not found';
                 break;
@@ -485,6 +485,12 @@
                 require_once "control/teacherLoginController.php";
                 $ctrl = new teacherLoginController();
                 echo $ctrl->teacherProfileTextEdit();
+                break;
+
+            case $baseURL.'/bikinCourse':
+                require_once "control/indexTeacherController.php";
+                $crsCtrl = new createExamController();
+                echo $crsCtrl->bikin();
                 break;
                 
             default :
