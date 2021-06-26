@@ -101,6 +101,11 @@
   
 
 <script>
+    //tambah link chart
+    let chartLink = document.getElementById('chart');
+    chartLink.href = "chartTopupCourse";
+
+    
     //add link ke pdf report
     let link = document.getElementById("link");
     link.href = "reportTopUpPdf";

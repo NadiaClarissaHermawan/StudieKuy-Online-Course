@@ -784,16 +784,22 @@
         }
 
         //transaction course chart
-        public function showTCourseChart(){
-
+        public function showTransactionCourseChart(){
+            return View::createViewChart('chartTransactionCourse.php',[
+                // "result"=>$result
+            ]);
         }
         //coure report chart
         public function showCourseChart(){
-            
+            return View::createViewChart('chartCourse.php',[
+                // "result"=>$result
+            ]);
         }
         //top up report chart
         public function showTopupChart(){
-            
+            return View::createViewChart('chartTopup.php',[
+                // "result"=>$result
+            ]);
         }
     }
 ?>

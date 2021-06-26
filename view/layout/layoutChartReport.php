@@ -15,9 +15,8 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">Report</a>
+            <a href="" class="menuNav">Report Chart</a>
             <div class="menuNavKanan">
-                <a href="" id="chart" class="material-icons md-36">leaderboard</a>
                 <a href="" id="link" class="material-icons md-36">cloud_download</a>
                 <a href="indexAdmin" class="material-icons md-36">home</a>
             </div>

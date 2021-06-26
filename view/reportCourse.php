@@ -101,9 +101,13 @@
 </div>
 <br>
 <a href="indexAdmin" id="back">Back</a>
-<!-- <a href="reportCoursePdf" class="material-icons md-36">cloud_download</a> -->
+<div style="height:50px;"></div>
 
 <script>
+    //tambah link chart
+    let chartLink = document.getElementById('chart');
+    chartLink.href = "chartCourse";
+
     //add link ke pdf report
     let link = document.getElementById("link");
     link.href = "reportCoursePdf";

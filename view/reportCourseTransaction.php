@@ -90,8 +90,11 @@
 </div>
 <a id="back" href="indexAdmin" >Back</a>
 <div style="height:50px;"></div>
-
 <script>
+    //tambah link chart
+    let chartLink = document.getElementById('chart');
+    chartLink.href = "chartTransactionCourse";
+    
     //add link ke pdf report
     let link = document.getElementById("link");
     link.href = "reportTransactionCoursePdf";
