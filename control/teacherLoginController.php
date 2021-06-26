@@ -111,22 +111,26 @@
         }
 
          //edit profile text info
-         public function profileTextEdit(){
+         public function teacherProfileTextEdit(){
             $id_p = $_SESSION['id_pengguna'];
             $urealname = $_POST['urealname'];
             $uname = $_POST['uname'];
             $upass = $_POST['upass'];
+            $uemail = $_POST['uemail'];
 
             $urealname = $this->db->escapeString($urealname);
             $uname = $this->db->escapeString($uname);
             $upass = $this->db->escapeString($upass);
+            $uemail = $this->db->escapeString($uemail);
 
             //update info yg ada di tabel pengguna
             $query = "UPDATE pengguna 
-                      SET nama_user = '$uname', real_name = '$urealname', pass = '$upass'
+                      SET nama_user = '$uname', real_name = '$urealname', pass = '$upass', email = '$uemail'
                       WHERE id_pengguna = '$id_p'
                      ";
             $this->db->executeNonSelectQuery($query);
+            header('Location: teacherProfile');
+            die;
         }
         //____________________________________________________________________________________________________________________________________________
 

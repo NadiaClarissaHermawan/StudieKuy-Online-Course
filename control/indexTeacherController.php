@@ -190,12 +190,9 @@
                     $result = new Teacher ($value['real_name'], $value['nama_user'], $value['email'], $value['pass'], $value['pendidikan_terakhir'], $value['profile_picture']);
                 }
                 return $result;
-<<<<<<< Updated upstream
-=======
                 // return View::createViewTeacherProfile('teacherProfile.php', [
                 //     "result"=>$result
                 // ]);
->>>>>>> Stashed changes
 
             //belum login
             }else{

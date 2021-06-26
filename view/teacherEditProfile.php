@@ -31,16 +31,33 @@
         </div>
         
         <!-- update data diri -->
-        <form method="post" action="profileTextEdit" style="display: flex;" >
+        <form method="post" action="teacherProfileTextEdit" style="display: flex;" >
             <div class="content1-tengah-edit tulisanPutih hurufBesar" >
                 <table class="profileTable2">
+                    <tr>
+                        <td class="td-edit profile-title">Name</td>
+                        <td class="td-edit" style="padding-right:20px">:</td>
+                        <?php   
+                            echo 
+                            '<td class="td-edit">
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:150%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result->getRealname().'"/>
+                            </td>';
+                        ?>
+                    </tr>
+                    <tr>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 20px;"></td>
+                        <td class="td-edit" style="line-height: 7px;">
+                            <span id="nameError" class="td-edit errorMessage" style="line-height:10px; font-size:1vw; width:150%">Nama harus lebih dari 3 karakter</span>
+                        </td>
+                    </tr>
                     <tr>
                         <td class="td-edit profile-title">Username</td>
                         <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
                             '<td class="td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="uname" id="uname" oninput="checkUName()" value="'.$result->getUsername().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uname" id="uname" oninput="checkUName()" value="'.$result->getUsername().'"/>
                             </td>';
                         ?> 
                     </tr>
@@ -51,31 +68,31 @@
                             <span class="td-edit errorMessage" style="line-height:10px; font-size:1vw" id="userError"style=" color:red">username</span>
                         </td>
                     </tr>
-
                     <tr>
-                        <td class="td-edit profile-title">Name</td>
+                        <td class="td-edit profile-title">Email</td>
                         <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
                             '<td class="td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result->getRealname().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="uemail" id="uemail" oninput="checkEmail()" value="'.$result->getEmail().'"/>
                             </td>';
-                        ?>
+                        ?> 
                     </tr>
                     <tr>
                         <td class="td-edit" style="line-height: 20px;"></td>
-                        <td class="td-edit" style="line-height: 20px;"></td>
-                        <td class="td-edit" style="line-height: 20px;">
-                            <span id="nameError" class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Nama harus lebih dari 3 karakter</span>
+                        <td class="td-edit"  style="line-height: 20px;"></td>
+                        <td class="td-edit"  style="line-height: 20px;">
+                            <span class="td-edit errorMessage" style="line-height:10px; font-size:1vw" id="emailError"style=" color:red">email</span>
                         </td>
                     </tr>
+
                     <tr>
                         <td class="td-edit profile-title">Password</td>
                         <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
                             '<td class="td-edit">
-                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="upass" id="upass" oninput="checkPw()" value="'.$result->getPassword().'"/>
+                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:150%" name="upass" id="upass" oninput="checkPw()" value="'.$result->getPassword().'"/>
                             </td>';
                         ?>
                     </tr>
@@ -91,7 +108,7 @@
             <div class="content1-kanan-edit">
                     <td class="td-edit">
                         <input type="submit" class="submit-edit-profile" id="sbt" onclick="checkValidation()"/>
-                        </td>
+                    </td>
             </div>
         </form>
     </div>
@@ -155,16 +172,20 @@
     	else{
     		event.preventDefault();
             if(!checkUName()){
+                idU.style.width = "150%";
 				idU.textContent = "Username harus terdiri lebih dari 8 karakter!";
                 setError(user, idU);
             }
 			if(!checkURealName()){
+                idName.style.width = "150%";
 				setError(name, idName);
 			}
             if(!checkPw()){
+                idPw.style.width = "150%";
                 setError(pass, idPw);
             }
             if(!checkEmail()){
+                idEmail.style.width = "150%";
 				idEmail.textContent = "Email tidak valid!";
 				idEmail.style.marginLeft = "0px";
                 setError(email, idEmail);
@@ -207,6 +228,7 @@
 
         if(username === '' || username.length < 8){
 			idU.textContent = 'Username harus terdiri lebih dari 8 karakter';
+            idU.style.width = "150%";
             setError(user, idU);
             return false;
         }

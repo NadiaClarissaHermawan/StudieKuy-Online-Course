@@ -304,7 +304,7 @@
     	if(!emailUser.match(emailFormat)){ 
 			idEmail.textContent = "Email tidak valid !"
     		setError(email, idEmail);
-    		return false;
+    		return false;   
     	}
     	else {
     		setSuccess(email, idEmail);

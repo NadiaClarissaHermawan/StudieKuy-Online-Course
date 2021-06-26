@@ -464,6 +464,12 @@
                 echo $createCtrl->insertCourse();
                 break;
 
+            case $baseURL.'/teacherProfileTextEdit':
+                require_once "control/teacherLoginController.php";
+                $ctrl = new teacherLoginController();
+                echo $ctrl->teacherProfileTextEdit();
+                break;
+                
             default :
                 echo '404 not found';
                 break;

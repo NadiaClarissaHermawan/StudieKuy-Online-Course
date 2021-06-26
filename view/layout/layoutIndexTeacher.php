@@ -15,12 +15,6 @@
         
         <div class="nav">
             <a href="indexTeacher" class="menuNavNow">Home</a>
-            <?php 
-                //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['statusTeacher'])){
-                    echo ' <a href="teacherProfile" class="menuNavNow">My Profile</a>';
-                }
-            ?>
         </div>
         
         <!-- ini mesti ada buat keluarin konten yg uda dibikin sblmnya di php, kalo gaada, meski di echo di view jg gakan keluar -->
