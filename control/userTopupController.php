@@ -59,13 +59,19 @@
         //upload foto bukti transfer
         public function topup(){
             if(isset($_FILES["file"])){
+                //cari id_transaksi yg masih kosong
+                $query = "SELECT id_transaksi_saldo
+                          FROM transaksi_saldo
+                          ORDER BY id_transaksi_saldo DESC
+                         ";
+                $id_kosong = $this->db->executeSelectQuery($query)[0]['id_transaksi_saldo'];
+
                 $oldName = $_FILES["file"]["tmp_name"];
                 //dirname => naik 1 directory
                 //__DIR__ => directory file ini skrg (controller/Controller.php)
-                $newName = dirname(__DIR__)."\\view\\images\\buktitransfer\\".$_SESSION['id_pengguna'].".jpg";
+                $newName = dirname(__DIR__)."\\view\\images\\buktitransfer\\".$id_kosong.".jpg";
                 if(move_uploaded_file($oldName, $newName)){
-                    printf("File [%s] has successfully uploaded to [%s]",
-                    $oldName, $newName);
+                    return '{"result":"'.$id_kosong.'"}';
                 }else{
                     echo "Error in uploading";
                 }	
