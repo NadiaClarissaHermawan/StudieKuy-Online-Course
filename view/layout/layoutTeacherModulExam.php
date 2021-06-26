@@ -19,7 +19,7 @@
         <div class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
             <h1 id="judul" style="display: inline-block;"> Teacher Studie Kuy !</h1>
-            <button name="loginButton" class="tulisanCoklat" id="header-loginButton">TEACHER</button>
+            <a href="teacherLogout"><button type="submit" name="loginButton" class="tulisanCoklat" id="header-loginButton">TEACHER LOG OUT</button></a> 
         </div>
         
         <div class="nav">
