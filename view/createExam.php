@@ -16,8 +16,8 @@
 <hr>
 
 <div>
-    <form class="insert-form" name="form" id="container" method="POST" action="bikinCourse" enctype="multipart/form-data">
-        <?php $nomor = 1?>
+    <form class="insert-form" name="form" id="container" method="POST" action="bikinCourse" enctype="multipart/form-data">  
+    <?php $nomor = 1?>
         <input type="hidden" name="id_courses" value="<?php echo $_GET['id_courses']?>"/>
             <div class="content2 tulisanPutih">
                 <div class="content2-1">Question <?php echo $nomor?></div>
@@ -43,7 +43,6 @@
                 </div>
             </div>
         <div hidden id="batasan"></div>
-
     </form>
 </div>
 
@@ -61,9 +60,13 @@
     </div>
 </div>
 
-<script>
+<script defer>
+    let nomor = 2;
+
     function addQuestion(){
-        <?php $nomor ++?>
+        console.log(nomor);
+        console.log("q".concat(nomor));
+
         let content2 = document.createElement("div");
         let content21 = document.createElement("div");
         let content22 = document.createElement("div");
@@ -73,7 +76,7 @@
         question.setAttribute("autofocus", "");
         question.setAttribute("autocomplete", "off");
         question.setAttribute("type", "text");
-        question.setAttribute("name", "q<?php echo $nomor?>");
+        question.setAttribute("name", "q".concat(nomor));
         question.className = "question";
 
         let content3 = document.createElement("div");
@@ -86,25 +89,25 @@
 
         let radio = document.createElement("input");
         radio.setAttribute("type", "radio");
-        radio.setAttribute("name", "q<?php echo $nomor?>kunjaw");
+        radio.setAttribute("name", "q".concat(nomor).concat("kunjaw"));
         radio.value = "1";
         let radio2 = document.createElement("input");
         radio2.setAttribute("type", "radio");
-        radio2.setAttribute("name", "q<?php echo $nomor?>kunjaw");
+        radio2.setAttribute("name", "q".concat(nomor).concat("kunjaw"));
         radio2.value = "2";
         let radio3 = document.createElement("input");
         radio3.setAttribute("type", "radio");
-        radio3.setAttribute("name", "q<?php echo $nomor?>kunjaw");
+        radio3.setAttribute("name", "q".concat(nomor).concat("kunjaw"));
         radio3.value = "3";
 
         let text = document.createElement("input");
-        text.setAttribute("name", "q<?php echo $nomor?>opt1");
+        text.setAttribute("name", "q".concat(nomor).concat("opt1"));
         text.className ="space-input";
         let text2 = document.createElement("input");
-        text2.setAttribute("name", "q<?php echo $nomor?>opt2");
+        text2.setAttribute("name", "q".concat(nomor).concat("opt2"));
         text2.className ="space-input";
         let text3 = document.createElement("input");
-        text3.setAttribute("name", "q<?php echo $nomor?>opt3");
+        text3.setAttribute("name", "q".concat(nomor).concat("opt3"));
         text3.className ="space-input";
         
         content2.className = "content2 tulisanPutih";
@@ -120,7 +123,7 @@
         label2.className = "choice";
         label3.className = "choice";
 
-        let node21 = document.createTextNode("Question <?php echo $nomor?>");
+        let node21 = document.createTextNode("Question ".concat(nomor));
         let node22 = document.createTextNode(":");
 
         content21.appendChild(node21);
@@ -149,14 +152,13 @@
         document.body.appendChild(content2);
         document.body.appendChild(content3);
 
-
-
         let button = document.getElementById("container");
         button.append(content2);
         button.append(content3);
 
         //checker if all dynamic form is included =)
         //console.log(document.getElementById("container"));
+        nomor = nomor+1;
     }
 
     let modal = document.getElementById("myModal");
