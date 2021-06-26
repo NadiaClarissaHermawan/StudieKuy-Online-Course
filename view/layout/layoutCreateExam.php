@@ -22,7 +22,7 @@
         </div>
         
         <div class="nav">
-            <a href="" class="menuNav">Create Course Exam</a>
+            <a href="#" class="menuNavNow">Create Course Exam</a>
             <div class="menuNavKanan">
                 <a href="indexTeacher" class="material-icons md-36">home</a>
             </div>

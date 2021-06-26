@@ -222,7 +222,7 @@
                      ";
             $this->db->executeNonSelectQuery($query);
 
-            header('Location: teacherIndex');
+            header('Location: indexTeacher');
             die;
         }
 
@@ -268,7 +268,7 @@
         }
 
         public function created(){
-            return View::createViewTeacherProfile('courseCreated.php', []);
+            return View::createViewCreateExam('courseCreated.php', []);
         }
     }
 
