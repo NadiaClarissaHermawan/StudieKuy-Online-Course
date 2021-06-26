@@ -20,6 +20,7 @@ body {
     height: 100%;
     width: 100%;
 }
+
 .white-box {
     margin-top: 15%;
     width: 80%;
@@ -45,6 +46,12 @@ body {
     margin: 15px;
 }
 
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 16px 9px rgba(255,255,255,0.33);
+    -webkit-box-shadow: 0px 0px 16px 9px rgba(255,255,255,0.33);
+    -moz-box-shadow: 0px 0px 16px 9px rgba(255,255,255,0.33);
+}
 .text {
     background-color: white;
     border-bottom-left-radius: 30px;

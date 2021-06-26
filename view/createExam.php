@@ -47,7 +47,6 @@
 </div>
 
 <button class="button" id="button" onclick="addQuestion()" >Add New Question</button>
-<a href="uploadModul"><button class="buttonL">Back</button></a>
 
 <button class="buttonR" id="myBtn" onsubmit="kirim()">Submit</button>
 <div id="myModal" class="modal">

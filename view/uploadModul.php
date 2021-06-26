@@ -36,7 +36,6 @@
 </div>
 
 <button class="button" id="button" onclick="addModule()" >Add New Module</button>
-<a href="createCourse"><button class="buttonL">Back</button></a>
 <a href="createExam"><button class="buttonR" onclick="submitModul()">Next</button></a>
 
 <script>
