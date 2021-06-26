@@ -17,7 +17,7 @@
 <div>
     <form class="insert-form" name="form" id="container" method="POST" action="uploadModul" enctype="multipart/form-data">
         <?php $nomor = 1?>
-
+        <input type="hidden" name="id_courses" value="<?php echo $_GET['id_courses']?>"/>
         <div class="content2 tulisanPutih" id="mod">
             <div class="content2-1"><input type="text" required="" class="nama-modul" name="modul<?php echo $nomor?>" autofocus placeholder="Enter modul name.."></div>
             <div class="content2-2">:</div>

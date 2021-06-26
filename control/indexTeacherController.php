@@ -65,7 +65,7 @@
                 $name = $_POST['courseName'];
                 $category = $_POST['optVal'];
                 $desc = $_POST['courseDesc'];
-                $cost = $_POST['courseCost'];
+                $cost = $_POST['courseCost'] / 1000;
                 $kkm = $_POST['courseKKM'];
                 $gbr = $_FILES['courseImgx'];
 
@@ -104,7 +104,7 @@
                                 WHERE id_courses = $id_course
                                 ";
                         $this->db->executeNonSelectQuery($query);
-                        return '{"result":"success"}';
+                        header('Location: uploadModul?id='.$id_course.'');
                         
                     }else{
                         return '{"result":"error"}';
@@ -114,7 +114,7 @@
                 //update bidang course
                 $query = "INSERT INTO bidang_course (id_bidang, id_courses) VALUES ($category, $id_course)";
                 $this->db->executeNonSelectQuery($query);
-                header('Location: uploadModul?id_courses="$id_course"');
+                header('Location: uploadModul?id_courses='.$id_course);
                 die;
 
             //belum login
@@ -136,11 +136,61 @@
             return View::createViewUploadModul('uploadModul.php', []);
         }
 
-        //tambahin modul yg sdh di create --> kacau
+        //tambahin modul yg sdh di create
         public function addModul(){
-            var_dump($_POST);
-            var_dump($_FILES);
-            die;
+            // var_dump($_POST);
+            // var_dump($_FILES);
+            $id_courses = $_POST['id_courses'];
+            $namaModul = $_POST;
+            $video = $_FILES;
+
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+
+            //sdh login
+            if(isset($_SESSION['statusTeacher']) && $_SESSION['statusTeacher']!=""){
+                $nomor = 1;
+                foreach($namaModul as $key){
+                    //kalo bukan id_courses
+                    if($key != $id_courses){
+                        //cari id_modul yg masih kosong slotnya
+                        $query = "SELECT id_modul
+                                  FROM modul
+                                  ORDER BY id_modul DESC
+                                 ";
+                        $id_modul = $this->db->executeSelectQuery($query)[0]['id_modul'] + 1;
+                        $isi_modul = $id_modul.'.mp4';
+
+                        //insert new modul
+                        $query = "INSERT INTO modul (isi_modul, nama_modul, id_courses)
+                                  VALUES ('$isi_modul', '$key', '$id_courses')
+                                 ";
+                        $this->db->executeNonSelectQuery($query);
+
+                        //pindahin video yg diupload ke direktori
+                        if(isset($video['video'.$nomor])){
+                            $oldName = $video['video'.$nomor]["tmp_name"];
+                            //dirname => naik 1 directory
+                            //__DIR__ => directory file ini skrg (controller/Controller.php)
+                            $newName = dirname(__DIR__)."\\view\\modul\\".$id_modul.".mp4";
+                            if(move_uploaded_file($oldName, $newName)){
+                                header('Location: createExam?id_courses='.$id_courses);
+                                
+                            }else{
+                                return '{"result":"upload modul error", mohon masukan file yang valid}';
+                            }	
+                        }
+
+                        $nomor ++;
+                    }
+                }
+
+            }else{
+                session_destroy();
+                header('Location: teacherLogin');
+                die;
+            }
         }
     }
 

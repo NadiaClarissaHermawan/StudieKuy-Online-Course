@@ -455,7 +455,6 @@
                 require_once "control/indexTeacherController.php";
                 $crsCtrl = new uploadModulController();
                 echo $crsCtrl->addModul();
-                header('Location: createExam');
                 break;
                 
              case $baseURL.'/createCourse':
