@@ -40,7 +40,7 @@
             </div>
             <div class="rowLogin tulisanCoklat" style="margin-bottom: 20px;">
                 <span class="hurufKecil">doesn't have an account? </span>
-                <a class="link hurufKecil" href="userRegister" id="register-link"> Register now!</a>
+                <a class="link hurufKecil" href="userTeacherRegister" id="register-link"> Register now!</a>
             </div>
         </div>
     </form>

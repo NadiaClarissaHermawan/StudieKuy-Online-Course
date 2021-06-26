@@ -63,9 +63,8 @@
 			method: 'POST',
 			body: formData
 		})
-
 		
-		// notif aja
+		//notif aja
 		.then(response => response.json())
 		.then(response => console.log('Success:',JSON.stringify(response)))
 		.then(result =>{
@@ -77,8 +76,7 @@
 		let gambar = document.getElementById("gambar");
         gambar.style.visibility = "visible";
         gambar.src="";
-		// gambar.src = "/TugasBesar/view/images/buktitransfer/".concat(<?php echo $_SESSION['id_pengguna']?>).concat(".jpg");
-		gambar.src = "/TugasBesar/view/images/buktitransfer/84.jpg";
+		gambar.src = "/TugasBesar/view/images/buktitransfer/".concat(<?php echo $_SESSION['id_pengguna']?>).concat(".jpg");
 	}
 
 

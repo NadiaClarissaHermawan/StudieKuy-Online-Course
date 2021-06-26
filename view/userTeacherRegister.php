@@ -101,14 +101,14 @@
 	                <span class="errorMessage"  style="margin-left:0px" id="diplomaError">Gelar tidak valid!</span>
 	            </div>
 
-				<div class="rowLogin tulisanCoklat">
+				<!-- <div class="rowLogin tulisanCoklat">
 					<label for="upload" class="txt hurufSedang">Upload Image</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
 					<input type="file" name="upload" id="upload" class="kotakInput" onsubmit="checkUpload()" >
 				</div>
 				<div class="rowLogin">
 	                <span class="errorMessage" id="uploadError">Gambar belum tercantum</span>
-	            </div>
+	            </div> -->
 				<div class="rowLogin tulisanCoklat" style="margin-bottom: 30px;">
 					<button type="submit" class="register-button link tulisanCoklat" name="registerButton" onclick="checkValidation()">Register</button>
 				</div>

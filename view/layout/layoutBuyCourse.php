@@ -33,6 +33,8 @@
                 }else{
                     if($saldoUser == 0.000){
                         $saldoUser = 0;
+                    }else{
+                        $saldoUser *= 1000;
                     }
                     $statusLogin = $_SESSION['status'];
                     echo '<a  href="userTopup"><button style="top:-64px" type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';

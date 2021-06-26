@@ -231,7 +231,7 @@
                 $saldo = $res1[0]->getSaldo();
 
                 //ambil direktori modul" dari course bersangkutan
-                $query = "SELECT isi_modul, nama_modul, keterangan_modul, nama_course, c.id_courses
+                $query = "SELECT isi_modul, nama_modul, nama_course, c.id_courses
                             FROM modul INNER JOIN courses c
                                     ON modul.id_courses = c.id_courses
                             WHERE modul.id_courses = (SELECT id_courses
@@ -244,7 +244,7 @@
                 $resQuery = $this->db->executeSelectQuery($query);
                 $result = [];
                 foreach($resQuery as $key =>$value){
-                    $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['keterangan_modul'], $value['nama_course'], $value['id_courses']);
+                    $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['nama_course'], $value['id_courses']);
                 }
 
                 //cek apakah sudah klik salah satu modul?
