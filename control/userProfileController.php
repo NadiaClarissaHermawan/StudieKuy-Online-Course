@@ -93,13 +93,13 @@
                 //__DIR__ => directory file ini skrg (controller/Controller.php)
                 $newName = dirname(__DIR__)."\\view\\images\\profilepicture\\".$tempUser.".jpg";
                 if(move_uploaded_file($oldName, $newName)){
-                    return '{"result":"success"}';
                     $tempProf = $tempUser.".jpg";
                     $query = "UPDATE pengguna
                               SET profile_picture = '$tempProf';
                               WHERE id_pengguna = $tempUser
                              ";
                     $this->db->executeNonSelectQuery($query);
+                    return '{"result":"success"}';
                     
                 }else{
                     return '{"result":"error"}';

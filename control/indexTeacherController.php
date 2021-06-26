@@ -80,8 +80,42 @@
                         ";
                 $idT = $this->db->executeSelectQuery($query)[0]['id_pengajar'];
                 
-                $query = "INSERT INTO courses (nama_course, tarif, batas_nilai_minimum, keterangan_course, id_pengajar, gambar_courses) VALUES ('$name', '$cost', '$kkm', '$desc', '$idT', '$gbr')";
+                //add new course
+                $query = "INSERT INTO courses (nama_course, tarif, batas_nilai_minimum, keterangan_course, id_pengajar, gambar_courses) VALUES ('$name', '$cost', '$kkm', '$desc', '$idT', 'empty.jpg')";
                 $this->db->executeNonSelectQuery($query);
+
+                //ambil id_course baru 
+                $query = "SELECT id_courses
+                          FROM courses
+                          WHERE nama_course = '$name'
+                         ";
+                $id_course = $this->db->executeSelectQuery($query)[0]['id_courses'];
+
+                //move gambar ke direktori, rename & update gambar_courses di tabel courses
+                if(isset($gbr)){
+                    $oldName = $gbr["tmp_name"];
+                    //dirname => naik 1 directory
+                    //__DIR__ => directory file ini skrg (controller/Controller.php)
+                    $newName = dirname(__DIR__)."\\view\\images\\gambarcourses\\".$id_course.".jpg";
+                    if(move_uploaded_file($oldName, $newName)){
+                        $tempProf = $id_course.".jpg";
+                        $query = "UPDATE courses
+                                SET gambar_courses = '$tempProf'
+                                WHERE id_courses = $id_course
+                                ";
+                        $this->db->executeNonSelectQuery($query);
+                        return '{"result":"success"}';
+                        
+                    }else{
+                        return '{"result":"error"}';
+                    }	
+                }
+
+                //update bidang course
+                $query = "INSERT INTO bidang_course (id_bidang, id_courses) VALUES ($category, $id_course)";
+                $this->db->executeNonSelectQuery($query);
+                header('Location: uploadModul?id_courses="$id_course"');
+                die;
 
             //belum login
             }else{
