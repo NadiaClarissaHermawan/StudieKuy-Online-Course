@@ -75,7 +75,7 @@
 				<div class="rowLogin tulisanCoklat">
 					<label for="uemail" class="txt hurufSedang">E-mail</label>
 					<span style="width: 7px;"  class="hurufSedang">:</span>
-					<input type="text" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail" oninput="checkEmail()" />
+					<input type="email" class="kotakInput" id="uemail" name="uemail" placeholder="Enter e-mail" oninput="checkEmail()" />
 				</div>
 				<div class="rowLogin errorMessage" id="emailError"style="height: 20px; color:red; margin-left:0px"></div>
 
@@ -252,7 +252,7 @@
 
         function checkEmail() {
         	const emailUser = email.value;
-        	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+        	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$";
 
         	if(!emailUser.match(emailFormat)){ 
 				idEmail.textContent = "Email tidak valid !"
