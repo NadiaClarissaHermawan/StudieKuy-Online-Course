@@ -19,16 +19,16 @@
                 $nomor = 1;
                 foreach($result as $key => $row){
                     if($row->getNamaModul() == $selectedModulName){
-                        echo '<a href="teacherCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
+                        echo '<a href="teacherCourseModul?namaModul='.$row->getNamaModul().'&course='.$_GET['course'].'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
                     }else if($selectedModulName == "" && $nomor == 1){
-                        echo '<a href="teacherCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
+                        echo '<a href="teacherCourseModul?namaModul='.$row->getNamaModul().'&course='.$_GET['course'].'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
                     }else{
-                        echo '<a href="teacherCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
+                        echo '<a href="teacherCourseModul?namaModul='.$row->getNamaModul().'&course='.$_GET['course'].'"><li class="menu">'.$row->getNamaModul().'</li></a>';
                     }
                     echo '<hr class="batas">';
                     $nomor ++;
                 }
-                echo '<a href="teacherCourseExam?course='.$row->getIdCourse().'"><li class="menu">Exam</li></a>';
+                echo '<a href="teacherCourseExam?course='.$_GET['course'].'"><li class="menu">Exam</li></a>';
                 echo '<hr class="batas">';
             }
         ?>

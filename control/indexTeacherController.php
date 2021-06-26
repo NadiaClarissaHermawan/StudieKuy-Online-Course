@@ -296,14 +296,15 @@
             }
 
             $id_pengguna = $_SESSION['id_pengguna'];
-            $query = "SELECT id_courses, nama_course, tarif, batas_nilai_minimum, keterangan_course, gambar_courses
-                      FROM courses
+            $query = "SELECT c.id_courses, nama_course, tarif, batas_nilai_minimum, keterangan_course, gambar_courses, count(id_member) as 'jmlh'
+                      FROM courses c INNER JOIN member_course mc ON c.id_courses = mc.id_courses
                       WHERE id_pengajar = (SELECT id_pengajar FROM pengajar WHERE id_pengguna = '$id_pengguna')
+                      GROUP BY id_courses
+                      ORDER BY id_courses ASC
                      ";
             $resQuery = $this->db->executeSelectQuery($query);
-
             foreach($resQuery as $key => $value){
-                $result[] = new CourseTeacher($value['id_courses'], $value['nama_course'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses']);
+                $result[] = new CourseTeacher($value['id_courses'], $value['nama_course'], $value['tarif'], $value['batas_nilai_minimum'], $value['keterangan_course'], $value['gambar_courses'], $value['jmlh']);
             }
 
             return View::createViewTeacherCourse('teacherCourse.php', [
@@ -321,7 +322,7 @@
                 $id = $_SESSION['id_pengguna'];
                 $idCourse = $_GET['course'];
                 //ambil direktori modul" dari course bersangkutan
-                $query = "SELECT isi_modul, nama_modul, keterangan_modul, nama_course, c.id_courses
+                $query = "SELECT isi_modul, nama_modul, nama_course, c.id_courses
                           FROM modul INNER JOIN courses c
                           ON modul.id_courses = c.id_courses
                           WHERE modul.id_courses = $idCourse
@@ -331,7 +332,7 @@
                 $resQuery = $this->db->executeSelectQuery($query);
                 $result = [];
                 foreach($resQuery as $key =>$value){
-                    $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['keterangan_modul'], $value['nama_course'], $value['id_courses']);
+                    $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['nama_course'], $value['id_courses']);
                 }
 
                 //cek apakah sudah klik salah satu modul?
@@ -370,7 +371,7 @@
             }
 
             //sudah login
-            if(isset($_SESSION['status'])){
+            if(isset($_SESSION['statusTeacher'])){
                 $id = $_SESSION['id_pengguna'];
                 // $id_memCourse = $_SESSION['idMemCourse'];
                 $idCourse = $_GET['course'];

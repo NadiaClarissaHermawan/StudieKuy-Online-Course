@@ -30,7 +30,7 @@
             }
         ?>
     </ul>
-    <div class="vidShow tulisanCoklat hurufBesar" >
+    <div class="vidShow tulisanCoklat hurufBesar">
         <?php 
             echo '<video controls class="videoModul">';
 
