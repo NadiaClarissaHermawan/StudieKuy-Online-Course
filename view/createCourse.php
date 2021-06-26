@@ -90,7 +90,7 @@
     
     <div class="tombol">
         <button type="submit" style="padding: 0px; width: 5%; border-radius:20px; margin:0px; border: none">
-            <img src="view/images/createCourse.jpg" style="width: 100%;border-radius:20px" onclick="checkValidation()">
+            <img src="view/images/createCourse.jpg" style="width: 100%;border-radius:20px; cursor: pointer;" onclick="checkValidation()">
         </button>
     </div>
 </form> 
