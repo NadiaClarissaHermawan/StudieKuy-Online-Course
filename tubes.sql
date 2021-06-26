@@ -20,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `tubes`
 --
+DROP DATABASE tubes;
+CREATE DATABASE tubes;
+USE tubes;
 
 -- --------------------------------------------------------
 

@@ -228,7 +228,7 @@
             die;
         }
 
-        //fix jadi bikin course --> tinggal add exam
+        //fix jadi bikin course --> tinggal add exam & sertif name
         public function bikin(){
             $id_courses = $_POST['id_courses'];
             $arrayAll = $_POST;
@@ -265,6 +265,13 @@
                          ";
                 $this->db->executeNonSelectQuery($query);
             }
+
+            //bikin sertif
+            $query = "INSERT INTO sertifikat (nama_sertif, id_courses)
+                      VALUES((SELECT nama_course FROM courses WHERE id_courses=$id_courses), $id_courses)
+                     ";
+            $this->db->executeNonSelectQuery($query);
+            
             header('Location: courseCreated');
             die;
         }
