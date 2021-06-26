@@ -1,13 +1,55 @@
 <div class="putih">
     <div class="baris1">
-        <a href="bidangCourse?bidang=Computer"><img src="view/images/course1.png" class="pic" style="background-color: #27283D"></a>
-        <a href="bidangCourse?bidang=Economy"><img src="view/images/course2.png" class="pic" style="background-color: #AEF5FF"></a>
-        <a href="bidangCourse?bidang=Law"><img src="view/images/course3.png" class="pic" style="background-color: #FFDEAC"></a>
+        <a href="bidangCourse?bidang=Computer" class="category">
+            <img class="pic" src="view/images/course1.png" style="background: rgba(0, 0, 0, 0.6);">
+            <div class="overlay">
+                <p class="name">
+                    Computer
+                </p>
+            </div>
+        </a>
+        <a href="bidangCourse?bidang=Economy" class="category">
+            <img class="pic" src="view/images/course2.png" style="background-color: #AEF5FF">
+            <div class="overlay">
+                <p class="name">
+                    Economy
+                </p>
+            </div>
+        </a>
+        <a href="bidangCourse?bidang=Law" class="category">
+            <img class="pic" src="view/images/course3.png" style="background-color: #FFDEAC">
+            <div class="overlay">
+                <p class="name">
+                    Law
+                </p>
+            </div>
+        </a>
     </div>
     <div class="baris1">
-        <a href="bidangCourse?bidang=Art"><img src="view/images/course4.png" class="pic" style="background-color: #B1EA8E"></a>
-        <a href="bidangCourse?bidang=Science"><img src="view/images/course5.png" class="pic" style="background-color: #F7AB36"></a>
-        <a href="bidangCourse?bidang=Language"><img src="view/images/course6.png" class="pic" style="background-color: #F6ADF4"></a>
+        <a href="bidangCourse?bidang=Art" class="category">
+            <img class="pic" src="view/images/course4.png" style="background-color: #B1EA8E">
+            <div class="overlay">
+                <p class="name">
+                    Art
+                </p>
+            </div>
+        </a>
+        <a href="bidangCourse?bidang=Science" class="category">
+            <img class="pic" src="view/images/course5.png" style="background-color: #F7AB36">
+            <div class="overlay">
+                <p class="name">
+                    Science
+                </p>
+            </div>
+        </a>
+        <a href="bidangCourse?bidang=Language" class="category">
+            <img class="pic" src="view/images/course6.png" style="background-color: #F6ADF4">
+            <div class="overlay">
+                <p class="name">
+                    Language
+                </p>
+            </div>
+        </a>
     </div>
 </div>
 <!-- <script>
