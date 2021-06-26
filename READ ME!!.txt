@@ -1,0 +1,7 @@
+Untuk akses page" awal routernya:
+
+MEMBER'S SIDE: localhost/TugasBesar/index
+
+TEACHER'S SIDE: localhost/TugasBesar/teacherLogin
+
+ADMIN'S SIDE: localhost/TugasBesar/adminLogin
