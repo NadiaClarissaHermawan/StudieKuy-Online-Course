@@ -14,72 +14,68 @@
     <div class="tulisanPutih hurufBesar">Create Course Exam</div>
 </div>
 <hr>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Question 1</div>
-    <div class="content2-2">:</div>
-    <div class="content2-3"><input type="text" class="question"></div>
-</div>
-<div class="content3 tulisanPutih">
-    <div class="content3-1" style="visibility: hidden;"></div>
-    <div class="content3-2" style="visibility: hidden;"></div>
-    <div class="content3-3">
-        <label class="choice">
-            <input type="radio" name="opt">
-            <input type="text" class="space-input">
-        </label>
-        <label class="choice">
-            <input type="radio" name="opt" >
-            <input type="text" class="space-input">
-        </label>
-        <label class="choice">
-            <input type="radio" name="opt" >
-            <input type="text" class="space-input">
-        </label>
-    </div>
-</div>
-<div class="content2 tulisanPutih">
-    <div class="content2-1">Question 2</div>
-    <div class="content2-2">:</div>
-    <div class="content2-3"><input type="text" class="question"></div>
-</div>
-<div class="content3 tulisanPutih">
-    <div class="content3-1"></div>
-    <div class="content3-2"></div>
-    <div class="content3-3">
-        <label class="choice">
-            <input type="radio" name="opt">
-            <input type="text" class="space-input">
-        </label>
-        <label class="choice">
-            <input type="radio" name="opt" >
-            <input type="text" class="space-input">
-        </label>
-        <label class="choice">
-            <input type="radio" name="opt" >
-            <input type="text" class="space-input">
-        </label>
-    </div>
+
+<div>
+    <form class="insert-form" name="form" id="container" method="POST" action="bikinCourse" enctype="multipart/form-data">
+        <?php $nomor = 1?>
+        <input type="hidden" name="id_courses" value="<?php echo $_GET['id_courses']?>"/>
+        <div class="content2 tulisanPutih">
+            <div class="content2-1">Question <?php echo $nomor?></div>
+            <div class="content2-2">:</div>
+            <div class="content2-3"><input autofocus autocomplete="off" type="text" name="q<?php echo $nomor?>" class="question"></div>
+        </div>
+        <div class="content3 tulisanPutih">
+            <div class="content3-1" style="visibility: hidden;"></div>
+            <div class="content3-2" style="visibility: hidden;"></div>
+            <div class="content3-3">
+                <label class="choice">
+                    <input type="radio" name="q<?php echo $nomor?>kunjaw" value="1">
+                    <input type="text" name="q<?php echo $nomor?>opt1" class="space-input">
+                </label>
+                <label class="choice">
+                    <input type="radio" name="q<?php echo $nomor?>kunjaw" value="2">
+                    <input type="text"  name="q<?php echo $nomor?>opt2" class="space-input">
+                </label>
+                <label class="choice">
+                    <input type="radio" name="q<?php echo $nomor?>kunjaw" value="3">
+                    <input type="text"  name="q<?php echo $nomor?>opt3" class="space-input">
+                </label>
+            </div>
+        </div>
+        <div hidden id="batasan"></div>
+
+    </form>
 </div>
 
 <button class="button" id="button" onclick="addQuestion()" >Add New Question</button>
 <a href="uploadModul"><button class="buttonL">Back</button></a>
 
-<button class="buttonR" id="myBtn" onsubmit="">Submit</button>
+<button class="buttonR" id="myBtn" onsubmit="kirim()">Submit</button>
 <div id="myModal" class="modal">
     <div class="modal-content">
-        <p class="tulisanHitam">Course has been created!</p>
-        <!-- Test button sementara mau arahin ke home dlu -->
-        <a href="indexTeacher"><button class="buttonM tulisanCoklat hurufSedang">Go to Course</button></a>
+        <p class="tulisanHitam">Are you sure to submit course?</p>
+        <!-- yes -->
+        <button class="buttonM tulisanCoklat hurufSedang" style="margin-right: 50px;" onclick="submitForm()">Yes</button>
+        <!-- no -->
+        <a href="batalBikinCourse?id_courses=<?php echo $_GET['id_courses']?>"><button class="buttonM tulisanCoklat hurufSedang">No</button></a>
     </div>
 </div>
 
 <script>
     function addQuestion(){
+        <?php $nomor ++?>
         let content2 = document.createElement("div");
         let content21 = document.createElement("div");
         let content22 = document.createElement("div");
         let content23 = document.createElement("div");
+
         let question = document.createElement("input");
+        question.setAttribute("autofocus", "");
+        question.setAttribute("autocomplete", "off");
+        question.setAttribute("type", "text");
+        question.setAttribute("name", "q<?php echo $nomor?>");
+        question.className = "question";
+
         let content3 = document.createElement("div");
         let content31 = document.createElement("div");
         let content32 = document.createElement("div");
@@ -87,24 +83,34 @@
         let label = document.createElement("label");
         let label2 = document.createElement("label");
         let label3 = document.createElement("label");
+
         let radio = document.createElement("input");
+        radio.setAttribute("type", "radio");
+        radio.setAttribute("name", "q<?php echo $nomor?>kunjaw");
+        radio.value = "1";
         let radio2 = document.createElement("input");
+        radio2.setAttribute("type", "radio");
+        radio2.setAttribute("name", "q<?php echo $nomor?>kunjaw");
+        radio2.value = "2";
         let radio3 = document.createElement("input");
+        radio3.setAttribute("type", "radio");
+        radio3.setAttribute("name", "q<?php echo $nomor?>kunjaw");
+        radio3.value = "3";
+
         let text = document.createElement("input");
+        text.setAttribute("name", "q<?php echo $nomor?>opt1");
+        text.className ="space-input";
         let text2 = document.createElement("input");
+        text2.setAttribute("name", "q<?php echo $nomor?>opt2");
+        text2.className ="space-input";
         let text3 = document.createElement("input");
+        text3.setAttribute("name", "q<?php echo $nomor?>opt3");
+        text3.className ="space-input";
         
-        radio.type = "radio";
-        radio2.type = "radio";
-        radio3.type = "radio";
-        radio.name = "opt";
-        radio2.name = "opt";
-        radio3.name = "opt";
         content2.className = "content2 tulisanPutih";
         content21.className = "content2-1";
         content22.className = "content2-2";
         content23.className = "content2-3";
-        question.className = "question";
 
         content3.className = "content3 tulisanPutih";
         content31.className = "content3-1";
@@ -113,11 +119,8 @@
         label.className = "choice";
         label2.className = "choice";
         label3.className = "choice";
-        text.className = "space-input";
-        text2.className = "space-input";
-        text3.className = "space-input";
 
-        let node21 = document.createTextNode("Question");
+        let node21 = document.createTextNode("Question <?php echo $nomor?>");
         let node22 = document.createTextNode(":");
 
         content21.appendChild(node21);
@@ -146,9 +149,14 @@
         document.body.appendChild(content2);
         document.body.appendChild(content3);
 
-        let button = document.getElementById("button");
-        document.body.insertBefore(content2, button);
-        document.body.insertBefore(content3, button);
+
+
+        let button = document.getElementById("container");
+        button.append(content2);
+        button.append(content3);
+
+        //checker if all dynamic form is included =)
+        //console.log(document.getElementById("container"));
     }
 
     let modal = document.getElementById("myModal");
@@ -163,5 +171,10 @@
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+
+    function submitForm(){
+        let form = document.getElementById("container");
+        form.submit();
     }
 </script>
