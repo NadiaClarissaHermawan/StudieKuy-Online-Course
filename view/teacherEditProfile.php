@@ -4,7 +4,6 @@
     if(session_status() == PHP_SESSION_NONE){
         session_start();
     }
-
     //kalo belom login gabisa kesini
     if(!isset($_SESSION['statusTeacher'])){
         header("Location: teacherLogin");
@@ -16,9 +15,8 @@
     <!-- judul -->
     <div class="title">
         <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
-        <div class="title-kanan">
-            <span class="material-icons md-36" id="del" onclick="deleteAccount()">delete</span>
-            <a href="signOutUser" class="tulisanPutih hurufSedang" id="out">Sign Out</a>
+        <div class="title-kanan" style="justify-content: flex-end;">
+            <span class="material-icons md-36" id="del"  onclick="deleteAccount()">delete</span>
         </div>
     </div>
     <hr>
@@ -26,9 +24,9 @@
     <div class="content1">
         <!-- update prof pic -->
         <div id="input-gbr" class="content1-kiri-edit">
-            <img class="content1-image" src="/TugasBesar/view/images/profilepicture/<?php echo $result[0]->getProfpic()?>" id="gambar"/>
+            <img class="content1-image" src="/TugasBesar/view/images/profilepicture/<?php echo $result->getProfpic()?>" id="gambar"/>
             <form id="formUpload" enctype="multipart/form-data" style="margin-top: 3%">
-                <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:35%;">
+                <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:40%;">
             </form>
         </div>
         
@@ -42,7 +40,7 @@
                         <?php   
                             echo 
                             '<td class="td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="uname" id="uname" oninput="checkUName()" value="'.$result[0]->getUsername().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="uname" id="uname" oninput="checkUName()" value="'.$result->getUsername().'"/>
                             </td>';
                         ?> 
                     </tr>
@@ -60,7 +58,7 @@
                         <?php   
                             echo 
                             '<td class="td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result[0]->getRealname().'"/>
+                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="urealname" id="urealname" oninput="checkURealName()" value="'.$result->getRealname().'"/>
                             </td>';
                         ?>
                     </tr>
@@ -72,46 +70,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td  class="td-edit profile-title">Address</td>
-                        <td  class="td-edit" style="padding-right:20px">:</td>
-                        <?php   
-                            echo 
-                            '<td  class="td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="uaddress" id="uaddress" oninput="checkAddress()" value="'.$result[0]->getAddress().'"/>
-                            </td>';
-                        ?>
-                    </tr>
-                    <tr>
-                        <td  class="td-edit" style="line-height: 20px;"></td>
-                        <td class="td-edit" style="line-height: 20px;"></td>
-                        <td class="td-edit" style="line-height: 20px;" >
-                            <span id="addrError"  class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Address harus diisi!</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-edit profile-title">Phone Number</td>
-                        <td class="td-edit" style="padding-right:20px">:</td>
-                        <?php   
-                            echo 
-                            '<td class="td-edit">
-                                <input type="text" class="edit-input-box tulisanPutih" style="text-align:left;  width:100%" name="uphone" id="uphone" oninput="checkPhone()" value="'.$result[0]->getPhone().'"/>
-                            </td>';
-                        ?>
-                    </tr>
-                    <tr>
-                        <td class="td-edit" style="line-height: 20px;"></td>
-                        <td class="td-edit" style="line-height: 20px;"></td>
-                        <td class="td-edit" style="line-height: 20px;">
-                            <span id="phoneError" class="td-edit errorMessage" style="line-height:10px; font-size:1vw">Phone tidak valid!</span>
-                        </td>
-                    </tr>
-                    <tr>
                         <td class="td-edit profile-title">Password</td>
                         <td class="td-edit" style="padding-right:20px">:</td>
                         <?php   
                             echo 
                             '<td class="td-edit">
-                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="upass" id="upass" oninput="checkPw()" value="'.$result[0]->getPassword().'"/>
+                                <input type="password" class="edit-input-box tulisanPutih" style="text-align:left; width:100%" name="upass" id="upass" oninput="checkPw()" value="'.$result->getPassword().'"/>
                             </td>';
                         ?>
                     </tr>
@@ -140,9 +104,9 @@
 
 	fil.onchange = function(){
 		//ambil disini & masukin ke formData
-		formData.append('file', fil.files[0]);
+		formData.append('file', fil.files);
 		//proses AJAX fetch
-		fetch('uploadFile', {
+		fetch('uploadFileTeacher', {
 			method: 'POST',
 			body: formData
 		})
@@ -158,7 +122,7 @@
 		})
 		let gambar = document.getElementById("gambar");
         
-        let poto = "<?php echo $result[0]->getProfpic()?>";
+        let poto = "<?php echo $result->getProfpic()?>";
         // console.log("HELLO " + poto);	
         gambar.src = "/TugasBesar/view/images/profilepicture/".concat(poto);
         // console.log("YESY  "+gambar.src);
@@ -200,16 +164,10 @@
             if(!checkPw()){
                 setError(pass, idPw);
             }
-            if(!checkAddress()){
-                setError(addr, idAddr);
-            }
             if(!checkEmail()){
 				idEmail.textContent = "Email tidak valid!";
 				idEmail.style.marginLeft = "0px";
                 setError(email, idEmail);
-            }
-            if(!checkPhone()){
-                setError(phone, idPhone);
             }
             return false;
     	}
@@ -284,19 +242,6 @@
         }
     }
 
-    function checkAddress() {
-    	const address = addr.value;
-    	
-    	if(address === ''){
-    		setError(addr, idAddr);
-    		return false;
-    	}
-    	else {
-    		setSuccess(addr, idAddr);
-    		return true;
-    	}
-    }
-
     function checkEmail() {
     	const emailUser = email.value;
     	const emailFormat = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
@@ -311,19 +256,6 @@
     		return true;
     	}
     }
-
-    function checkPhone() {
-    	const phoneUser = phone.value;
-     	if(phoneUser.length >= 10 && phoneUser.length <= 13){ 
-     		setSuccess(phone, idPhone);
-    		return true;
-    	}
-    	else {
-    		setError(phone, idPhone);
-    		return false;
-    	}
-    }
-
     function setError(input, idInput){
         input.className = 'kotakInput2 error tulisanPutih';
         input.style.width = "100%";

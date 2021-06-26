@@ -15,7 +15,7 @@
 <div id="contentMainPage">
     <!-- judul -->
     <div class="title">
-        <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti;">My Profile </div>
+        <div class="title-kiri tulisanPutih" style="font-family:  Calligraffitti; padding-left:10%">My Profile </div>
         <div class="title-tengah">
             <a href="profileEditTeacher" class="tulisanPutih hurufSedang">Edit</a>
         </div>

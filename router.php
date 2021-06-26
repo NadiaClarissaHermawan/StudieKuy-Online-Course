@@ -239,12 +239,6 @@
                 $teacherProfileCtrl = new indexTeacherController();
                 echo $teacherProfileCtrl->signOut();
                 break;
-
-            case $baseURL.'/profileEditTeacher':
-                require_once "control/indexTeacherController.php";
-                $editCtrl = new indexTeacherController();
-                echo $editCtrl->view_editProfile();
-                break;
             
             //course dlm 1 bidang
             case $baseURL.'/bidangCourse':
@@ -372,9 +366,9 @@
                 break;
 
             case $baseURL.'/profileEditTeacher':
-                require_once "control/indexTeacherController.php";
-                $edit = new indexTeacherController();
-                echo $edit->viewEditTeacherProfile();
+                require_once "control/teacherLoginController.php";
+                $editTeach = new teacherLoginController();
+                echo $editTeach->viewEditTeacherProfile();
                 break;
 
             default :

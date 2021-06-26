@@ -17,7 +17,7 @@
             <a href="indexTeacher" class="menuNavNow">Home</a>
             <?php 
                 //jgn lupa ini status udah login, di add di header controller bersangkutan
-                if(isset($_SESSION['status'])){
+                if(isset($_SESSION['statusTeacher'])){
                     echo ' <a href="teacherProfile" class="menuNavNow">My Profile</a>';
                 }
             ?>
