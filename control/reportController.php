@@ -798,7 +798,6 @@
                       ON mc.id_courses = c.id_courses
                       GROUP BY c.nama_course";
             $result = $this->db->executeSelectQuery($query);
-
             return View::createViewChart('chartCourse.php',[
                 "result"=>$result
             ]);

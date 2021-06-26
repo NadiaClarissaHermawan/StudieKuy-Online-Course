@@ -231,12 +231,44 @@
             $id_courses = $_POST['id_courses'];
             $arrayAll = $_POST;
 
-            foreach($arrayAll as $row){
-                //var_dump($row);
+            //loop per nomor
+            for($i = 1; $i<=count($arrayAll)/5; $i++){
+                //cari questionnya
+                if(isset($arrayAll['q'.$i])){
+                    $question = $arrayAll['q'.$i];
+                }
 
-                //pola tetap : question - 
+                //cari opsi1
+                if(isset($arrayAll['q'.$i.'opt1'])){
+                    $opsi1 = $arrayAll['q'.$i.'opt1']; 
+                }
+
+                //cari opsi2
+                if(isset($arrayAll['q'.$i.'opt2'])){
+                    $opsi2 = $arrayAll['q'.$i.'opt2']; 
+                }
+
+                //cari opsi3
+                if(isset($arrayAll['q'.$i.'opt3'])){
+                    $opsi3 = $arrayAll['q'.$i.'opt3']; 
+                }
+
+                //cari kunjawnya
+                if(isset($arrayAll['q'.$i.'kunjaw'])){
+                    $kunjaw = $arrayAll['q'.$i.'kunjaw'];
+                }
+
+                $query = "INSERT INTO soal_ujian (nomor_soal, soal, opsi1, opsi2, opsi3, kunci_jawaban, id_courses)
+                          VALUES ($i, '$question', '$opsi1', '$opsi2', '$opsi3', $kunjaw, $id_courses)
+                         ";
+                $this->db->executeNonSelectQuery($query);
             }
-            
+            header('Location: courseCreated');
+            die;
+        }
+
+        public function created(){
+            return View::createViewTeacherProfile('courseCreated.php', []);
         }
     }
 

@@ -19,29 +19,29 @@
     <form class="insert-form" name="form" id="container" method="POST" action="bikinCourse" enctype="multipart/form-data">
         <?php $nomor = 1?>
         <input type="hidden" name="id_courses" value="<?php echo $_GET['id_courses']?>"/>
-        <div class="content2 tulisanPutih">
-            <div class="content2-1">Question <?php echo $nomor?></div>
-            <div class="content2-2">:</div>
-            <div class="content2-3"><input autofocus autocomplete="off" type="text" name="q<?php echo $nomor?>" class="question"></div>
-        </div>
-        <div class="content3 tulisanPutih">
-            <div class="content3-1" style="visibility: hidden;"></div>
-            <div class="content3-2" style="visibility: hidden;"></div>
-            <div class="content3-3">
-                <label class="choice">
-                    <input type="radio" name="q<?php echo $nomor?>kunjaw" value="1">
-                    <input type="text" name="q<?php echo $nomor?>opt1" class="space-input">
-                </label>
-                <label class="choice">
-                    <input type="radio" name="q<?php echo $nomor?>kunjaw" value="2">
-                    <input type="text"  name="q<?php echo $nomor?>opt2" class="space-input">
-                </label>
-                <label class="choice">
-                    <input type="radio" name="q<?php echo $nomor?>kunjaw" value="3">
-                    <input type="text"  name="q<?php echo $nomor?>opt3" class="space-input">
-                </label>
+            <div class="content2 tulisanPutih">
+                <div class="content2-1">Question <?php echo $nomor?></div>
+                <div class="content2-2">:</div>
+                <div class="content2-3"><input autofocus autocomplete="off" type="text" name="q<?php echo $nomor?>" class="question"></div>
             </div>
-        </div>
+            <div class="content3 tulisanPutih">
+                <div class="content3-1" style="visibility: hidden;"></div>
+                <div class="content3-2" style="visibility: hidden;"></div>
+                <div class="content3-3">
+                    <label class="choice">
+                        <input type="radio" name="q<?php echo $nomor?>kunjaw" value="1">
+                        <input type="text" name="q<?php echo $nomor?>opt1" class="space-input">
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q<?php echo $nomor?>kunjaw" value="2">
+                        <input type="text"  name="q<?php echo $nomor?>opt2" class="space-input">
+                    </label>
+                    <label class="choice">
+                        <input type="radio" name="q<?php echo $nomor?>kunjaw" value="3">
+                        <input type="text"  name="q<?php echo $nomor?>opt3" class="space-input">
+                    </label>
+                </div>
+            </div>
         <div hidden id="batasan"></div>
 
     </form>

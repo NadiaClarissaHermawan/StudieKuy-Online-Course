@@ -389,6 +389,12 @@
                 echo $crsCtrl->batalBikin();
                 break;
 
+            case $baseURL.'/courseCreated':
+                require_once "control/indexTeacherController.php";
+                $ctrl = new createExamController();
+                echo $ctrl->created();
+                break;
+
             default :
                 echo '404 not found';
                 break;
