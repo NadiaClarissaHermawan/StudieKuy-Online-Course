@@ -12,23 +12,23 @@
 ?>
 <div>
     <ul class="navKiri" style="padding:0px">
-        <!-- masih isi php dr modul user -->
+        <!-- masih isi php dr modul teacher-->
         <?php
-            // if(isset($result) && $result != null){
-            //     echo '<hr class="batas">';
-            //     $nomor = 1;
-            //     foreach($result as $key => $row){
-            //         if($row->getNamaModul() == $selectedModulName){
-            //             echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
-            //         }else if($selectedModulName == "" && $nomor == 1){
-            //             echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
-            //         }else{
-            //             echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
-            //         }
-            //         echo '<hr class="batas">';
-            //         $nomor ++;
-            //     }
-            // }
+            if(isset($result) && $result != null){
+                echo '<hr class="batas">';
+                $nomor = 1;
+                foreach($result as $key => $row){
+                    if($row->getNamaModul() == $selectedModulName){
+                        echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
+                    }else if($selectedModulName == "" && $nomor == 1){
+                        echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu selected">'.$row->getNamaModul().'</li></a>';
+                    }else{
+                        echo '<a href="userCourseModul?namaModul='.$row->getNamaModul().'"><li class="menu">'.$row->getNamaModul().'</li></a>';
+                    }
+                    echo '<hr class="batas">';
+                    $nomor ++;
+                }
+            }
         ?>
     </ul>
     <div class="vidShow tulisanCoklat hurufBesar">

@@ -4,6 +4,7 @@
     require_once "control/services/mysqlDB.php";
     require_once "model/teacher.php";
     require_once "model/courseTeacher.php";
+    require_once "model/modul.php";
 
     class indexTeacherController{
         protected $db;
@@ -303,8 +304,58 @@
         }
 
         public function view_teacherCourseModul(){
-            return View::createViewTeacherModul('teacherModul.php', []);
+            if(session_status() == PHP_SESSION_NONE){
+                session_start();
+            }
+
+            //sudah login
+            if(isset($_SESSION['statusTeacher'])){
+                $id = $_SESSION['id_pengguna'];
+                $idCourse = $_GET['course'];
+                //ambil direktori modul" dari course bersangkutan
+                $query = "SELECT isi_modul, nama_modul, keterangan_modul, nama_course, c.id_courses
+                          FROM modul INNER JOIN courses c
+                          ON modul.id_courses = c.id_courses
+                          WHERE modul.id_courses = $idCourse
+                          ORDER BY id_modul ASC
+                        ";
+                
+                $resQuery = $this->db->executeSelectQuery($query);
+                $result = [];
+                foreach($resQuery as $key =>$value){
+                    $result[] = new Modul($value['nama_modul'], $value['isi_modul'], $value['keterangan_modul'], $value['nama_course'], $value['id_courses']);
+                }
+
+                //cek apakah sudah klik salah satu modul?
+                //kalau sudah, ambil sumber video modul
+                $sumberModul = "";
+                $selectedModulName = "";
+                if(isset($_GET['namaModul']) && $_GET['namaModul'] != ""){
+                    $namaModul = $_GET['namaModul'];
+                    $query = "SELECT isi_modul
+                              FROM modul
+                              WHERE nama_modul = '$namaModul'
+                             ";
+                    $sumberModul = $this->db->executeSelectQuery($query);
+                    $sumberModul = $sumberModul[0]['isi_modul'];
+                    $selectedModulName = $namaModul;
+
+                //kalau ga, ambil & pick video pertama
+                }else{
+                    $sumberModul = $resQuery[0]['isi_modul'];
+                }
+                
+                return View::createViewTeacherModul('teacherModul.php', [
+                    "result" => $result
+                ], $sumberModul, $selectedModulName);
+            
+            //belum login
+            }else{
+                session_destroy();
+                return View::createViewTeacherModul('indexTeacher.php', []);
+            }
         }
+        
         public function view_teacherCourseExam(){
             return View::createViewTeacherExam('teacherExam.php', []);
         }

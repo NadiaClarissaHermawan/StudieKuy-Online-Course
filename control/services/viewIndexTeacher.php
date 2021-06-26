@@ -84,11 +84,13 @@
             ob_end_clean();
             return $include;
         }
-        public static function createViewTeacherModul($view, $param){
+        public static function createViewTeacherModul($view, $param, $sumberModul, $selectedModulName){
             foreach($param as $key => $value){
                 $$key = $value;
             }
-
+            $selectedModulName = $selectedModulName;
+            $sumberModul = $sumberModul;
+            
             ob_start();
             include 'view/'.$view;
             $content = ob_get_contents();
