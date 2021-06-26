@@ -28,7 +28,7 @@
         <div id="input-gbr" class="content1-kiri-edit">
             <img class="content1-image" src="/TugasBesar/view/images/profilepicture/<?php echo $result[0]->getProfpic()?>" id="gambar"/>
             <form id="formUpload" enctype="multipart/form-data" style="margin-top: 3%">
-                <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:35%;">
+                <input class="submit-edit-profile" type="file" name="file"  id="baten" style="width:40%;">
             </form>
         </div>
         
@@ -152,18 +152,18 @@
 		.then(response => console.log('Success:',JSON.stringify(response)))
 		.then(result =>{
 			console.log("success", result);
+            
 		})
 		.catch(error =>{
 			console.log("error", error);
 		})
+
 		let gambar = document.getElementById("gambar");
-        
         let poto = "<?php echo $result[0]->getProfpic()?>";
         // console.log("HELLO " + poto);	
         gambar.src = "/TugasBesar/view/images/profilepicture/".concat(poto);
-        // console.log("YESY  "+gambar.src);
+        console.log("YESS  "+gambar.src);
             
-        // inputgbr.appendChild(gambar);
 
         location.reload();
 	}

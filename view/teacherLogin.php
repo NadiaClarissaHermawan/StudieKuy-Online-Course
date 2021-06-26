@@ -9,17 +9,17 @@
                 <?php
                     if(isset($_SESSION['unameNotFound']) == false){       
                 ?>
-                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()"/>  
+                    <input autofocus type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()"/>  
                 <?php
                     }else if(isset($_SESSION['unameNotFound']) && $_SESSION['unameNotFound']  == 0){
                         session_destroy();
                 ?>  
-                    <input type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
+                    <input autofocus type="text" class="kotakInput" id="uname" name="uname" placeholder="Enter username" oninput="checkUName()" />
                     <div id="error" hidden style="margin-left: 20px;">Username not found</div>
                 <?php
                     }else{
                         $tempUname = $_SESSION['unameNotFound'];
-                        echo '<input type="text" class="kotakInput" id="uname" name="uname" value="'.
+                        echo '<input autofocus type="text" class="kotakInput" id="uname" name="uname" value="'.
                         $tempUname.'" placeholder="Enter username" onload="wrongPassword()" oninput="checkUName()" />';
 
                         echo '<div id="error" hidden>Wrong password</div>';

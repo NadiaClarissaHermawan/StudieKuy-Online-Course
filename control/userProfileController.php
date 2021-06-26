@@ -95,11 +95,11 @@
                 if(move_uploaded_file($oldName, $newName)){
                     $tempProf = $tempUser.".jpg";
                     $query = "UPDATE pengguna
-                              SET profile_picture = '$tempProf';
+                              SET profile_picture = '$tempProf'
                               WHERE id_pengguna = $tempUser
                              ";
                     $this->db->executeNonSelectQuery($query);
-                    return '{"result":"success"}';
+                    return '{"result":"'.$tempProf.'"}';
                     
                 }else{
                     return '{"result":"error"}';
