@@ -179,8 +179,8 @@
                      ";
             $this->db->executeNonSelectQuery($query);
 
-            //update info di tabel member
-            $query = "UPDATE member
+            //update info di tabel teacher
+            $query = "UPDATE pengajar
                       SET kontak = '$uphone', alamat = '$uaddress'
                       WHERE id_pengguna = '$id_p'
                      ";

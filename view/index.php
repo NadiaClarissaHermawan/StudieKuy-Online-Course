@@ -38,7 +38,7 @@
                 from engaging video lectures and dynamic graphics to data
                 visualizations and interactive elements
             </p>
-            <a href="courses" class="content1-button"><h1>Start Learning Now !</h1></a>
+            <a href="courses" class="content1-button"><h1 style="font-size: 1.4vw;">Start Learning Now !</h1></a>
         </div>
         <div class="content1-kanan">
             <img src="view/images/index1.png" class="content1-image"/>
