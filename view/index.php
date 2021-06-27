@@ -1,4 +1,35 @@
 <div id="contentMainPage">
+    <!-- Slide Show -->
+    <div class="slideshow-container">
+        <div class="mySlides fade" style="display: flex; flex-direction: row;">
+            <div class="numbertext">1 / 3</div>
+            <a class="prev" onclick="plusSlides(-1)" style="width: 15%;">&#10094;</a>
+            <img src="view/images/Slide1.png" class="img">
+            <a class="next" onclick="plusSlides(1)" style="width: 15%;">&#10095;</a>
+        </div>
+
+        <div class="mySlides fade" style="display: flex; flex-direction: row;">
+            <div class="numbertext">2 / 3</div>
+            <a class="prev" onclick="plusSlides(-1)" style="width: 15%;">&#10094;</a>
+            <img src="view/images/slide2.png" class="img">
+            <a class="next" onclick="plusSlides(1)" style="width: 15%;">&#10095;</a>
+        </div>
+
+        <div class="mySlides fade" style="display: flex; flex-direction: row;">
+            <div class="numbertext">3 / 3</div>
+            <a class="prev" onclick="plusSlides(-1)" style="width: 15%;">&#10094;</a>
+            <img src="view/images/Slide3.png" class="img">
+            <a class="next" onclick="plusSlides(1)" style="width: 15%;">&#10095;</a>
+        </div>
+    </div>
+    <hr class="pembatasDashed">
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
     <!-- blok coklat paling atas  -->
     <div class="content1">
         <div class="content1-kiri">
@@ -123,38 +154,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="view/images/slide1.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="view/images/slide2.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="view/images/slide3.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 
 <script>
