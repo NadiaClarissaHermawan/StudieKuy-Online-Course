@@ -10,7 +10,7 @@
         exit;
     }
 ?>
-<div class="sertif">
+<div id="ser" class="sertif">
 	<p class="judul tulisanCoklat">Studie Kuy !</p>
 	<hr class="garis">
 	<p class="subJudul">CERTIFICATE OF COMPLETION</p>
@@ -40,3 +40,21 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	function printss(){
+		let head1 = document.getElementById("head1");
+		let head2 = document.getElementById("head2");
+		let head3 = document.getElementById("head3");
+		head1.style.visibility ="hidden";
+		head2.style.visibility ="hidden";
+		head3.style.visibility ="hidden";
+		ser.style.marginTop = "20px";
+		window.print();
+		head1.style.visibility ="visible";
+		head2.style.visibility ="visible";
+		head3.style.visibility ="visible";
+		ser.style.marginTop = "159px";
+		return;
+	}
+</script>

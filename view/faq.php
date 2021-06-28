@@ -4,14 +4,14 @@
             <div class="talktext question">
                 <img src="view/images/ppTasha.jpg" class="profilePic" style="margin-right: 10px;">
                 <br>
-                <p>Mengapa bumi bulat?</p>
+                <p>Apa saja benefit belajar di Studie Kuy?</p>
                 <!-- <br> -->
             </div>
         </div>
         <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">
             <div class="talktext answer">
                 <img src="view/images/profpicAdmin.jpg" class="profilePic">
-                <p>Karena saat kita berjalan lurus dari suatu tempat maka akan kembali ke tempat itu.</p>
+                <p>Dengan mengambil online course di Studie Kuy, maka selain akan mendapatkan ilmu pengetahuan, tapi kamu juga akan memperoleh sertifikat yang akan berguna suatu saat!</p>
             </div>
         </div>
     </div>
@@ -22,14 +22,14 @@
             <div class="talktext question">
                 <img src="view/images/ppRio.png" class="profilePic" style="margin-right: 10px;">
                 <br>
-                <p>Apakah benar panda itu beruang?</p>
+                <p>Bagaimana cara mengambil online course di Studie Kuy ?</p>
                 <!-- <br> -->
             </div>
         </div>
         <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">
             <div class="talktext answer">
                 <img src="view/images/profpicAdmin.jpg" class="profilePic">
-                <p>Ya, Panda merupakan salah satu spesies beruang.</p>
+                <p>Untuk membeli suatu course, kamu harus memiliki saldo Studie Kuy yang cukup terlebih dahulu, selebihnya, kamu hanya perlu untuk meng-klik enroll pada course yang diinginkan</p>
             </div>
         </div>
     </div>
@@ -40,14 +40,14 @@
         <div class="talktext question">
             <img src="view/images/ppNadia.png" class="profilePic" style="margin-right: 10px;">
             <br>
-            <p>Mengapa pohon tidak berjalan?</p>
+            <p>Apakah exam pada course dapat diambil berkali-kali?</p>
             <!-- <br> -->
         </div>
         </div>
         <div class="talk-bubble tri-right round right-in " style="margin-left: 44%;">
         <div class="talktext answer">
             <img src="view/images/profpicAdmin.jpg" class="profilePic">
-            <p>Pohon sebenarnya "bergerak", walau tidak bisa dilihat secara kasat mata.</p>
+            <p>Ya, tentu saja, exam-exam tersebut dapat di ambil sebanyak yang kamu mau</p>
         </div>
         </div>
     </div>

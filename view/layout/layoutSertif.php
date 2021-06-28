@@ -11,13 +11,13 @@
         <link rel="stylesheet" type="text/css" href="View/layout/style/sertifikat.css"/>
     </head>
     <body>
-    	<div class="header">
+    	<div id="head1" class="header">
             <img src="view/images/logoStudieKuy.png" id="logo" style="display: inline-block;"/>
     		<h1 id="judul" style="display: inline-block;"> Studie Kuy ! </h1>
 
         </div>
         
-        <div class="nav">
+        <div id="head2" class="nav">
             <a href="courses" class="menuNav">Courses</a>
             <a href="#anchor-aboutUs" class="menuNav">About Us</a>
             <a href="faq" class="menuNav">FAQ</a>
@@ -38,7 +38,8 @@
                     echo '<a  href="userTopup"><button style="top:-64px" type="submit" name="topupButton" class="tulisanCoklat" id="header-topupButton">'.$saldoUser.'</button></a>';
                 }
             ?>
-            <div class="menuNavKanan">
+            <div id="head3" class="menuNavKanan">
+                <a onclick="printss()" class="material-icons md-36">cloud_download</a>
                 <a href="index" class="material-icons md-36">home</a>
                 <?php 
                     //jgn lupa ini status udah login, di add di header controller bersangkutan
