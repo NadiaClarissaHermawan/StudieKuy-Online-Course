@@ -1,35 +1,33 @@
 <div id="contentMainPage">
     <!-- Slide Show -->
     <div class="slideshow-container">
-        <div class="mySlides fade" style="display: flex; flex-direction: row;">
-            <div class="numbertext">1 / 3</div>
+        <div class="mySlides fade" style="display: flex; flex-direction: row;justify-content: center;align-items: center;text-align: center; background-color:#F4C47A">
             <a class="prev" onclick="plusSlides(-1)" style="width: 15%;">&#10094;</a>
             <img src="view/images/Slide1.png" class="img">
             <a class="next" onclick="plusSlides(1)" style="width: 15%;">&#10095;</a>
         </div>
 
-        <div class="mySlides fade" style="display: flex; flex-direction: row;">
-            <div class="numbertext">2 / 3</div>
+        <div class="mySlides fade"  style="display: flex; flex-direction: row;justify-content: center;align-items: center;text-align: center; background-color:#45C1D2">
             <a class="prev" onclick="plusSlides(-1)" style="width: 15%;">&#10094;</a>
             <img src="view/images/slide2.png" class="img">
             <a class="next" onclick="plusSlides(1)" style="width: 15%;">&#10095;</a>
         </div>
 
-        <div class="mySlides fade" style="display: flex; flex-direction: row;">
-            <div class="numbertext">3 / 3</div>
+        <div class="mySlides fade"  style="display: flex; flex-direction: row;justify-content: center;align-items: center;text-align: center; background-color:#B69DBC">
             <a class="prev" onclick="plusSlides(-1)" style="width: 15%;">&#10094;</a>
             <img src="view/images/Slide3.png" class="img">
             <a class="next" onclick="plusSlides(1)" style="width: 15%;">&#10095;</a>
         </div>
     </div>
-    <hr class="pembatasDashed">
-    <br>
-
-    <div style="text-align:center">
+    <!-- <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span> 
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
+    </div> -->
+    <hr class="pembatasDashed">
+    <br>
+
+    
     <!-- blok coklat paling atas  -->
     <div class="content1">
         <div class="content1-kiri">

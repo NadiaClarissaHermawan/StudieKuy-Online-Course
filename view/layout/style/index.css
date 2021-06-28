@@ -15,7 +15,7 @@
 --------------------
  */
 #contentMainPage {
-    padding-top: 150px;
+    padding-top: 130px;
 }
 .content1 {
     display: flex;
@@ -193,13 +193,15 @@
 }
 .img {
     vertical-align: middle;
-    width: 70%;
+    width: 75%;
+    border-radius: 30px;
     height: 50%;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .slideshow-container {
     width: 100%;
-    margin-left: 10%;
     margin-right: 5%;
 }
 

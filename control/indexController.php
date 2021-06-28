@@ -237,6 +237,7 @@
             ], $resQuery, $saldoUser, $namaBidang, $namaCourse);
         }
 
+        //melihat modul" dr course yg sdh di enroll
         public function view_courseModul(){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
