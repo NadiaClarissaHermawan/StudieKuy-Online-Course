@@ -297,7 +297,7 @@
 
             $id_pengguna = $_SESSION['id_pengguna'];
             $query = "SELECT c.id_courses, nama_course, tarif, batas_nilai_minimum, keterangan_course, gambar_courses, count(id_member) as 'jmlh'
-                      FROM courses c INNER JOIN member_course mc ON c.id_courses = mc.id_courses
+                      FROM courses c LEFT OUTER JOIN member_course mc ON c.id_courses = mc.id_courses
                       WHERE id_pengajar = (SELECT id_pengajar FROM pengajar WHERE id_pengguna = '$id_pengguna')
                       GROUP BY id_courses
                       ORDER BY id_courses ASC
