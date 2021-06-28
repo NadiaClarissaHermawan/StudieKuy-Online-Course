@@ -17,11 +17,12 @@
             return $include;
         }
 
-        public static function createViewList($view, $param, $saldo){
+        public static function createViewList($view, $param, $saldo, $start){
             foreach($param as $key => $value){
                 $$key = $value;
             }
             $saldo = $saldo[0]->getSaldo();
+            $start = $start;
 
             ob_start();
             include 'view/'.$view;

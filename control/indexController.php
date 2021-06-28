@@ -43,6 +43,7 @@
             }
         }
 
+        //lihat list course yang sudah di enroll member
         public function view_coursesList(){
             if(session_status() == PHP_SESSION_NONE){
                 session_start();
@@ -104,7 +105,7 @@
                     "result" => $result,
                     "jmlhPage"=>$jumlahPage,
                     "indexStart"=>$indexStart
-                ], $saldo);
+                ], $saldo, $start);
             
             //belum login
             }else{

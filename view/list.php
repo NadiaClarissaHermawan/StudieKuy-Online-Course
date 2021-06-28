@@ -31,9 +31,17 @@
 
 <div style="display: flex; text-align:center; justify-content:center; align-items:center">
     <?php
+
         // pagination angka halamannya
         for($i =1; $i<=$jmlhPage; $i++){
-            echo '<a style="color:white; font-size:1.5vw; margin: 10px; text-decoration:none" href="coursesList?start='.$i.'">'.$i.'</a>';
+            if(isset($start) && $i == $start){
+                echo '<a class="pageNow" style=" font-size:1.5vw; margin: 10px; text-decoration:none" href="coursesList?start='.$i.'">'.$i.'</a>';
+            }else if(isset($start) && $start == 0 && $i == 1){
+                echo '<a class="pageNow" style=" font-size:1.5vw; margin: 10px; text-decoration:none" href="coursesList?start='.$i.'">'.$i.'</a>';
+            }else{
+                echo '<a style="color:white; font-size:1.5vw; margin: 10px; text-decoration:none" href="coursesList?start='.$i.'">'.$i.'</a>';
+        
+            }
         }
     ?>
 </div>

@@ -16,7 +16,10 @@
     border-radius: 15px;
     padding: 2%;
 }
-
+.pageNow{
+    color: #F3A2A2;
+    text-decoration: none;
+}
 .content2-1 {
     width: 70%;
     display: flex;

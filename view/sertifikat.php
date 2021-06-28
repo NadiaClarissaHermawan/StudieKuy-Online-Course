@@ -43,6 +43,7 @@
 
 <script>
 	function printss(){
+		//ilangin header dll
 		let head1 = document.getElementById("head1");
 		let head2 = document.getElementById("head2");
 		let head3 = document.getElementById("head3");
@@ -50,7 +51,9 @@
 		head2.style.visibility ="hidden";
 		head3.style.visibility ="hidden";
 		ser.style.marginTop = "20px";
+		//print
 		window.print();
+		//balikin header dll
 		head1.style.visibility ="visible";
 		head2.style.visibility ="visible";
 		head3.style.visibility ="visible";
